@@ -10,6 +10,7 @@
     "mailgen": "^2.0.27",
     "mongoose": "^7.0.4",
     "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.22",
     "sha1": "^1.1.1"
   }
 }
