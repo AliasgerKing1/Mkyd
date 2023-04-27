@@ -1,7 +1,9 @@
 import axios from "axios"
 
-const apiUrl = "http://localhost:4000/api/user";
-const apiOtpUrl = "http://localhost:4000/api/otp";
+// const apiUrl = "http://localhost:4000/api/user";
+const apiUrl = "https://mkyd.onrender.com/api/user";
+// const apiOtpUrl = "http://localhost:4000/api/otp";
+const apiOtpUrl = "https://mkyd.onrender.com/api/otp";
 
 let addUser = async (data) => {
     return await axios.post(apiUrl, data);

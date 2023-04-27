@@ -8,12 +8,11 @@ import {getPath} from "../../../Redux/PathReducer"
 import {getOtpRedux} from "../../../Redux/OtpReducer"
 import {getTypeOtpRedux} from "../../../Redux/TypeOtpNotReducer"
 
-import { addUser, checkUser, otpIn, signupOtp } from '../../../services/UserService'
+import { addUser, checkUser, signupOtp } from '../../../services/UserService'
 import SignupSchema from '../../../schemas/SignupSchema'
 
 import Footer from '../../shared/Footer'
 import ScrollTop from '../../shared/ScrollTop'
-import Header from '../../shared/Header'
 import {AlertDanger} from "../../shared/Alert"
 const initialValues =  {
     name : "",
@@ -25,24 +24,23 @@ const initialValues =  {
 }
 const Signup = () => {
     let dispatch = useDispatch();
-    let [isReset,setIsReset] = useState(false);
     let [showSpinner, setShowSpinner] = useState(false);
     let [showAlert, setShowAlert] = useState(false);
 let [msg, setMsg] = useState("");
     let navigate = useNavigate();
-    let {values, handleBlur, handleChange, handleSubmit, errors, touched, resetForm} = useFormik({
+    let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
         initialValues : initialValues,
         validationSchema : SignupSchema,
         onSubmit : async () => {
             setShowSpinner(true);
             let res = await checkUser({email : values.email})
-            if(res.data.status == 401) {
+            if(res.data.status === 401) {
                 setMsg("This email/username already exist, please Login !");
                 setShowAlert(true);
-            }else if(res.data.status == 200) {
+            }else if(res.data.status === 200) {
                 let result = await addUser(values)
                 let otp = await signupOtp(result.data._id)
-                if(otp.data.status == 200) {
+                if(otp.data.status === 200) {
                     dispatch(getOtpRedux({otpSent : true}));
                 }
                 dispatch(getTypeOtpRedux(result.data));

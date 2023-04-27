@@ -3,8 +3,6 @@ import { NavLink, useParams } from 'react-router-dom'
 
 import { useDispatch,useSelector } from 'react-redux'
 import {getPath} from "../../../Redux/PathReducer"  
-import UserReducer from '../../../Redux/UserReducer'
-import SingleUserReducer from "../../../Redux/SingleUserReducer"
 import { getSingleUserRedux } from '../../../Redux/SingleUserReducer'
 
 import { getUserById } from '../../../services/UserService'
@@ -27,7 +25,7 @@ const Profile = () => {
   useEffect(()=> {
     let check = 2;
     dispatch(getPath(check))
-        if(state.length == 0) {
+        if(state.length === 0) {
             getProfileFun();
 
     }

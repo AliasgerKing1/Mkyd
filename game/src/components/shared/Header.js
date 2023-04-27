@@ -22,7 +22,7 @@ let getProfileFun = () => {
     })
 }
     useEffect(()=> {
-        if(state3.length == 0) {
+        if(state3.length === 0) {
             getProfileFun()
         }
     }, [])
@@ -61,13 +61,13 @@ if(obj) {
                                         <li className="active menu-item-has-children"><NavLink to="/auth/home">Home</NavLink>
                                         </li>
                                         <li><a href="about-us.html">ABOUT US</a></li>
-                                        <li className="menu-item-has-children"><a href="#">TOURNAMENT</a>
+                                        <li className="menu-item-has-children"><a  style={{cursor : "pointer"}}>TOURNAMENT</a>
                                             <ul className="sub-menu">
                                                 <li><a href="tournament.html">TOURNAMENT</a></li>
                                                 <li><a href="tournament-details.html">TOURNAMENT Single</a></li>
                                             </ul>
                                         </li>
-                                        <li className="menu-item-has-children"><a href="#">PAGES</a>
+                                        <li className="menu-item-has-children"><a  style={{cursor : "pointer"}}>PAGES</a>
                                             <ul className="sub-menu">
                                                 <li><a href="shop.html">Gaming Shop</a></li>
                                                 <li><a href="shop-details.html">Shop Details</a></li>
@@ -76,7 +76,7 @@ if(obj) {
                                                 <li><a href="team-details.html">Player Details</a></li>
                                             </ul>
                                         </li>
-                                        <li className="menu-item-has-children"><a href="#">News</a>
+                                        <li className="menu-item-has-children"><a  style={{cursor : "pointer"}}>News</a>
                                             <ul className="sub-menu">
                                                 <li><a href="blog.html">Our Blog</a></li>
                                                 <li><a href="blog-details.html">Blog Details</a></li>
@@ -87,7 +87,7 @@ if(obj) {
                                 </div>
                                 <div className="tgmenu__action d-none d-md-block">
                                     <ul className="list-wrap">
-                                        <li className="search"><a href="#"><i className="flaticon-search-1"></i></a></li>
+                                        <li className="search"><a  style={{cursor : "pointer"}}><i className="flaticon-search-1"></i></a></li>
                                         {state === 0 ? (<li className="header-btn"><NavLink to="/" className="tg-border-btn"><i className="flaticon-login"></i>~sing in</NavLink></li>) : null }
 
                                         {state === 1 ? (<li className="header-btn"><NavLink to={`/auth/profile/${state3[0] ? (state3[0]._id) : null}`} className="tg-border-btn"><i className="flaticon-edit"></i>My Account</NavLink></li>) : null}
@@ -119,11 +119,11 @@ if(obj) {
                                 </div>
                                 <div className="social-links">
                                     <ul className="list-wrap">
-                                        <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i className="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i className="fab fa-linkedin-in"></i></a></li>
-                                        <li><a href="#"><i className="fab fa-youtube"></i></a></li>
+                                        <li><a  style={{cursor : "pointer"}}><i className="fab fa-facebook-f"></i></a></li>
+                                        <li><a  style={{cursor : "pointer"}}><i className="fab fa-twitter"></i></a></li>
+                                        <li><a  style={{cursor : "pointer"}}><i className="fab fa-instagram"></i></a></li>
+                                        <li><a  style={{cursor : "pointer"}}><i className="fab fa-linkedin-in"></i></a></li>
+                                        <li><a  style={{cursor : "pointer"}}><i className="fab fa-youtube"></i></a></li>
                                     </ul>
                                 </div>
                             </nav>
@@ -189,10 +189,10 @@ if(obj) {
                         <p>Subscribe dolor sitamet, consectetur adiping eli. Duis esollici tudin augue.</p>
                     </div>
                     <ul className="offCanvas__social list-wrap">
-                        <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i className="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i className="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i className="fab fa-youtube"></i></a></li>
+                        <li><a  style={{cursor : "pointer"}}><i className="fab fa-twitter"></i></a></li>
+                        <li><a  style={{cursor : "pointer"}}><i className="fab fa-facebook-f"></i></a></li>
+                        <li><a  style={{cursor : "pointer"}}><i className="fab fa-linkedin-in"></i></a></li>
+                        <li><a  style={{cursor : "pointer"}}><i className="fab fa-youtube"></i></a></li>
                     </ul>
                 </div>
                 <div className="offCanvas__copyright">

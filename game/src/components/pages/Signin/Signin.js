@@ -6,14 +6,12 @@ import { NavLink } from 'react-router-dom'
 
 import { useDispatch, useSelector } from 'react-redux'
 import {getPath} from "../../../Redux/PathReducer"
-import TypeOtpNotReducer from "../../../Redux/TypeOtpNotReducer" 
  
 import SigninSchema from "../../../schemas/SigninSchema"
 import { DoLogin } from '../../../services/UserService'
 
 import Footer from '../../shared/Footer'
 import ScrollTop from '../../shared/ScrollTop'
-import Header from '../../shared/Header'
 import {AlertDanger} from "../../shared/Alert"
 const initialValues =  {
     email : "",
@@ -31,7 +29,7 @@ let [msg, setMsg] = useState("");
         validationSchema : SigninSchema,
         onSubmit : () => {
             setShowSpinner(true);
-if(state.isVerified != true) {
+if(state.isVerified !== true) {
     DoLogin(values).then(result=> {
         if (result.data.errType === 1) {
             setMsg("This email/username or password is incorrect !");

@@ -6,18 +6,13 @@ import { NavLink } from 'react-router-dom'
 
 import { useDispatch, useSelector } from 'react-redux'
 import {getPath} from "../../../Redux/PathReducer"
-import OtpReducer from '../../../Redux/OtpReducer'
-import TypeOtpNotReducer from '../../../Redux/TypeOtpNotReducer'
-import { getOtpRedux } from '../../../Redux/OtpReducer'
 import {getTypeOtpRedux} from "../../../Redux/TypeOtpNotReducer"
  
 import OtpSchema from "../../../schemas/OtpSchema"
-import SigninSchema from "../../../schemas/SigninSchema"
 import { checkOtp, otpVerfied,getUserByOtpId } from '../../../services/UserService'
 
 import Footer from '../../shared/Footer'
 import ScrollTop from '../../shared/ScrollTop'
-import Header from '../../shared/Header'
 import {AlertDanger, AlertSuccess} from "../../shared/Alert"
 const initialValues =  {
     otp : "",
@@ -63,8 +58,8 @@ let [msg2, setMsg2] = useState("");
     useEffect(()=> {
     let check = 0;
     dispatch(getPath(check))
-    if(state.otpSent == true) {
-        setMsg2("Otp Sent Successfully !");
+    if(state.otpSent === true) {
+        setMsg2("Otp Sent Successfully, check your Email!");
         setShowAlert2(true);
     }
     setTimeout(()=> {

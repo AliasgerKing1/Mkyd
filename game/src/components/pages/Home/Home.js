@@ -3,13 +3,11 @@ import { NavLink } from 'react-router-dom'
 
 import { useDispatch, useSelector } from 'react-redux'
 import {getPath} from "../../../Redux/PathReducer"
-import {getUserRedux} from "../../../Redux/UserReducer"
 
 
 import ScrollTop from '../../shared/ScrollTop'
 import Header from "../../shared/Header"
 import Footer from '../../shared/Footer'
-// import { getUser } from '../../../services/UserService'
 
 const Home = () => {
     let dispatch = useDispatch();
@@ -18,16 +16,6 @@ const Home = () => {
         let check = 1;
         dispatch(getPath(check))
     }, [])
-    // let getUserFun = () => {
-    //     getUser().then(result => {
-    //         dispatch(getUserRedux(result.data))
-    //     })
-    // } 
-    // useEffect(() => {
-    //     if(state.length == 0) {
-    //     getUserFun();
-    //     }
-    //       },[]);
   return (
     <>
   <ScrollTop />
@@ -72,9 +60,9 @@ const Home = () => {
             <div className="slider__brand-wrap">
                 <div className="container custom-container">
                     <ul className="slider__brand-list list-wrap">
-                        <li><a href="#"><img src="/assets/img/brand/brand_logo01.png" alt="brand" /></a></li>
-                        <li><a href="#"><img src="/assets/img/brand/brand_logo02.png" alt="brand" /></a></li>
-                        <li><a href="#"><img src="/assets/img/brand/brand_logo03.png" alt="brand" /></a></li>
+                        <li><a style={{cursor : "pointer"}}><img src="/assets/img/brand/brand_logo01.png" alt="brand" /></a></li>
+                        <li><a style={{cursor : "pointer"}}><img src="/assets/img/brand/brand_logo02.png" alt="brand" /></a></li>
+                        <li><a style={{cursor : "pointer"}}><img src="/assets/img/brand/brand_logo03.png" alt="brand" /></a></li>
                     </ul>
                 </div>
             </div>
@@ -188,22 +176,22 @@ const Home = () => {
                             </div>
                             <ul className="nav nav-tabs" id="myTab" role="tablist">
                                 <li className="nav-item" role="presentation">
-                                    <button className="nav-link active" id="about01-tab" data-bs-toggle="tab" data-bs-target="#about01" type="button" role="tab" aria-controls="about01" aria-selected="true"><span className="img-shape"></span><img src="/assets/img/others/about_tab01.png" alt="img" /></button>
+                                    <button className="nav-link active" id="about01-tab" data-bs-toggle="tab" data-bs-target="/auth/homeabout01" type="button" role="tab" aria-controls="about01" aria-selected="true"><span className="img-shape"></span><img src="/assets/img/others/about_tab01.png" alt="img" /></button>
                                 </li>
                                 <li className="nav-item" role="presentation">
-                                    <button className="nav-link" id="about02-tab" data-bs-toggle="tab" data-bs-target="#about02" type="button" role="tab" aria-controls="about02" aria-selected="false"><span className="img-shape"></span><img src="/assets/img/others/about_tab02.png" alt="img" /></button>
+                                    <button className="nav-link" id="about02-tab" data-bs-toggle="tab" data-bs-target="/auth/homeabout02" type="button" role="tab" aria-controls="about02" aria-selected="false"><span className="img-shape"></span><img src="/assets/img/others/about_tab02.png" alt="img" /></button>
                                 </li>
                                 <li className="nav-item" role="presentation">
-                                    <button className="nav-link" id="about03-tab" data-bs-toggle="tab" data-bs-target="#about03" type="button" role="tab" aria-controls="about03" aria-selected="false"><span className="img-shape"></span><img src="/assets/img/others/about_tab03.png" alt="img" /></button>
+                                    <button className="nav-link" id="about03-tab" data-bs-toggle="tab" data-bs-target="/auth/homeabout03" type="button" role="tab" aria-controls="about03" aria-selected="false"><span className="img-shape"></span><img src="/assets/img/others/about_tab03.png" alt="img" /></button>
                                 </li>
                                 <li className="nav-item" role="presentation">
-                                    <button className="nav-link" id="about04-tab" data-bs-toggle="tab" data-bs-target="#about04" type="button" role="tab" aria-controls="about04" aria-selected="false"><span className="img-shape"></span><img src="/assets/img/others/about_tab04.png" alt="img" /></button>
+                                    <button className="nav-link" id="about04-tab" data-bs-toggle="tab" data-bs-target="/auth/homeabout04" type="button" role="tab" aria-controls="about04" aria-selected="false"><span className="img-shape"></span><img src="/assets/img/others/about_tab04.png" alt="img" /></button>
                                 </li>
                                 <li className="nav-item" role="presentation">
-                                    <button className="nav-link" id="about05-tab" data-bs-toggle="tab" data-bs-target="#about05" type="button" role="tab" aria-controls="about05" aria-selected="false"><span className="img-shape"></span><img src="/assets/img/others/about_tab05.png" alt="img" /></button>
+                                    <button className="nav-link" id="about05-tab" data-bs-toggle="tab" data-bs-target="/auth/homeabout05" type="button" role="tab" aria-controls="about05" aria-selected="false"><span className="img-shape"></span><img src="/assets/img/others/about_tab05.png" alt="img" /></button>
                                 </li>
                                 <li className="nav-item" role="presentation">
-                                    <button className="nav-link" id="about06-tab" data-bs-toggle="tab" data-bs-target="#about06" type="button" role="tab" aria-controls="about06" aria-selected="false"><span className="img-shape"></span><img src="/assets/img/others/about_tab06.png" alt="img" /></button>
+                                    <button className="nav-link" id="about06-tab" data-bs-toggle="tab" data-bs-target="/auth/homeabout06" type="button" role="tab" aria-controls="about06" aria-selected="false"><span className="img-shape"></span><img src="/assets/img/others/about_tab06.png" alt="img" /></button>
                                 </li>
                             </ul>
                         </div>
@@ -666,7 +654,7 @@ const Home = () => {
                                         </div>
                                     </div>
                                     <div className="trendingNft__item-wish">
-                                        <a href="#"><i className="far fa-heart"></i></a>
+                                        <a style={{cursor : "pointer"}}><i className="far fa-heart"></i></a>
                                     </div>
                                 </div>
                                 <div className="trendingNft__item-image">

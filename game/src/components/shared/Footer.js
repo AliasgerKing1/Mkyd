@@ -17,10 +17,10 @@ const Footer = () => {
                                 <p className="desc">Lorem ipsum dolor sitamet consectur adipiscing Duis esollici tudin augue euismod. Nulla ullam dolor sitamet consectetur</p>
                                 <p className="social-title">Active <span>With Us <i className="fas fa-angle-double-right"></i></span></p>
                                 <div className="footer-social">
-                                    <a href="#"><img src="/assets/img/icons/social_icon01.png" alt="iocn" /></a>
-                                    <a href="#"><img src="/assets/img/icons/social_icon02.png" alt="iocn" /></a>
-                                    <a href="#"><img src="/assets/img/icons/social_icon03.png" alt="iocn" /></a>
-                                    <a href="#"><img src="/assets/img/icons/social_icon04.png" alt="iocn" /></a>
+                                    <a style={{cursor : "pointer"}}><img src="/assets/img/icons/social_icon01.png" alt="iocn" /></a>
+                                    <a style={{cursor : "pointer"}}><img src="/assets/img/icons/social_icon02.png" alt="iocn" /></a>
+                                    <a style={{cursor : "pointer"}}><img src="/assets/img/icons/social_icon03.png" alt="iocn" /></a>
+                                    <a style={{cursor : "pointer"}}><img src="/assets/img/icons/social_icon04.png" alt="iocn" /></a>
                                 </div>
                             </div>
                         </div>
@@ -29,12 +29,12 @@ const Footer = () => {
                         <div className="footer-widget widget_nav_menu">
                             <h4 className="fw-title">quick link</h4>
                             <ul className="list-wrap menu">
-                                <li><a href="#">Gaming</a></li>
-                                <li><a href="#">Product</a></li>
-                                <li><a href="#">All NFTs</a></li>
-                                <li><a href="#">Social Network</a></li>
-                                <li><a href="#">Domain Names</a></li>
-                                <li><a href="#">Collectibles</a></li>
+                                <li><a style={{cursor : "pointer"}}>Gaming</a></li>
+                                <li><a style={{cursor : "pointer"}}>Product</a></li>
+                                <li><a style={{cursor : "pointer"}}>All NFTs</a></li>
+                                <li><a style={{cursor : "pointer"}}>Social Network</a></li>
+                                <li><a style={{cursor : "pointer"}}>Domain Names</a></li>
+                                <li><a style={{cursor : "pointer"}}>Collectibles</a></li>
                             </ul>
                         </div>
                     </div>
@@ -42,12 +42,12 @@ const Footer = () => {
                         <div className="footer-widget widget_nav_menu">
                             <h4 className="fw-title">Supports</h4>
                             <ul className="list-wrap menu">
-                                <li><a href="#">Setting & Privacy</a></li>
-                                <li><a href="#">Help & Support</a></li>
-                                <li><a href="#">Live Auctions</a></li>
-                                <li><a href="#">Item Details</a></li>
-                                <li><a href="#">24/7 Supports</a></li>
-                                <li><a href="#">Our News</a></li>
+                                <li><a style={{cursor : "pointer"}}>Setting & Privacy</a></li>
+                                <li><a style={{cursor : "pointer"}}>Help & Support</a></li>
+                                <li><a style={{cursor : "pointer"}}>Live Auctions</a></li>
+                                <li><a style={{cursor : "pointer"}}>Item Details</a></li>
+                                <li><a style={{cursor : "pointer"}}>24/7 Supports</a></li>
+                                <li><a style={{cursor : "pointer"}}>Our News</a></li>
                             </ul>
                         </div>
                     </div>
