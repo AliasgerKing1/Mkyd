@@ -32,7 +32,7 @@ let Logout = () => {
   }
   let DoLogin = (obj) => {
     return axios.post(
-        '"https://mkyd.onrender.com/api/user/loginauth',
+        'https://mkyd.onrender.com/api/user/loginauth',
         obj
       );
     }
