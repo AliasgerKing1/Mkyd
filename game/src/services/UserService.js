@@ -16,6 +16,9 @@ const header = token;
 let getUserById = async (token) => {
   return await axios.get(`${apiUrl}/${token}`);
 }
+let getUserByOtpId = async (id) => {
+  return await axios.get(`${apiUrl}/otpid/${id}`);
+}
 
 
 
@@ -60,4 +63,4 @@ return await axios.get(`${apiOtpUrl}/otpin/${id}`)
     let otpVerfied = async (id) => {
       return await axios.get(`${apiOtpUrl}/otpverified/${id}`)
     }
-export {addUser,getUserById, DoLogin,IsSignin ,Logout, checkUser, signupOtp, otpIn, checkOtp, otpVerfied}
+export {addUser,getUserById, DoLogin,IsSignin ,Logout, checkUser, signupOtp, otpIn, checkOtp, otpVerfied, getUserByOtpId}

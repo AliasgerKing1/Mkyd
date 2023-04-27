@@ -31,7 +31,7 @@ let [msg, setMsg] = useState("");
         validationSchema : SigninSchema,
         onSubmit : () => {
             setShowSpinner(true);
-if(state.otp != null) {
+if(state.isVerified != true) {
     DoLogin(values).then(result=> {
         if (result.data.errType === 1) {
             setMsg("This email/username or password is incorrect !");

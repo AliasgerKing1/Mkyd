@@ -9,10 +9,11 @@ import {getPath} from "../../../Redux/PathReducer"
 import OtpReducer from '../../../Redux/OtpReducer'
 import TypeOtpNotReducer from '../../../Redux/TypeOtpNotReducer'
 import { getOtpRedux } from '../../../Redux/OtpReducer'
+import {getTypeOtpRedux} from "../../../Redux/TypeOtpNotReducer"
  
 import OtpSchema from "../../../schemas/OtpSchema"
 import SigninSchema from "../../../schemas/SigninSchema"
-import { checkOtp, otpVerfied } from '../../../services/UserService'
+import { checkOtp, otpVerfied,getUserByOtpId } from '../../../services/UserService'
 
 import Footer from '../../shared/Footer'
 import ScrollTop from '../../shared/ScrollTop'
@@ -36,11 +37,17 @@ let [msg2, setMsg2] = useState("");
         validationSchema : OtpSchema,
         onSubmit : () => {
             setShowSpinner(true);
-            checkOtp(values).then(result=> {
+            let otpSets = {
+                data : values,
+                email : state2.email
+            }
+            checkOtp(otpSets).then(result=> {
                 if(result.data.status === 200) {
                                     otpVerfied(state2._id).then(result2 => {
-                                      console.log(result2.data)
+                                        getUserByOtpId(state2._id).then(status => {
+                                    dispatch(getTypeOtpRedux(status.data))
                                     navigate("/")
+                                })
                                   })
                                 } else {
                                     setMsg("Otp is incorrect !");
