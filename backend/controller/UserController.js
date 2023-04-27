@@ -49,6 +49,11 @@ routes.get('/:token', async (req, res) => {
     }
 res.send(result); 
 });
+routes.get('/otpid/:id', async (req, res) => {
+    let id = req.params.id;
+let result = await User.find({_id : id});
+res.send(result); 
+});
 
 routes.post("/checkuser", async (req,res) => {
     let email = req.body.email;

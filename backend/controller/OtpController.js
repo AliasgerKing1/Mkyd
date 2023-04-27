@@ -1,21 +1,93 @@
 let routes = require("express").Router();
 let User = require("../models/User")
+
+
+let nodemailer = require("nodemailer")
+let mailGen = require("mailgen")
+const {EMAIL, PASSWORD} = require("../config/env")
+
 routes.get("/:id", async (req,res)=> {
     let id = req.params.id;
     let random = Math.floor(Math.random() * 1000000);
     await User.updateMany({_id : id}, {otp : random});
-    res.send({status : 200, success : true})
+
+    let result = await User.find({_id : id})
+
+    let userEmail = result[0].email; 
+    let userName = result[0].name; 
+    // send mail using gmail and nodemailer
+let config = {
+    service : "gmail",
+    auth : {
+        user : EMAIL,
+        pass : PASSWORD,
+    }
+}
+
+let transporter = nodemailer.createTransport(config);
+
+let MailGenerator = new mailGen({
+    theme : "default",
+    product : {
+        name : "Mailgen",
+        link : 'https://mailgen.js/'
+    }
+})
+
+let response = {
+    body : {
+        name : userName,
+        intro : "Your verification code is arived !",
+        table : {
+            data : [
+                {
+                subject : "Your Verification Code : ",
+                description : "Verification code will expire after 5 minutes, so fastly verify your account !",
+                code : random,
+                }
+            ]
+        },
+        outro : "click on this link to reach otp page : "
+    }
+}
+
+let mail = MailGenerator.generate(response)
+
+let message = {
+    from : EMAIL,
+    to : userEmail,
+    subject : "Varification code to login on Mkyd",
+    html : mail
+}
+
+transporter.sendMail(message).then(()=> {
+    return res.status(200).json({
+        msg : "You should recieve a mail",
+        status : 200, 
+        success : true
+    })
+}).catch (error => {
+    console.log(error)
+    res.status(500).json({error})
+})
+
+    // res.send({status : 200, success : true})
 })
 
 routes.post("/checkotp", async (req,res)=> {
-    let otp = req.body.otp;
-   try {
+
+    let otp = req.body.data.otp;
+    let email = req.body.email;
+    try {
+        let verifyEmail = await User.find({email : email })
+        if(verifyEmail.length == 1) {
     let result = await User.find({otp : otp})
 if(result.length == 1) {
     res.send({status : 200, success : true})
 }else {
     res.send({status : 401, success : false})
 }
+        }
    }catch (error) {
     console.log(error)
 }
