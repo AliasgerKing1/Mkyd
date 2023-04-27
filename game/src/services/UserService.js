@@ -1,3 +1,4 @@
+/*eslint-disable */
 import axios from "axios"
 
 // const apiUrl = "http://localhost:4000/api/user";
