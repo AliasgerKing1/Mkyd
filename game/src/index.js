@@ -12,6 +12,7 @@ import UserReducer from "./Redux/UserReducer"
 import SingleUserReducer from './Redux/SingleUserReducer';
 import OtpReducer from './Redux/OtpReducer';
 import TypeOtpNotReducer from './Redux/TypeOtpNotReducer';
+import VerificationReducer from './Redux/VerifiedReducer';
 
 import { BrowserRouter } from 'react-router-dom';
 let rootReducer = combineReducers({
@@ -20,6 +21,7 @@ let rootReducer = combineReducers({
   SingleUserReducer,
   OtpReducer,
   TypeOtpNotReducer,
+  VerificationReducer
 })
 let store = configureStore ({
   reducer : rootReducer

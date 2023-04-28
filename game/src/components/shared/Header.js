@@ -212,8 +212,8 @@ if(obj) {
                     <div className="offCanvas__contact">
                         <h4 className="small-title">CONTACT US</h4>
                         <ul className="offCanvas__contact-list list-wrap">
-                            <li><a href="tel:93332225557">+91 623 205 3953</a></li>
-                            <li><a href="mailto:info@webmail.com">sabkagameinfo@gmail.com</a></li>
+                            <li><a href="tel:916232053953">+91 623 205 3953</a></li>
+                            <li><a href="mailto:sabkaappinfo12@gmail.com">sabkaappinfo12@gmail.com</a></li>
                             <li>Saifee nagar khati wala tank, Indore, India</li>
                         </ul>
                     </div>

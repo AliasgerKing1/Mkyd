@@ -1,14 +1,12 @@
 /*eslint-disable */
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-
+import { useNavigate, NavLink, useLocation } from 'react-router-dom'
 import {useFormik} from "formik"
-import { NavLink } from 'react-router-dom'
 
 import { useDispatch, useSelector } from 'react-redux'
 import {getPath} from "../../../Redux/PathReducer"
 import {getTypeOtpRedux} from "../../../Redux/TypeOtpNotReducer"
- 
+ import {getVerificationRedux} from "../../../Redux/VerifiedReducer"
 import OtpSchema from "../../../schemas/OtpSchema"
 import { checkOtp, otpVerfied,getUserByOtpId } from '../../../services/UserService'
 
@@ -21,6 +19,7 @@ const initialValues =  {
 const Login = () => {
     let dispatch = useDispatch();
     let navigate = useNavigate();
+    let location = useLocation();
     let state = useSelector(state => state.OtpReducer)
     let state2 = useSelector(state2 => state2.TypeOtpNotReducer)
     let [showSpinner, setShowSpinner] = useState(false);
@@ -42,6 +41,7 @@ let [msg2, setMsg2] = useState("");
                                     otpVerfied(state2._id).then(result2 => {
                                         getUserByOtpId(state2._id).then(status => {
                                     dispatch(getTypeOtpRedux(status.data))
+                                    dispatch(getVerificationRedux([{verified : true}]))
                                     navigate("/")
                                 })
                                   })
@@ -66,6 +66,7 @@ let [msg2, setMsg2] = useState("");
     setTimeout(()=> {
 setShowAlert2(false)
     }, 3000)
+// console.log(location.pathname)
 }, [])
   return (
     <>
@@ -107,7 +108,8 @@ setShowAlert2(false)
                                     { showAlert2 ? (<AlertSuccess msg={msg2}/>) : ""}
                             <ul>
                                 <li><p>Otp should be a number</p></li>
-                                <li><p>Otp should be 6 digit</p></li>
+                                <li><p>Otp should be 6 digits</p></li>
+                                <li><p>Otp will expire after 5 minutes</p></li>
                             </ul>
                             </div>
                             </div>

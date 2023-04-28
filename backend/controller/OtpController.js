@@ -1,21 +1,26 @@
 let routes = require("express").Router();
 let User = require("../models/User")
 
-
 let nodemailer = require("nodemailer")
 let mailGen = require("mailgen")
 const {EMAIL, PASSWORD} = require("../config/env")
+
 
 routes.get("/:id", async (req,res)=> {
     let id = req.params.id;
     let random = Math.floor(Math.random() * 1000000);
     await User.updateMany({_id : id}, {otp : random});
-
+    setTimeout(async ()=> {
+    await User.updateOne({ _id: id },
+    { $set: { otp: null } })
+      }, 5 * 60 * 1000); // 5 minutes expressed in milliseconds
+      
     let result = await User.find({_id : id})
 
     let userEmail = result[0].email; 
     let userName = result[0].name; 
-    // send mail using gmail and nodemailer
+
+    // send mail using gmail, nodemailer and Mailgen
 let config = {
     service : "gmail",
     auth : {
@@ -56,7 +61,7 @@ let mail = MailGenerator.generate(response)
 let message = {
     from : EMAIL,
     to : userEmail,
-    subject : "Varification code to login on Mkyd",
+    subject : "Varification code to login on SabkaApp",
     html : mail
 }
 
@@ -71,7 +76,6 @@ transporter.sendMail(message).then(()=> {
     res.status(500).json({error})
 })
 
-    // res.send({status : 200, success : true})
 })
 
 routes.post("/checkotp", async (req,res)=> {
@@ -97,7 +101,6 @@ routes.get("/otpverified/:id", async (req,res)=> {
     let id = req.params.id;
 try {
     let result = await User.updateMany({_id : id}, {isVerified : true})
-    console.log(result)
 res.send({status : 200, success : true})
 }catch (error) {
     console.log(error)

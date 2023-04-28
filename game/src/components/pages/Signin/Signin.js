@@ -1,6 +1,6 @@
 /*eslint-disable */
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 import {useFormik} from "formik"
 import { NavLink } from 'react-router-dom'
@@ -14,6 +14,7 @@ import { DoLogin } from '../../../services/UserService'
 import Footer from '../../shared/Footer'
 import ScrollTop from '../../shared/ScrollTop'
 import {AlertDanger} from "../../shared/Alert"
+import { getUrlLocationRedux } from '../../../Redux/VerifiedReducer'
 const initialValues =  {
     email : "",
     password : "",
@@ -21,16 +22,18 @@ const initialValues =  {
 const Login = () => {
     let dispatch = useDispatch();
     let navigate = useNavigate();
+    let location = useLocation();
     let state = useSelector(state=>state.TypeOtpNotReducer)
+    let state2 = useSelector(state2=>state2.VerificationReducer)
     let [showSpinner, setShowSpinner] = useState(false);
     let [showAlert, setShowAlert] = useState(false);
+    let [doRedirection, setDoRedirection] = useState(false);
 let [msg, setMsg] = useState("");
     let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
         initialValues : initialValues,
         validationSchema : SigninSchema,
         onSubmit : () => {
             setShowSpinner(true);
-if(state.isVerified !== true) {
     DoLogin(values).then(result=> {
         if (result.data.errType === 1) {
             setMsg("This email/username or password is incorrect !");
@@ -38,6 +41,10 @@ if(state.isVerified !== true) {
         }
         if (result.data.errType === 2) {
             setMsg("This Password is incorrect !");
+            setShowAlert(true);
+        }
+        if (result.data.errType === 3) {
+            setMsg("Please verify your account first !");
             setShowAlert(true);
         }
         if(result.data.status === 200) {
@@ -48,10 +55,6 @@ if(state.isVerified !== true) {
 }).catch(error=> {
 setShowSpinner(false);
 })
-} else {
-    setMsg("Please verify your account first  !");
-    setShowAlert(true);
-}
 
 } 
   
@@ -59,6 +62,15 @@ setShowSpinner(false);
     useEffect(()=> {
     let check = 0;
     dispatch(getPath(check))
+    if(state2.length != 0) {
+        if(state2[0].verified != true) {
+            setDoRedirection(true)
+        }
+    }
+    // console.log(location.pathname)
+    if(location.pathname == "/") {
+getUrlLocationRedux(location.pathname)
+    }
 }, [])
   return (
     <>
@@ -117,7 +129,8 @@ setShowSpinner(false);
                                 </div>
                                 <div className='col-md-6'>
                                 <NavLink to="/signup" className="d-block">Dont have an account yet?</NavLink>
-                                <NavLink to="#" >Forget Password?</NavLink>
+                                <NavLink to="#"className="d-block">Forget Password?</NavLink>
+                                <NavLink to="#" style={{display : (doRedirection == false ? "none" : "block")}}>Verify your email</NavLink>
                                 </div>
                                 </div>
                             </form>

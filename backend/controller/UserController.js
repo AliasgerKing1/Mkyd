@@ -15,6 +15,8 @@ routes.post("/loginauth", async (req, res)=> {
     let email = req.body.email;
     let password = sha1(req.body.password);
     try {
+        const verify = await User.find({email : email})
+        if(verify[0] ? (verify[0].isVerified == true) : "hello") {
         const result = await User.find({email : email})
         if(result.length == 1) {
             if(result[0].password == password) {
@@ -22,10 +24,13 @@ routes.post("/loginauth", async (req, res)=> {
                 let token = jwt.sign(obj , "Aliasger web");
                 res.send({success : true, status : 200, token : token});
             }else {
-                res.send({success : false,status: 401, errType : 2});
+                res.send({success : false, status : 401, errType : 2});
             }
         }else {
-            res.send({success : false,status: 401, errType : 1});
+            res.send({success : false, status : 401, errType : 1});
+        }
+        } else {
+            res.send({success : false, status : 401, errType : 3});
         }
     }catch(error) {
         console.log(error)
@@ -62,7 +67,7 @@ routes.post("/checkuser", async (req,res) => {
         if(result.length == 0) {
             res.send({success : true, status : 200});
         }else {
-            res.send({success : false,status: 401});
+            res.send({success : false, status : 401});
         }
 }catch(error) {
     console.log(error)
