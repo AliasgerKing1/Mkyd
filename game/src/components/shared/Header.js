@@ -11,6 +11,9 @@ import { Logout, getUserById } from '../../services/UserService'
 const Header = () => {
     let dispatch = useDispatch();
     let navigate = useNavigate();
+    const [active, setActive] = useState(false)
+    const [navActive, setNavActive] = useState(false)
+    const [tripleNavActive, setTripleNavActive] = useState(false)
     let [id, setId] = useState({})
     let state = useSelector(state=> state.PathReducer)
     let state2 = useSelector(state2=> state2.UserReducer)
@@ -46,12 +49,13 @@ if(obj) {
   return (
     <>
         {/* <!-- header-area --> */}
-        <header>
+        <header className={`${active ? "mobile-menu-visible " : ""}${tripleNavActive ? "offCanvas__menu-visible " : ""}`}>
         <div id="sticky-header" className="tg-header__area transparent-header">
             <div className="container custom-container">
                 <div className="row">
                     <div className="col-12">
-                        <div className="mobile-nav-toggler"><i className="fas fa-bars"></i></div>
+                        <div className="mobile-nav-toggler" onClick={()=> setActive(!active)}><i className="fas fa-bars" ></i></div>
+
                         <div className="tgmenu__wrap">
                             <nav className="tgmenu__nav">
                                 <div className="logo">
@@ -93,7 +97,7 @@ if(obj) {
 
                                         {state === 1 ? (<li className="header-btn"><NavLink to={`/auth/profile/${state3[0] ? (state3[0]._id) : null}`} className="tg-border-btn"><i className="flaticon-edit"></i>My Account</NavLink></li>) : null}
                                         {state === 2 ? (<li className="header-btn" onClick={logOut}><NavLink to="/auth/profile" className="tg-border-btn"><i className="flaticon-edit"></i>Logout</NavLink></li>) : null}
-                                        <li className="side-toggle-icon">
+                                        <li className="side-toggle-icon" onClick={()=> setTripleNavActive(!tripleNavActive)}>
                                             <span></span>
                                             <span></span>
                                             <span></span>
@@ -105,7 +109,7 @@ if(obj) {
                         {/* <!-- Mobile Menu  --> */}
                         <div className="tgmobile__menu">
                             <nav className="tgmobile__menu-box">
-                                <div className="close-btn"><i className="flaticon-swords-in-cross-arrangement"></i></div>
+                                <div className="close-btn" onClick={()=>setActive(!active)}><i className="flaticon-swords-in-cross-arrangement"></i></div>
                                 <div className="nav-logo">
                                     <a href="index-2.html"><img src="/assets/img/logo/logo.png" alt="Logo" /></a>
                                 </div>
@@ -116,7 +120,39 @@ if(obj) {
                                     </form>
                                 </div>
                                 <div className="tgmobile__menu-outer">
-                                    {/* <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header--> */}
+                                    <ul className="navigation">
+                                        {/* <li className="active menu-item-has-children"><a href="#">Home</a>
+                                            <ul className="sub-menu" style={{ dispaly : navActive ? 'block' : 'none', height : navActive ? "80px" : "" }}>
+                                                <li className="active"><a href="index-2.html">Home One</a></li>
+                                                <li><a href="index-3.html">Home Two</a></li>
+                                            </ul>
+                                        <div className={"dropdown-btn" + (navActive ? ' open' : "")} onClick={()=> setNavActive(!navActive)}><span className="plus-line"></span></div></li> */}
+                                        <li><NavLink to="/auth/home">Home</NavLink></li>
+                                        <li><NavLink to={`/auth/profile/${state3[0] ? (state3[0]._id) : null}`}>My account</NavLink></li>
+                                        <li><a href="about-us.html">ABOUT US</a></li>
+                                        <li className="menu-item-has-children"><a href="#">TOURNAMENT</a>
+                                            <ul className="sub-menu">
+                                                <li><a href="tournament.html">TOURNAMENT</a></li>
+                                                <li><a href="tournament-details.html">TOURNAMENT Single</a></li>
+                                            </ul>
+                                        <div className="dropdown-btn"><span className="plus-line"></span></div></li>
+                                        <li className="menu-item-has-children"><a href="#">PAGES</a>
+                                            <ul className="sub-menu">
+                                                <li><a href="shop.html">Gaming Shop</a></li>
+                                                <li><a href="shop-details.html">Shop Details</a></li>
+                                                <li><a href="services.html">Our Services</a></li>
+                                                <li><a href="services-details.html">Services Details</a></li>
+                                                <li><a href="team-details.html">Player Details</a></li>
+                                            </ul>
+                                        <div className="dropdown-btn"><span className="plus-line"></span></div></li>
+                                        <li className="menu-item-has-children"><a href="#">News</a>
+                                            <ul className="sub-menu">
+                                                <li><a href="blog.html">Our Blog</a></li>
+                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                            </ul>
+                                        <div className="dropdown-btn"><span className="plus-line"></span></div></li>
+                                        <li><a href="contact.html">contact</a></li>
+                                    </ul>
                                 </div>
                                 <div className="social-links">
                                     <ul className="list-wrap">
@@ -167,18 +203,18 @@ if(obj) {
                     <div className="offCanvas__logo logo">
                         <a href="index-2.html"><img src="/assets/img/logo/logo.png" alt="Logo" /></a>
                     </div>
-                    <div className="offCanvas__toggle">
+                    <div className="offCanvas__toggle" onClick={()=>setTripleNavActive(!tripleNavActive)}>
                         <i className="flaticon-swords-in-cross-arrangement"></i>
                     </div>
                 </div>
                 <div className="offCanvas__content">
-                    <h2 className="title">Best Seller of Month Ideas for <span>NFT Wallet</span></h2>
+                    <h2 className="title">Best place for <span>game lovers</span></h2>
                     <div className="offCanvas__contact">
                         <h4 className="small-title">CONTACT US</h4>
                         <ul className="offCanvas__contact-list list-wrap">
-                            <li><a href="tel:93332225557">+9 333 222 5557</a></li>
-                            <li><a href="mailto:info@webmail.com">info@webmail.com</a></li>
-                            <li>New Central Park W7 Street ,New York</li>
+                            <li><a href="tel:93332225557">+91 623 205 3953</a></li>
+                            <li><a href="mailto:info@webmail.com">sabkagameinfo@gmail.com</a></li>
+                            <li>Saifee nagar khati wala tank, Indore, India</li>
                         </ul>
                     </div>
                     <div className="offCanvas__newsletter">
@@ -197,7 +233,7 @@ if(obj) {
                     </ul>
                 </div>
                 <div className="offCanvas__copyright">
-                    <p>Copyright © 2023 - By <span>MYKD</span></p>
+                    <p>Copyright © 2023 - By <span>Aliasger</span></p>
                 </div>
             </div>
         </div>
