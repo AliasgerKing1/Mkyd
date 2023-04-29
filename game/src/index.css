@@ -136,3 +136,15 @@
     transform: rotate(360deg);
   }
 }
+.fa-money:before {
+  content: "\20B9"; /* The Indian Rupee symbol */
+  margin-right: 5px; /* Optional: Add some spacing between the symbol and the text */
+}
+.fa-rank:before {
+  content: "\f559"; /* The Medal symbol */
+  margin-right: 5px; /* Optional: Add some spacing between the symbol and the text */
+}
+.fa-like:before {
+  content: "\f164"; /* The thumbs-up symbol */
+  margin-right: 5px; /* Optional: Add some spacing between the symbol and the text */
+}
