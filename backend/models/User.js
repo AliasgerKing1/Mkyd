@@ -14,6 +14,10 @@ const User = mongoose.Schema({
         type : Number,
         default: 0
     },
+    last_called: {
+        type: Date,
+        default: null
+      },
    coins : {
         type : Number,
         default: 10000
@@ -23,6 +27,10 @@ const User = mongoose.Schema({
         default: "Bronze"
     },
    game_point : {
+        type : Number,
+        default: 0
+    },
+   ad_point : {
         type : Number,
         default: 0
     },
@@ -38,5 +46,15 @@ const User = mongoose.Schema({
         type : String,
         default: null
     },
+    followers : {
+type : Array,
+default : [
+]
+    },
+    followings : {
+        type : Array,
+        default : [
+        ]
+    }
 })
 module.exports = mongoose.model("user", User);

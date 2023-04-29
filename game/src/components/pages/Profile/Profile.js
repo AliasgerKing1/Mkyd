@@ -32,6 +32,8 @@ const Profile = () => {
         let value = state[0].coins / 1000
          setCoinValue(value)
     }
+    // console.log("followers" , state[0].followers.length)
+    // console.log("followings" , state[0].followings.length)
 }, [])
 
   return (
@@ -108,7 +110,7 @@ const Profile = () => {
 
                                     </div>
                                     <div className="tournament__list-live">
-                                        <a href="https://www.twitch.tv/videos/1726788358" target="_blank">View More <i className="far fa-play-circle"></i></a>
+                                        <a href="https://www.twitch.tv/videos/1726788358" target="_blank">More Finance <i className="far fa-play-circle"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +137,7 @@ const Profile = () => {
                                         <span>{state[0] ? (state[0].rank == null ? "None" : (state[0].rank)) : null}</span>
                                     </div>
                                     <div className="tournament__list-live">
-                                        <a href="https://www.twitch.tv/videos/1726788358" target="_blank">View More <i className="far fa-play-circle"></i></a>
+                                        <a href="https://www.twitch.tv/videos/1726788358" target="_blank">More Games <i className="far fa-play-circle"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -148,13 +150,13 @@ const Profile = () => {
                                         <a href="tournament-details.html"><img src="/assets/img/others/tournament_thumb03.png" alt="thumb" /></a>
                                     </div>
                                     <div className="tournament__list-name">
-                                        <h5 className="team-name">Network</h5>
-                                        <span className="status">Online</span>
+                                        <h5 className="team-name">followers</h5>
+                                        <span className="status">{state[0].followers.length}</span>
                                     </div>
                                     <div className="tournament__list-prize">
-                                        <h6 className="title">Link</h6>
-                                        <i className="fas fa-trophy"></i>
-                                        <span>$45000</span>
+                                        <h6 className="title">followings</h6>
+                                        <i className="fas fa-user"></i>
+                                        <span>{state[0].followings.length}</span>
                                     </div>
                                     <div className="tournament__list-time">
                                         <h6 className="title">Likes</h6>
@@ -162,7 +164,7 @@ const Profile = () => {
                                         <span>{state[0] ? (state[0].likes) : null}</span>
                                     </div>
                                     <div className="tournament__list-live">
-                                        <a href="https://www.twitch.tv/videos/1726788358" target="_blank">Live now <i className="far fa-play-circle"></i></a>
+                                        <a href="https://www.twitch.tv/videos/1726788358" target="_blank">More Profile <i className="far fa-play-circle"></i></a>
                                     </div>
                                 </div>
                             </div>

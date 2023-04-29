@@ -8,7 +8,7 @@ import {getPath} from "../../../Redux/PathReducer"
 import {getTypeOtpRedux} from "../../../Redux/TypeOtpNotReducer"
  import {getVerificationRedux} from "../../../Redux/VerifiedReducer"
 import OtpSchema from "../../../schemas/OtpSchema"
-import { checkOtp, otpVerfied,getUserByOtpId } from '../../../services/UserService'
+import { checkOtp, otpVerfied,getUserByOtpId, signupOtp } from '../../../services/UserService'
 
 import Footer from '../../shared/Footer'
 import ScrollTop from '../../shared/ScrollTop'
@@ -68,6 +68,10 @@ setShowAlert2(false)
     }, 3000)
 // console.log(location.pathname)
 }, [])
+let reSend = async () => {
+    let otp = await signupOtp(state2._id)
+    console.log(otp)
+}
   return (
     <>
 <ScrollTop />
@@ -83,12 +87,12 @@ setShowAlert2(false)
                         <div className="col-12">
                             <div className="breadcrumb__content">
                                 <h2 className="title">Otp</h2>
-                                <nav aria-label="breadcrumb">
+                                {/* <nav aria-label="breadcrumb">
                                     <ol className="breadcrumb">
-                                        {/* <li className="breadcrumb-item"><NavLink to="/auth/home">Home</NavLink></li>
-                                        <li className="breadcrumb-item active" aria-current="page">Login</li> */}
+                                        <li className="breadcrumb-item"><NavLink to="/auth/home">Home</NavLink></li>
+                                        <li className="breadcrumb-item active" aria-current="page">Login</li>
                                     </ol>
-                                </nav>
+                                </nav> */}
                             </div>
                         </div>
                     </div>
@@ -124,10 +128,11 @@ setShowAlert2(false)
                                 </div>
                                 <div className='row'>
                                 <div className='col-md-4 offset-md-2'>
-                                <button type='submit' className="submit-btn">SignIn</button>
+                                <button type='submit' className="submit-btn">confirm</button>
                            { showAlert ? (<AlertDanger msg={msg}/>) : ""}
                                 </div>
                                 <div className='col-md-4 offset-md-2'>
+                                <NavLink onClick={reSend} style={{display : "block"}}>Re-send Otp</NavLink>
                                 <NavLink to="/" >Back to Login</NavLink>
                                 </div>
                                 </div>

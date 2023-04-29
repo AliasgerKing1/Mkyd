@@ -14,6 +14,10 @@ let useRoutes = [
     element: <Profile/>
   },
   {
+    path : "profile/single",
+    element: <Profile/>
+  },
+  {
     path : "*",
     element: <NotFoundError />
   },
