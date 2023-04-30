@@ -1,6 +1,6 @@
 /*eslint-disable */
 import React, { useEffect, useState } from 'react'
-import { NavLink, useParams } from 'react-router-dom'
+import { NavLink, useLocation, useParams } from 'react-router-dom'
 
 import { useDispatch,useSelector } from 'react-redux'
 import {getPath} from "../../../Redux/PathReducer"  
@@ -32,14 +32,9 @@ const Profile = () => {
         let value = state[0].coins / 1000
          setCoinValue(value)
     }
-    // console.log("followers" , state[0].followers.length)
-    // console.log("followings" , state[0].followings.length)
 }, [])
-
   return (
     <>
-    <ScrollTop />
-
     <Header />
 
 {/* <!-- main-area --> */}
@@ -79,7 +74,7 @@ const Profile = () => {
                 <div className="row align-items-end mb-60">
                     <div className="col-lg-8">
                         <div className="section__title text-center text-lg-start title-shape-none">
-                            <h3 className="title">Total States</h3>
+                            <h3 className="title2">Gaming States</h3>
                         </div>
                     </div>
                 </div>
@@ -114,6 +109,13 @@ const Profile = () => {
                                     </div>
                                 </div>
                             </div>
+                            <div className="row align-items-end mb-60">
+                    <div className="col-lg-8">
+                        <div className="section__title text-center text-lg-start title-shape-none">
+                            <h3 className="title2">Gaming States</h3>
+                        </div>
+                    </div>
+                </div>
                             <div className="tournament__list-item wow fadeInUp" data-wow-delay=".4s">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1116.562" height="163.37" viewBox="0 0 1116.562 163.37">
                                     <path className="background-path" d="M708,1784l28-27s4.11-5.76,18-6,702-1,702-1a37.989,37.989,0,0,1,16,9c7.47,7.08,37,33,37,33s9.02,9.47,9,18,0,42,0,42-0.19,9.43-11,19-32,30-32,30-5.53,11.76-21,12-985,0-985,0a42.511,42.511,0,0,1-26-13c-11.433-12.14-34-32-34-32s-6.29-5.01-7-17,0-43,0-43-1-5.42,12-18,34-32,34-32,10.4-8.28,19-8,76,0,76,0a44.661,44.661,0,0,1,21,11c9.268,8.95,22,22,22,22Z" transform="translate(-401.563 -1749.875)" />
@@ -141,6 +143,13 @@ const Profile = () => {
                                     </div>
                                 </div>
                             </div>
+                            <div className="row align-items-end mb-60">
+                    <div className="col-lg-8">
+                        <div className="section__title text-center text-lg-start title-shape-none">
+                            <h3 className="title2">Social States</h3>
+                        </div>
+                    </div>
+                </div>
                             <div className="tournament__list-item wow fadeInUp" data-wow-delay=".6s">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1116.562" height="163.37" viewBox="0 0 1116.562 163.37">
                                     <path className="background-path" d="M708,1784l28-27s4.11-5.76,18-6,702-1,702-1a37.989,37.989,0,0,1,16,9c7.47,7.08,37,33,37,33s9.02,9.47,9,18,0,42,0,42-0.19,9.43-11,19-32,30-32,30-5.53,11.76-21,12-985,0-985,0a42.511,42.511,0,0,1-26-13c-11.433-12.14-34-32-34-32s-6.29-5.01-7-17,0-43,0-43-1-5.42,12-18,34-32,34-32,10.4-8.28,19-8,76,0,76,0a44.661,44.661,0,0,1,21,11c9.268,8.95,22,22,22,22Z" transform="translate(-401.563 -1749.875)" />
@@ -151,12 +160,12 @@ const Profile = () => {
                                     </div>
                                     <div className="tournament__list-name">
                                         <h5 className="team-name">followers</h5>
-                                        <span className="status">{state[0].followers.length}</span>
+                                        <span className="status">{state[0] ? (state[0].followers.length) : null}</span>
                                     </div>
                                     <div className="tournament__list-prize">
                                         <h6 className="title">followings</h6>
                                         <i className="fas fa-user"></i>
-                                        <span>{state[0].followings.length}</span>
+                                        <span>{state[0] ? (state[0].followings.length) : null}</span>
                                     </div>
                                     <div className="tournament__list-time">
                                         <h6 className="title">Likes</h6>
@@ -164,7 +173,7 @@ const Profile = () => {
                                         <span>{state[0] ? (state[0].likes) : null}</span>
                                     </div>
                                     <div className="tournament__list-live">
-                                        <a href="https://www.twitch.tv/videos/1726788358" target="_blank">More Profile <i className="far fa-play-circle"></i></a>
+                                        <NavLink to={`/auth/profile/account/${state[0] ? (state[0]._id) : null}`} >More Profile <i className="far fa-play-circle"></i></NavLink>
                                     </div>
                                 </div>
                             </div>

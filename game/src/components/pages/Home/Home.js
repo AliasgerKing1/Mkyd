@@ -19,8 +19,6 @@ const Home = () => {
     }, [])
   return (
     <>
-  <ScrollTop />
-
   <Header />
 
 

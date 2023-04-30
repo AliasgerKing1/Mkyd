@@ -74,8 +74,6 @@ let reSend = async () => {
 }
   return (
     <>
-<ScrollTop />
-
     {/* <!-- main-area --> */}
     <main className="main--area" id='top'>
     { showSpinner ? (<div className="loading">Loading&#8230;</div>)  : "" }

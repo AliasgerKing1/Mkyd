@@ -18,8 +18,6 @@ const NotFoundError = () => {
     }, [])
   return (
     <>
-<ScrollTop />
-
 <Header />
 
 
