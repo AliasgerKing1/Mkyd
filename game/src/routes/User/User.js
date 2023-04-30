@@ -6,14 +6,11 @@ import Profile from "../../components/pages/Profile/Profile"
 import NotFoundError from "../../components/pages/NotFoundError/NotFoundError";
 import SocialDetails from "../../components/pages/SocialDetails/SocialDetails"
 import Users from '../../components/pages/Users/Users';
+import Shop from '../../components/pages/Shop/Shop';
 let useRoutes = [
   {
     path : "home",
     element: <Home/>
-  },
-  {
-    path : "users",
-    element: <Users/>
   },
   {
     path : "profile/:id",
@@ -22,6 +19,14 @@ let useRoutes = [
   {
     path : "profile/account/:id",
     element: <SocialDetails/>
+  },
+  {
+    path : "users",
+    element: <Users/>
+  },
+  {
+    path : "shop",
+    element: <Shop/>
   },
   {
     path : "*",

@@ -1,13 +1,12 @@
 /*eslint-disable */
 import React, { useEffect, useState } from 'react'
-import { NavLink, useLocation, useParams } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 
 import { useDispatch,useSelector } from 'react-redux'
 import {getPath} from "../../../Redux/PathReducer"  
 import { getSingleUserRedux } from '../../../Redux/SingleUserReducer'
 
 import { getUserById } from '../../../services/UserService'
-import ScrollTop from "../../shared/ScrollTop"
 import Header from "../../shared/Header"
 import Footer from "../../shared/Footer"
 const Profile = () => {

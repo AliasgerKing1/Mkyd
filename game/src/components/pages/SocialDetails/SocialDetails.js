@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React from 'react'
 import Footer from '../../shared/Footer'
 import ScrollTop from '../../shared/ScrollTop'
