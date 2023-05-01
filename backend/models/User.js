@@ -35,10 +35,23 @@ const User = mongoose.Schema({
         type : Number,
         default: 0
     },
+   ad_level : {
+        type : String,
+        default: "free"
+    },
    rank : {
         type : Number,
         default: null
     },
+   game_title : {
+        type : Object,
+        default: {
+title : "no title",
+weight : 0,
+typ : "no value"
+        }
+    },
+    
    likes : {
         type : Number,
         default: 0

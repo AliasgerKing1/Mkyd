@@ -1,16 +1,20 @@
 /*eslint-disable */
 import axios from "axios"
 
-const apiUrl = "http://localhost:4000/api/user";
-// const apiUrl = "https://sabka-app.onrender.com/api/user";
-const apiOtpUrl = "http://localhost:4000/api/otp";
-// const apiOtpUrl = "https://sabka-app.onrender.com/api/otp";
+// const apiUrl = "http://localhost:4000/api/user";
+const apiUrl = "https://sabka-app.onrender.com/api/user";
+// const apiOtpUrl = "http://localhost:4000/api/otp";
+const apiOtpUrl = "https://sabka-app.onrender.com/api/otp";
 
 let addUser = async (data) => {
     return await axios.post(apiUrl, data);
 }
-let token = localStorage.getItem("token");
-const header = token;
+// let token = localStorage.getItem("token");
+// const header = token;
+
+let getUser = async () => {
+    return await axios.get(apiUrl);
+}
 
 // let getUser = async () => {
 //     return await axios.get(apiUrl,{ headers: { header } });
@@ -32,8 +36,8 @@ let Logout = () => {
   }
   let DoLogin = (obj) => {
     return axios.post(
-        'http://localhost:4000/api/user/loginauth',
-        // 'https://sabka-app.onrender.com/api/user/loginauth',
+        // 'http://localhost:4000/api/user/loginauth',
+        'https://sabka-app.onrender.com/api/user/loginauth',
         obj
       );
     }
@@ -67,4 +71,4 @@ return await axios.get(`${apiOtpUrl}/otpin/${id}`)
     let otpVerfied = async (id) => {
       return await axios.get(`${apiOtpUrl}/otpverified/${id}`)
     }
-export {addUser,getUserById, DoLogin,IsSignin ,Logout, checkUser, signupOtp, otpIn, checkOtp, otpVerfied, getUserByOtpId}
+export { addUser, getUser , getUserById,  DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId }

@@ -4,18 +4,26 @@ import { NavLink } from 'react-router-dom'
 
 import { useDispatch, useSelector } from 'react-redux'
 import {getPath} from "../../../Redux/PathReducer"
+import {getUserRedux} from "../../../Redux/UserReducer"
 
 
-import ScrollTop from '../../shared/ScrollTop'
 import Header from "../../shared/Header"
 import Footer from '../../shared/Footer'
+import { getUser } from '../../../services/UserService'
 
 const Home = () => {
     let dispatch = useDispatch();
     let state = useSelector(state=>state.UserReducer)
+    let getUserFun = async() => {
+        let result = await getUser();
+        dispatch(getUserRedux(result.data));
+    }
     useEffect(()=> {
         let check = 1;
         dispatch(getPath(check))
+        if(state.length == 0) {
+            getUserFun();
+        }
     }, [])
   return (
     <>
@@ -37,7 +45,7 @@ const Home = () => {
                                     <h2 className="title wow fadeInUp" data-wow-delay=".5s">steaming</h2>
                                     <p className="wow fadeInUp" data-wow-delay=".8s">video games online</p>
                                     <div className="slider__btn wow fadeInUp" data-wow-delay="1.2s">
-                                        <a href="contact.html" className="tg-btn-1"><span>contact us</span></a>
+                                        <NavLink to="/auth/users" className="tg-btn-1"><span>contact us</span></NavLink>
                                     </div>
                                 </div>
                             </div>
