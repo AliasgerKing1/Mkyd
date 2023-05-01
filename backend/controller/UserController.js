@@ -39,7 +39,9 @@ routes.post("/loginauth", async (req, res)=> {
 
 routes.get('/', async (req, res) => {
     // let token = req.headers.header;
-const result = await User.find({});
+    let limit = req.query.limit;
+    let skip = req.query.page;
+const result = await User.find({}).skip(skip).limit(limit);
 // let obj = jwt.decode(token, "Aliasger web");
 // result.push(obj);
 res.send(result);
@@ -72,5 +74,19 @@ routes.post("/checkuser", async (req,res) => {
 }catch(error) {
     console.log(error)
 }
+
 })
+
+//search area
+routes.get("/search/:searchquery", async (req, res)=> {
+    let searchQuery = JSON.parse(req.params.searchquery);
+try {
+    
+    let result = await User.find({ name: searchQuery }).lean().exec(); // convert to plain JS object
+    res.send(result);
+}catch (error) {
+    res.send({status : 401, success : false});
+}
+  });
+  
 module.exports = routes;

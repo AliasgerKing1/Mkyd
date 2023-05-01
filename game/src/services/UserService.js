@@ -1,10 +1,10 @@
 /*eslint-disable */
 import axios from "axios"
 
-// const apiUrl = "http://localhost:4000/api/user";
-const apiUrl = "https://sabka-app.onrender.com/api/user";
-// const apiOtpUrl = "http://localhost:4000/api/otp";
-const apiOtpUrl = "https://sabka-app.onrender.com/api/otp";
+const apiUrl = "http://localhost:4000/api/user";
+// const apiUrl = "https://sabka-app.onrender.com/api/user";
+const apiOtpUrl = "http://localhost:4000/api/otp";
+// const apiOtpUrl = "https://sabka-app.onrender.com/api/otp";
 
 let addUser = async (data) => {
     return await axios.post(apiUrl, data);
@@ -13,7 +13,7 @@ let addUser = async (data) => {
 // const header = token;
 
 let getUser = async () => {
-    return await axios.get(apiUrl);
+    return await axios.get("http://localhost:4000/api/user/?limit=8&page=0");
 }
 
 // let getUser = async () => {
@@ -36,8 +36,8 @@ let Logout = () => {
   }
   let DoLogin = (obj) => {
     return axios.post(
-        // 'http://localhost:4000/api/user/loginauth',
-        'https://sabka-app.onrender.com/api/user/loginauth',
+        'http://localhost:4000/api/user/loginauth',
+        // 'https://sabka-app.onrender.com/api/user/loginauth',
         obj
       );
     }
@@ -71,4 +71,11 @@ return await axios.get(`${apiOtpUrl}/otpin/${id}`)
     let otpVerfied = async (id) => {
       return await axios.get(`${apiOtpUrl}/otpverified/${id}`)
     }
-export { addUser, getUser , getUserById,  DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId }
+
+
+    //search area
+
+    let searchQuery = async (searchquery) => {
+return await axios.get(`${apiUrl}/search/${searchquery}`)
+    }
+export { addUser, getUser , getUserById,  DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId, searchQuery }

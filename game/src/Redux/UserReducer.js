@@ -7,7 +7,7 @@ let userReducer = createSlice({
     initialState,
     reducers : {
         getUserRedux(state, action) {
-return action.payload;
+return [...state, ...action.payload];
         }
     }
 })

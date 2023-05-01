@@ -48,7 +48,7 @@ const User = mongoose.Schema({
         default: {
 title : "no title",
 weight : 0,
-typ : "no value"
+type : "no value"
         }
     },
     

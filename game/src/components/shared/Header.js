@@ -3,8 +3,7 @@ import React, { useEffect, useState } from 'react'
 import {NavLink, useNavigate} from "react-router-dom"
 
 import {useDispatch, useSelector} from "react-redux";
-import PathReducer from '../../Redux/PathReducer';
-import SingleUserReducer, { getSingleUserRedux } from '../../Redux/SingleUserReducer';
+import { getSingleUserRedux } from '../../Redux/SingleUserReducer';
 
 import { Logout, getUserById } from '../../services/UserService'
 
@@ -36,8 +35,6 @@ let obj = state2[state2.length-1]
 if(obj) {
     setId(obj.id)
 }
-// console.log(obj)
-// console.log(id)
         }
       }, [state2]);
 

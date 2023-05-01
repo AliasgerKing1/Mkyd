@@ -17,7 +17,7 @@ const Profile = () => {
   let [adValue, setAdValue] = useState();
   let getProfileFun = () => {
             getUserById(JSON.stringify(params)).then(result => {
-            console.log(result)
+            // console.log(result)
             dispatch(getSingleUserRedux(result));
         })
   }

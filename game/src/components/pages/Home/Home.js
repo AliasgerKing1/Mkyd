@@ -1,5 +1,5 @@
 /*eslint-disable */
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { useDispatch, useSelector } from 'react-redux'
@@ -13,7 +13,8 @@ import { getUser } from '../../../services/UserService'
 
 const Home = () => {
     let dispatch = useDispatch();
-    let state = useSelector(state=>state.UserReducer)
+    let state = useSelector(state=>state.UserReducer);
+    let [firstLoad, setFirstLoad] = useState(true);
     let getUserFun = async() => {
         let result = await getUser();
         dispatch(getUserRedux(result.data));
@@ -21,10 +22,16 @@ const Home = () => {
     useEffect(()=> {
         let check = 1;
         dispatch(getPath(check))
+    }, [])
+    useEffect(()=> {
+if(firstLoad == true) {
+    setFirstLoad(false)
+    return
+}
         if(state.length == 0) {
             getUserFun();
         }
-    }, [])
+    }, [firstLoad])
   return (
     <>
   <Header />

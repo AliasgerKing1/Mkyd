@@ -53,6 +53,7 @@ let [msg, setMsg] = useState("");
         }
         setShowSpinner(false);
 }).catch(error=> {
+    console.log(error)
 setShowSpinner(false);
 })
 

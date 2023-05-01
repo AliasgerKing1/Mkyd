@@ -54,7 +54,7 @@ const Shop = () => {
                                 <h4 className="shop__widget-title">filter by price</h4>
                                 <div className="shop__widget-inner">
                                     <div className="shop__price-filter">
-                                        <div id="slider-range"></div>
+                                    <div id="slider-range" className="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div className="ui-slider-range ui-widget-header ui-corner-all" style={{left: '11.6327%', width: '60.6122%'}}></div><span className="ui-slider-handle ui-state-default ui-corner-all" tabIndex="0" style={{left: '11.6327%'}}></span><span className="ui-slider-handle ui-state-default ui-corner-all" tabIndex="0" style={{left: '72.2449%'}}></span></div>
                                         <div className="shop__price-slider-amount">
                                             <input type="submit" className="p-0 border-0" value="Filter" />
                                             <input type="text" id="amount" name="price" placeholder="Add Your Price" />
