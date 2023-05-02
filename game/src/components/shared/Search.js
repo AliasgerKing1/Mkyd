@@ -3,14 +3,21 @@ import React, { useEffect, useState } from 'react'
 
 
 import {useDispatch} from "react-redux"
+import { getSearchRedux} from "../../Redux/SearchReducer"
+import { getSearchConditionRedux } from '../../Redux/SearchCondition';
 
 import {searchQuery} from "../../services/UserService";
 const Search = () => {
     let dispatch = useDispatch()
     let [search, setSearch] = useState("")
+    let checkLength = () => {
+      if (search.length == 0) {
+      dispatch(getSearchConditionRedux(false))
+    }
+  }
 let searchFun = async () => {
 let result = await searchQuery(JSON.stringify(search));
-console.log(result.data)
+dispatch(getSearchRedux(result.data))
 }
   return (
     <>
@@ -18,7 +25,11 @@ console.log(result.data)
                                 <h4 className="shop__widget-title">search</h4>
                                 <div className="shop__widget-inner">
                                     <div className="shop__search">
-                                        <input type="text" placeholder="Search here" onChange={(e)=>setSearch(e.target.value)} />
+                                        <input type="text" placeholder="Search here" onChange={(e)=> {
+                                          setSearch(e.target.value)
+                                          checkLength()
+                                          }
+                                          } />
                                         <button className="p-0 border-0"><i className="flaticon-search" onClick={searchFun}></i></button>
                                     </div>
                                 </div>

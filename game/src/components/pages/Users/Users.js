@@ -39,15 +39,15 @@ const Users = () => {
     if (isScrolledToFixedHeight) {
         setShowSpinner(true);
       // Calling API
-      fetch(`http://localhost:4000/api/user/?limit=8&page=0`)
+      fetch(`http://localhost:4000/api/user/?limit=8&page=${pages}`)
         .then((response) => response.json())
         .then((newData) => {
-            // Dispatch the action to update the state
-            dispatch(getUserRedux(newData));
+// let uniqueArr = [...new Set(arr.map(obj => JSON.stringify(obj)))].map(str => JSON.parse(str));
+dispatch(getUserRedux(newData));
+setShowSpinner(false);
+setPages(pages + 8);
+setInfHeight(infheight + 450);
           });
-          setShowSpinner(false);
-        setPages(pages + 8)
-        setInfHeight(infheight + 450 )
     }
   }, [isScrolledToFixedHeight]);
 
