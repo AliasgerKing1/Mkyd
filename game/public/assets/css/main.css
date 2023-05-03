@@ -4941,7 +4941,7 @@ html.show-preloader body {
   text-transform: uppercase;
   font-family: var(--tg-heading-font-family);
   font-weight: var(--tg-fw-bold);
-  font-size: 13px;
+  font-size: 12px;
   color: var(--tg-theme-primary);
   letter-spacing: 1px;
   margin: 0 0 2px;

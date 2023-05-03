@@ -16,7 +16,7 @@ state2.length == 0 ? (state.map((x)=> {
                                 <NavLink to={`/auth/profile/user/${x._id}`}><img src="/assets/img/team/team01.png" alt="img" /></NavLink>
                             </div>
                             <div className="team__content">
-                                <h4 className="name"><a href="team-details.html">{x.name}</a></h4>
+                                <h4 className="name"><NavLink to={`/auth/profile/user/${x._id}`}>{x.name}</NavLink></h4>
                                 <span className="designation">{x.game_title.title}</span>
                             </div>
                         </div>
@@ -30,7 +30,7 @@ state2.length == 0 ? (state.map((x)=> {
                                 <NavLink to={`/auth/profile/user/${x._id}`}><img src="/assets/img/team/team01.png" alt="img" /></NavLink>
                             </div>
                             <div className="team__content">
-                                <h4 className="name"><a href="team-details.html">{x.name}</a></h4>
+                                <h4 className="name"><NavLink to={`/auth/profile/user/${x._id}`}>{x.name}</NavLink></h4>
                                 <span className="designation">{x.game_title.title}</span>
                             </div>
                         </div>

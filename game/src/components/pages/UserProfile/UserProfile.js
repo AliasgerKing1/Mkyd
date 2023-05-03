@@ -1,5 +1,5 @@
 /*eslint-disable */
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 import { useParams } from 'react-router-dom'
@@ -9,15 +9,21 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getOtherUserRedux } from '../../../Redux/OtherUserRedux'
 
 
-import { getUserByDirectId } from '../../../services/UserService'
+import { getUserByDirectId, updateUserById, updateOtherUserById } from '../../../services/UserService'
 
 import Header from '../../shared/Header'
 import Footer from '../../shared/Footer'
+import { getSingleUserRedux } from '../../../Redux/SingleUserReducer'
 
 const UserProfile = () => {
     let params = useParams();
     let dispatch = useDispatch();
+    let [followings, setFollowings] = useState(false)
+    let [follower, setFollowers] = useState(false)
     let state = useSelector(state=> state.otherUserReducer)
+    let state2 = useSelector(state2=>state2.SingleUserReducer)
+    let state3 = useSelector(state3=>state3.FollowersReducer)
+    let state4 = useSelector(state4=>state4.FollowingsReducer)
 
     let otherUserProfileFun = async () => {
         let result = await getUserByDirectId (params.id);
@@ -28,6 +34,22 @@ if(state ? (state.length == 0) : null) {
     otherUserProfileFun();
 }
 }, [])
+let follow = async () => {
+let follow_obj = {
+    sender_id : state2[0]._id,
+    reciever_id : state[0]._id,
+    friend : true
+}
+let result = await updateUserById(state2[0]._id, follow_obj)
+let result2 = await updateOtherUserById(state[0]._id, follow_obj)
+dispatch(getSingleUserRedux(result.data))
+dispatch(getOtherUserRedux(result2.data))
+if(result.data.length != 0 && result2.data.length != 0) {
+    setFollowings(true)
+    setFollowers(true)
+}
+}
+
   return (
     <>
 <Header />
@@ -35,7 +57,6 @@ if(state ? (state.length == 0) : null) {
 
     {/* <!-- main-area --> */}
     <main className="main--area">
-
         {/* <!-- breadcrumb-area --> */}
         <section className="breadcrumb-area" data-background="/assets/img/bg/breadcrumb_bg01.jpg">
             <div className="container">
@@ -56,6 +77,17 @@ if(state ? (state.length == 0) : null) {
                                 <ul className="list-wrap">
                                 <li>
                                         <div className="team__info-item">
+                                            <div className="team__info-content">
+                                                { followings == true || state4.follow == true ? (<div className='contact__form-wrap'>
+                                                    <button className="submit-btn"  onClick={follow}>UnFollow</button>
+                                                        </div>) : (<div className='contact__form-wrap'>
+                                                    <button className="submit-btn"  onClick={follow}>Follow</button>
+                                                        </div>)}
+                                            </div>
+                                        </div>
+                                    </li>
+                                {/* <li>
+                                        <div className="team__info-item">
                                             <div className="team__info-icon">
                                                 <i className="flaticon-diamond"></i>
                                             </div>
@@ -64,7 +96,7 @@ if(state ? (state.length == 0) : null) {
                                                 <h5 className="title">{state[0] ? (state[0].game_point) : null}</h5>
                                             </div>
                                         </div>
-                                    </li>
+                                    </li> */}
                                     <li>
                                         <div className="team__info-item">
                                             <div className="team__info-icon">
@@ -99,64 +131,8 @@ if(state ? (state.length == 0) : null) {
                 </div>
             </div>
         </section>
+                                    {/* <a href='#' onClick={follow} className="video__btn tg-btn-1"><span>Follow</span></a> */}
         {/* <!-- breadcrumb-area-end --> */}
-
-        {/* <!-- team-info-area --> */}
-        {/* <section className="team__info-area">
-            <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <div className="team__info-wrap">
-                            <div className="team__info-discord">
-                                <div className="about__content-circle">
-                                </div>
-                                <div className="team__info-discord-info">
-                                    
-                                </div>
-                            </div>
-                            <div className="team__info-list">
-                                <ul className="list-wrap">
-                                    <li>
-                                        <div className="team__info-item">
-                                            <div className="team__info-icon">
-                                                <i className="fas fa-user"></i>
-                                            </div>
-                                            <div className="team__info-content">
-                                                <span className="sub">followers</span>
-                                                <h5 className="title">{state[0] ? (state[0].followers.length) : null}</h5>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="team__info-item">
-                                            <div className="team__info-icon">
-                                                <i className="fas fa-user"></i>
-                                            </div>
-                                            <div className="team__info-content">
-                                                <span className="sub">followings</span>
-                                                <h5 className="title">{state[0] ? (state[0].followings.length) : null}</h5>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="team__info-item">
-                                            <div className="team__info-icon">
-                                                <i className="flaticon-diamond"></i>
-                                            </div>
-                                            <div className="team__info-content">
-                                                <span className="sub">Game Points</span>
-                                                <h5 className="title">{state[0] ? (state[0].game_point) : null}</h5>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> */}
-        {/* <!-- team-info-area-end --> */}
 
         {/* <!-- team-details-area --> */}
         <section className="team__details-area section-pt-120 section-pb-120" data-background="/assets/img/bg/team_details_bg.jpg">

@@ -16,6 +16,8 @@ import VerificationReducer from './Redux/VerifiedReducer';
 import SearchReducer from './Redux/SearchReducer';
 import EmptySearchReducer from "./Redux/EmptySearchReducer"
 import otherUserReducer from "./Redux/OtherUserRedux"
+import FollowersReducer from "./Redux/FollowersReducer"
+import FollowingsReducer from "./Redux/FollowingsReducer"
 
 import { BrowserRouter } from 'react-router-dom';
 let rootReducer = combineReducers({
@@ -27,7 +29,9 @@ let rootReducer = combineReducers({
   VerificationReducer,
   SearchReducer,
   EmptySearchReducer,
-  otherUserReducer
+  otherUserReducer,
+  FollowersReducer,
+  FollowingsReducer
 })
 let store = configureStore ({
   reducer : rootReducer

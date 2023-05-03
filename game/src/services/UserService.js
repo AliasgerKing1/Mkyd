@@ -30,6 +30,12 @@ let getUserByOtpId = async (id) => {
 let getUserByDirectId = async (id) => {
   return await axios.get(`${apiUrl}/directid/${id}`);
 }
+let updateUserById = async (id, obj) => {
+  return await axios.put(`${apiUrl}/${id}`, obj);
+}
+let updateOtherUserById = async (id, obj) => {
+  return await axios.put(`${apiUrl}/other/${id}`, obj);
+}
 
 //Signin area
 
@@ -80,4 +86,4 @@ return await axios.get(`${apiOtpUrl}/otpin/${id}`)
     let searchQuery = async (searchquery) => {
 return await axios.get(`${apiUrl}/search/${searchquery}`)
     }
-export { addUser, getUser , getUserById, getUserByDirectId, DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId, searchQuery }
+export { addUser, getUser , getUserById, getUserByDirectId, updateUserById, updateOtherUserById , DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId, searchQuery }

@@ -67,6 +67,27 @@ let result = await User.find({_id : id});
 res.send(result); 
 });
 
+routes.put("/:id", async (req,res)=> {
+    let id = req.params.id;
+    try {
+        await User.updateOne({_id : id},{ $push: {followings :  req.body}})
+        let result = await User.find({_id : id})
+            res.send(result)
+    }catch (error) {
+        res.send({status : 500, success : false, error : error})
+    }
+}) 
+routes.put("/other/:id", async (req,res)=> {
+    let id = req.params.id;
+    try {
+        await User.updateOne({_id : id},{ $push: {followers :  req.body}})
+        let result = await User.find({_id : id})
+            res.send(result)
+    }catch (error) {
+        res.send({status : 500, success : false, error : error})
+    }
+}) 
+
 routes.post("/checkuser", async (req,res) => {
     let email = req.body.email;
     try {
