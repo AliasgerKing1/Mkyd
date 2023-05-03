@@ -81,11 +81,22 @@ routes.post("/checkuser", async (req,res) => {
 routes.get("/search/:searchquery", async (req, res)=> {
     let searchQuery = JSON.parse(req.params.searchquery);
 try {
-    
-    let result = await User.find({ name: searchQuery }).lean().exec(); // convert to plain JS object
-    res.send(result);
+    const searchString = searchQuery; // the user input
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escape all special characters
+      }
+      
+      const regex = new RegExp(`^${escapeRegExp(searchString)}`, 'i');
+      
+const result = await User.find({ name: { $regex: regex } }); // find all users whose names start with the search string
+    // let result = await User.find({ name: searchQuery }).lean().exec(); // convert to plain JS object
+    if(result.length == 0) {
+        res.send(result);
+    }else {
+        res.send({status : 404, success : false})
+    }
 }catch (error) {
-    res.send({status : 401, success : false});
+    res.send({status : 401, success : false, error : error});
 }
   });
   

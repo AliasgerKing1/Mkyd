@@ -14,6 +14,7 @@ import Search from '../../shared/Search'
 const Users = () => {
     let dispatch = useDispatch();
     let state = useSelector(state=>state.UserReducer)
+    let state2 = useSelector(state2=>state2.SearchReducer)
     let [showSpinner, setShowSpinner] = useState(false);
     const [isScrolledToFixedHeight, setIsScrolledToFixedHeight] = useState(false);
     const [pages, setPages] = useState(8);
@@ -21,18 +22,20 @@ const Users = () => {
     const fixedHeight = infheight; // the fixed height to check against
   
     useEffect(() => {
+      if(state2.length == 0) {
         setShowSpinner(true);
-      function handleScroll() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const isFixedHeightReached = scrollTop >= fixedHeight;
-        setIsScrolledToFixedHeight(isFixedHeightReached);
+        function handleScroll() {
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+          const isFixedHeightReached = scrollTop >= fixedHeight;
+          setIsScrolledToFixedHeight(isFixedHeightReached);
+        }
+    
+        window.addEventListener("scroll", handleScroll);
+    
+        return () => {
+          window.removeEventListener("scroll", handleScroll);
+        };
       }
-  
-      window.addEventListener("scroll", handleScroll);
-  
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
     }, []);
   
       useEffect(() => {

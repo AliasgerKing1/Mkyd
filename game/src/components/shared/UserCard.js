@@ -1,13 +1,26 @@
 /*eslint-disable */
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
 const UserCard = ({state}) => {
+    let [val1,setVal1] = useState(false)
+    let [val2,setVal2] = useState(false)
+    let [val3,setVal3] = useState(false)
     let state2 = useSelector(state2 => state2.SearchReducer)
+    let state3 = useSelector(state3=>state3.EmptySearchReducer)
+    if(state2.length == 0 && state3 == false) {
+setVal1(true)
+    }
+    if(state2.length != 0 && state3 == true) {
+setVal2(true)
+    }
+    if( state3 == true ) {
+setVal3(true)
+    }
   return (
     <>
                     {
-state2.length == 0 ? (state.map((x)=> {
+val1 == true ? (state.map((x)=> {
                         return (
                             <div className="col-xl-3 col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s" key={x._id}>
                         <div className="team__item">
@@ -21,7 +34,10 @@ state2.length == 0 ? (state.map((x)=> {
                         </div>
                     </div>
                         )
-                    })) : (state2.map((x)=> {
+                    })) : null
+                }
+                {
+                    val2 == true ? (state2.map((x)=> {
                         return (
                             <div className="col-xl-3 col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay=".2s" key={x._id}>
                         <div className="team__item">
@@ -34,7 +50,11 @@ state2.length == 0 ? (state.map((x)=> {
                             </div>
                         </div>
                     </div>
-                    )}))
+                    )})) : null 
+                }
+                {
+                    val3 == true ? (<h1
+                        >no data found</h1>) : null
                 }
     </>
   )

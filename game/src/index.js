@@ -14,7 +14,7 @@ import OtpReducer from './Redux/OtpReducer';
 import TypeOtpNotReducer from './Redux/TypeOtpNotReducer';
 import VerificationReducer from './Redux/VerifiedReducer';
 import SearchReducer from './Redux/SearchReducer';
-import SearchCondition from './Redux/SearchCondition';
+import EmptySearchReducer from "./Redux/EmptySearchReducer"
 
 import { BrowserRouter } from 'react-router-dom';
 let rootReducer = combineReducers({
@@ -25,7 +25,7 @@ let rootReducer = combineReducers({
   TypeOtpNotReducer,
   VerificationReducer,
   SearchReducer,
-  SearchCondition
+  EmptySearchReducer
 })
 let store = configureStore ({
   reducer : rootReducer

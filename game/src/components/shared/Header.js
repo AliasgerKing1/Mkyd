@@ -108,7 +108,7 @@ if(obj) {
                             <nav className="tgmobile__menu-box">
                                 <div className="close-btn" onClick={()=>setActive(!active)}><i className="flaticon-swords-in-cross-arrangement"></i></div>
                                 <div className="nav-logo">
-                                    <a href="index-2.html"><img src="/assets/img/logo/logo.png" alt="Logo" /></a>
+                                <NavLink to="/auth/home"><img src="/assets/img/logo/logo.png" alt="Logo" /></NavLink>
                                 </div>
                                 <div className="tgmobile__search">
                                     <form action="#">
@@ -198,7 +198,7 @@ if(obj) {
             <div className="offCanvas__body">
                 <div className="offCanvas__top">
                     <div className="offCanvas__logo logo">
-                        <a href="index-2.html"><img src="/assets/img/logo/logo.png" alt="Logo" /></a>
+                    <NavLink to="/auth/home"><img src="/assets/img/logo/logo.png" alt="Logo" /></NavLink>
                     </div>
                     <div className="offCanvas__toggle" onClick={()=>setTripleNavActive(!tripleNavActive)}>
                         <i className="flaticon-swords-in-cross-arrangement"></i>
