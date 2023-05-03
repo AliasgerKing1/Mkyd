@@ -427,56 +427,11 @@ if(firstLoad == true) {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-xl-9 col-lg-10 col-md-11">
-                            <div className="swiper-container gallery-active">
-                                <div className="swiper-wrapper">
-                                    <div className="swiper-slide">
+                            <div className="swiper-container gallery-active swiper-slider-0 swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+                                <div className="swiper-wrapper" style={{transitionDuration: '0ms', transform: 'translate3d(-946px, 0px, 0px)'}} id="swiper-wrapper-3857ed6e100114223" aria-live="polite"><div className="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="4" style={{width: '945px', marginRight: '1px'}}>
                                         <div className="gallery__item">
                                             <div className="gallery__thumb">
-                                                <NavLink to="/assets/img/gallery/gallery01.jpg" target='_blank' data-cursor="-theme" data-cursor-text="View <br> Image" className="popup-image" title="PUBG Tournament"><img src="/assets/img/gallery/gallery01.jpg" alt="img" /></NavLink>
-                                            </div>
-                                            <div className="gallery__content">
-                                                <h3 className="title">pubg tournament</h3>
-                                                <span className="rate">rate 50%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <div className="gallery__item">
-                                            <div className="gallery__thumb">
-                                                <a href="/assets/img/gallery/gallery02.jpg" data-cursor="-theme" data-cursor-text="View <br> Image" className="popup-image" title="Assassin's Creed"><img src="/assets/img/gallery/gallery02.jpg" alt="img" /></a>
-                                            </div>
-                                            <div className="gallery__content">
-                                                <h3 className="title">Assassin's Creed</h3>
-                                                <span className="rate">rate 65%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <div className="gallery__item">
-                                            <div className="gallery__thumb">
-                                                <a href="/assets/img/gallery/gallery03.jpg" data-cursor="-theme" data-cursor-text="View <br> Image" className="popup-image" title="World of Warcraft"><img src="/assets/img/gallery/gallery03.jpg" alt="img" /></a>
-                                            </div>
-                                            <div className="gallery__content">
-                                                <h3 className="title">World of Warcraft</h3>
-                                                <span className="rate">rate 60%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <div className="gallery__item">
-                                            <div className="gallery__thumb">
-                                                <a href="/assets/img/gallery/gallery04.jpg" data-cursor="-theme" data-cursor-text="View <br> Image" className="popup-image" title="The Chant 2"><img src="/assets/img/gallery/gallery04.jpg" alt="img" /></a>
-                                            </div>
-                                            <div className="gallery__content">
-                                                <h3 className="title">The Chant s.2</h3>
-                                                <span className="rate">rate 70%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="swiper-slide">
-                                        <div className="gallery__item">
-                                            <div className="gallery__thumb">
-                                                <a href="/assets/img/gallery/gallery05.jpg" data-cursor="-theme" data-cursor-text="View <br> Image" className="popup-image" title="Dota 2 tournament"><img src="/assets/img/gallery/gallery05.jpg" alt="img" /></a>
+                                                <a href="assets/img/gallery/gallery05.jpg" data-cursor="-theme" data-cursor-text="View <br> Image" className="popup-image" title="Dota 2 tournament"><img src="/assets/img/gallery/gallery05.jpg" alt="img" /></a>
                                             </div>
                                             <div className="gallery__content">
                                                 <h3 className="title">Dota 2 tournament</h3>
@@ -484,10 +439,75 @@ if(firstLoad == true) {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                    <div className="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style={{width: '945px', marginRight: '1px'}}>
+                                        <div className="gallery__item">
+                                            <div className="gallery__thumb">
+                                                <a href="assets/img/gallery/gallery01.jpg" data-cursor="-theme" data-cursor-text="View <br> Image" className="popup-image" title="PUBG Tournament"><img src="/assets/img/gallery/gallery01.jpg" alt="img" /></a>
+                                            </div>
+                                            <div className="gallery__content">
+                                                <h3 className="title">pubg tournament</h3>
+                                                <span className="rate">rate 50%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="swiper-slide swiper-slide-next" data-swiper-slide-index="1" style={{width: '945px', marginRight: '1px'}}>
+                                        <div className="gallery__item">
+                                            <div className="gallery__thumb">
+                                                <a href="assets/img/gallery/gallery02.jpg" data-cursor="-theme" data-cursor-text="View <br> Image" className="popup-image" title="Assassin's Creed"><img src="/assets/img/gallery/gallery02.jpg" alt="img" /></a>
+                                            </div>
+                                            <div className="gallery__content">
+                                                <h3 className="title">Assassin's Creed</h3>
+                                                <span className="rate">rate 65%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="swiper-slide" data-swiper-slide-index="2" style={{width: '945px', marginRight: '1px'}}>
+                                        <div className="gallery__item">
+                                            <div className="gallery__thumb">
+                                                <a href="assets/img/gallery/gallery03.jpg" data-cursor="-theme" data-cursor-text="View <br> Image" className="popup-image" title="World of Warcraft"><img src="/assets/img/gallery/gallery03.jpg" alt="img" /></a>
+                                            </div>
+                                            <div className="gallery__content">
+                                                <h3 className="title">World of Warcraft</h3>
+                                                <span className="rate">rate 60%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="swiper-slide" data-swiper-slide-index="3" style={{width: '945px', marginRight: '1px'}}>
+                                        <div className="gallery__item">
+                                            <div className="gallery__thumb">
+                                                <a href="assets/img/gallery/gallery04.jpg" data-cursor="-theme" data-cursor-text="View <br> Image" className="popup-image" title="The Chant 2"><img src="/assets/img/gallery/gallery04.jpg" alt="img" /></a>
+                                            </div>
+                                            <div className="gallery__content">
+                                                <h3 className="title">The Chant s.2</h3>
+                                                <span className="rate">rate 70%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="4" style={{width: '945px', marginRight: '1px'}}>
+                                        <div className="gallery__item">
+                                            <div className="gallery__thumb">
+                                                <a href="assets/img/gallery/gallery05.jpg" data-cursor="-theme" data-cursor-text="View <br> Image" className="popup-image" title="Dota 2 tournament"><img src="/assets/img/gallery/gallery05.jpg" alt="img" /></a>
+                                            </div>
+                                            <div className="gallery__content">
+                                                <h3 className="title">Dota 2 tournament</h3>
+                                                <span className="rate">rate 85%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div className="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" style={{width: '945px', marginRight: '1px'}}>
+                                        <div className="gallery__item">
+                                            <div className="gallery__thumb">
+                                                <a href="assets/img/gallery/gallery01.jpg" data-cursor="-theme" data-cursor-text="View <br> Image" className="popup-image" title="PUBG Tournament"><img src="/assets/img/gallery/gallery01.jpg" alt="img" /></a>
+                                            </div>
+                                            <div className="gallery__content">
+                                                <h3 className="title">pubg tournament</h3>
+                                                <span className="rate">rate 50%</span>
+                                            </div>
+                                        </div>
+                                    </div></div>
                                 {/* <!-- scrollbar --> */}
-                                <div className="swiper-scrollbar"></div>
-                            </div>
+                                <div className="swiper-scrollbar"><div className="swiper-scrollbar-drag" style={{transitionDuration: '0ms', transform: 'translate3d(0px, 0px, 0px)', width: '200px'}}></div></div>
+                            <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
                         </div>
                     </div>
                 </div>
@@ -560,20 +580,24 @@ if(firstLoad == true) {
         {/* <!-- team-area-end --> */}
 
         {/* <!-- video-area --> */}
-        <section className="video__area video-bg tg-jarallax" data-background="/assets/img/bg/video_bg.jpg">
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-xl-6 col-lg-8 col-md-11">
-                        <div className="video__content text-center">
-                            <a href="https://www.youtube.com/watch?v=ssrNcwxALS4" className="popup-video"><i className="flaticon-play"></i></a>
-                            <h2 className="title">JOIN THE <span>COMMUNITY</span></h2>
-                            <p>Join our Discord community and choosec onsteur</p>
-                            <a href="https://discord.com/" target="_blank" className="video__btn tg-btn-1"><span>join discord</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <section className="video__area video-bg tg-jarallax" data-background="assets/img/bg/video_bg.jpg" style={{backgroundImage: 'none'}} data-jarallax-original-styles={{backgroundImage: 'url("assets/img/bg/video_bg.jpg")'}}>
+  <div className="container">
+    <div className="row justify-content-center">
+      <div className="col-xl-6 col-lg-8 col-md-11">
+        <div className="video__content text-center">
+          <a href="https://www.youtube.com/watch?v=ssrNcwxALS4" className="popup-video"><i className="flaticon-play"></i></a>
+          <h2 className="title">JOIN THE <span>COMMUNITY</span></h2>
+          <p>Join our Discord community and choosec onsteur</p>
+          <a href="https://discord.com/" target="_blank" className="video__btn tg-btn-1"><span>join discord</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden', zIndex: -100, clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'}} id="jarallax-container-0">
+    <div style={{backgroundPosition: '50% 50%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundImage: 'url("https://themedox.com/demo/mykd/assets/img/bg/video_bg.jpg")', position: 'absolute', top: 0, left: 0, width: 1903, height: 644.2, overflow: 'hidden', pointerEvents: 'none', transformStyle: 'preserve-3d', backfaceVisibility: 'hidden', marginTop: 9.9, transform: 'translate3d(0, -52.4733px, 0)'}}></div>
+  </div>
+</section>
+
         {/* <!-- video-area-end --> */}
 
         {/* <!-- roadMap-area --> */}
@@ -642,76 +666,19 @@ if(firstLoad == true) {
                     <div className="row">
                         <div className="col-md-7">
                             <div className="trendingNft__title">
-                                <h2 className="title">top Trending <img src="/assets/img/icons/fire.png" width="35" alt="icon" /></h2>
+                                <h2 className="title">top Trending <img src="/assets/img/icons/fire.png" alt="icon" width="35" /></h2>
                             </div>
                         </div>
                         <div className="col-md-5">
                             <div className="trendingNft__nav">
-                                <button className="slider-button-prev"><i className="fas fa-angle-left"></i></button>
-                                <button className="slider-button-next"><i className="fas fa-angle-right"></i></button>
+                                <button className="slider-button-prev" tabIndex="0" aria-label="Previous slide" aria-controls="swiper-wrapper-1b3baf13db49fd9a"><i className="fas fa-angle-left"></i></button>
+                                <button className="slider-button-next" tabIndex="0" aria-label="Next slide" aria-controls="swiper-wrapper-1b3baf13db49fd9a"><i className="fas fa-angle-right"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="swiper-container trendingNft-active">
-                    <div className="swiper-wrapper">
-                        <div className="swiper-slide">
-                            <div className="trendingNft__item">
-                                <div className="trendingNft__item-top">
-                                    <div className="trendingNft__item-avatar">
-                                        <div className="image">
-                                            <a href="shop-details.html"><img src="/assets/img/nft/nft_avatar01.png" alt="img" /></a>
-                                        </div>
-                                        <div className="info">
-                                            <h6 className="name">Crypto Max</h6>
-                                            <a href="shop-details.html" className="userName">@Jon Max</a>
-                                        </div>
-                                    </div>
-                                    <div className="trendingNft__item-wish">
-                                        <a style={{cursor : "pointer"}}><i className="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div className="trendingNft__item-image">
-                                    <a href="shop-details.html"><img src="/assets/img/nft/nft_img04.jpg" alt="img" /></a>
-                                </div>
-                                <div className="trendingNft__item-bottom">
-                                    <div className="trendingNft__item-price">
-                                        <span className="bid">Last Bid</span>
-                                        <h6 className="eth"><i className="fab fa-ethereum"></i> 1.002 <span>Eth</span></h6>
-                                    </div>
-                                    <a href="shop-details.html" className="bid-btn">Bid <i className="fas fa-long-arrow-alt-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="swiper-slide">
-                            <div className="trendingNft__item">
-                                <div className="trendingNft__item-top">
-                                    <div className="trendingNft__item-avatar">
-                                        <div className="image">
-                                            <a href="shop-details.html"><img src="/assets/img/nft/nft_avatar02.png" alt="img" /></a>
-                                        </div>
-                                        <div className="info">
-                                            <h6 className="name">Golden Crypto</h6>
-                                            <a href="shop-details.html" className="userName">@Jon Max</a>
-                                        </div>
-                                    </div>
-                                    <div className="trendingNft__item-wish">
-                                        <a href="shop-details.html"><i className="far fa-heart"></i></a>
-                                    </div>
-                                </div>
-                                <div className="trendingNft__item-image">
-                                    <a href="shop-details.html"><img src="/assets/img/nft/nft_img05.jpg" alt="img" /></a>
-                                </div>
-                                <div className="trendingNft__item-bottom">
-                                    <div className="trendingNft__item-price">
-                                        <span className="bid">Last Bid</span>
-                                        <h6 className="eth"><i className="fab fa-ethereum"></i> 1.004 <span>Eth</span></h6>
-                                    </div>
-                                    <a href="shop-details.html" className="bid-btn">Bid <i className="fas fa-long-arrow-alt-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="swiper-slide">
+                <div className="swiper-container trendingNft-active swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+                    <div className="swiper-wrapper" style={{transitionDuration: '0ms', transform: 'translate3d(-1300px, 0px, 0px)'}} id="swiper-wrapper-1b3baf13db49fd9a" aria-live="polite"><div className="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" style={{width: '403.333px', marginRight: '30px'}}>
                             <div className="trendingNft__item">
                                 <div className="trendingNft__item-top">
                                     <div className="trendingNft__item-avatar">
@@ -738,8 +705,7 @@ if(firstLoad == true) {
                                     <a href="shop-details.html" className="bid-btn">Bid <i className="fas fa-long-arrow-alt-right"></i></a>
                                 </div>
                             </div>
-                        </div>
-                        <div className="swiper-slide">
+                        </div><div className="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="3" style={{width: '403.333px', marginRight: '30px'}}>
                             <div className="trendingNft__item">
                                 <div className="trendingNft__item-top">
                                     <div className="trendingNft__item-avatar">
@@ -766,8 +732,7 @@ if(firstLoad == true) {
                                     <a href="shop-details.html" className="bid-btn">Bid <i className="fas fa-long-arrow-alt-right"></i></a>
                                 </div>
                             </div>
-                        </div>
-                        <div className="swiper-slide">
+                        </div><div className="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="4" style={{width: '403.333px', marginRight: '30px'}}>
                             <div className="trendingNft__item">
                                 <div className="trendingNft__item-top">
                                     <div className="trendingNft__item-avatar">
@@ -795,8 +760,229 @@ if(firstLoad == true) {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                        <div className="swiper-slide swiper-slide-active" data-swiper-slide-index="0" style={{width: '403.333px', marginRight: '30px'}}>
+                            <div className="trendingNft__item">
+                                <div className="trendingNft__item-top">
+                                    <div className="trendingNft__item-avatar">
+                                        <div className="image">
+                                            <a href="shop-details.html"><img src="/assets/img/nft/nft_avatar01.png" alt="img" /></a>
+                                        </div>
+                                        <div className="info">
+                                            <h6 className="name">Crypto Max</h6>
+                                            <a href="shop-details.html" className="userName">@Jon Max</a>
+                                        </div>
+                                    </div>
+                                    <div className="trendingNft__item-wish">
+                                        <a href="#"><i className="far fa-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div className="trendingNft__item-image">
+                                    <a href="shop-details.html"><img src="/assets/img/nft/nft_img04.jpg" alt="img" /></a>
+                                </div>
+                                <div className="trendingNft__item-bottom">
+                                    <div className="trendingNft__item-price">
+                                        <span className="bid">Last Bid</span>
+                                        <h6 className="eth"><i className="fab fa-ethereum"></i> 1.002 <span>Eth</span></h6>
+                                    </div>
+                                    <a href="shop-details.html" className="bid-btn">Bid <i className="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="swiper-slide swiper-slide-next" data-swiper-slide-index="1" style={{width: '403.333px', marginRight: '30px'}}>
+                            <div className="trendingNft__item">
+                                <div className="trendingNft__item-top">
+                                    <div className="trendingNft__item-avatar">
+                                        <div className="image">
+                                            <a href="shop-details.html"><img src="/assets/img/nft/nft_avatar02.png" alt="img" /></a>
+                                        </div>
+                                        <div className="info">
+                                            <h6 className="name">Golden Crypto</h6>
+                                            <a href="shop-details.html" className="userName">@Jon Max</a>
+                                        </div>
+                                    </div>
+                                    <div className="trendingNft__item-wish">
+                                        <a href="shop-details.html"><i className="far fa-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div className="trendingNft__item-image">
+                                    <a href="shop-details.html"><img src="/assets/img/nft/nft_img05.jpg" alt="img" /></a>
+                                </div>
+                                <div className="trendingNft__item-bottom">
+                                    <div className="trendingNft__item-price">
+                                        <span className="bid">Last Bid</span>
+                                        <h6 className="eth"><i className="fab fa-ethereum"></i> 1.004 <span>Eth</span></h6>
+                                    </div>
+                                    <a href="shop-details.html" className="bid-btn">Bid <i className="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="swiper-slide" data-swiper-slide-index="2" style={{width: '403.333px', marginRight: '30px'}}>
+                            <div className="trendingNft__item">
+                                <div className="trendingNft__item-top">
+                                    <div className="trendingNft__item-avatar">
+                                        <div className="image">
+                                            <a href="shop-details.html"><img src="/assets/img/nft/nft_avatar03.png" alt="img" /></a>
+                                        </div>
+                                        <div className="info">
+                                            <h6 className="name">Black Crypto</h6>
+                                            <a href="shop-details.html" className="userName">@Jon Max</a>
+                                        </div>
+                                    </div>
+                                    <div className="trendingNft__item-wish">
+                                        <a href="shop-details.html"><i className="far fa-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div className="trendingNft__item-image">
+                                    <a href="shop-details.html"><img src="/assets/img/nft/nft_img06.jpg" alt="img" /></a>
+                                </div>
+                                <div className="trendingNft__item-bottom">
+                                    <div className="trendingNft__item-price">
+                                        <span className="bid">Last Bid</span>
+                                        <h6 className="eth"><i className="fab fa-ethereum"></i> 1.005 <span>Eth</span></h6>
+                                    </div>
+                                    <a href="shop-details.html" className="bid-btn">Bid <i className="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="swiper-slide" data-swiper-slide-index="3" style={{width: '403.333px', marginRight: '30px'}}>
+                            <div className="trendingNft__item">
+                                <div className="trendingNft__item-top">
+                                    <div className="trendingNft__item-avatar">
+                                        <div className="image">
+                                            <a href="shop-details.html"><img src="/assets/img/nft/nft_avatar02.png" alt="img" /></a>
+                                        </div>
+                                        <div className="info">
+                                            <h6 className="name">Luck Crypto</h6>
+                                            <a href="shop-details.html" className="userName">@Jon Max</a>
+                                        </div>
+                                    </div>
+                                    <div className="trendingNft__item-wish">
+                                        <a href="shop-details.html"><i className="far fa-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div className="trendingNft__item-image">
+                                    <a href="shop-details.html"><img src="/assets/img/nft/nft_img07.jpg" alt="img" /></a>
+                                </div>
+                                <div className="trendingNft__item-bottom">
+                                    <div className="trendingNft__item-price">
+                                        <span className="bid">Last Bid</span>
+                                        <h6 className="eth"><i className="fab fa-ethereum"></i> 1.005 <span>Eth</span></h6>
+                                    </div>
+                                    <a href="shop-details.html" className="bid-btn">Bid <i className="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="4" style={{width: '403.333px', marginRight: '30px'}}>
+                            <div className="trendingNft__item">
+                                <div className="trendingNft__item-top">
+                                    <div className="trendingNft__item-avatar">
+                                        <div className="image">
+                                            <a href="shop-details.html"><img src="/assets/img/nft/nft_avatar03.png" alt="img" /></a>
+                                        </div>
+                                        <div className="info">
+                                            <h6 className="name">King Crypto</h6>
+                                            <a href="shop-details.html" className="userName">@Jon Max</a>
+                                        </div>
+                                    </div>
+                                    <div className="trendingNft__item-wish">
+                                        <a href="shop-details.html"><i className="far fa-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div className="trendingNft__item-image">
+                                    <a href="shop-details.html"><img src="/assets/img/nft/nft_img08.jpg" alt="img" /></a>
+                                </div>
+                                <div className="trendingNft__item-bottom">
+                                    <div className="trendingNft__item-price">
+                                        <span className="bid">Last Bid</span>
+                                        <h6 className="eth"><i className="fab fa-ethereum"></i> 1.005 <span>Eth</span></h6>
+                                    </div>
+                                    <a href="shop-details.html" className="bid-btn">Bid <i className="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    <div className="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0" style={{width: '403.333px', marginRight: '30px'}}>
+                            <div className="trendingNft__item">
+                                <div className="trendingNft__item-top">
+                                    <div className="trendingNft__item-avatar">
+                                        <div className="image">
+                                            <a href="shop-details.html"><img src="/assets/img/nft/nft_avatar01.png" alt="img" /></a>
+                                        </div>
+                                        <div className="info">
+                                            <h6 className="name">Crypto Max</h6>
+                                            <a href="shop-details.html" className="userName">@Jon Max</a>
+                                        </div>
+                                    </div>
+                                    <div className="trendingNft__item-wish">
+                                        <a href="#"><i className="far fa-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div className="trendingNft__item-image">
+                                    <a href="shop-details.html"><img src="/assets/img/nft/nft_img04.jpg" alt="img" /></a>
+                                </div>
+                                <div className="trendingNft__item-bottom">
+                                    <div className="trendingNft__item-price">
+                                        <span className="bid">Last Bid</span>
+                                        <h6 className="eth"><i className="fab fa-ethereum"></i> 1.002 <span>Eth</span></h6>
+                                    </div>
+                                    <a href="shop-details.html" className="bid-btn">Bid <i className="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                        </div><div className="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="1" style={{width: '403.333px', marginRight: '30px'}}>
+                            <div className="trendingNft__item">
+                                <div className="trendingNft__item-top">
+                                    <div className="trendingNft__item-avatar">
+                                        <div className="image">
+                                            <a href="shop-details.html"><img src="/assets/img/nft/nft_avatar02.png" alt="img" /></a>
+                                        </div>
+                                        <div className="info">
+                                            <h6 className="name">Golden Crypto</h6>
+                                            <a href="shop-details.html" className="userName">@Jon Max</a>
+                                        </div>
+                                    </div>
+                                    <div className="trendingNft__item-wish">
+                                        <a href="shop-details.html"><i className="far fa-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div className="trendingNft__item-image">
+                                    <a href="shop-details.html"><img src="/assets/img/nft/nft_img05.jpg" alt="img" /></a>
+                                </div>
+                                <div className="trendingNft__item-bottom">
+                                    <div className="trendingNft__item-price">
+                                        <span className="bid">Last Bid</span>
+                                        <h6 className="eth"><i className="fab fa-ethereum"></i> 1.004 <span>Eth</span></h6>
+                                    </div>
+                                    <a href="shop-details.html" className="bid-btn">Bid <i className="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                        </div><div className="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2" style={{width: '403.333px', marginRight: '30px'}}>
+                            <div className="trendingNft__item">
+                                <div className="trendingNft__item-top">
+                                    <div className="trendingNft__item-avatar">
+                                        <div className="image">
+                                            <a href="shop-details.html"><img src="/assets/img/nft/nft_avatar03.png" alt="img" /></a>
+                                        </div>
+                                        <div className="info">
+                                            <h6 className="name">Black Crypto</h6>
+                                            <a href="shop-details.html" className="userName">@Jon Max</a>
+                                        </div>
+                                    </div>
+                                    <div className="trendingNft__item-wish">
+                                        <a href="shop-details.html"><i className="far fa-heart"></i></a>
+                                    </div>
+                                </div>
+                                <div className="trendingNft__item-image">
+                                    <a href="shop-details.html"><img src="/assets/img/nft/nft_img06.jpg" alt="img" /></a>
+                                </div>
+                                <div className="trendingNft__item-bottom">
+                                    <div className="trendingNft__item-price">
+                                        <span className="bid">Last Bid</span>
+                                        <h6 className="eth"><i className="fab fa-ethereum"></i> 1.005 <span>Eth</span></h6>
+                                    </div>
+                                    <a href="shop-details.html" className="bid-btn">Bid <i className="fas fa-long-arrow-alt-right"></i></a>
+                                </div>
+                            </div>
+                        </div></div>
+                <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
             </div>
         </section>
         {/* <!-- trending-nft-end --> */}

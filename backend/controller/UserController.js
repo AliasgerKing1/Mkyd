@@ -61,6 +61,11 @@ routes.get('/otpid/:id', async (req, res) => {
 let result = await User.find({_id : id});
 res.send(result); 
 });
+routes.get('/directid/:id', async (req, res) => {
+    let id = req.params.id;
+let result = await User.find({_id : id});
+res.send(result); 
+});
 
 routes.post("/checkuser", async (req,res) => {
     let email = req.body.email;
@@ -89,12 +94,7 @@ try {
       const regex = new RegExp(`^${escapeRegExp(searchString)}`, 'i');
       
 const result = await User.find({ name: { $regex: regex } }); // find all users whose names start with the search string
-    // let result = await User.find({ name: searchQuery }).lean().exec(); // convert to plain JS object
-    if(result.length == 0) {
         res.send(result);
-    }else {
-        res.send({status : 404, success : false})
-    }
 }catch (error) {
     res.send({status : 401, success : false, error : error});
 }

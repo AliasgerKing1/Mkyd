@@ -27,7 +27,9 @@ let getUserByOtpId = async (id) => {
   return await axios.get(`${apiUrl}/otpid/${id}`);
 }
 
-
+let getUserByDirectId = async (id) => {
+  return await axios.get(`${apiUrl}/directid/${id}`);
+}
 
 //Signin area
 
@@ -78,4 +80,4 @@ return await axios.get(`${apiOtpUrl}/otpin/${id}`)
     let searchQuery = async (searchquery) => {
 return await axios.get(`${apiUrl}/search/${searchquery}`)
     }
-export { addUser, getUser , getUserById,  DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId, searchQuery }
+export { addUser, getUser , getUserById, getUserByDirectId, DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId, searchQuery }

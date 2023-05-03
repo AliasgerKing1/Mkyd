@@ -8,15 +8,8 @@ const Search = () => {
     let dispatch = useDispatch()
     let checkChange = async (value) => {
       let result = await searchQuery(JSON.stringify(value));
-      if(result.data.status) {
-        if(result.data.status == 404 && value != undefined) {
-          dispatch(getEmptySearchRedux(true))
-        }else {
-          dispatch(getEmptySearchRedux(false))
           dispatch(getSearchRedux(result.data));
-        }
       }
-    }
   return (
     <>
                     <div className="shop__widget">
