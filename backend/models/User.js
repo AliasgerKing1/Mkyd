@@ -62,15 +62,15 @@ type : "no value"
     },
     followers: [
         {
-          sender_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-          receiver_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+          sender_id: { type: String, ref: "User" },
+          receiver_id: { type: String, ref: "User" },
           friend: Boolean
         }
       ],
       followings: [
         {
-          sender_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-          receiver_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+          sender_id: { type: String, ref: "User" },
+          receiver_id: { type: String, ref: "User" },
           friend: Boolean
         }
       ],

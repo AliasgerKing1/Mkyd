@@ -148,3 +148,7 @@
   content: "\f164"; /* The thumbs-up symbol */
   margin-right: 5px; /* Optional: Add some spacing between the symbol and the text */
 }
+.fa-triple-dot:before {
+  content: "\2026"; /* The triple-dot symbol */
+  margin-right: 5px; /* Optional: Add some spacing between the symbol and the text */
+}

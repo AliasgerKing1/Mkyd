@@ -111,7 +111,7 @@ setAdValue(advalue)
 
                                     </div>
                                     <div className="tournament__list-live">
-                                        <a href="https://www.twitch.tv/videos/1726788358" target="_blank">More Finance <i className="far fa-play-circle"></i></a>
+                                        <a href="#">More Finance <i className="far fa-play-circle"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +145,7 @@ setAdValue(advalue)
                                         <span>{state[0] ? (state[0].rank == null ? "None" : (state[0].rank)) : null}</span>
                                     </div>
                                     <div className="tournament__list-live">
-                                        <a href="https://www.twitch.tv/videos/1726788358" target="_blank">More Games <i className="far fa-play-circle"></i></a>
+                                        <a href="#">More Games <i className="far fa-play-circle"></i></a>
                                     </div>
                                 </div>
                             </div>

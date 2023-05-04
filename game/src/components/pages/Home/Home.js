@@ -178,7 +178,7 @@ if(firstLoad == true) {
                     <div className="col-xl-6 col-lg-7 col-md-10">
                         <div className="section__title text-center mb-60">
                             <span className="sub-title tg__animate-text">know about us</span>
-                            <h3 className="title">top rated steamers</h3>
+                            <h3 className="title">top Quality Items</h3>
                         </div>
                     </div>
                 </div>
@@ -186,8 +186,8 @@ if(firstLoad == true) {
                     <div className="col-xl-10">
                         <div className="about__tab-wrap">
                             <div className="about__buttons">
-                                <a href="shop.html" className="tg-btn-2">buy Hero</a>
-                                <a href="shop.html" className="tg-btn-2 -secondary">buy nfts</a>
+                                <NavLink to="/auth/shop" className="tg-btn-2">buy Products</NavLink>
+                                <NavLink to="/auth/shop"  className="tg-btn-2 -secondary">buy Assets</NavLink>
                             </div>
                             <ul className="nav nav-tabs" id="myTab" role="tablist">
                                 <li className="nav-item" role="presentation">

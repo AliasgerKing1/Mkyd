@@ -1,9 +1,9 @@
 /*eslint-disable */
 import React from 'react'
 import Footer from '../../shared/Footer'
-import ScrollTop from '../../shared/ScrollTop'
 import Header from '../../shared/Header'
 import { useSelector } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 
 const SocialDetails = () => {
     let state = useSelector(state=>state.SingleUserReducer)
@@ -49,10 +49,12 @@ const SocialDetails = () => {
                                             <div className="team__info-icon">
                                                 <i className="fas fa-user"></i>
                                             </div>
+                                            <NavLink to={`/auth/profile/follow/${state[0] ? (state[0]._id) : null}`}>
                                             <div className="team__info-content">
                                                 <span className="sub">followers</span>
                                                 <h5 className="title">{state[0] ? (state[0].followers.length) : null}</h5>
                                             </div>
+                                            </NavLink>
                                         </div>
                                     </li>
                                     <li>
@@ -60,10 +62,12 @@ const SocialDetails = () => {
                                             <div className="team__info-icon">
                                                 <i className="fas fa-user"></i>
                                             </div>
+                                            <NavLink to={`/auth/profile/follow/${state[0] ? (state[0]._id) : null}`}>
                                             <div className="team__info-content">
                                                 <span className="sub">followings</span>
                                                 <h5 className="title">{state[0] ? (state[0].followings.length) : null}</h5>
                                             </div>
+                                            </NavLink>
                                         </div>
                                     </li>
                                 </ul>

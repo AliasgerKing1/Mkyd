@@ -23,7 +23,7 @@ const UserProfile = () => {
     let [followings, setFollowings] = useState(false)
     let state = useSelector(state=> state.otherUserReducer)
     let state2 = useSelector(state2=>state2.SingleUserReducer)
-    let state3 = useSelector(state3=>state3.FollowersReducer)
+    // let state3 = useSelector(state3=>state3.FollowersReducer)
     let state4 = useSelector(state4=>state4.FollowingsReducer)
 
     let otherUserProfileFun = async () => {
@@ -37,39 +37,38 @@ const UserProfile = () => {
         }
         if (state && state[0] && state[0].followers[0] && state[0].followers[0].friend &&
             state2 && state2[0] && state2[0].followings[0] && state2[0].followings[0].friend) {
-            dispatch(getFollowersRedux({follow : true}))
             dispatch(getFollowingsRedux({follow : true}))
         }
     }, [state, state2]);
     
 let follow = async () => {
 let follow_obj = {
-    sender_id : state2[0]._id,
-    receiver_id : state[0]._id,
+    sender_id : state2[0] ? (state2[0]._id) : null,
+    receiver_id : state[0] ? (state[0]._id) : null,
     friend : true
 }
-let result = await updateUserById(state2[0]._id, follow_obj)
-let result2 = await updateOtherUserById(state[0]._id, follow_obj)
+let result = await updateUserById(state2[0] ? (state2[0]._id) : null, follow_obj)
+let result2 = await updateOtherUserById(state[0] ? (state[0]._id) : null, follow_obj)
 dispatch(getSingleUserRedux(result.data))
 dispatch(getOtherUserRedux(result2.data))
 if(result.data.length != 0 && result2.data.length != 0) {
     setFollowings(true)
+    dispatch(getFollowingsRedux({follow : true}))
 }
 
 }
 let unFollow = async () => {
     let obj = {
-            sender_id : state2[0]._id,
-            receiver_id : state[0]._id,
+            sender_id : state2[0] ? (state2[0]._id) : null,
+            receiver_id : state[0] ? (state[0]._id) : null,
         friend : false
     }
     let result = await unFriendUser(obj)
-let result2 = await unFriendOtherUser(obj)
-console.log(result.data)
-console.log(result2.data)
-// dispatch(getSingleUserRedux(result.data))
-// dispatch(getOtherUserRedux(result2.data))
-setFollowings(false)
+    let result2 = await unFriendOtherUser(obj)
+    setFollowings(false)
+    dispatch(getFollowingsRedux({follow : false}))
+dispatch(getSingleUserRedux(result.data))
+dispatch(getOtherUserRedux(result2.data))
 }
   return (
     <>

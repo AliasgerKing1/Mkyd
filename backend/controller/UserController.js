@@ -93,8 +93,8 @@ routes.post("/unfollow", async (req, res) => {
     let receiver = req.body.receiver_id;
     try {
       const updatedUser = await User.findOneAndUpdate(
-        { "followers.sender_id": sender, "followers.receiver_id": receiver },
-        { $pull: { followers: { sender_id: sender, receiver_id: receiver } } },
+        { "followings.sender_id": sender, "followings.receiver_id": receiver },
+        { $pull: { followings: { sender_id: sender, receiver_id: receiver } } },
         { new: true }
       );
       res.send(updatedUser);
@@ -107,8 +107,6 @@ routes.post("/unfollow", async (req, res) => {
   routes.post("/other/unfollow", async (req, res) => {
     let sender = req.body.sender_id;
     let receiver = req.body.receiver_id;
-    console.log(sender)
-    console.log(receiver)
     try {
       const updatedUser = await User.findOneAndUpdate(
         { "followers.sender_id": sender, "followers.receiver_id": receiver },
