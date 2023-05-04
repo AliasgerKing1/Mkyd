@@ -1,7 +1,9 @@
 /*eslint-disable */
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
 import {NavLink} from "react-router-dom"
+
+
+import { useSelector } from 'react-redux'
 
 const UserCard = ({state}) => {
     let state2 = useSelector(state2 => state2.SearchReducer)

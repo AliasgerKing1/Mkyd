@@ -7,19 +7,20 @@ import { useParams } from 'react-router-dom'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { getOtherUserRedux } from '../../../Redux/OtherUserRedux'
-
+import { getSingleUserRedux } from '../../../Redux/SingleUserReducer'
+import {getFollowersRedux} from "../../../Redux/FollowersReducer"
+import {getFollowingsRedux} from "../../../Redux/FollowingsReducer"
 
 import { getUserByDirectId, updateUserById, updateOtherUserById } from '../../../services/UserService'
 
 import Header from '../../shared/Header'
 import Footer from '../../shared/Footer'
-import { getSingleUserRedux } from '../../../Redux/SingleUserReducer'
+
 
 const UserProfile = () => {
     let params = useParams();
     let dispatch = useDispatch();
     let [followings, setFollowings] = useState(false)
-    let [follower, setFollowers] = useState(false)
     let state = useSelector(state=> state.otherUserReducer)
     let state2 = useSelector(state2=>state2.SingleUserReducer)
     let state3 = useSelector(state3=>state3.FollowersReducer)
@@ -29,11 +30,18 @@ const UserProfile = () => {
         let result = await getUserByDirectId (params.id);
         dispatch(getOtherUserRedux(result.data))
     }
-useEffect(()=> {
-if(state ? (state.length == 0) : null) {
-    otherUserProfileFun();
-}
-}, [])
+    
+    useEffect(()=> {
+        if (state && state._id !== params) {
+            otherUserProfileFun();
+        }
+        if (state && state[0] && state[0].followers[0] && state[0].followers[0].friend &&
+            state2 && state2[0] && state2[0].followings[0] && state2[0].followings[0].friend) {
+            dispatch(getFollowersRedux({follow : true}))
+            dispatch(getFollowingsRedux({follow : true}))
+        }
+    }, [state, state2]);
+    
 let follow = async () => {
 let follow_obj = {
     sender_id : state2[0]._id,
@@ -46,10 +54,21 @@ dispatch(getSingleUserRedux(result.data))
 dispatch(getOtherUserRedux(result2.data))
 if(result.data.length != 0 && result2.data.length != 0) {
     setFollowings(true)
-    setFollowers(true)
-}
 }
 
+}
+let unFollow = async () => {
+    let obj = {
+        sender_id : state2[0]._id,
+        reciever_id : state[0]._id,
+        friend : true
+    }
+    let result = await updateUserById(state2[0]._id, follow_obj)
+let result2 = await updateOtherUserById(state[0]._id, follow_obj)
+dispatch(getSingleUserRedux(result.data))
+dispatch(getOtherUserRedux(result2.data))
+
+}
   return (
     <>
 <Header />
@@ -81,7 +100,7 @@ if(result.data.length != 0 && result2.data.length != 0) {
                                                 { followings == true || state4.follow == true ? (<div className='contact__form-wrap'>
                                                     <button className="submit-btn"  onClick={follow}>UnFollow</button>
                                                         </div>) : (<div className='contact__form-wrap'>
-                                                    <button className="submit-btn"  onClick={follow}>Follow</button>
+                                                    <button className="submit-btn"  onClick={unFollow}>Follow</button>
                                                         </div>)}
                                             </div>
                                         </div>

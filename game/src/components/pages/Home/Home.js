@@ -5,8 +5,6 @@ import { NavLink } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {getPath} from "../../../Redux/PathReducer"
 import {getUserRedux} from "../../../Redux/UserReducer"
-import {getFollowersRedux} from "../../../Redux/FollowersReducer"
-import {getFollowingsRedux} from "../../../Redux/FollowingsReducer"
 
 
 import Header from "../../shared/Header"
@@ -17,7 +15,6 @@ const Home = () => {
     let dispatch = useDispatch();
     let state = useSelector(state=>state.UserReducer);
     let state2 = useSelector(state2=>state2.SingleUserReducer)
-    let state3 = useSelector(state3=> state3.otherUserReducer)
     let [firstLoad, setFirstLoad] = useState(true);
     let getUserFun = async() => {
         let result = await getUser();
@@ -26,10 +23,6 @@ const Home = () => {
     useEffect(()=> {
         let check = 1;
         dispatch(getPath(check))
-        if(state2[0] ? (state2[0].followings[0].friend == true) : null) {
-dispatch(getFollowersRedux({follow : true}))
-dispatch(getFollowingsRedux({follow : true}))
-        }
     }, [])
     useEffect(()=> {
 if(firstLoad == true) {

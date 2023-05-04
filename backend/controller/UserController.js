@@ -70,7 +70,7 @@ res.send(result);
 routes.put("/:id", async (req,res)=> {
     let id = req.params.id;
     try {
-        await User.updateOne({_id : id},{ $push: {followings :  req.body}})
+        await User.updateOne({_id : id},{ $set: {followings :  req.body}})
         let result = await User.find({_id : id})
             res.send(result)
     }catch (error) {
@@ -80,7 +80,7 @@ routes.put("/:id", async (req,res)=> {
 routes.put("/other/:id", async (req,res)=> {
     let id = req.params.id;
     try {
-        await User.updateOne({_id : id},{ $push: {followers :  req.body}})
+        await User.updateOne({_id : id},{ $set: {followers :  req.body}})
         let result = await User.find({_id : id})
             res.send(result)
     }catch (error) {
