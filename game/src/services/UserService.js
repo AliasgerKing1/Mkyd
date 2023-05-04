@@ -37,10 +37,10 @@ let updateOtherUserById = async (id, obj) => {
   return await axios.put(`${apiUrl}/other/${id}`, obj);
 }
 let unFriendUser = async (obj) => {
-  return await axios.post(`${apiUrl}/follow`, obj);
+  return await axios.post(`${apiUrl}/unfollow`, obj);
 }
 let unFriendOtherUser = async (obj) => {
-  return await axios.put(`${apiUrl}/other/follow/${id}`, obj);
+  return await axios.post(`${apiUrl}/other/unfollow`, obj);
 }
 
 //Signin area
@@ -91,4 +91,4 @@ return await axios.get(`${apiOtpUrl}/otpin/${id}`)
     let searchQuery = async (searchquery) => {
 return await axios.get(`${apiUrl}/search/${searchquery}`)
     }
-export { addUser, getUser , getUserById, getUserByDirectId, updateUserById, updateOtherUserById , unFriendUser, DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId, searchQuery }
+export { addUser, getUser , getUserById, getUserByDirectId, updateUserById, updateOtherUserById , unFriendUser, unFriendOtherUser, DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId, searchQuery }

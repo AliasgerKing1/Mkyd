@@ -11,7 +11,7 @@ import { getSingleUserRedux } from '../../../Redux/SingleUserReducer'
 import {getFollowersRedux} from "../../../Redux/FollowersReducer"
 import {getFollowingsRedux} from "../../../Redux/FollowingsReducer"
 
-import { getUserByDirectId, updateUserById, updateOtherUserById, unFriendUser } from '../../../services/UserService'
+import { getUserByDirectId, updateUserById, updateOtherUserById, unFriendUser, unFriendOtherUser } from '../../../services/UserService'
 
 import Header from '../../shared/Header'
 import Footer from '../../shared/Footer'
@@ -45,7 +45,7 @@ const UserProfile = () => {
 let follow = async () => {
 let follow_obj = {
     sender_id : state2[0]._id,
-    reciever_id : state[0]._id,
+    receiver_id : state[0]._id,
     friend : true
 }
 let result = await updateUserById(state2[0]._id, follow_obj)
@@ -60,13 +60,13 @@ if(result.data.length != 0 && result2.data.length != 0) {
 let unFollow = async () => {
     let obj = {
             sender_id : state2[0]._id,
-    reciever_id : state[0]._id,
+            receiver_id : state[0]._id,
         friend : false
     }
     let result = await unFriendUser(obj)
-// let result2 = await unFriendOtherUser(state[0]._id, obj)
+let result2 = await unFriendOtherUser(obj)
 console.log(result.data)
-// console.log(result2.data)
+console.log(result2.data)
 // dispatch(getSingleUserRedux(result.data))
 // dispatch(getOtherUserRedux(result2.data))
 setFollowings(false)

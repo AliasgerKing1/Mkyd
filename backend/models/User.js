@@ -60,15 +60,19 @@ type : "no value"
         type : String,
         default: null
     },
-    followers : {
-type : Array,
-default : [
-]
-    },
-    followings : {
-        type : Array,
-        default : [
-        ]
-    }
+    followers: [
+        {
+          sender_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+          receiver_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+          friend: Boolean
+        }
+      ],
+      followings: [
+        {
+          sender_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+          receiver_id: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+          friend: Boolean
+        }
+      ],
 })
 module.exports = mongoose.model("user", User);
