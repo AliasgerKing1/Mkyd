@@ -36,9 +36,14 @@ let updateUserById = async (id, obj) => {
 let updateOtherUserById = async (id, obj) => {
   return await axios.put(`${apiUrl}/other/${id}`, obj);
 }
+let unFriendUser = async (obj) => {
+  return await axios.post(`${apiUrl}/follow`, obj);
+}
+let unFriendOtherUser = async (obj) => {
+  return await axios.put(`${apiUrl}/other/follow/${id}`, obj);
+}
 
 //Signin area
-
 let Logout = () => {
     localStorage.clear();
   }
@@ -86,4 +91,4 @@ return await axios.get(`${apiOtpUrl}/otpin/${id}`)
     let searchQuery = async (searchquery) => {
 return await axios.get(`${apiUrl}/search/${searchquery}`)
     }
-export { addUser, getUser , getUserById, getUserByDirectId, updateUserById, updateOtherUserById , DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId, searchQuery }
+export { addUser, getUser , getUserById, getUserByDirectId, updateUserById, updateOtherUserById , unFriendUser, DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId, searchQuery }

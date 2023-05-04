@@ -88,6 +88,26 @@ routes.put("/other/:id", async (req,res)=> {
     }
 }) 
 
+routes.post("/follow", async (req,res)=> {
+let sender = req.body.sender_id;
+let receiver = req.body.reciever_id;
+try {
+    await User.deleteOne({ $and: [{ "followings.sender_id": sender }, { "followings.reciever_id": receiver }]});
+}catch (error) {
+    res.send({status : 500, success : false, error : error})
+}
+
+})
+routes.post("/other/follow", async (req,res)=> {
+let sender = req.body.sender_id;
+let receiver = req.body.reciever_id;
+try {
+    await User.deleteOne({ $and: [{ "followers.sender_id": sender }, { "followers.reciever_id": receiver }]});
+}catch (error) {
+    res.send({status : 500, success : false, error : error})
+}
+
+})
 routes.post("/checkuser", async (req,res) => {
     let email = req.body.email;
     try {
