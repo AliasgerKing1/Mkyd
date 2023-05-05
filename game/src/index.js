@@ -18,6 +18,7 @@ import EmptySearchReducer from "./Redux/EmptySearchReducer"
 import otherUserReducer from "./Redux/OtherUserRedux"
 import FollowersReducer from "./Redux/FollowersReducer"
 import FollowingsReducer from "./Redux/FollowingsReducer"
+import RedirectFollowReducer from './Redux/RedirectFollowReducer';
 
 import { BrowserRouter } from 'react-router-dom';
 let rootReducer = combineReducers({
@@ -31,7 +32,8 @@ let rootReducer = combineReducers({
   EmptySearchReducer,
   otherUserReducer,
   FollowersReducer,
-  FollowingsReducer
+  FollowingsReducer,
+  RedirectFollowReducer
 })
 let store = configureStore ({
   reducer : rootReducer

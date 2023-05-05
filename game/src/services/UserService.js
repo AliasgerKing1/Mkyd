@@ -42,6 +42,12 @@ let unFriendUser = async (obj) => {
 let unFriendOtherUser = async (obj) => {
   return await axios.post(`${apiUrl}/other/unfollow`, obj);
 }
+let getFollwingsList = async (id) => {
+  return await axios.get(`${apiUrl}/fetchfollowings/${id}`);
+}
+let getFollwersList = async (id) => {
+  return await axios.get(`${apiUrl}/fetchfollowers/${id}`);
+}
 
 //Signin area
 let Logout = () => {
@@ -91,4 +97,4 @@ return await axios.get(`${apiOtpUrl}/otpin/${id}`)
     let searchQuery = async (searchquery) => {
 return await axios.get(`${apiUrl}/search/${searchquery}`)
     }
-export { addUser, getUser , getUserById, getUserByDirectId, updateUserById, updateOtherUserById , unFriendUser, unFriendOtherUser, DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId, searchQuery }
+export { addUser, getUser , getUserById, getUserByDirectId, updateUserById, updateOtherUserById , unFriendUser, unFriendOtherUser, getFollwingsList, getFollwersList, DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId, searchQuery }

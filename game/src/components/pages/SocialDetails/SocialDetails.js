@@ -2,11 +2,19 @@
 import React from 'react'
 import Footer from '../../shared/Footer'
 import Header from '../../shared/Header'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+import { getRedirectFollowerRedux } from '../../../Redux/RedirectFollowReducer'
 
 const SocialDetails = () => {
+    let dispatch = useDispatch();
     let state = useSelector(state=>state.SingleUserReducer)
+    let followers = () => {
+        dispatch(getRedirectFollowerRedux({follow : "follower",follow2 : "followers" }))
+    }
+    let followings = () => {
+        dispatch(getRedirectFollowerRedux({follow : "following",follow2 : "followings" }))
+    }
   return (
     <>
 <Header />
@@ -49,7 +57,7 @@ const SocialDetails = () => {
                                             <div className="team__info-icon">
                                                 <i className="fas fa-user"></i>
                                             </div>
-                                            <NavLink to={`/auth/profile/follow/${state[0] ? (state[0]._id) : null}`}>
+                                            <NavLink to={`/auth/profile/follow/${state[0] ? (state[0]._id) : null}`} onClick={followers}>
                                             <div className="team__info-content">
                                                 <span className="sub">followers</span>
                                                 <h5 className="title">{state[0] ? (state[0].followers.length) : null}</h5>
@@ -62,7 +70,7 @@ const SocialDetails = () => {
                                             <div className="team__info-icon">
                                                 <i className="fas fa-user"></i>
                                             </div>
-                                            <NavLink to={`/auth/profile/follow/${state[0] ? (state[0]._id) : null}`}>
+                                            <NavLink to={`/auth/profile/follow/${state[0] ? (state[0]._id) : null}`} onClick={followings}>
                                             <div className="team__info-content">
                                                 <span className="sub">followings</span>
                                                 <h5 className="title">{state[0] ? (state[0].followings.length) : null}</h5>

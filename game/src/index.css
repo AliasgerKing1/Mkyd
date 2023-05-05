@@ -152,3 +152,6 @@
   content: "\2026"; /* The triple-dot symbol */
   margin-right: 5px; /* Optional: Add some spacing between the symbol and the text */
 }
+.ms-500 {
+  margin-left: 500px;
+}

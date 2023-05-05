@@ -119,6 +119,30 @@ routes.post("/unfollow", async (req, res) => {
     }
   });
   
+  routes.get("/fetchfollowings/:id", async (req,res)=> {
+    let id = req.params.id;
+    let data = await User.find({_id : id});
+    if(data[0].followers) {
+    // let followings = data.followings;
+    // let receiver_id = followings.map((x)=> {
+    //     return x.receiver_id;
+    // });
+    // console.log(receiver_id)
+    }
+
+  })
+  routes.get("/fetchfollowers/:id", async (req,res)=> {
+    let id = req.params.id;
+    let data = await User.find({_id : id});
+    if(data[0].followings) {
+    let followers = data[0].followers;
+    let receiver_id = followers.map((x)=> {
+        return x.receiver_id;
+    });
+    console.log(receiver_id)
+    }
+
+  })
 routes.post("/checkuser", async (req,res) => {
     let email = req.body.email;
     try {
