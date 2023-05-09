@@ -122,28 +122,57 @@ routes.post("/unfollow", async (req, res) => {
   routes.get("/fetchfollowings/:id", async (req,res)=> {
     let id = req.params.id;
     let data = await User.find({_id : id});
+    try {
     if(data[0].followers) {
-    // let followings = data.followings;
-    // let receiver_id = followings.map((x)=> {
-    //     return x.receiver_id;
-    // });
-    // console.log(receiver_id)
-    }
-
+    let followings = data[0].followings;
+    let receiver_id = followings.map((x)=> {
+        return x.receiver_id;
+    });
+    try {
+        const result = await User.find({ _id: { $in: receiver_id } }).exec();
+        res.send(result)
+      } catch (err) {
+          res.send({status : 500, error : err})
+      }
+              }        
+          } catch (error) {
+              res.send({status : 500, error : error})
+          }
   })
   routes.get("/fetchfollowers/:id", async (req,res)=> {
     let id = req.params.id;
     let data = await User.find({_id : id});
-    if(data[0].followings) {
-    let followers = data[0].followers;
-    let receiver_id = followers.map((x)=> {
-        return x.receiver_id;
-    });
-    console.log(receiver_id)
+    try {
+        if(data[0].followings) {
+            let followers = data[0].followers;
+            let receiver_id = followers.map((x) => {
+                return x.receiver_id;
+            });
+try {
+  const result = await User.find({ _id: { $in: receiver_id } }).exec();
+  res.send(result)
+} catch (err) {
+    res.send({status : 500, error : err})
+}
+        }        
+    } catch (error) {
+        res.send({status : 500, error : error})
     }
+});
 
-  })
-routes.post("/checkuser", async (req,res) => {
+
+
+
+
+
+
+
+
+
+
+
+
+    routes.post("/checkuser", async (req,res) => {
     let email = req.body.email;
     try {
         const result = await User.find({email : email})

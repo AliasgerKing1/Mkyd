@@ -10,14 +10,14 @@ let mailGen = require("mailgen")
 const {EMAIL, PASSWORD} = require("../config/env")
 
 
-let callCount = 0; // Initialize the call counter variable
+// let callCount = 0; // Initialize the call counter variable
 
 routes.get("/:id", async (req, res) => {
-  if (callCount >= 3) { // Check if the API has been called three times
-    return res.status(403).json({ status : 403 }); // Return an error response
-  }
+  // if (callCount >= 3) { // Check if the API has been called three times
+    // return res.status(403).json({ status : 403 }); // Return an error response
+  // }
 
-  callCount++; // Increment the call counter variable
+  // callCount++; // Increment the call counter variable
 
   let id = req.params.id;
 var gen = rn.generator({
@@ -28,8 +28,8 @@ var gen = rn.generator({
 let random = gen()
   // let random = Math.floor(Math.random() * 1000000);
   await User.updateOne({_id : id}, {otp : random});
-  await User.updateOne({ _id: id },
-    { $set: { times_otp : callCount } })
+  // await User.updateOne({ _id: id },
+  //   { $set: { times_otp : callCount } })
   setTimeout(async ()=> {
   await User.updateOne({ _id: id },
   { $set: { otp: null } })
@@ -90,7 +90,7 @@ transporter.sendMail(message).then(()=> {
       msg : "You should recieve a mail",
       status : 200, 
       success : true,
-      otpCount : callCount
+      // otpCount : callCount
   })
 }).catch (error => {
   console.log(error)

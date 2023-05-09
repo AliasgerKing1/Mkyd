@@ -8,10 +8,9 @@ import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getOtherUserRedux } from '../../../Redux/OtherUserRedux'
 import { getSingleUserRedux } from '../../../Redux/SingleUserReducer'
-import {getFollowersRedux} from "../../../Redux/FollowersReducer"
 import {getFollowingsRedux} from "../../../Redux/FollowingsReducer"
 
-import { getUserByDirectId, updateUserById, updateOtherUserById, unFriendUser, unFriendOtherUser } from '../../../services/UserService'
+import { getUserByDirectId, updateUserById, updateOtherUserById, unFriendUser, unFriendOtherUser, fetchCurrentProfileOpen } from '../../../services/UserService'
 
 import Header from '../../shared/Header'
 import Footer from '../../shared/Footer'
@@ -37,10 +36,10 @@ const UserProfile = () => {
         }
         if (state && state[0] && state[0].followers[0] && state[0].followers[0].friend &&
             state2 && state2[0] && state2[0].followings[0] && state2[0].followings[0].friend) {
-            dispatch(getFollowingsRedux({follow : true}))
+            dispatch(getFollowingsRedux({follow : true, receiver_id : state[0]._id}))
         }
+
     }, [state, state2]);
-    
 let follow = async () => {
 let follow_obj = {
     sender_id : state2[0] ? (state2[0]._id) : null,
@@ -98,7 +97,7 @@ dispatch(getOtherUserRedux(result2.data))
                                 <li>
                                         <div className="team__info-item">
                                             <div className="team__info-content">
-                                                { followings == true || state4.follow == true ? (<div className='contact__form-wrap'>
+                                                { followings == true || (state4.follow == true && state4.receiver_id === state[0]._id) ? (<div className='contact__form-wrap'>
                                                     <button className="submit-btn"  onClick={unFollow}>UnFollow</button>
                                                         </div>) : (<div className='contact__form-wrap'>
                                                     <button className="submit-btn"  onClick={follow}>Follow</button>

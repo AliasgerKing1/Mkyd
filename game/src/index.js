@@ -19,6 +19,8 @@ import otherUserReducer from "./Redux/OtherUserRedux"
 import FollowersReducer from "./Redux/FollowersReducer"
 import FollowingsReducer from "./Redux/FollowingsReducer"
 import RedirectFollowReducer from './Redux/RedirectFollowReducer';
+import FetchFollowersReducer from './Redux/FetchFollowersReducer';
+import FetchFollowingsReducer from './Redux/FetchFollowingsReducer';
 
 import { BrowserRouter } from 'react-router-dom';
 let rootReducer = combineReducers({
@@ -33,7 +35,9 @@ let rootReducer = combineReducers({
   otherUserReducer,
   FollowersReducer,
   FollowingsReducer,
-  RedirectFollowReducer
+  RedirectFollowReducer,
+  FetchFollowersReducer,
+  FetchFollowingsReducer,
 })
 let store = configureStore ({
   reducer : rootReducer

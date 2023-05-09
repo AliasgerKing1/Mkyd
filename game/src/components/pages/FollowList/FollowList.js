@@ -1,16 +1,34 @@
 /*eslint-disable */
 import React, { useEffect } from 'react'
+
+
+import { useDispatch, useSelector } from 'react-redux'
+import {getFollowersRedux} from "../../../Redux/FetchFollowersReducer"
+import { getFollowingsRedux } from '../../../Redux/FetchFollowingsReducer'
+
+
+import { getFollwersList, getFollwingsList } from '../../../services/UserService'
+
+
 import Header from '../../shared/Header'
 import Footer from '../../shared/Footer'
 import RemoveModal from '../../shared/RemoveModal'
-import { useSelector } from 'react-redux'
-import { getFollwersList, getFollwingsList } from '../../../services/UserService'
+import { AlertDanger } from '../../shared/Alert'
 
 const FollowList = () => {
+    let dispatch = useDispatch();
 	let state = useSelector(state=>state.SingleUserReducer)
+	let state2 = useSelector(state2=>state2.FetchFollowersReducer)
+	let state3 = useSelector(state3=>state3.FetchFollowingsReducer)
+	let state4 = useSelector(state4=>state4.RedirectFollowReducer)
 	useEffect(()=> {
  getFollwersList(state[0] ? (state[0]._id) : null).then(result => {
-	console.log(result.data)
+    // console.log(result.data[0].followers[0])
+	dispatch(getFollowersRedux(result.data))
+})
+ getFollwingsList(state[0] ? (state[0]._id) : null).then(result => {
+    // console.log(result.data[0].followers[0])
+	dispatch(getFollowingsRedux(result.data))
 })
 	}, [])
   return (
@@ -27,13 +45,41 @@ const FollowList = () => {
                     <div className="col-12">
 <table className='ms-5 me-5'>
 <tbody>
-	<tr>
+{ state4.follow === "follower" ? (state2.map((x)=> {
+    return (
+        <tr key={x._id}>
 		<td><img src="/assets/images/person_1.jpg" alt="follower/following profile picture" className='pro-pic' /></td>
-		<td><h3 className='pro-name ms-4'>{state[0] ? (state[0].name) : null}</h3></td>
+		<td><h3 className='pro-name ms-4'>{x.name}</h3></td>
 		<td><a className='ms-1 follow'><sup>Follow</sup></a></td>
 		<td><div className='contact__form-wrap'><button className="submit-btn2 ms-500" data-bs-toggle="modal" data-bs-target="#removeModal">Remove</button></div></td>
-		<RemoveModal />
+		<RemoveModal user={x} />
 	</tr>
+    )
+})) : (state4.follow !== "following" ? (
+    <tr>
+    <td>
+    <AlertDanger msg="You have no followers yet !" />
+    </td>
+    </tr>
+    ) : null)}
+
+{ state4.follow === "following" ? (state3.map((x)=> {
+    return (
+        <tr key={x._id}>
+		<td><img src="/assets/images/person_1.jpg" alt="follower/following profile picture" className='pro-pic' /></td>
+		<td><h3 className='pro-name ms-4'>{x.name}</h3></td>
+		<td><a className='ms-1 follow'><sup>Follow</sup></a></td>
+		<td><div className='contact__form-wrap'><button className="submit-btn2 ms-500" data-bs-toggle="modal" data-bs-target="#removeModal">Remove</button></div></td>
+		<RemoveModal user={x.name}/>
+	</tr>
+    )
+})) : ( state4.follow !== "follower" ? (
+    <tr>
+    <td>
+    <AlertDanger msg="You dont follow anyone yet !" />
+    </td>
+    </tr>
+    ) : null)}
 </tbody>
 </table>
                     </div>

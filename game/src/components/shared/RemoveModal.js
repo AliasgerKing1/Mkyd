@@ -1,8 +1,21 @@
+/*eslint-disable */
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { unFriendOtherUser } from '../../services/UserService'
 
-const RemoveModal = () => {
+const RemoveModal = ({user}) => {
     let state = useSelector(state=>state.RedirectFollowReducer)
+    let state2= useSelector(state2=>state2.SingleUserReducer)
+    let unFollow = async () => {
+      if(state.follow === "follower") {
+  let obj = {
+    sender_id : state2[0] ? (state2[0]._id) : null,
+    receiver_id : user._id,
+friend : false
+}
+// let result2 = await unFriendOtherUser();
+}
+    }
   return (
     <>
         {/* <!-- Modal --> */}
@@ -14,11 +27,11 @@ const RemoveModal = () => {
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div className="modal-body">
-        Are you sure to remove User from your {state.follow2} ?
+        Are you sure to remove <b>{user.name}</b> from your {state.follow2} ?
       </div>
       <div className="modal-footer">
         <button type="button" className="btn btn-secondary2" data-bs-dismiss="modal">NO</button>
-        <button type="button" className="btn btn-primary2">Yes</button>
+        <button type="button" className="btn btn-primary2" onClick={unFollow}>Yes</button>
       </div>
     </div>
   </div>
