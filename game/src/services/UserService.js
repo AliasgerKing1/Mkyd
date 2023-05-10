@@ -50,7 +50,10 @@ let getFollwersList = async (id) => {
 }
 
 let getFollowersByDirect = async (ids) => {
-return await axios.get(`${apiUrl}/fetchfollowersDirect`, ids)
+return await axios.post(`${apiUrl}/fetchfollowersDirect`, ids)
+}
+let getFollowingsByDirect = async (ids) => {
+return await axios.post(`${apiUrl}/fetchfollowersDirect`, ids)
 }
 //Signin area
 let Logout = () => {
@@ -94,10 +97,9 @@ return await axios.get(`${apiOtpUrl}/otpin/${id}`)
       return await axios.get(`${apiOtpUrl}/otpverified/${id}`)
     }
 
-
     //search area
 
     let searchQuery = async (searchquery) => {
 return await axios.get(`${apiUrl}/search/${searchquery}`)
     }
-export { addUser, getUser , getUserById, getUserByDirectId, updateUserById, updateOtherUserById , unFriendUser, unFriendOtherUser, getFollwingsList, getFollwersList, getFollowersByDirect,  DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId, searchQuery }
+export { addUser, getUser , getUserById, getUserByDirectId, updateUserById, updateOtherUserById , unFriendUser, unFriendOtherUser, getFollwingsList, getFollwersList, getFollowersByDirect, getFollowingsByDirect, DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId, searchQuery }

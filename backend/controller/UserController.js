@@ -160,16 +160,35 @@ try {
     }
 });
 
-routes.get("/fetchfollowersDirect", async (req,res)=> {
-    let ids = req.body;
-    let result;
-    ids.map((x)=> {
-        result = User.find({ _id: { $in: x._id } });
+routes.post("/fetchfollowersDirect", async (req,res)=> {
+    let data = req.body;
+    let ids = data.map((x)=> {
+      return x.sender_id
     })
-    res.send(result)
-});
-
-
+    let result = [];
+    for (let i = 0; i < ids.length; i++) {
+      let user = await User.findOne({ _id: ids[i] });
+      if (user) {
+        result.push(user);
+      }
+    }
+    res.json(result);
+  });
+routes.post("/fetchfollowingsDirect", async (req,res)=> {
+    let data = req.body;
+    let ids = data.map((x)=> {
+      return x.sender_id
+    })
+    let result = [];
+    for (let i = 0; i < ids.length; i++) {
+      let user = await User.findOne({ _id: ids[i] });
+      if (user) {
+        result.push(user);
+      }
+    }
+    res.json(result);
+  });
+  
 
 
 
