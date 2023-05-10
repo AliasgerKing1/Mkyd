@@ -1,10 +1,14 @@
 /*eslint-disable */
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from '../../shared/Footer'
 import Header from '../../shared/Header'
 import { NavLink } from 'react-router-dom'
 
 const Shop = () => {
+    let [isAdd, setIsAdd] = useState(false)
+    let addToWishList = () => {
+setIsAdd(true)
+    }
   return (
     <>
 <Header />
@@ -46,7 +50,6 @@ const Shop = () => {
                                 <div className="shop__widget-inner">
                                     <div className="shop__search">
                                         <input type="text" placeholder="Search here" />
-                                        <button className="p-0 border-0"><i className="flaticon-search"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -133,7 +136,10 @@ const Shop = () => {
                                 <div className="shop__item">
                                     <div className="shop__item-thumb">
                                         <a href="shop-details.html"><img src="/assets/img/products/product01.jpg" alt="img" /></a>
-                                        <a href="#" className="wishlist-button"><i className="far fa-heart"></i></a>
+                                        <a style={{cursor: "pointer"}} className="wishlist-button" onClick={()=>{
+                                            addToWishList()
+                                        isAdd == false ? setIsAdd(true) : setIsAdd(false)
+                                        }}><i className="far fa-heart" style={isAdd == true ? {color: '#45f882'} : null}></i></a>
                                     </div>
                                     <div className="shop__item-line"></div>
                                     <div className="shop__item-content">
@@ -145,7 +151,7 @@ const Shop = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col">
+                            {/* <div className="col">
                                 <div className="shop__item">
                                     <div className="shop__item-thumb">
                                         <a href="shop-details.html"><img src="/assets/img/products/product02.jpg" alt="img" /></a>
@@ -272,7 +278,7 @@ const Shop = () => {
                                         <div className="shop__item-cat"><a href="shop.html">E-SPORTS</a></div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="pagination__wrap">
                             <ul className="list-wrap d-flex flex-wrap justify-content-center">

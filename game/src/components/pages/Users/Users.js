@@ -63,9 +63,9 @@ setInfHeight(infheight + 450);
 <Search />
                 <div className="row justify-content-center">
 <UserCard state={state} />
-{showSpinner == true ? (<div className="spinner-border text-success" role="status">
+{/* {showSpinner == true ? (<div className="spinner-border text-success" role="status">
   <span className="visually-hidden">Loading...</span>
-</div>) : null}
+</div>) : null} */}
                 </div>
             </div>
         

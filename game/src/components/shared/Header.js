@@ -62,29 +62,29 @@ if(obj) {
                                     <ul className="navigation">
                                         <li className="active menu-item-has-children"><NavLink to="/auth/home">Home</NavLink>
                                         </li>
-                                        <li><a href="about-us.html">ABOUT US</a></li>
-                                        <li className="menu-item-has-children"><a  style={{cursor : "pointer"}}>TOURNAMENT</a>
+                                        <li className="menu-item-has-children nav-menu"><a  style={{cursor : "pointer"}}>TOURNAMENT</a>
                                             <ul className="sub-menu">
                                                 <li><a href="tournament.html">TOURNAMENT</a></li>
                                                 <li><a href="tournament-details.html">TOURNAMENT Single</a></li>
                                             </ul>
                                         </li>
-                                        <li className="menu-item-has-children"><a  style={{cursor : "pointer"}}>PAGES</a>
+                                        <li className="menu-item-has-children nav-menu"><a  style={{cursor : "pointer"}}>Social</a>
                                             <ul className="sub-menu">
-                                                <li><a href="shop.html">Gaming Shop</a></li>
-                                                <li><a href="shop-details.html">Shop Details</a></li>
-                                                <li><a href="services.html">Our Services</a></li>
-                                                <li><a href="services-details.html">Services Details</a></li>
-                                                <li><a href="team-details.html">Player Details</a></li>
+                                                <li className='sub-nav-item'><NavLink to={`/auth/social/feed/${state3[0] ? (state3[0]._id) : null}`}>Feed</NavLink></li>
+                                                <li className='sub-nav-item'><NavLink to="/auth/users">Social Profile</NavLink></li>
                                             </ul>
                                         </li>
-                                        <li className="menu-item-has-children"><a  style={{cursor : "pointer"}}>News</a>
-                                            <ul className="sub-menu">
-                                                <li><a href="blog.html">Our Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
+                                        <li><a href="about-us.html">ABOUT US</a></li>
                                         <li><a href="contact.html">contact</a></li>
+                                        <li className="menu-item-has-children nav-menu"><a  style={{cursor : "pointer"}}>Other</a>
+                                            <ul className="sub-menu">
+                                                <li className='sub-nav-item'><NavLink to={`/auth/shop/${state3[0] ? (state3[0]._id) : null}`}>Gaming Shop</NavLink></li>
+                                                {/* <li className='sub-nav-item'><a href="shop-details.html">Shop Details</a></li>
+                                                <li className='sub-nav-item'><a href="services.html">Our Services</a></li>
+                                                <li className='sub-nav-item'><a href="services-details.html">Services Details</a></li>
+                                                <li className='sub-nav-item'><a href="team-details.html">Player Details</a></li> */}
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div className="tgmenu__action d-none d-md-block">

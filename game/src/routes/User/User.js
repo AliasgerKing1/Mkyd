@@ -9,6 +9,7 @@ import UserProfile from "../../components/pages/UserProfile/UserProfile"
 import Users from '../../components/pages/Users/Users';
 import Shop from '../../components/pages/Shop/Shop';
 import FollowList from '../../components/pages/FollowList/FollowList';
+import Feed from '../../components/pages/Feed/Feed';
 let useRoutes = [
   {
     path : "home",
@@ -35,7 +36,11 @@ let useRoutes = [
     element: <FollowList/>
   },
   {
-    path : "shop",
+    path : "social/feed/:id",
+    element: <Feed/>
+  },
+  {
+    path : "shop/:id",
     element: <Shop/>
   },
   {
