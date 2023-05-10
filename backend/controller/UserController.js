@@ -160,7 +160,14 @@ try {
     }
 });
 
-
+routes.get("/fetchfollowersDirect", async (req,res)=> {
+    let ids = req.body;
+    let result;
+    ids.map((x)=> {
+        result = User.find({ _id: { $in: x._id } });
+    })
+    res.send(result)
+});
 
 
 

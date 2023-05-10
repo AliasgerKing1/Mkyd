@@ -48,6 +48,10 @@ let getFollwingsList = async (id) => {
 let getFollwersList = async (id) => {
   return await axios.get(`${apiUrl}/fetchfollowers/${id}`);
 }
+
+let getFollowersByDirect = async (ids) => {
+return await axios.get(`${apiUrl}/fetchfollowersDirect`, ids)
+}
 //Signin area
 let Logout = () => {
     localStorage.clear();
@@ -96,4 +100,4 @@ return await axios.get(`${apiOtpUrl}/otpin/${id}`)
     let searchQuery = async (searchquery) => {
 return await axios.get(`${apiUrl}/search/${searchquery}`)
     }
-export { addUser, getUser , getUserById, getUserByDirectId, updateUserById, updateOtherUserById , unFriendUser, unFriendOtherUser, getFollwingsList, getFollwersList,  DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId, searchQuery }
+export { addUser, getUser , getUserById, getUserByDirectId, updateUserById, updateOtherUserById , unFriendUser, unFriendOtherUser, getFollwingsList, getFollwersList, getFollowersByDirect,  DoLogin, IsSignin , Logout,  checkUser,  signupOtp,  otpIn,  checkOtp,  otpVerfied,  getUserByOtpId, searchQuery }

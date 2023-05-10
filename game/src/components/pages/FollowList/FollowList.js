@@ -1,4 +1,5 @@
 /*eslint-disable */
+// https://preview.keenthemes.com/metronic8/demo1/dashboards/social.html?_ga=2.147283249.743252408.1683647965-1858520265.1683647962
 import React, { useEffect } from 'react'
 
 
@@ -7,7 +8,7 @@ import {getFollowersRedux} from "../../../Redux/FetchFollowersReducer"
 import { getFollowingsRedux } from '../../../Redux/FetchFollowingsReducer'
 
 
-import { getFollwersList, getFollwingsList } from '../../../services/UserService'
+import { getFollowersByDirect, getFollwersList, getFollwingsList } from '../../../services/UserService'
 
 
 import Header from '../../shared/Header'
@@ -23,6 +24,9 @@ const FollowList = () => {
 	let state4 = useSelector(state4=>state4.RedirectFollowReducer)
 	useEffect(()=> {
  getFollwersList(state[0] ? (state[0]._id) : null).then(result => {
+    getFollowersByDirect.then(result=> {
+console.log(result.data)
+    })
     // console.log(result.data[0].followers[0])
 	dispatch(getFollowersRedux(result.data))
 })
