@@ -12,11 +12,11 @@ const router = useRoutes([
       path : "/",
       element: <Signin />
     },
-// {
-//   path : "auth",
-//   element: <Layouts/>,
-//   children : userRoutes
-// }
+{
+  path : "auth",
+  element: <Layouts/>,
+  children : userRoutes
+}
   ])
   return (router);
 }
