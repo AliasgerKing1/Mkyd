@@ -34,7 +34,7 @@ const Home = () => {
             {/*begin::Row*/}
 <div className="row gx-5 gx-xl-10">  
     {/*begin::Col*/}
-    <div className="col-xxl-4 mb-5 mb-xl-10">       
+    <div className="col-xl-4 mb-5 mb-xl-10">       
         {/*begin::Chart widget 27*/}
 <div className="card card-flush h-xl-100">
     {/*begin::Header*/}
@@ -2073,91 +2073,331 @@ const Home = () => {
 
 {/*begin::Row*/}
 <div className="row gx-5 gx-xl-10">
-    {/*begin::Col*/}
-    <div className="col-xl-6 mb-5 mb-xl-10">
-        {/*begin::Chart widget 15*/}
+<div className="col-xl-6 mb-5 mb-xl-10">
+        
+{/*begin::Table Widget 5*/}
 <div className="card card-flush h-xl-100">
-    {/*begin::Header*/}
+    {/*begin::Card header*/}
     <div className="card-header pt-7">
         {/*begin::Title*/}
         <h3 className="card-title align-items-start flex-column">
-			<span className="card-label fw-bold text-dark">Author Sales</span>
-
-			<span className="text-gray-400 pt-2 fw-semibold fs-6">Statistics by Countries</span>
-		</h3>
+            <span className="card-label fw-bold text-dark">Stock Report</span>
+            <span className="text-gray-400 mt-1 fw-semibold fs-6">Total 2,356 Items in the Stock</span>
+        </h3>
         {/*end::Title*/}
 
-        {/*begin::Toolbar*/}
-        <div className="card-toolbar"> 
-                            <div className="card-toolbar">   
-                    <a href="#" className="btn btn-sm btn-light">PDF Report</a>             
+        {/*begin::Actions*/}
+        <div className="card-toolbar">
+            {/*begin::Filters*/}
+            <div className="d-flex flex-stack flex-wrap gap-4">
+                {/*begin::Destination*/}
+                <div className="d-flex align-items-center fw-bold">
+                    {/*begin::Label*/}
+                    <div className="text-muted fs-7 me-2">Cateogry</div>
+                    {/*end::Label*/}
+
+                    {/*begin::Select*/}
+                    <select className="form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto select2-hidden-accessible" data-control="select2" data-hide-search="true" data-dropdown-css-className="w-150px" data-placeholder="Select an option" data-select2-id="select2-data-1-tymb" tabindex="-1" aria-hidden="true" data-kt-initialized="1">
+                        <option></option>
+                        <option value="Show All" selected="" data-select2-id="select2-data-3-gwzo">Show All</option>
+                        <option value="a">Category A</option>
+                        <option value="b">Category B</option>
+                    </select><span className="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-2-vig8" style={{width: '100%',}}><span className="selection"><span className="select2-selection select2-selection--single form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-j2xb-container" aria-controls="select2-j2xb-container"><span className="select2-selection__rendered" id="select2-j2xb-container" role="textbox" aria-readonly="true" title="Show All">Show All</span><span className="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
+                    {/*end::Select*/}
                 </div>
-             
+                {/*end::Destination*/}
 
-            {/*begin::Menu*/}
-<div className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-100px py-4" data-kt-menu="true">
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            Remove
-        </a>
-    </div>
-    {/*end::Menu item*/}
-    
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            Mute
-        </a>
-    </div>
-    {/*end::Menu item*/}
+                {/*begin::Status*/}
+                <div className="d-flex align-items-center fw-bold">
+                    {/*begin::Label*/}
+                    <div className="text-muted fs-7 me-2">Status</div>
+                    {/*end::Label*/}
 
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            Settings
-        </a>
+                    {/*begin::Select*/}
+                    <select className="form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto select2-hidden-accessible" data-control="select2" data-hide-search="true" data-dropdown-css-className="w-150px" data-placeholder="Select an option" data-kt-table-widget-5="filter_status" data-select2-id="select2-data-4-olhp" tabindex="-1" aria-hidden="true" data-kt-initialized="1">
+                        <option></option>
+                        <option value="Show All" selected="" data-select2-id="select2-data-6-geks">Show All</option>
+                        <option value="In Stock">In Stock</option>
+                        <option value="Out of Stock">Out of Stock</option>
+                        <option value="Low Stock">Low Stock</option>
+                    </select><span className="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-5-eklo" style={{width: '100%',}}><span className="selection"><span className="select2-selection select2-selection--single form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-6jj3-container" aria-controls="select2-6jj3-container"><span className="select2-selection__rendered" id="select2-6jj3-container" role="textbox" aria-readonly="true" title="Show All">Show All</span><span className="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
+                    {/*end::Select*/}
+                </div>
+                {/*end::Status*/}
+
+                {/*begin::Search*/}
+                <a href="apps/ecommerce/catalog/products.html" className="btn btn-light btn-sm">View Stock</a>
+                {/*end::Search*/}
+            </div>
+            {/*begin::Filters*/}
+        </div>
+        {/*end::Actions*/}
     </div>
-    {/*end::Menu item*/}
+    {/*end::Card header*/}
+
+    {/*begin::Card body*/}
+    <div className="card-body">
+        {/*begin::Table*/}
+        <div id="kt_table_widget_5_table_wrapper" className="dataTables_wrapper dt-bootstrap4 no-footer"><div className="table-responsive"><table className="table align-middle table-row-dashed fs-6 gy-3 dataTable no-footer" id="kt_table_widget_5_table">
+            {/*begin::Table head*/}
+            <thead>
+                {/*begin::Table row*/}
+                <tr className="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0"><th className="min-w-100px sorting" tabindex="0" aria-controls="kt_table_widget_5_table" rowspan="1" colspan="1" style={{width: '169.35px'}} aria-label="Item: activate to sort column ascending">Item</th><th className="text-end pe-3 min-w-100px sorting_disabled" rowspan="1" colspan="1" style={{width: '132.85px'}} aria-label="Product ID">Product ID</th><th className="text-end pe-3 min-w-150px sorting" tabindex="0" aria-controls="kt_table_widget_5_table" rowspan="1" colspan="1" style={{width: '196.6px'}}aria-label="Date Added: activate to sort column ascending">Date Added</th><th className="text-end pe-3 min-w-100px sorting" tabindex="0" aria-controls="kt_table_widget_5_table" rowspan="1" colspan="1" style={{width: '132.85px'}} aria-label="Price: activate to sort column ascending">Price</th><th className="text-end pe-3 min-w-50px sorting" tabindex="0" aria-controls="kt_table_widget_5_table" rowspan="1" colspan="1" style={{width: '133.317px'}} aria-label="Status: activate to sort column ascending">Status</th><th className="text-end pe-0 min-w-25px sorting" tabindex="0" aria-controls="kt_table_widget_5_table" rowspan="1" colspan="1" style={{width: '77.95px'}} aria-label="Qty: activate to sort column ascending">Qty</th></tr>
+                {/*end::Table row*/}
+            </thead>
+            {/*end::Table head*/}
+
+            {/*begin::Table body*/}
+            <tbody className="fw-bold text-gray-600">
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                            <tr className="odd">
+                        {/*begin::Item*/}
+                        <td>
+                            <a href="apps/ecommerce/catalog/edit-product.html" className="text-dark text-hover-primary">Macbook Air M1</a>
+                        </td>
+                        {/*end::Item*/}
+
+                        {/*begin::Product ID*/}
+                        <td className="text-end">
+                            #XGY-356                        </td>
+                        {/*end::Product ID*/}
+
+                        {/*begin::Date added*/}
+                        <td className="text-end" data-order="2023-04-20T00:00:00+05:30">
+                            02 Apr, 2023                        </td>
+                        {/*end::Date added*/}
+
+                        {/*begin::Price*/}
+                        <td className="text-end">
+                            $1,230                        </td>
+                        {/*end::Price*/}
+
+                        {/*begin::Status*/}
+                        <td className="text-end">
+                            <span className="badge py-3 px-4 fs-7 badge-light-primary">In Stock</span>
+                        </td>
+                        {/*end::Status*/}
+
+                        {/*begin::Qty*/}
+                        <td className="text-end" data-order="58">
+                            <span className="text-dark fw-bold">58 PCS</span>
+                        </td>
+                        {/*end::Qty*/}                       
+                    </tr><tr className="even">
+                        {/*begin::Item*/}
+                        <td>
+                            <a href="apps/ecommerce/catalog/edit-product.html" className="text-dark text-hover-primary">Surface Laptop 4</a>
+                        </td>
+                        {/*end::Item*/}
+
+                        {/*begin::Product ID*/}
+                        <td className="text-end">
+                            #YHD-047                        </td>
+                        {/*end::Product ID*/}
+
+                        {/*begin::Date added*/}
+                        <td className="text-end" data-order="2023-04-20T00:00:00+05:30">
+                            01 Apr, 2023                        </td>
+                        {/*end::Date added*/}
+
+                        {/*begin::Price*/}
+                        <td className="text-end">
+                            $1,060                        </td>
+                        {/*end::Price*/}
+
+                        {/*begin::Status*/}
+                        <td className="text-end">
+                            <span className="badge py-3 px-4 fs-7 badge-light-danger">Out of Stock</span>
+                        </td>
+                        {/*end::Status*/}
+
+                        {/*begin::Qty*/}
+                        <td className="text-end" data-order="0">
+                            <span className="text-dark fw-bold">0 PCS</span>
+                        </td>
+                        {/*end::Qty*/}                       
+                    </tr><tr className="odd">
+                        {/*begin::Item*/}
+                        <td>
+                            <a href="apps/ecommerce/catalog/edit-product.html" className="text-dark text-hover-primary">Logitech MX 250</a>
+                        </td>
+                        {/*end::Item*/}
+
+                        {/*begin::Product ID*/}
+                        <td className="text-end">
+                            #SRR-678                        </td>
+                        {/*end::Product ID*/}
+
+                        {/*begin::Date added*/}
+                        <td className="text-end" data-order="2023-03-20T00:00:00+05:30">
+                            24 Mar, 2023                        </td>
+                        {/*end::Date added*/}
+
+                        {/*begin::Price*/}
+                        <td className="text-end">
+                            $64                        </td>
+                        {/*end::Price*/}
+
+                        {/*begin::Status*/}
+                        <td className="text-end">
+                            <span className="badge py-3 px-4 fs-7 badge-light-primary">In Stock</span>
+                        </td>
+                        {/*end::Status*/}
+
+                        {/*begin::Qty*/}
+                        <td className="text-end" data-order="290">
+                            <span className="text-dark fw-bold">290 PCS</span>
+                        </td>
+                        {/*end::Qty*/}                       
+                    </tr><tr className="even">
+                        {/*begin::Item*/}
+                        <td>
+                            <a href="apps/ecommerce/catalog/edit-product.html" className="text-dark text-hover-primary">AudioEngine HD3</a>
+                        </td>
+                        {/*end::Item*/}
+
+                        {/*begin::Product ID*/}
+                        <td className="text-end">
+                            #PXF-578                        </td>
+                        {/*end::Product ID*/}
+
+                        {/*begin::Date added*/}
+                        <td className="text-end" data-order="2023-03-20T00:00:00+05:30">
+                            24 Mar, 2023                        </td>
+                        {/*end::Date added*/}
+
+                        {/*begin::Price*/}
+                        <td className="text-end">
+                            $1,060                        </td>
+                        {/*end::Price*/}
+
+                        {/*begin::Status*/}
+                        <td className="text-end">
+                            <span className="badge py-3 px-4 fs-7 badge-light-danger">Out of Stock</span>
+                        </td>
+                        {/*end::Status*/}
+
+                        {/*begin::Qty*/}
+                        <td className="text-end" data-order="46">
+                            <span className="text-dark fw-bold">46 PCS</span>
+                        </td>
+                        {/*end::Qty*/}                       
+                    </tr><tr className="odd">
+                        {/*begin::Item*/}
+                        <td>
+                            <a href="apps/ecommerce/catalog/edit-product.html" className="text-dark text-hover-primary">HP Hyper LTR</a>
+                        </td>
+                        {/*end::Item*/}
+
+                        {/*begin::Product ID*/}
+                        <td className="text-end">
+                            #PXF-778                        </td>
+                        {/*end::Product ID*/}
+
+                        {/*begin::Date added*/}
+                        <td className="text-end" data-order="2023-01-20T00:00:00+05:30">
+                            16 Jan, 2023                        </td>
+                        {/*end::Date added*/}
+
+                        {/*begin::Price*/}
+                        <td className="text-end">
+                            $4500                        </td>
+                        {/*end::Price*/}
+
+                        {/*begin::Status*/}
+                        <td className="text-end">
+                            <span className="badge py-3 px-4 fs-7 badge-light-primary">In Stock</span>
+                        </td>
+                        {/*end::Status*/}
+
+                        {/*begin::Qty*/}
+                        <td className="text-end" data-order="78">
+                            <span className="text-dark fw-bold">78 PCS</span>
+                        </td>
+                        {/*end::Qty*/}                       
+                    </tr><tr className="even">
+                        {/*begin::Item*/}
+                        <td>
+                            <a href="apps/ecommerce/catalog/edit-product.html" className="text-dark text-hover-primary">Dell 32 UltraSharp</a>
+                        </td>
+                        {/*end::Item*/}
+
+                        {/*begin::Product ID*/}
+                        <td className="text-end">
+                            #XGY-356                        </td>
+                        {/*end::Product ID*/}
+
+                        {/*begin::Date added*/}
+                        <td className="text-end" data-order="2023-12-20T00:00:00+05:30">
+                            22 Dec, 2023                        </td>
+                        {/*end::Date added*/}
+
+                        {/*begin::Price*/}
+                        <td className="text-end">
+                            $1,060                        </td>
+                        {/*end::Price*/}
+
+                        {/*begin::Status*/}
+                        <td className="text-end">
+                            <span className="badge py-3 px-4 fs-7 badge-light-warning">Low Stock</span>
+                        </td>
+                        {/*end::Status*/}
+
+                        {/*begin::Qty*/}
+                        <td className="text-end" data-order="8">
+                            <span className="text-dark fw-bold">8 PCS</span>
+                        </td>
+                        {/*end::Qty*/}                       
+                    </tr>
+                    <tr className="odd">
+                        {/*begin::Item*/}
+                        <td>
+                            <a href="apps/ecommerce/catalog/edit-product.html" className="text-dark text-hover-primary">Google Pixel 6 Pro</a>
+                        </td>
+                        {/*end::Item*/}
+
+                        {/*begin::Product ID*/}
+                        <td className="text-end">
+                            #XVR-425                        </td>
+                        {/*end::Product ID*/}
+
+                        {/*begin::Date added*/}
+                        <td className="text-end" data-order="2023-12-20T00:00:00+05:30">
+                            27 Dec, 2023                        </td>
+                        {/*end::Date added*/}
+
+                        {/*begin::Price*/}
+                        <td className="text-end">
+                            $1,060                        </td>
+                        {/*end::Price*/}
+
+                        {/*begin::Status*/}
+                        <td className="text-end">
+                            <span className="badge py-3 px-4 fs-7 badge-light-primary">In Stock</span>
+                        </td>
+                        {/*end::Status*/}
+
+                        {/*begin::Qty*/}
+                        <td className="text-end" data-order="124">
+                            <span className="text-dark fw-bold">124 PCS</span>
+                        </td>
+                        {/*end::Qty*/}                       
+                    </tr>
+                    </tbody>
+            {/*end::Table body*/}
+        </table></div><div className="row"><div className="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start"></div><div className="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end"></div></div></div>
+        {/*end::Table*/}
+    </div>
+    {/*end::Card body*/}
 </div>
-{/*end::Menu*/}
- 
-            {/*end::Menu*/}             
-        </div>
-        {/*end::Toolbar*/}
-    </div>
-    {/*end::Header*/}
-
-    {/*begin::Body*/}
-    <div className="card-body pt-5">
-        {/*begin::Chart container*/}
-        <div id="kt_charts_widget_15_chart" className="min-h-auto ps-4 pe-6 mb-3 h-300px">
-        <div style={{position: 'relative', height: "100%"}}>
-        <div style={{position: 'absolute', width: '674px', height: '300px'}}>
-        <div>
-        <canvas style={{position: 'absolute', top: '0px', left: '0px', width: '674px', height: '300px'}} width="674px" height="300px"></canvas>
-        <canvas style={{position: 'absolute', top: '0px', left: '0px', width: '674px', height: '300px'}} width="674px" height="300px"></canvas>
-        </div>
-        </div>
-        <div className="am5-html-container" style={{position: 'absolute', pointerEvents: 'none', overflow: 'hidden', width: '674px', height: '300px'}}>
-        </div>
-        <div className="am5-reader-container" role="alert" style={{zIndex: '-100000', opacity:'0', position: 'absolute', top: '0px',}}></div>
-        <div className="am5-focus-container" style={{position: 'absolute', pointerEvents: 'none', top: '0px', left: '0px', overflow: 'hidden', width: '674px', height: '300px'}} role="application">
-        <div style={{position: 'absolute', pointerEvents: 'none', top: '8px', left: '-48px', width: '40px', height: '40px'}} role="button" aria-label="Zoom Out"></div>
-        </div>
-        <div className="am5-tooltip-container">
-        <div style={{position: 'absolute', top: '-1000000px', opacity: '1e-7', pointerEvents: 'none'}} role="tooltip">US: 725</div>
-        </div>
-        </div>
-        </div>       
-        {/*end::Chart container*/} 
-    </div>
-    {/*end::Body*/}
-</div>
-{/*end::Chart widget 15*/}
-    </div>
-    {/*end::Col*/}
-    
+{/*end::Table Widget 5*/}   
+ </div>
      {/*begin::Col*/}
      <div className="col-xl-6 mb-5 mb-xl-10">
         
@@ -2184,7 +2424,7 @@ const Home = () => {
     {/*begin::Body*/}
     <div className="card-body d-flex justify-content-between flex-column py-3">
         {/*begin::Block*/}
-        <div className="m-0"></div>
+        {/* <div className="m-0"></div> */}
         {/*end::Block*/}
 
         {/*begin::Table container*/}
@@ -2265,6 +2505,54 @@ const Home = () => {
                                             <tr>
                             <td>
                                 <a href="#" className="text-gray-600 fw-bold text-hover-primary mb-1 fs-6">Best noise cancelation headsets</a>                                            
+                            </td>
+                            <td className="d-flex align-items-center border-0">                                
+                                <span className="fw-bold text-gray-800 fs-6 me-3">263</span> 
+
+                                <div className="progress rounded-start-0">
+                                    <div className="progress-bar bg-success m-0" role="progressbar" style={{height: '12px',width: '74px'}} aria-valuenow="74" aria-valuemin="0" aria-valuemax="74px"></div>
+                                </div>                                 
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td>
+                                <a href="#" className="text-gray-600 fw-bold text-hover-primary mb-1 fs-6">Macbook M1</a>                                            
+                            </td>
+                            <td className="d-flex align-items-center border-0">                                
+                                <span className="fw-bold text-gray-800 fs-6 me-3">263</span> 
+
+                                <div className="progress rounded-start-0">
+                                    <div className="progress-bar bg-success m-0" role="progressbar" style={{height: '12px',width: '74px'}} aria-valuenow="74" aria-valuemin="0" aria-valuemax="74px"></div>
+                                </div>                                 
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td>
+                                <a href="#" className="text-gray-600 fw-bold text-hover-primary mb-1 fs-6">OLED TV in Amsterdam</a>                                            
+                            </td>
+                            <td className="d-flex align-items-center border-0">                                
+                                <span className="fw-bold text-gray-800 fs-6 me-3">263</span> 
+
+                                <div className="progress rounded-start-0">
+                                    <div className="progress-bar bg-success m-0" role="progressbar" style={{height: '12px',width: '74px'}} aria-valuenow="74" aria-valuemin="0" aria-valuemax="74px"></div>
+                                </div>                                 
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td>
+                                <a href="#" className="text-gray-600 fw-bold text-hover-primary mb-1 fs-6">Top 10 Earbuds</a>                                            
+                            </td>
+                            <td className="d-flex align-items-center border-0">                                
+                                <span className="fw-bold text-gray-800 fs-6 me-3">263</span> 
+
+                                <div className="progress rounded-start-0">
+                                    <div className="progress-bar bg-success m-0" role="progressbar" style={{height: '12px',width: '74px'}} aria-valuenow="74" aria-valuemin="0" aria-valuemax="74px"></div>
+                                </div>                                 
+                            </td>
+                        </tr>
+                                            <tr>
+                            <td>
+                                <a href="#" className="text-gray-600 fw-bold text-hover-primary mb-1 fs-6">Cyber Monday</a>                                            
                             </td>
                             <td className="d-flex align-items-center border-0">                                
                                 <span className="fw-bold text-gray-800 fs-6 me-3">263</span> 
@@ -2448,7 +2736,7 @@ const Home = () => {
     <div className="card-body d-flex align-items-end p-0">                 
         {/*begin::Chart*/}
         <div id="kt_charts_widget_29" className="h-300px w-100 min-h-auto ps-7 pe-0 mb-5" style={{minHeight: '315px'}}>
-        <div id="apexcharts0golmeqi" class="apexcharts-canvas apexcharts0golmeqi apexcharts-theme-light" style={{width: '270.25px', height: '300px'}}>
+        <div id="apexcharts0golmeqi" className="apexcharts-canvas apexcharts0golmeqi apexcharts-theme-light" style={{width: '400.25px', height: '300px'}}>
         <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsData="ApexChartsNS"
@@ -2891,150 +3179,353 @@ const Home = () => {
     {/*end::Col*/}
 
     {/*begin::Col*/}
-    <div className="col-xl-8 mb-5 mb-xl-10">       
+    <div className="col-xl-4 mb-5 mb-xl-10">       
         
-{/*begin::Chart widget 24*/}
-<div className="card card-flush overflow-hidden h-xl-100">
-    {/*begin::Header*/}
-    <div className="card-header py-5">
-        {/*begin::Title*/}
-        <h3 className="card-title align-items-start flex-column">            
-            <span className="card-label fw-bold text-dark">Human Resources</span>
-            <span className="text-gray-400 mt-1 fw-semibold fs-6">Reports by states and ganders</span>
-        </h3>
-        {/*end::Title*/}
-
-        {/*begin::Toolbar*/}
-        <div className="card-toolbar">            
-            {/*begin::Menu*/}
-            <button className="btn btn-icon btn-color-gray-400 btn-active-color-primary justify-content-end" 
-                data-kt-menu-trigger="click" 
-                data-kt-menu-placement="bottom-end" 
-                data-kt-menu-overflow="true">   
+        {/*begin::List widget 21*/}
+        <div className="card card-flush h-xl-100">
+            {/*begin::Header*/}
+            <div className="card-header border-0 pt-5">
+                <h3 className="card-title align-items-start flex-column">
+                    <span className="card-label fw-bold text-dark">Active Lessons</span>
+        
+                    <span className="text-muted mt-1 fw-semibold fs-7">Avg. 72% completed lessons</span>
+                </h3>
+        
+                {/*begin::Toolbar*/}
+                <div className="card-toolbar">   
+                    <a href="#" className="btn btn-sm btn-light">All Lessons</a>             
+                </div>
+                {/*end::Toolbar*/}
+            </div>
+            {/*end::Header*/}
+        
+            {/*begin::Body*/}
+            <div className="card-body pt-5">                 
+                            
+                    {/*begin::Item*/}
+                    <div className="d-flex flex-stack">                 
+                        {/*begin::Wrapper*/}                                  
+                        <div className="d-flex align-items-center me-3">
+                            {/*begin::Logo*/}                         
+                            <img src="/assets/media/svg/brand-logos/laravel-2.svg" className="me-4 w-30px" alt="" />                  
+                            {/*end::Logo*/}
+        
+                            {/*begin::Section*/}                                  
+                            <div className="flex-grow-1">
+                                {/*begin::Text*/}
+                                <a href="#" className="text-gray-800 text-hover-primary fs-5 fw-bold lh-0">Laravel</a>
+                                {/*end::Text*/}
                                 
-                {/*begin::Svg Icon | path: icons/duotune/general/gen023.svg*/}
-<span className="svg-icon svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="4" fill="currentColor"/>
-<rect x="11" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-<rect x="15" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-<rect x="7" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                             
-            </button>
-            
-{/*begin::Menu 2*/}
-<div className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px" data-kt-menu="true">
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <div className="menu-content fs-6 text-dark fw-bold px-3 py-4">Quick Actions</div>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu separator*/}
-    <div className="separator mb-3 opacity-75"></div>
-    {/*end::Menu separator*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Ticket
-        </a>
-    </div>
-    {/*end::Menu item*/}
-    
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Customer
-        </a>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-start">
-        {/*begin::Menu item*/}
-        <a href="#" className="menu-link px-3">
-            <span className="menu-title">New Group</span>
-            <span className="menu-arrow"></span>
-        </a>
-        {/*end::Menu item*/}
-
-        {/*begin::Menu sub*/}
-        <div className="menu-sub menu-sub-dropdown w-175px py-4">
-            {/*begin::Menu item*/}
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Admin Group
-                </a>
+                                {/*begin::Description*/}
+                                <span className="text-gray-400 fw-semibold d-block fs-6">PHP Framework</span>
+                                {/*end::Description-*/}
+                            </div>                   
+                            {/*end::Section*/}
+                        </div>                   
+                        {/*end::Wrapper*/}
+                        
+                        {/*begin::Statistics*/}
+                        <div className="d-flex align-items-center w-100 mw-125px">  
+                            {/*begin::Progress*/}                  
+                            <div className="progress h-6px w-100 me-2 bg-light-success">
+                                <div className="progress-bar bg-success" role="progressbar" style={{width: '65%'}} aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            {/*end::Progress*/}
+        
+                            {/*begin::Value*/}
+                            <span className="text-gray-400 fw-semibold">
+                                65%
+                            </span>
+                            {/*end::Value*/}
+                        </div>
+                        {/*end::Statistics*/}
+                    </div>
+                    {/*end::Item*/}
+                    
+                                    {/*begin::Separator*/}
+                        <div className="separator separator-dashed my-3"></div>
+                        {/*end::Separator*/}
+                     
+                            
+                    {/*begin::Item*/}
+                    <div className="d-flex flex-stack">                 
+                        {/*begin::Wrapper*/}                                  
+                        <div className="d-flex align-items-center me-3">
+                            {/*begin::Logo*/}                         
+                            <img src="/assets/media/svg/brand-logos/vue-9.svg" className="me-4 w-30px" alt="" />                  
+                            {/*end::Logo*/}
+        
+                            {/*begin::Section*/}                                  
+                            <div className="flex-grow-1">
+                                {/*begin::Text*/}
+                                <a href="#" className="text-gray-800 text-hover-primary fs-5 fw-bold lh-0">Vue 3</a>
+                                {/*end::Text*/}
+                                
+                                {/*begin::Description*/}
+                                <span className="text-gray-400 fw-semibold d-block fs-6">JS Framework</span>
+                                {/*end::Description-*/}
+                            </div>                   
+                            {/*end::Section*/}
+                        </div>                   
+                        {/*end::Wrapper*/}
+                        
+                        {/*begin::Statistics*/}
+                        <div className="d-flex align-items-center w-100 mw-125px">  
+                            {/*begin::Progress*/}                  
+                            <div className="progress h-6px w-100 me-2 bg-light-warning">
+                                <div className="progress-bar bg-warning" role="progressbar" style={{width: '87%'}} aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            {/*end::Progress*/}
+        
+                            {/*begin::Value*/}
+                            <span className="text-gray-400 fw-semibold">
+                                87%
+                            </span>
+                            {/*end::Value*/}
+                        </div>
+                        {/*end::Statistics*/}
+                    </div>
+                    {/*end::Item*/}
+                    
+                                    {/*begin::Separator*/}
+                        <div className="separator separator-dashed my-3"></div>
+                        {/*end::Separator*/}
+                     
+                            
+                    {/*begin::Item*/}
+                    <div className="d-flex flex-stack">                 
+                        {/*begin::Wrapper*/}                                  
+                        <div className="d-flex align-items-center me-3">
+                            {/*begin::Logo*/}                         
+                            <img src="/assets/media/svg/brand-logos/bootstrap5.svg" className="me-4 w-30px" alt="" />                  
+                            {/*end::Logo*/}
+        
+                            {/*begin::Section*/}                                  
+                            <div className="flex-grow-1">
+                                {/*begin::Text*/}
+                                <a href="#" className="text-gray-800 text-hover-primary fs-5 fw-bold lh-0">Bootstrap 5</a>
+                                {/*end::Text*/}
+                                
+                                {/*begin::Description*/}
+                                <span className="text-gray-400 fw-semibold d-block fs-6">CSS Framework</span>
+                                {/*end::Description-*/}
+                            </div>                   
+                            {/*end::Section*/}
+                        </div>                   
+                        {/*end::Wrapper*/}
+                        
+                        {/*begin::Statistics*/}
+                        <div className="d-flex align-items-center w-100 mw-125px">  
+                            {/*begin::Progress*/}                  
+                            <div className="progress h-6px w-100 me-2 bg-light-primary">
+                                <div className="progress-bar bg-primary" role="progressbar" style={{width: '44%'}} aria-valuenow="44" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            {/*end::Progress*/}
+        
+                            {/*begin::Value*/}
+                            <span className="text-gray-400 fw-semibold">
+                                44%
+                            </span>
+                            {/*end::Value*/}
+                        </div>
+                        {/*end::Statistics*/}
+                    </div>
+                    {/*end::Item*/}
+                    
+                                    {/*begin::Separator*/}
+                        <div className="separator separator-dashed my-3"></div>
+                        {/*end::Separator*/}
+                     
+                            
+                    {/*begin::Item*/}
+                    <div className="d-flex flex-stack">                 
+                        {/*begin::Wrapper*/}                                  
+                        <div className="d-flex align-items-center me-3">
+                            {/*begin::Logo*/}                         
+                            <img src="/assets/media/svg/brand-logos/angular-icon.svg" className="me-4 w-30px" alt="" />                  
+                            {/*end::Logo*/}
+        
+                            {/*begin::Section*/}                                  
+                            <div className="flex-grow-1">
+                                {/*begin::Text*/}
+                                <a href="#" className="text-gray-800 text-hover-primary fs-5 fw-bold lh-0">Angular 13</a>
+                                {/*end::Text*/}
+                                
+                                {/*begin::Description*/}
+                                <span className="text-gray-400 fw-semibold d-block fs-6">JS Framework</span>
+                                {/*end::Description-*/}
+                            </div>                   
+                            {/*end::Section*/}
+                        </div>                   
+                        {/*end::Wrapper*/}
+                        
+                        {/*begin::Statistics*/}
+                        <div className="d-flex align-items-center w-100 mw-125px">  
+                            {/*begin::Progress*/}                  
+                            <div className="progress h-6px w-100 me-2 bg-light-info">
+                                <div className="progress-bar bg-info" role="progressbar" style={{width: '70%'}} aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            {/*end::Progress*/}
+        
+                            {/*begin::Value*/}
+                            <span className="text-gray-400 fw-semibold">
+                                70%
+                            </span>
+                            {/*end::Value*/}
+                        </div>
+                        {/*end::Statistics*/}
+                    </div>
+                    {/*end::Item*/}
+                    
+                                    {/*begin::Separator*/}
+                        <div className="separator separator-dashed my-3"></div>
+                        {/*end::Separator*/}
+                     
+                            
+                    {/*begin::Item*/}
+                    <div className="d-flex flex-stack">                 
+                        {/*begin::Wrapper*/}                                  
+                        <div className="d-flex align-items-center me-3">
+                            {/*begin::Logo*/}                         
+                            <img src="/assets/media/svg/brand-logos/spring-3.svg" className="me-4 w-30px" alt="" />                  
+                            {/*end::Logo*/}
+        
+                            {/*begin::Section*/}                                  
+                            <div className="flex-grow-1">
+                                {/*begin::Text*/}
+                                <a href="#" className="text-gray-800 text-hover-primary fs-5 fw-bold lh-0">Spring</a>
+                                {/*end::Text*/}
+                                
+                                {/*begin::Description*/}
+                                <span className="text-gray-400 fw-semibold d-block fs-6">Java Framework</span>
+                                {/*end::Description-*/}
+                            </div>                   
+                            {/*end::Section*/}
+                        </div>                   
+                        {/*end::Wrapper*/}
+                        
+                        {/*begin::Statistics*/}
+                        <div className="d-flex align-items-center w-100 mw-125px">  
+                            {/*begin::Progress*/}                  
+                            <div className="progress h-6px w-100 me-2 bg-light-danger">
+                                <div className="progress-bar bg-danger" role="progressbar" style={{width: '56%'}} aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            {/*end::Progress*/}
+        
+                            {/*begin::Value*/}
+                            <span className="text-gray-400 fw-semibold">
+                                56%
+                            </span>
+                            {/*end::Value*/}
+                        </div>
+                        {/*end::Statistics*/}
+                    </div>
+                    {/*end::Item*/}
+                    
+                                    {/*begin::Separator*/}
+                        <div className="separator separator-dashed my-3"></div>
+                        {/*end::Separator*/}
+                     
+                            
+                    {/*begin::Item*/}
+                    <div className="d-flex flex-stack">                 
+                        {/*begin::Wrapper*/}                                  
+                        <div className="d-flex align-items-center me-3">
+                            {/*begin::Logo*/}                         
+                            <img src="/assets/media/svg/brand-logos/typescript-1.svg" className="me-4 w-30px" alt="" />                  
+                            {/*end::Logo*/}
+        
+                            {/*begin::Section*/}                                  
+                            <div className="flex-grow-1">
+                                {/*begin::Text*/}
+                                <a href="#" className="text-gray-800 text-hover-primary fs-5 fw-bold lh-0">TypeScript</a>
+                                {/*end::Text*/}
+                                
+                                {/*begin::Description*/}
+                                <span className="text-gray-400 fw-semibold d-block fs-6">Better Tooling</span>
+                                {/*end::Description-*/}
+                            </div>                   
+                            {/*end::Section*/}
+                        </div>                   
+                        {/*end::Wrapper*/}
+                        
+                        {/*begin::Statistics*/}
+                        <div className="d-flex align-items-center w-100 mw-125px">  
+                            {/*begin::Progress*/}                  
+                            <div className="progress h-6px w-100 me-2 bg-light-success">
+                                <div className="progress-bar bg-success" role="progressbar" style={{width: '82%'}} aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            {/*end::Progress*/}
+        
+                            {/*begin::Value*/}
+                            <span className="text-gray-400 fw-semibold">
+                                82%
+                            </span>
+                            {/*end::Value*/}
+                        </div>
+                        {/*end::Statistics*/}
+                    </div>
+                    {/*end::Item*/}
+                    
+                     
+                   
             </div>
-            {/*end::Menu item*/}
-
-            {/*begin::Menu item*/}
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Staff Group
-                </a>
+            {/*end::Body*/}
+        </div>
+        {/*end::List widget 21*/} 
             </div>
-            {/*end::Menu item*/}
+    {/*end::Col*/}
 
-            {/*begin::Menu item*/}            
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Member Group
-                </a>
+    {/*begin::Col*/}
+    <div className="col-xxl-4 mb-5 mb-xl-0">
+        {/*begin::Chart widget 31*/}
+        {/*begin::Card widget 1*/}
+        
+       {/*begin::Engage widget 1*/}
+       {/* class name === h-md-100 */}
+        <div className="card" dir="ltr" style={{height : '93%'}}> 
+           {/*begin::Body*/}
+            <div className="card-body d-flex flex-column flex-center">  
+               {/*begin::Heading*/}
+                <div className="mb-2">
+                   {/*begin::Title*/}
+                    <h1 className="fw-semibold text-gray-800 text-center lh-lg">           
+                        Try out our <br /> new
+                        <span className="fw-bolder"> Invoice Manager</span>
+                    </h1>
+                   {/*end::Title*/} 
+                    
+                   {/*begin::Illustration*/}
+                    <div className="py-10 text-center">
+                                            <img src="../assets/media/svg/illustrations/easy/2.svg" className="theme-light-show w-200px" alt="" />
+                            <img src="../assets/media/svg/illustrations/easy/2-dark.svg" className="theme-dark-show w-200px" alt="" />
+                                    </div>
+                   {/*end::Illustration*/}
+                </div>
+               {/*end::Heading*/}
+        
+               {/*begin::Links*/}
+                <div className="text-center mb-1"> 
+                   {/*begin::Link*/}
+                    <a className="btn btn-sm btn-primary me-2" data-bs-target="#kt_modal_create_account" data-bs-toggle="modal">
+                        Try Now            </a>
+                   {/*end::Link*/}
+        
+                   {/*begin::Link*/}
+                    <a className="btn btn-sm btn-light" href="../apps/ecommerce/sales/listing.html">
+                        Learn More            </a>
+                   {/*end::Link*/}
+                </div>
+               {/*end::Links*/}
             </div>
-            {/*end::Menu item*/}
+           {/*end::Body*/}
         </div>
-        {/*end::Menu sub*/}
+       {/*end::Engage widget 1*/}
+{/*end::Chart widget 31*/}
     </div>
-    {/*end::Menu item*/}
+    {/*end::Col*/}
 
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Contact
-        </a>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu separator*/}
-    <div className="separator mt-3 opacity-75"></div>
-    {/*end::Menu separator*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <div className="menu-content px-3 py-3">
-            <a className="btn btn-primary  btn-sm px-4" href="#">
-                Generate Reports
-            </a>
-        </div>
-    </div>
-    {/*end::Menu item*/}
-</div>
-{/*end::Menu 2*/}
- 
-            {/*end::Menu*/}               
-        </div>
-        {/*end::Toolbar*/}
-    </div>
-    {/*end::Header*/}
-
-    {/*begin::Card body*/}
-    <div className="card-body pt-0">  
-        {/* begin::Chart
-        <div id="kt_charts_widget_24" className="min-h-auto" style={{height: '300px'}}>
-        <div style="position: relative; height: 100%;"><div style={{position: 'absolute', width: '930px', height: '300px',}}><div><canvas style={{position: 'absolute', top: '0px', left: '0px', width: '930px', height: '300px'}} width="930px" height="300px"></canvas><canvas style="position: absolute; top: 0px; left: 0px; width: 930px; height: 300px;" width="930" height="300"></canvas></div></div><div class="am5-html-container" style="position: absolute; pointer-events: none; overflow: hidden; width: 930px; height: 300px;"></div><div class="am5-reader-container" role="alert" style="z-index: -100000; opacity: 0; position: absolute; top: 0px;"></div><div class="am5-focus-container" style="position: absolute; pointer-events: none; top: 0px; left: 0px; overflow: hidden; width: 930px; height: 300px;" role="application"><div style="position: absolute; pointer-events: none; top: 24px; left: 567px; width: 40px; height: 40px;" role="button" aria-label="Zoom Out"></div></div><div class="am5-tooltip-container"><div style="position: absolute; top: -1000000px; opacity: 1e-7; pointer-events: none;" role="tooltip">Males, age 65 to 69: 6.88M (4.4%)</div></div></div>
-
-        </div> */}
-        {/*end::Chart*/} 
-    </div>
-    {/*end::Card body*/}
-</div>
-{/*end::Chart widget 24*/}
-
-     </div>
-    {/*end::Col*/}    
+{/* human resource chart */}
 </div>
 {/*end::Row*/}
 
@@ -3570,119 +4061,362 @@ const Home = () => {
     {/*end::Col*/}
 
     {/*begin::Col*/}
-    <div className="col-xl-4 mb-5 mb-xl-0">
-        {/*begin::Chart widget 31*/}
-<div className="card card-flush h-xl-100">
-    {/*begin::Header*/}    
-    <div className="card-header pt-7 mb-7">
-        {/*begin::Title*/}
-        <h3 className="card-title align-items-start flex-column">
-			<span className="card-label fw-bold text-gray-800">Warephase stats</span>
-			<span className="text-gray-400 mt-1 fw-semibold fs-6">8k social visitors</span>
-		</h3>
-        {/*end::Title*/}
 
-        {/*begin::Toolbar*/}
-        <div className="card-toolbar">   
-            <a href="../apps/ecommerce/catalog/add-product.html" className="btn btn-sm btn-light">PDF Report</a>             
-        </div>
-        {/*end::Toolbar*/}
-    </div>    
-    {/*end::Header*/}
-
-    {/*begin::Body*/}
-    <div className="card-body d-flex align-items-end pt-0">         
-        {/*begin::Chart*/}
-        <div id="kt_charts_widget_31_chart" className="w-100 h-300px"></div>       
-        {/*end::Chart*/}            
-    </div>
-    {/*end::Body*/}
-</div>
-{/*end::Chart widget 31*/}
-    </div>
     {/*end::Col*/}
 
     {/*begin::Col*/}
-    <div className="col-xl-4 mb-5 mb-xl-0">
+    <div className="col-xl-8 mb-5 mb-xl-0">
         {/*begin::Chart widget 30*/}
-<div className="card card-flush h-xl-100">
-    {/*begin::Header*/}    
-    <div className="card-header pt-7 mb-7">
-        {/*begin::Title*/}
-        <h3 className="card-title align-items-start flex-column">
-			<span className="card-label fw-bold text-gray-800">Stats by Department</span>
-			<span className="text-gray-400 mt-1 fw-semibold fs-6">8k social visitors</span>
-		</h3>
-        {/*end::Title*/}
-
-        {/*begin::Toolbar*/}
-        <div className="card-toolbar">   
-            <a href="../apps/ecommerce/catalog/add-product.html" className="btn btn-sm btn-light">PDF Report</a>             
-        </div>
-        {/*end::Toolbar*/}
-    </div>    
-    {/*end::Header*/}
-
-    {/*begin::Body*/}
-    <div className="card-body d-flex justify-content-between flex-column">
-        {/*begin::Items*/}
-        <div className="d-flex flex-wrap d-grid gap-5 mb-10">   
-            {/*begin::Item*/}
-            <div className="border-end-dashed border-end border-gray-300 pe-xxl-7 me-xxl-5">   
-                {/*begin::Statistics*/}
-                <div className="d-flex mb-2">   
-                    <span className="fs-4 fw-semibold text-gray-400 me-1">$</span>
-                    <span className="fs-2hx fw-bold text-gray-800 me-2 lh-1 ls-n2">8,035</span>                
+        
+        {/*begin::Table widget 13*/}
+        <div className="card card-flush h-xl-100">
+            {/*begin::Header*/}
+            <div className="card-header pt-7">
+                {/*begin::Title*/}
+                <h3 className="card-title align-items-start flex-column">			
+                    <span className="card-label fw-bold text-gray-800">Most Popular Sellers</span>
+                    
+                    <span className="text-gray-400 mt-1 fw-semibold fs-6">Total 424,567 deliveries</span>
+                </h3>
+                {/*end::Title*/}
+        
+                {/*begin::Toolbar*/}
+                <div className="card-toolbar">   
+                    {/*begin::Daterangepicker(defined in src/js/layout/app.js)*/}
+                    <div data-kt-daterangepicker="true" data-kt-daterangepicker-opens="left" className="btn btn-sm btn-light d-flex align-items-center px-4" data-kt-initialized="1">           
+                        {/*begin::Display range*/}
+                        <div className="text-gray-600 fw-bold">14 Apr 2023 - 13 May 2023</div>
+                        {/*end::Display range*/}
+        
+                        {/*begin::Svg Icon | path: icons/duotune/general/gen014.svg*/}
+        <span className="svg-icon svg-icon-1 ms-2 me-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.3" d="M21 22H3C2.4 22 2 21.6 2 21V5C2 4.4 2.4 4 3 4H21C21.6 4 22 4.4 22 5V21C22 21.6 21.6 22 21 22Z" fill="currentColor"></path>
+        <path d="M6 6C5.4 6 5 5.6 5 5V3C5 2.4 5.4 2 6 2C6.6 2 7 2.4 7 3V5C7 5.6 6.6 6 6 6ZM11 5V3C11 2.4 10.6 2 10 2C9.4 2 9 2.4 9 3V5C9 5.6 9.4 6 10 6C10.6 6 11 5.6 11 5ZM15 5V3C15 2.4 14.6 2 14 2C13.4 2 13 2.4 13 3V5C13 5.6 13.4 6 14 6C14.6 6 15 5.6 15 5ZM19 5V3C19 2.4 18.6 2 18 2C17.4 2 17 2.4 17 3V5C17 5.6 17.4 6 18 6C18.6 6 19 5.6 19 5Z" fill="currentColor"></path>
+        <path d="M8.8 13.1C9.2 13.1 9.5 13 9.7 12.8C9.9 12.6 10.1 12.3 10.1 11.9C10.1 11.6 10 11.3 9.8 11.1C9.6 10.9 9.3 10.8 9 10.8C8.8 10.8 8.59999 10.8 8.39999 10.9C8.19999 11 8.1 11.1 8 11.2C7.9 11.3 7.8 11.4 7.7 11.6C7.6 11.8 7.5 11.9 7.5 12.1C7.5 12.2 7.4 12.2 7.3 12.3C7.2 12.4 7.09999 12.4 6.89999 12.4C6.69999 12.4 6.6 12.3 6.5 12.2C6.4 12.1 6.3 11.9 6.3 11.7C6.3 11.5 6.4 11.3 6.5 11.1C6.6 10.9 6.8 10.7 7 10.5C7.2 10.3 7.49999 10.1 7.89999 10C8.29999 9.90003 8.60001 9.80003 9.10001 9.80003C9.50001 9.80003 9.80001 9.90003 10.1 10C10.4 10.1 10.7 10.3 10.9 10.4C11.1 10.5 11.3 10.8 11.4 11.1C11.5 11.4 11.6 11.6 11.6 11.9C11.6 12.3 11.5 12.6 11.3 12.9C11.1 13.2 10.9 13.5 10.6 13.7C10.9 13.9 11.2 14.1 11.4 14.3C11.6 14.5 11.8 14.7 11.9 15C12 15.3 12.1 15.5 12.1 15.8C12.1 16.2 12 16.5 11.9 16.8C11.8 17.1 11.5 17.4 11.3 17.7C11.1 18 10.7 18.2 10.3 18.3C9.9 18.4 9.5 18.5 9 18.5C8.5 18.5 8.1 18.4 7.7 18.2C7.3 18 7 17.8 6.8 17.6C6.6 17.4 6.4 17.1 6.3 16.8C6.2 16.5 6.10001 16.3 6.10001 16.1C6.10001 15.9 6.2 15.7 6.3 15.6C6.4 15.5 6.6 15.4 6.8 15.4C6.9 15.4 7.00001 15.4 7.10001 15.5C7.20001 15.6 7.3 15.6 7.3 15.7C7.5 16.2 7.7 16.6 8 16.9C8.3 17.2 8.6 17.3 9 17.3C9.2 17.3 9.5 17.2 9.7 17.1C9.9 17 10.1 16.8 10.3 16.6C10.5 16.4 10.5 16.1 10.5 15.8C10.5 15.3 10.4 15 10.1 14.7C9.80001 14.4 9.50001 14.3 9.10001 14.3C9.00001 14.3 8.9 14.3 8.7 14.3C8.5 14.3 8.39999 14.3 8.39999 14.3C8.19999 14.3 7.99999 14.2 7.89999 14.1C7.79999 14 7.7 13.8 7.7 13.7C7.7 13.5 7.79999 13.4 7.89999 13.2C7.99999 13 8.2 13 8.5 13H8.8V13.1ZM15.3 17.5V12.2C14.3 13 13.6 13.3 13.3 13.3C13.1 13.3 13 13.2 12.9 13.1C12.8 13 12.7 12.8 12.7 12.6C12.7 12.4 12.8 12.3 12.9 12.2C13 12.1 13.2 12 13.6 11.8C14.1 11.6 14.5 11.3 14.7 11.1C14.9 10.9 15.2 10.6 15.5 10.3C15.8 10 15.9 9.80003 15.9 9.70003C15.9 9.60003 16.1 9.60004 16.3 9.60004C16.5 9.60004 16.7 9.70003 16.8 9.80003C16.9 9.90003 17 10.2 17 10.5V17.2C17 18 16.7 18.4 16.2 18.4C16 18.4 15.8 18.3 15.6 18.2C15.4 18.1 15.3 17.8 15.3 17.5Z" fill="currentColor"></path>
+        </svg>
+        </span>
+        {/*end::Svg Icon*/}          
+                    </div>  
+                    {/*end::Daterangepicker*/}            
                 </div>
-                {/*end::Statistics*/}
-
-                {/*begin::Description*/}
-                <span className="fs-6 fw-semibold text-gray-400">Actual for April</span>
-                {/*end::Description*/}
+                {/*end::Toolbar*/}
             </div>
-            {/*end::Item*/}             
-
-            {/*begin::Item*/}
-            <div className="m-0">   
-                {/*begin::Statistics*/}
-                <div className="d-flex align-items-center mb-2">   
-                    {/*begin::Currency*/}
-                    <span className="fs-4 fw-semibold text-gray-400 align-self-start me-1">$</span>
-                    {/*end::Currency*/}
-
-                    {/*begin::Value*/}
-                    <span className="fs-2hx fw-bold text-gray-800 me-2 lh-1 ls-n2">4,684</span>
-                    {/*end::Value*/}
-
-                    {/*begin::Label*/}
-                    <span className="badge badge-light-success fs-base">                                
-                        {/*begin::Svg Icon | path: icons/duotune/arrows/arr066.svg*/}
-<span className="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor"/>
-<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/} 
-                        4.5%
-                    </span>
-                    {/*end::Label*/}
+            {/*end::Header*/}
+        
+            {/*begin::Body*/}
+            <div className="card-body pt-3 pb-4">                
+                {/*begin::Table container*/}
+                <div className="table-responsive">
+                    {/*begin::Table*/}
+                    <table className="table table-row-dashed align-middle gs-0 gy-4 my-0">
+                        {/*begin::Table head*/}
+                        <thead>
+                            <tr className="fs-7 fw-bold text-gray-500 border-bottom-0">                                    
+                                <th className="p-0 w-200px w-xxl-450px"></th>
+                                <th className="p-0 min-w-150px"></th>
+                                <th className="p-0 min-w-125px"></th>
+                                <th className="p-0 min-w-125px"></th>                                     
+                                <th className="p-0 w-100px"></th>
+                            </tr>
+                        </thead>
+                        {/*end::Table head*/}
+        
+                        {/*begin::Table body*/}
+                        <tbody>
+                                                    <tr>                            
+                                    <td>
+                                        <div className="d-flex align-items-center">
+                                            <div className="symbol symbol-circle symbol-40px me-3">                                                   
+                                                <img src="/assets/media/avatars/300-1.jpg" className="" alt="" />                                                    
+                                            </div>
+                                            
+                                            <div className="d-flex justify-content-start flex-column">
+                                            <a href="../account/overview.html" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Brooklyn Simmons</a>
+                                                <span className="text-gray-400 fw-semibold d-block fs-7">Zuid Area</span>
+                                            </div>
+                                        </div>                                
+                                    </td>
+        
+                                    <td className="text-end">
+                                        <span className="text-gray-800 fw-bold d-block mb-1 fs-6">1,240</span>
+                                        <span className="fw-semibold text-gray-400 d-block">Deliveries</span>
+                                    </td>                                   
+        
+                                    <td className="text-end">
+                                        <a href="#" className="text-gray-800 fw-bold text-hover-primary d-block mb-1 fs-6">$5,400</a>
+                                        <span className="text-gray-400 fw-semibold d-block fs-7">Earnings</span>
+                                    </td>
+                                    
+                                    <td className="float-end text-end border-0">
+                                        <div className="rating gap-1">
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                            </div>
+                                        
+                                        <span className="text-gray-400 fw-semibold d-block fs-7 mt-1">Rating</span>
+                                    </td>                            
+        
+                                    <td className="text-end">
+                                        <a href="#" className="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-25px h-25px">
+                                            {/*begin::Svg Icon | path: icons/duotune/arrows/arr001.svg*/}
+        <span className="svg-icon svg-icon-5 svg-icon-gray-700"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"></path>
+        <path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"></path>
+        </svg>
+        </span>
+        {/*end::Svg Icon*/}                                </a>
+                                    </td>
+                                </tr>                        
+                                                    <tr>                            
+                                    <td>
+                                        <div className="d-flex align-items-center">
+                                            <div className="symbol symbol-circle symbol-40px me-3">                                                   
+                                                <img src="/assets/media/avatars/300-2.jpg" className="" alt="" />                                                    
+                                            </div>
+                                            
+                                            <div className="d-flex justify-content-start flex-column">
+                                            <a href="../account/overview.html" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Annette Black</a>
+                                                <span className="text-gray-400 fw-semibold d-block fs-7">Zuid Area</span>
+                                            </div>
+                                        </div>                                
+                                    </td>
+        
+                                    <td className="text-end">
+                                        <span className="text-gray-800 fw-bold d-block mb-1 fs-6">6,074</span>
+                                        <span className="fw-semibold text-gray-400 d-block">Deliveries</span>
+                                    </td>                                   
+        
+                                    <td className="text-end">
+                                        <a href="#" className="text-gray-800 fw-bold text-hover-primary d-block mb-1 fs-6">$174,074</a>
+                                        <span className="text-gray-400 fw-semibold d-block fs-7">Earnings</span>
+                                    </td>
+                                    
+                                    <td className="float-end text-end border-0">
+                                        <div className="rating gap-1">
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                            </div>
+                                        
+                                        <span className="text-gray-400 fw-semibold d-block fs-7 mt-1">Rating</span>
+                                    </td>                            
+        
+                                    <td className="text-end">
+                                        <a href="#" className="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-25px h-25px">
+                                            {/*begin::Svg Icon | path: icons/duotune/arrows/arr001.svg*/}
+        <span className="svg-icon svg-icon-5 svg-icon-gray-700"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"></path>
+        <path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"></path>
+        </svg>
+        </span>
+        {/*end::Svg Icon*/}                                </a>
+                                    </td>
+                                </tr>                        
+                                                    <tr>                            
+                                    <td>
+                                        <div className="d-flex align-items-center">
+                                            <div className="symbol symbol-circle symbol-40px me-3">                                                   
+                                                <img src="/assets/media/avatars/300-12.jpg" className="" alt="" />                                                    
+                                            </div>
+                                            
+                                            <div className="d-flex justify-content-start flex-column">
+                                            <a href="../account/overview.html" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Esther Howard</a>
+                                                <span className="text-gray-400 fw-semibold d-block fs-7">Zuid Area</span>
+                                            </div>
+                                        </div>                                
+                                    </td>
+        
+                                    <td className="text-end">
+                                        <span className="text-gray-800 fw-bold d-block mb-1 fs-6">357</span>
+                                        <span className="fw-semibold text-gray-400 d-block">Deliveries</span>
+                                    </td>                                   
+        
+                                    <td className="text-end">
+                                        <a href="#" className="text-gray-800 fw-bold text-hover-primary d-block mb-1 fs-6">$2,737</a>
+                                        <span className="text-gray-400 fw-semibold d-block fs-7">Earnings</span>
+                                    </td>
+                                    
+                                    <td className="float-end text-end border-0">
+                                        <div className="rating gap-1">
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                            </div>
+                                        
+                                        <span className="text-gray-400 fw-semibold d-block fs-7 mt-1">Rating</span>
+                                    </td>                            
+        
+                                    <td className="text-end">
+                                        <a href="#" className="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-25px h-25px">
+                                            {/*begin::Svg Icon | path: icons/duotune/arrows/arr001.svg*/}
+        <span className="svg-icon svg-icon-5 svg-icon-gray-700"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"></path>
+        <path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"></path>
+        </svg>
+        </span>
+        {/*end::Svg Icon*/}                                </a>
+                                    </td>
+                                </tr>                        
+                                                    <tr>                            
+                                    <td>
+                                        <div className="d-flex align-items-center">
+                                            <div className="symbol symbol-circle symbol-40px me-3">                                                   
+                                                <img src="/assets/media/avatars/300-11.jpg" className="" alt="" />                                                    
+                                            </div>
+                                            
+                                            <div className="d-flex justify-content-start flex-column">
+                                            <a href="../account/overview.html" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Guy Hawkins</a>
+                                                <span className="text-gray-400 fw-semibold d-block fs-7">Zuid Area</span>
+                                            </div>
+                                        </div>                                
+                                    </td>
+        
+                                    <td className="text-end">
+                                        <span className="text-gray-800 fw-bold d-block mb-1 fs-6">2,954</span>
+                                        <span className="fw-semibold text-gray-400 d-block">Deliveries</span>
+                                    </td>                                   
+        
+                                    <td className="text-end">
+                                        <a href="#" className="text-gray-800 fw-bold text-hover-primary d-block mb-1 fs-6">$59,634</a>
+                                        <span className="text-gray-400 fw-semibold d-block fs-7">Earnings</span>
+                                    </td>
+                                    
+                                    <td className="float-end text-end border-0">
+                                        <div className="rating gap-1">
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label ">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                            </div>
+                                        
+                                        <span className="text-gray-400 fw-semibold d-block fs-7 mt-1">Rating</span>
+                                    </td>                            
+        
+                                    <td className="text-end">
+                                        <a href="#" className="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-25px h-25px">
+                                            {/*begin::Svg Icon | path: icons/duotune/arrows/arr001.svg*/}
+        <span className="svg-icon svg-icon-5 svg-icon-gray-700"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"></path>
+        <path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"></path>
+        </svg>
+        </span>
+        {/*end::Svg Icon*/}                                </a>
+                                    </td>
+                                </tr>                        
+                                                    <tr>                            
+                                    <td>
+                                        <div className="d-flex align-items-center">
+                                            <div className="symbol symbol-circle symbol-40px me-3">                                                   
+                                                <img src="/assets/media/avatars/300-3.jpg" className="" alt="" />                                                    
+                                            </div>
+                                            
+                                            <div className="d-flex justify-content-start flex-column">
+                                            <a href="../account/overview.html" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Marvin McKinney</a>
+                                                <span className="text-gray-400 fw-semibold d-block fs-7">Zuid Area</span>
+                                            </div>
+                                        </div>                                
+                                    </td>
+        
+                                    <td className="text-end">
+                                        <span className="text-gray-800 fw-bold d-block mb-1 fs-6">822</span>
+                                        <span className="fw-semibold text-gray-400 d-block">Deliveries</span>
+                                    </td>                                   
+        
+                                    <td className="text-end">
+                                        <a href="#" className="text-gray-800 fw-bold text-hover-primary d-block mb-1 fs-6">$19,842</a>
+                                        <span className="text-gray-400 fw-semibold d-block fs-7">Earnings</span>
+                                    </td>
+                                    
+                                    <td className="float-end text-end border-0">
+                                        <div className="rating gap-1">
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                                    <div className="rating-label checked">
+                                                    <i className="bi bi-star-fill fs-6"></i>
+                                                </div>
+                                                                            </div>
+                                        
+                                        <span className="text-gray-400 fw-semibold d-block fs-7 mt-1">Rating</span>
+                                    </td>                            
+        
+                                    <td className="text-end">
+                                        <a href="#" className="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-25px h-25px">
+                                            {/*begin::Svg Icon | path: icons/duotune/arrows/arr001.svg*/}
+        <span className="svg-icon svg-icon-5 svg-icon-gray-700"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"></path>
+        <path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"></path>
+        </svg>
+        </span>
+        {/*end::Svg Icon*/}                                </a>
+                                    </td>
+                                </tr>                        
+                                            </tbody>
+                        {/*end::Table body*/}
+                    </table>
                 </div>
-                {/*end::Statistics*/}
-
-                {/*begin::Description*/}
-                <span className="fs-6 fw-semibold text-gray-400">GAP</span>
-                {/*end::Description*/}
+                {/*end::Table container*/}                  
             </div>
-            {/*end::Item*/}
+            {/*end: Card Body*/}
         </div>
-        {/*end::Items*/}
-
-        {/*begin::Chart container*/}
-        <div id="kt_charts_widget_30_chart" className="w-100 h-200px"></div>       
-        {/*end::Chart container*/} 
-    </div>
-    {/*end::Body*/}
-</div>
+        {/*end::Table widget 13*/}  
 {/*end::Chart widget 30*/}
     </div>
     {/*end::Col*/}

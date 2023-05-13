@@ -2,7 +2,7 @@
 import React from 'react';
 
 import Home from '../../components/pages/Home/Home';
-let useRoutes = [
+let userRoutes = [
   {
     path : "home",
     element: <Home/>
@@ -14,4 +14,4 @@ let useRoutes = [
   // },
 
 ]
-export default useRoutes;
+export default userRoutes;

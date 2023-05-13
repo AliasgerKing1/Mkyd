@@ -1,7 +1,11 @@
 /*eslint-disable */
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Sidebar = () => {
+    let [isMenu, setIsMenu] = useState(false);
+    let setShowMenu = () => {
+        setIsMenu(true);
+    }
   return (
     <>
     <div id="kt_app_sidebar" className="app-sidebar  flex-column " 
@@ -508,10 +512,14 @@ const Sidebar = () => {
 {/*begin::Footer*/}
 <div className="app-sidebar-footer d-flex flex-stack px-11 pb-10" id="kt_app_sidebar_footer">   
     {/*begin::User menu*/}
-    <div className="">
+    <div className="" onClick={()=> {
+        setShowMenu()
+        isMenu == true ? setIsMenu(false) : setIsMenu(true)
+    }
+    }>
        {/*begin::Menu wrapper*/}
         <div 
-            className="cursor-pointer symbol symbol-circle symbol-40px" 
+            className="cursor-pointer symbol symbol-circle symbol-40px show menu-dropdown" 
             data-kt-menu-trigger="{default: 'click', lg: 'hover'}" 		
             data-kt-menu-overflow="true"
             data-kt-menu-placement="top-start"			
@@ -521,7 +529,7 @@ const Sidebar = () => {
 
         
 {/*begin::User account menu*/}
-<div className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px" data-kt-menu="true">
+<div className={"menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px " + (isMenu == true ? "show" : "")} data-kt-menu="true" data-kt-menu-placement="top-start">
     {/*begin::Menu item*/}
     <div className="menu-item px-3">
         <div className="menu-content d-flex align-items-center px-3">
