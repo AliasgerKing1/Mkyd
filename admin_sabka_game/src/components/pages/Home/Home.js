@@ -2097,12 +2097,12 @@ const Home = () => {
                     {/*end::Label*/}
 
                     {/*begin::Select*/}
-                    <select className="form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto select2-hidden-accessible" data-control="select2" data-hide-search="true" data-dropdown-css-className="w-150px" data-placeholder="Select an option" data-select2-id="select2-data-1-tymb" tabindex="-1" aria-hidden="true" data-kt-initialized="1">
+                    <select className="form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto select2-hidden-accessible" data-control="select2" data-hide-search="true" data-dropdown-css-classname="w-150px" data-placeholder="Select an option" data-select2-id="select2-data-1-tymb" tabIndex="-1" aria-hidden="true" data-kt-initialized="1">
                         <option></option>
                         <option value="Show All" selected="" data-select2-id="select2-data-3-gwzo">Show All</option>
                         <option value="a">Category A</option>
                         <option value="b">Category B</option>
-                    </select><span className="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-2-vig8" style={{width: '100%',}}><span className="selection"><span className="select2-selection select2-selection--single form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-j2xb-container" aria-controls="select2-j2xb-container"><span className="select2-selection__rendered" id="select2-j2xb-container" role="textbox" aria-readonly="true" title="Show All">Show All</span><span className="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
+                    </select><span className="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-2-vig8" style={{width: '100%',}}><span className="selection"><span className="select2-selection select2-selection--single form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto" role="combobox" aria-haspopup="true" aria-expanded="false" tabIndex="0" aria-disabled="false" aria-labelledby="select2-j2xb-container" aria-controls="select2-j2xb-container"><span className="select2-selection__rendered" id="select2-j2xb-container" role="textbox" aria-readonly="true" title="Show All">Show All</span><span className="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
                     {/*end::Select*/}
                 </div>
                 {/*end::Destination*/}
@@ -2114,13 +2114,13 @@ const Home = () => {
                     {/*end::Label*/}
 
                     {/*begin::Select*/}
-                    <select className="form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto select2-hidden-accessible" data-control="select2" data-hide-search="true" data-dropdown-css-className="w-150px" data-placeholder="Select an option" data-kt-table-widget-5="filter_status" data-select2-id="select2-data-4-olhp" tabindex="-1" aria-hidden="true" data-kt-initialized="1">
+                    <select className="form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto select2-hidden-accessible" data-control="select2" data-hide-search="true" data-dropdown-css-classname="w-150px" data-placeholder="Select an option" data-kt-table-widget-5="filter_status" data-select2-id="select2-data-4-olhp" tabIndex="-1" aria-hidden="true" data-kt-initialized="1">
                         <option></option>
                         <option value="Show All" selected="" data-select2-id="select2-data-6-geks">Show All</option>
                         <option value="In Stock">In Stock</option>
                         <option value="Out of Stock">Out of Stock</option>
                         <option value="Low Stock">Low Stock</option>
-                    </select><span className="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-5-eklo" style={{width: '100%',}}><span className="selection"><span className="select2-selection select2-selection--single form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-6jj3-container" aria-controls="select2-6jj3-container"><span className="select2-selection__rendered" id="select2-6jj3-container" role="textbox" aria-readonly="true" title="Show All">Show All</span><span className="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
+                    </select><span className="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-5-eklo" style={{width: '100%',}}><span className="selection"><span className="select2-selection select2-selection--single form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto" role="combobox" aria-haspopup="true" aria-expanded="false" tabIndex="0" aria-disabled="false" aria-labelledby="select2-6jj3-container" aria-controls="select2-6jj3-container"><span className="select2-selection__rendered" id="select2-6jj3-container" role="textbox" aria-readonly="true" title="Show All">Show All</span><span className="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
                     {/*end::Select*/}
                 </div>
                 {/*end::Status*/}
@@ -2142,7 +2142,7 @@ const Home = () => {
             {/*begin::Table head*/}
             <thead>
                 {/*begin::Table row*/}
-                <tr className="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0"><th className="min-w-100px sorting" tabindex="0" aria-controls="kt_table_widget_5_table" rowspan="1" colspan="1" style={{width: '169.35px'}} aria-label="Item: activate to sort column ascending">Item</th><th className="text-end pe-3 min-w-100px sorting_disabled" rowspan="1" colspan="1" style={{width: '132.85px'}} aria-label="Product ID">Product ID</th><th className="text-end pe-3 min-w-150px sorting" tabindex="0" aria-controls="kt_table_widget_5_table" rowspan="1" colspan="1" style={{width: '196.6px'}}aria-label="Date Added: activate to sort column ascending">Date Added</th><th className="text-end pe-3 min-w-100px sorting" tabindex="0" aria-controls="kt_table_widget_5_table" rowspan="1" colspan="1" style={{width: '132.85px'}} aria-label="Price: activate to sort column ascending">Price</th><th className="text-end pe-3 min-w-50px sorting" tabindex="0" aria-controls="kt_table_widget_5_table" rowspan="1" colspan="1" style={{width: '133.317px'}} aria-label="Status: activate to sort column ascending">Status</th><th className="text-end pe-0 min-w-25px sorting" tabindex="0" aria-controls="kt_table_widget_5_table" rowspan="1" colspan="1" style={{width: '77.95px'}} aria-label="Qty: activate to sort column ascending">Qty</th></tr>
+                <tr className="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0"><th className="min-w-100px sorting" tabIndex="0" aria-controls="kt_table_widget_5_table" rowSpan="1" colspan="1" style={{width: '169.35px'}} aria-label="Item: activate to sort column ascending">Item</th><th className="text-end pe-3 min-w-100px sorting_disabled" rowSpan="1" colspan="1" style={{width: '132.85px'}} aria-label="Product ID">Product ID</th><th className="text-end pe-3 min-w-150px sorting" tabIndex="0" aria-controls="kt_table_widget_5_table" rowSpan="1" colspan="1" style={{width: '196.6px'}}aria-label="Date Added: activate to sort column ascending">Date Added</th><th className="text-end pe-3 min-w-100px sorting" tabIndex="0" aria-controls="kt_table_widget_5_table" rowSpan="1" colspan="1" style={{width: '132.85px'}} aria-label="Price: activate to sort column ascending">Price</th><th className="text-end pe-3 min-w-50px sorting" tabIndex="0" aria-controls="kt_table_widget_5_table" rowSpan="1" colspan="1" style={{width: '133.317px'}} aria-label="Status: activate to sort column ascending">Status</th><th className="text-end pe-0 min-w-25px sorting" tabIndex="0" aria-controls="kt_table_widget_5_table" rowSpan="1" colspan="1" style={{width: '77.95px'}} aria-label="Qty: activate to sort column ascending">Qty</th></tr>
                 {/*end::Table row*/}
             </thead>
             {/*end::Table head*/}
@@ -6412,7 +6412,7 @@ style={{backgroundImage:"url('/assets/media/misc/layout/header-bg.jpg')"}}>
 
 		{/*begin::Engage modals*/}
 					{/*begin::Modal - Sitemap*/}
-<div className="modal fade bg-dark bg-opacity-75" id="kt_app_engage_prebuilts_modal" tabindex="-1" aria-hidden="true">
+<div className="modal fade bg-dark bg-opacity-75" id="kt_app_engage_prebuilts_modal" tabIndex="-1" aria-hidden="true">
     {/*begin::Modal dialog*/}
     <div className="modal-dialog modal-fullscreen p-5 p-lg-10" id="kt_engage_prebuilts_modal_dialog">
         {/*begin::Modal content*/}
@@ -11994,7 +11994,7 @@ style={{backgroundImage:"url('/assets/media/misc/layout/header-bg.jpg')"}}>
 
                     {/*begin::Modals*/}
             {/*begin::Modal - Create Campaign*/}
-<div className="modal fade" id="kt_modal_create_campaign" tabindex="-1" aria-hidden="true">
+<div className="modal fade" id="kt_modal_create_campaign" tabIndex="-1" aria-hidden="true">
     {/*begin::Modal dialog*/}
     <div className="modal-dialog modal-fullscreen p-9">
         {/*begin::Modal content*/}
@@ -12815,7 +12815,7 @@ style={{backgroundImage:"url('/assets/media/misc/layout/header-bg.jpg')"}}>
     </div>
 </div>
 {/*end::Modal - Create Campaign*/}{/*begin::Modal - Users Search*/}
-<div className="modal fade" id="kt_modal_users_search" tabindex="-1" aria-hidden="true">
+<div className="modal fade" id="kt_modal_users_search" tabIndex="-1" aria-hidden="true">
     {/*begin::Modal dialog*/}
     <div className="modal-dialog modal-dialog-centered mw-650px">
         {/*begin::Modal content*/}
@@ -13760,7 +13760,7 @@ style={{backgroundImage:"url('/assets/media/misc/layout/header-bg.jpg')"}}>
 </div>
 {/*end::Modal - Users Search*/}
 {/*begin::Modal - Invite Friends*/}
-<div className="modal fade" id="kt_modal_invite_friends" tabindex="-1" aria-hidden="true">
+<div className="modal fade" id="kt_modal_invite_friends" tabIndex="-1" aria-hidden="true">
     {/*begin::Modal dialog*/}
     <div className="modal-dialog mw-650px">
         {/*begin::Modal content*/}

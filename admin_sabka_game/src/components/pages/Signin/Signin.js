@@ -9,7 +9,7 @@ const Signin = () => {
   return (
     <>
     {/*begin::Body*/}
-    <div  id="kt_body"  className="app-blank bgi-size-cover bgi-position-center bgi-no-repeat" style={{backgroundImage: "url('/assets/media/auth/bg4.jpg')"}}>
+    <div  id="kt_body"  className="app-blank bgi-size-cover bgi-position-center bgi-no-repeat" style={{backgroundImage: "url('/assets/media/auth/bg4.jpg')", height: "73.5rem", maxHeight: "73.5rem"}}>
         {/*begin::Theme mode setup on page load*/}
 
 {/*end::Theme mode setup on page load*/}            
@@ -204,7 +204,7 @@ const Signin = () => {
           position: "fixed",
           inset: "0px auto auto 0px",
           margin: "0px",
-          transform: "translate(782px, 300px)",
+          transform: "translate(1250px, 420px)",
         }
       : {}
   }

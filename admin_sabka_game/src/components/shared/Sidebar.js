@@ -3,19 +3,20 @@ import React, { useEffect, useState } from 'react'
 
 const Sidebar = () => {
     let [isMenu, setIsMenu] = useState(false);
-    let setShowMenu = () => {
-        setIsMenu(true);
-    }
+    let [isChangeWorkSpace, setIsChangeWorkSpace] = useState(false);
+    let [isInternalMenu1, setIsInternalMenu1] = useState(false);
+    let [isInternalMenu2, setIsInternalMenu2] = useState(false);
+    let [isInternalMenu3, setIsInternalMenu3] = useState(false);
   return (
     <>
-    <div id="kt_app_sidebar" className="app-sidebar  flex-column " 
+    <div id="kt_app_sidebar" className="app-sidebar  flex-column" 
      data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle"      
      >
 
             {/*begin::Header*/}
 <div className="app-sidebar-header d-none d-lg-flex px-6 pt-8 pb-4" id="kt_app_sidebar_header">
     {/*begin::Toggle*/}
-    <button type="button" data-kt-element="selected" className="btn btn-outline btn-custom btn-flex w-100" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" data-kt-menu-offset="0px, -1px">
+    <button type="button" data-kt-element="selected" className="btn btn-outline btn-custom btn-flex w-100 show menu-dropdown" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" data-kt-menu-offset="0px, -1px" onClick={()=> isChangeWorkSpace == false ? setIsChangeWorkSpace(true) : setIsChangeWorkSpace(false)}>
         {/*begin::Logo*/}
         <span className="d-flex flex-center flex-shrink-0 w-40px me-3">
             <img alt="Logo" src="/assets/media/logos/default-small.svg" data-kt-element="logo" className="h-30px"/>
@@ -49,7 +50,7 @@ const Sidebar = () => {
     {/*end::Toggle*/}
 
     {/*begin::Menu*/}
-    <div className="menu menu-sub menu-sub-dropdown menu-column menu-state-bg menu-rounded w-300px ps-3" data-kt-menu="true">
+    <div className={`menu menu-sub menu-sub-dropdown menu-column menu-state-bg menu-rounded w-300px ps-3 ${isChangeWorkSpace == true ? "show" : ""}`} data-kt-menu="true" style={{zIndex: '107', position: 'fixed', inset: '0px auto auto 0px', margin: '0px', transform: 'translate(20px, 85px)'}} data-popper-placement="bottom-start">
         {/*begin::Menu wrapper*/}
         <div className="hover-scroll-y h-250px my-3 pe-5 me-n1">
                             {/*begin::Menu item*/}
@@ -512,11 +513,7 @@ const Sidebar = () => {
 {/*begin::Footer*/}
 <div className="app-sidebar-footer d-flex flex-stack px-11 pb-10" id="kt_app_sidebar_footer">   
     {/*begin::User menu*/}
-    <div className="" onClick={()=> {
-        setShowMenu()
-        isMenu == true ? setIsMenu(false) : setIsMenu(true)
-    }
-    }>
+    <div className="" onMouseEnter={()=> setIsMenu(true)} onMouseLeave={()=> setIsMenu(false)} style={{cursor : "pointer"}}>
        {/*begin::Menu wrapper*/}
         <div 
             className="cursor-pointer symbol symbol-circle symbol-40px show menu-dropdown" 
@@ -529,7 +526,7 @@ const Sidebar = () => {
 
         
 {/*begin::User account menu*/}
-<div className={"menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px " + (isMenu == true ? "show" : "")} data-kt-menu="true" data-kt-menu-placement="top-start">
+<div className={`menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-4 fs-6 w-275px ${isMenu == true ? "show" : ""}`} data-kt-menu="true" data-kt-menu-placement="top-start">
     {/*begin::Menu item*/}
     <div className="menu-item px-3">
         <div className="menu-content d-flex align-items-center px-3">
@@ -577,14 +574,14 @@ const Sidebar = () => {
     {/*end::Menu item*/}
 
     {/*begin::Menu item*/}
-    <div className="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-end" data-kt-menu-offset="-15px, 0">
+    <div className={`menu-item px-5 ${isInternalMenu1 == true ? "show menu-dropdown" : ""}`} data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-end" data-kt-menu-offset="-15px, 0" onMouseEnter={()=> setIsInternalMenu1(true)} onMouseLeave={()=> setIsInternalMenu1(false)}>
         <a href="#" className="menu-link px-5">
             <span className="menu-title">My Subscription</span>
             <span className="menu-arrow"></span>
         </a>
 
         {/*begin::Menu sub*/}
-        <div className="menu-sub menu-sub-dropdown w-175px py-4">
+        <div className={`menu-sub menu-sub-dropdown w-175px py-4 ${isInternalMenu1 == true ? "show" : ""}`} style={{zIndex: '108', position: 'fixed', inset: 'auto auto 0px 0px', margin: '0px', transform: 'translate(275px, -257px)'}} data-popper-placement="right-end">
             {/*begin::Menu item*/}
             <div className="menu-item px-3">
                 <a href="../account/referrals.html" className="menu-link px-5">
@@ -653,7 +650,7 @@ const Sidebar = () => {
     {/*end::Menu separator*/}
 
             {/*begin::Menu item*/}
-        <div className="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0">
+        <div className={`menu-item px-5 ${isInternalMenu2 == true ? "show menu-dropdown" : ""}`} data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="left-start" data-kt-menu-offset="-15px, 0" onMouseEnter={()=> setIsInternalMenu2(true)} onMouseLeave={()=> setIsInternalMenu2(false)}>
             <a href="#" className="menu-link px-5">
                 <span className="menu-title position-relative">
                     Mode 
@@ -685,7 +682,7 @@ const Sidebar = () => {
             </a>
 
             {/*begin::Menu*/}
-<div className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-muted menu-active-bg menu-state-color fw-semibold py-4 fs-base w-150px" data-kt-menu="true" data-kt-element="theme-mode-menu">
+<div className={`menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-title-gray-700 menu-icon-muted menu-active-bg menu-state-color fw-semibold py-4 fs-base w-150px ${isInternalMenu2 == true ? "show" : ""}`} data-kt-menu="true" data-kt- element="theme-mode-menu" style={{zIndex: '108', position: 'fixed', inset: '8px auto auto 0px', margin: '0px', transform: 'translate(275px, 266px)'}} data-popper-placement="right- start">
     {/*begin::Menu item*/}
     <div className="menu-item px-3 my-0">
         <a href="#" className="menu-link px-3 py-2" data-kt-element="mode" data-kt-value="light">
@@ -754,7 +751,7 @@ const Sidebar = () => {
         {/*end::Menu item*/}
     
     {/*begin::Menu item*/}
-    <div className="menu-item px-5" data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-end" data-kt-menu-offset="-15px, 0">
+    <div className={`menu-item px-5 ${isInternalMenu3 == true ? "show menu-dropdown" : ""}`} data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="right-end" data-kt-menu-offset="-15px, 0" onMouseEnter={()=> setIsInternalMenu3(true)} onMouseLeave={()=> setIsInternalMenu3(false)}>
         <a href="#" className="menu-link px-5">
             <span className="menu-title position-relative">
                 Language 
@@ -766,7 +763,7 @@ const Sidebar = () => {
         </a>
 
         {/*begin::Menu sub*/}
-        <div className="menu-sub menu-sub-dropdown w-175px py-4">
+        <div className={`menu-sub menu-sub-dropdown w-175px py-4 ${isInternalMenu3 == true ? "show" : ""}`} style={{zIndex: '108', position: 'fixed', inset: 'auto auto 0px 0px', margin: '0px', transform: 'translate (275px, 466px)'}} data- popper-placement="right-end">
             {/*begin::Menu item*/}
             <div className="menu-item px-3">
                 <a href="../account/settings.html" className="menu-link d-flex px-5 active">
@@ -847,19 +844,7 @@ const Sidebar = () => {
     </div>
     {/*end::User menu*/} 
 
-    {/*begin::Logout*/}
-    <a href="../authentication/flows/basic/sign-in.html" className="btn btn-sm btn-outline btn-flex btn-custom px-3">
-        {/*begin::Svg Icon | path: icons/duotune/arrows/arr076.svg*/}
-<span className="svg-icon svg-icon-3 me-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.3" width="12" height="2" rx="1" transform="matrix(-1 0 0 1 15.5 11)" fill="currentColor"/>
-<path d="M13.6313 11.6927L11.8756 10.2297C11.4054 9.83785 11.3732 9.12683 11.806 8.69401C12.1957 8.3043 12.8216 8.28591 13.2336 8.65206L16.1592 11.2526C16.6067 11.6504 16.6067 12.3496 16.1592 12.7474L13.2336 15.3479C12.8216 15.7141 12.1957 15.6957 11.806 15.306C11.3732 14.8732 11.4054 14.1621 11.8756 13.7703L13.6313 12.3073C13.8232 12.1474 13.8232 11.8526 13.6313 11.6927Z" fill="currentColor"/>
-<path d="M8 5V6C8 6.55228 8.44772 7 9 7C9.55228 7 10 6.55228 10 6C10 5.44772 10.4477 5 11 5H18C18.5523 5 19 5.44772 19 6V18C19 18.5523 18.5523 19 18 19H11C10.4477 19 10 18.5523 10 18C10 17.4477 9.55228 17 9 17C8.44772 17 8 17.4477 8 18V19C8 20.1046 8.89543 21 10 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3H10C8.89543 3 8 3.89543 8 5Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}         
-        Logout
-    </a>
-    {/*end::Logout*/}
+
 </div>
 {/*end::Footer*/}    </div>
     </>
