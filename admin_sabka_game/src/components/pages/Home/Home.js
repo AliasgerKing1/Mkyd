@@ -1,8 +1,16 @@
 /*eslint-disable */
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../../shared/Header'
 import Sidebar from "../../shared/Sidebar"
+import Footer from '../../shared/Footer'
+import CampaignModal from '../../shared/CampaignModal'
+import Row1Home from '../../shared/Row1/Row1Home'
+import Row2Home from '../../shared/Row2/Row2Home'
+import Row3Home from '../../shared/Row3/Row3Home'
+import Row4Home from '../../shared/Row4/Row4Home'
+import Row5Home from '../../shared/Row5/Row5Home'
 const Home = () => {
+
   return (
     <>
               
@@ -31,4397 +39,15 @@ const Home = () => {
 <div id="kt_app_content" className="app-content  flex-column-fluid " >
             {/*begin::Content container*/}
         <div id="kt_app_content_container" className="app-container  container-fluid ">
-            {/*begin::Row*/}
-<div className="row gx-5 gx-xl-10">  
-    {/*begin::Col*/}
-    <div className="col-xl-4 mb-5 mb-xl-10">       
-        {/*begin::Chart widget 27*/}
-<div className="card card-flush h-xl-100">
-    {/*begin::Header*/}
-    <div className="card-header py-7">
-        {/*begin::Statistics*/}
-        <div className="m-0">   
-            {/*begin::Heading*/}
-            <div className="d-flex align-items-center mb-2">          
-                {/*begin::Title*/}     
-                <span className="fs-2hx fw-bold text-gray-800 me-2 lh-1 ls-n2">35,568</span>
-                {/*end::Title*/}
-                 
-                {/*begin::Label*/}  
-                <span className="badge badge-light-danger fs-base">                                
-                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr066.svg*/}
-<span className="svg-icon svg-icon-5 svg-icon-danger ms-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor"/>
-<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/} 
-                    8.02%
-                </span> 
-                {/*end::Label*/}                            
-            </div>
-            {/*end::Heading*/}
+<Row1Home />
 
-            {/*begin::Description*/}
-            <span className="fs-6 fw-semibold text-gray-400">Organic Sessions</span>
-            {/*end::Description*/}
-        </div>
-        {/*end::Statistics*/}
+<Row2Home />
 
-        {/*begin::Toolbar*/}
-        <div className="card-toolbar">   
-            {/*begin::Menu*/}
-            <button className="btn btn-icon btn-color-gray-400 btn-active-color-primary justify-content-end" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-overflow="true">                
-                {/*begin::Svg Icon | path: icons/duotune/general/gen023.svg*/}
-<span className="svg-icon svg-icon-1 svg-icon-gray-300 me-n1">
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="4" fill="currentColor"/>
-<rect x="11" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-<rect x="15" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-<rect x="7" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                             
-            </button>
+<Row3Home />
 
-            
-{/*begin::Menu 2*/}
-<div className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px" data-kt-menu="true">
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <div className="menu-content fs-6 text-dark fw-bold px-3 py-4">Quick Actions</div>
-    </div>
-    {/*end::Menu item*/}
+<Row4Home />
 
-    {/*begin::Menu separator*/}
-    <div className="separator mb-3 opacity-75"></div>
-    {/*end::Menu separator*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Ticket
-        </a>
-    </div>
-    {/*end::Menu item*/}
-    
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Customer
-        </a>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-start">
-        {/*begin::Menu item*/}
-        <a href="#" className="menu-link px-3">
-            <span className="menu-title">New Group</span>
-            <span className="menu-arrow"></span>
-        </a>
-        {/*end::Menu item*/}
-
-        {/*begin::Menu sub*/}
-        <div className="menu-sub menu-sub-dropdown w-175px py-4">
-            {/*begin::Menu item*/}
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Admin Group
-                </a>
-            </div>
-            {/*end::Menu item*/}
-
-            {/*begin::Menu item*/}
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Staff Group
-                </a>
-            </div>
-            {/*end::Menu item*/}
-
-            {/*begin::Menu item*/}            
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Member Group
-                </a>
-            </div>
-            {/*end::Menu item*/}
-        </div>
-        {/*end::Menu sub*/}
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Contact
-        </a>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu separator*/}
-    <div className="separator mt-3 opacity-75"></div>
-    {/*end::Menu separator*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <div className="menu-content px-3 py-3">
-            <a className="btn btn-primary  btn-sm px-4" href="#">
-                Generate Reports
-            </a>
-        </div>
-    </div>
-    {/*end::Menu item*/}
-</div>
-{/*end::Menu 2*/}
- 
-            {/*end::Menu*/}         
-        </div>
-        {/*end::Toolbar*/}
-    </div>
-    {/*end::Header*/}
-
-    {/*begin::Body*/}
-    <div className="card-body pt-0 pb-1">                 
-        <div id="kt_charts_widget_27" className="min-h-auto" style={{minHeight: '365px'}}>
-        <div id="apexcharts21y48rj6" className="apexcharts-canvas apexcharts21y48rj6 apexcharts-theme-light" style={{width: '889px', height: '350px'}}>
-        <svg
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsData="ApexChartsNS"
-      width="889px"
-      height="350px"
-      className="apexcharts-svg"
-      version="1.1"
-      style={{ background: "transparent" }}
-    >
-      <g
-        className="apexcharts-inner apexcharts-graphical"
-        transform="translate(74.45 30)"
-      >
-        <defs>
-          <linearGradient x1="0" x2="0" y1="0" y2="1">
-            <stop
-              offset="0"
-              stopColor="rgba(216,227,240,0.4)"
-              stopOpacity="0.4"
-            ></stop>
-            <stop
-              offset="1"
-              stopColor="rgba(190,209,230,0.5)"
-              stopOpacity="0.5"
-            ></stop>
-            <stop
-              offset="1"
-              stopColor="rgba(190,209,230,0.5)"
-              stopOpacity="0.5"
-            ></stop>
-          </linearGradient>
-          <clipPath id="gridRectMask21y48rj6">
-            <rect
-              width="325.475"
-              height="277.494"
-              x="-2"
-              y="0"
-              fill="#fff"
-              stroke="none"
-              strokeDasharray="0"
-              strokeWidth="0"
-              opacity="1"
-              rx="0"
-              ry="0"
-            ></rect>
-          </clipPath>
-          <clipPath></clipPath>
-          <clipPath></clipPath>
-          <clipPath>
-            <rect
-              width="325.475"
-              height="281.494"
-              x="-2"
-              y="-2"
-              fill="#fff"
-              stroke="none"
-              strokeDasharray="0"
-              strokeWidth="0"
-              opacity="1"
-              rx="0"
-              ry="0"
-            ></rect>
-          </clipPath>
-        </defs>
-        <g className="apexcharts-yaxis apexcharts-xaxis-inversed">
-          <g
-            className="apexcharts-yaxis-texts-g apexcharts-xaxis-inversed-texts-g"
-            transform="translate(-53.967)"
-          >
-            <text
-              x="-15"
-              y="32.272"
-              fill="#3f4254"
-              className="apexcharts-text apexcharts-yaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="14"
-              fontWeight="600"
-              textAnchor="start"
-            >
-              <tspan>USA</tspan>
-            </text>
-            <text
-              x="-15"
-              y="87.771"
-              fill="#3f4254"
-              className="apexcharts-text apexcharts-yaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="14"
-              fontWeight="600"
-              textAnchor="start"
-            >
-              <tspan>India</tspan>
-            </text>
-            <text
-              x="-15"
-              y="143.27"
-              fill="#3f4254"
-              className="apexcharts-text apexcharts-yaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="14"
-              fontWeight="600"
-              textAnchor="start"
-            >
-              <tspan>Canada</tspan>
-            </text>
-            <text
-              x="-15"
-              y="198.768"
-              fill="#3f4254"
-              className="apexcharts-text apexcharts-yaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="14"
-              fontWeight="600"
-              textAnchor="start"
-            >
-              <tspan>Brasil</tspan>
-            </text>
-            <text
-              x="-15"
-              y="254.267"
-              fill="#3f4254"
-              className="apexcharts-text apexcharts-yaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="14"
-              fontWeight="600"
-              textAnchor="start"
-            >
-              <tspan>France</tspan>
-            </text>
-          </g>
-        </g>
-        <g className="apexcharts-xaxis apexcharts-yaxis-inversed">
-          <g
-            className="apexcharts-xaxis-texts-g"
-            transform="translate(0 -9.333)"
-          >
-            <text
-              x="321.475"
-              y="307.494"
-              fill="#3f4254"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="14"
-              fontWeight="600"
-              textAnchor="middle"
-            >
-              <tspan>15K</tspan>
-            </text>
-            <text
-              x="257.08"
-              y="307.494"
-              fill="#3f4254"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="14"
-              fontWeight="600"
-              textAnchor="middle"
-            >
-              <tspan>12K</tspan>
-            </text>
-            <text
-              x="192.685"
-              y="307.494"
-              fill="#3f4254"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="14"
-              fontWeight="600"
-              textAnchor="middle"
-            >
-              <tspan>9K</tspan>
-            </text>
-            <text
-              x="128.29"
-              y="307.494"
-              fill="#3f4254"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="14"
-              fontWeight="600"
-              textAnchor="middle"
-            >
-              <tspan>6K</tspan>
-            </text>
-            <text
-              x="63.895"
-              y="307.494"
-              fill="#3f4254"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="14"
-              fontWeight="600"
-              textAnchor="middle"
-            >
-              <tspan>3K</tspan>
-            </text>
-            <text
-              x="-0.5"
-              y="307.494"
-              fill="#3f4254"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="14"
-              fontWeight="600"
-              textAnchor="middle"
-            >
-              <tspan>0K</tspan>
-            </text>
-          </g>
-        </g>
-        <g className="apexcharts-grid">
-          <g className="apexcharts-gridlines-vertical">
-            <path
-              stroke="#e1e3ea"
-              strokeDasharray="4"
-              strokeLinecap="butt"
-              d="M0 0L0 277.494"
-              className="apexcharts-gridline"
-            ></path>
-            <path
-              stroke="#e1e3ea"
-              strokeDasharray="4"
-              strokeLinecap="butt"
-              d="M64.595 0L64.595 277.494"
-              className="apexcharts-gridline"
-            ></path>
-            <path
-              stroke="#e1e3ea"
-              strokeDasharray="4"
-              strokeLinecap="butt"
-              d="M129.19 0L129.19 277.494"
-              className="apexcharts-gridline"
-            ></path>
-            <path
-              stroke="#e1e3ea"
-              strokeDasharray="4"
-              strokeLinecap="butt"
-              d="M193.785 0L193.785 277.494"
-              className="apexcharts-gridline"
-            ></path>
-            <path
-              stroke="#e1e3ea"
-              strokeDasharray="4"
-              strokeLinecap="butt"
-              d="M258.38 0L258.38 277.494"
-              className="apexcharts-gridline"
-            ></path>
-            <path
-              stroke="#e1e3ea"
-              strokeDasharray="4"
-              strokeLinecap="butt"
-              d="M322.975 0L322.975 277.494"
-              className="apexcharts-gridline"
-            ></path>
-          </g>
-          <path
-            stroke="#e0e0e0"
-            strokeDasharray="0"
-            strokeLinecap="butt"
-            d="M0 278.494L0 284.494"
-            className="apexcharts-xaxis-tick"
-          ></path>
-          <path
-            stroke="#e0e0e0"
-            strokeDasharray="0"
-            strokeLinecap="butt"
-            d="M64.595 278.494L64.595 284.494"
-            className="apexcharts-xaxis-tick"
-          ></path>
-          <path
-            stroke="#e0e0e0"
-            strokeDasharray="0"
-            strokeLinecap="butt"
-            d="M129.19 278.494L129.19 284.494"
-            className="apexcharts-xaxis-tick"
-          ></path>
-          <path
-            stroke="#e0e0e0"
-            strokeDasharray="0"
-            strokeLinecap="butt"
-            d="M193.785 278.494L193.785 284.494"
-            className="apexcharts-xaxis-tick"
-          ></path>
-          <path
-            stroke="#e0e0e0"
-            strokeDasharray="0"
-            strokeLinecap="butt"
-            d="M258.38 278.494L258.38 284.494"
-            className="apexcharts-xaxis-tick"
-          ></path>
-          <path
-            stroke="#e0e0e0"
-            strokeDasharray="0"
-            strokeLinecap="butt"
-            d="M322.975 278.494L322.975 284.494"
-            className="apexcharts-xaxis-tick"
-          ></path>
-          <path
-            stroke="transparent"
-            strokeDasharray="0"
-            strokeLinecap="butt"
-            d="M0 277.494L321.475 277.494"
-          ></path>
-          <path
-            stroke="transparent"
-            strokeDasharray="0"
-            strokeLinecap="butt"
-            d="M0 1L0 277.494"
-          ></path>
-        </g>
-        <g className="apexcharts-bar-series apexcharts-plot-series">
-          <g className="apexcharts-series" dataRealIndex="0">
-            <path
-              fill="rgba(62,151,255,0.85)"
-              fillOpacity="1"
-              strokeDasharray="0"
-              strokeLinecap="round"
-              strokeOpacity="1"
-              strokeWidth="0"
-              d="M.1 13.875h259.424q8 0 8 8v11.75q0 8-8 8H.1z"
-              className="apexcharts-bar-area"
-              clipPath="url(#gridRectMask21y48rj6)"
-            ></path>
-            <path
-              fill="rgba(241,65,108,0.85)"
-              fillOpacity="1"
-              strokeDasharray="0"
-              strokeLinecap="round"
-              strokeOpacity="1"
-              strokeWidth="0"
-              d="M.1 69.374h153.723q8 0 8 8v11.749q0 8-8 8H.1z"
-              className="apexcharts-bar-area"
-              clipPath="url(#gridRectMask21y48rj6)"
-            ></path>
-            <path
-              fill="rgba(80,205,137,0.85)"
-              fillOpacity="1"
-              strokeDasharray="0"
-              strokeLinecap="round"
-              strokeOpacity="1"
-              strokeWidth="0"
-              d="M.1 124.872h122.369q8 0 8 8v11.75q0 8-8 8H.1z"
-              className="apexcharts-bar-area"
-              clipPath="url(#gridRectMask21y48rj6)"
-            ></path>
-            <path
-              fill="rgba(255,199,0,0.85)"
-              fillOpacity="1"
-              strokeDasharray="0"
-              strokeLinecap="round"
-              strokeOpacity="1"
-              strokeWidth="0"
-              d="M.1 180.371h100.037q8 0 8 8v11.75q0 8-8 8H.1z"
-              className="apexcharts-bar-area"
-              clipPath="url(#gridRectMask21y48rj6)"
-            ></path>
-            <path
-              fill="rgba(114,57,234,0.85)"
-              fillOpacity="1"
-              strokeDasharray="0"
-              strokeLinecap="round"
-              strokeOpacity="1"
-              strokeWidth="0"
-              d="M.1 235.87h86.728q8 0 8 8v11.75q0 8-8 8H.1z"
-              className="apexcharts-bar-area"
-              clipPath="url(#gridRectMask21y48rj6)"
-            ></path>
-          </g>
-          <g className="apexcharts-datalabels" dataRealIndex="0">
-            <g className="apexcharts-data-labels">
-              <text
-                x="22.1"
-                y="33.249"
-                fill="#fff"
-                className="apexcharts-datalabel"
-                dominantBaseline="auto"
-                fontFamily="inherit"
-                fontSize="14"
-                fontWeight="600"
-                textAnchor="start"
-              >
-                12,478
-              </text>
-            </g>
-            <g className="apexcharts-data-labels">
-              <text
-                x="18.1"
-                y="88.748"
-                fill="#fff"
-                className="apexcharts-datalabel"
-                dominantBaseline="auto"
-                fontFamily="inherit"
-                fontSize="14"
-                fontWeight="600"
-                textAnchor="start"
-              >
-                7,546
-              </text>
-            </g>
-            <g className="apexcharts-data-labels">
-              <text
-                x="19.1"
-                y="144.247"
-                fill="#fff"
-                className="apexcharts-datalabel"
-                dominantBaseline="auto"
-                fontFamily="inherit"
-                fontSize="14"
-                fontWeight="600"
-                textAnchor="start"
-              >
-                6,083
-              </text>
-            </g>
-            <g className="apexcharts-data-labels">
-              <text
-                x="18.1"
-                y="199.746"
-                fill="#fff"
-                className="apexcharts-datalabel"
-                dominantBaseline="auto"
-                fontFamily="inherit"
-                fontSize="14"
-                fontWeight="600"
-                textAnchor="start"
-              >
-                5,041
-              </text>
-            </g>
-            <g className="apexcharts-data-labels">
-              <text
-                x="15.1"
-                y="255.245"
-                fill="#fff"
-                className="apexcharts-datalabel"
-                dominantBaseline="auto"
-                fontFamily="inherit"
-                fontSize="14"
-                fontWeight="600"
-                textAnchor="start"
-              >
-                4,420
-              </text>
-            </g>
-          </g>
-        </g>
-        <path
-          stroke="#b6b6b6"
-          strokeDasharray="0"
-          strokeLinecap="butt"
-          strokeWidth="1"
-          d="M0 0L321.475 0"
-          className="apexcharts-ycrosshairs"
-        ></path>
-        <path
-          strokeDasharray="0"
-          strokeLinecap="butt"
-          strokeWidth="0"
-          d="M0 0L321.475 0"
-          className="apexcharts-ycrosshairs-hidden"
-        ></path>
-      </g>
-    </svg>
-        </div>
-        </div>       
-    </div>
-    {/*end::Body*/}
-</div>
-{/*end::Chart widget 27*/}
-
-
-     </div>
-    {/*end::Col*/}
-
-    {/*begin::Col*/}
-    <div className="col-xxl-4 mb-5 mb-xl-10">       
-        {/*begin::Chart widget 28*/}
-<div className="card card-flush h-xl-100">
-    {/*begin::Header*/}
-    <div className="card-header py-7">
-        {/*begin::Statistics*/}
-        <div className="m-0">   
-            {/*begin::Heading*/}
-            <div className="d-flex align-items-center mb-2">          
-                {/*begin::Title*/}     
-                <span className="fs-2hx fw-bold text-gray-800 me-2 lh-1 ls-n2">2,579</span>
-                {/*end::Title*/}
-                 
-                {/*begin::Label*/}  
-                <span className="badge badge-light-success fs-base">                                
-                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr066.svg*/}
-<span className="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor"/>
-<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}    
-                    2.2%
-                </span>  
-                {/*end::Label*/}                            
-            </div>
-            {/*end::Heading*/}
-
-            {/*begin::Description*/}
-            <span className="fs-6 fw-semibold text-gray-400">Domain External Links</span>
-            {/*end::Description*/}
-        </div>
-        {/*end::Statistics*/}
-
-        {/*begin::Toolbar*/}
-        <div className="card-toolbar">   
-            {/*begin::Menu*/}
-            <button className="btn btn-icon btn-color-gray-400 btn-active-color-primary justify-content-end" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-overflow="true">                
-                {/*begin::Svg Icon | path: icons/duotune/general/gen023.svg*/}
-<span className="svg-icon svg-icon-1 svg-icon-gray-300 me-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="4" fill="currentColor"/>
-<rect x="11" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-<rect x="15" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-<rect x="7" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                             
-            </button>
-
-            
-{/*begin::Menu 2*/}
-<div className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px" data-kt-menu="true">
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <div className="menu-content fs-6 text-dark fw-bold px-3 py-4">Quick Actions</div>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu separator*/}
-    <div className="separator mb-3 opacity-75"></div>
-    {/*end::Menu separator*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Ticket
-        </a>
-    </div>
-    {/*end::Menu item*/}
-    
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Customer
-        </a>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-start">
-        {/*begin::Menu item*/}
-        <a href="#" className="menu-link px-3">
-            <span className="menu-title">New Group</span>
-            <span className="menu-arrow"></span>
-        </a>
-        {/*end::Menu item*/}
-
-        {/*begin::Menu sub*/}
-        <div className="menu-sub menu-sub-dropdown w-175px py-4">
-            {/*begin::Menu item*/}
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Admin Group
-                </a>
-            </div>
-            {/*end::Menu item*/}
-
-            {/*begin::Menu item*/}
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Staff Group
-                </a>
-            </div>
-            {/*end::Menu item*/}
-
-            {/*begin::Menu item*/}            
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Member Group
-                </a>
-            </div>
-            {/*end::Menu item*/}
-        </div>
-        {/*end::Menu sub*/}
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Contact
-        </a>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu separator*/}
-    <div className="separator mt-3 opacity-75"></div>
-    {/*end::Menu separator*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <div className="menu-content px-3 py-3">
-            <a className="btn btn-primary  btn-sm px-4" href="#">
-                Generate Reports
-            </a>
-        </div>
-    </div>
-    {/*end::Menu item*/}
-</div>
-{/*end::Menu 2*/}
- 
-            {/*end::Menu*/}         
-        </div>
-        {/*end::Toolbar*/}
-    </div>
-    {/*end::Header*/}
-
-    {/*begin::Body*/}
-    <div className="card-body d-flex align-items-end ps-4 pe-0 pb-4">                 
-        {/*begin::Chart*/}
-        <div id="kt_charts_widget_28" className="h-300px w-100 min-h-auto" style={{minHeight: '315px'}}>
-        <div id="apexchartsi60j3klu" className="apexcharts-canvas apexchartsi60j3klu apexcharts-theme-light" style={{width: '889px', height: '350px'}}>
-        <svg
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsData="ApexChartsNS"
-      width="889px"
-      height="350px"
-      className="apexcharts-svg apexcharts-zoomable"
-      version="1.1"
-      style={{ background: "transparent" }}
-    >
-      <g
-        className="apexcharts-inner apexcharts-graphical"
-        transform="translate(51.083 30)"
-      >
-        <defs>
-          <clipPath id="gridRectMaski60j3klu">
-            <rect
-              width="387.717"
-              height="233.73"
-              x="-3.5"
-              y="-1.5"
-              fill="#fff"
-              stroke="none"
-              strokeDasharray="0"
-              strokeWidth="0"
-              opacity="1"
-              rx="0"
-              ry="0"
-            ></rect>
-          </clipPath>
-          <clipPath></clipPath>
-          <clipPath></clipPath>
-          <clipPath>
-            <rect
-              width="384.717"
-              height="234.73"
-              x="-2"
-              y="-2"
-              fill="#fff"
-              stroke="none"
-              strokeDasharray="0"
-              strokeWidth="0"
-              opacity="1"
-              rx="0"
-              ry="0"
-            ></rect>
-          </clipPath>
-          <linearGradient
-            id="SvgjsLinearGradient3564"
-            x1="0"
-            x2="0"
-            y1="0"
-            y2="1"
-          >
-            <stop
-              offset="0"
-              stopColor="rgba(114,57,234,0.4)"
-              stopOpacity="0.4"
-            ></stop>
-            <stop
-              offset="0.8"
-              stopColor="rgba(255,255,255,0)"
-              stopOpacity="0"
-            ></stop>
-            <stop
-              offset="1"
-              stopColor="rgba(255,255,255,0)"
-              stopOpacity="0"
-            ></stop>
-          </linearGradient>
-        </defs>
-        <g className="apexcharts-xaxis" transform="translate(20)">
-          <g className="apexcharts-xaxis-texts-g" transform="translate(0 -4)">
-            <text
-              x="0"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            >
-              <tspan>May 04</tspan>
-            </text>
-            <text
-              x="27.194"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="54.388"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="81.582"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="108.776"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            >
-              <tspan>May 10</tspan>
-            </text>
-            <text
-              x="135.97"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="163.164"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="190.358"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="217.552"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            >
-              <tspan>May 18</tspan>
-            </text>
-            <text
-              x="244.746"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="271.94"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="299.135"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="326.329"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            >
-              <tspan>May 26</tspan>
-            </text>
-            <text
-              x="353.523"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="380.717"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-          </g>
-        </g>
-        <g className="apexcharts-grid">
-          <g className="apexcharts-gridlines-horizontal">
-            <path
-              stroke="#e1e3ea"
-              strokeDasharray="4"
-              strokeLinecap="butt"
-              d="M0 0L380.717 0"
-              className="apexcharts-gridline"
-            ></path>
-            <path
-              stroke="#e1e3ea"
-              strokeDasharray="4"
-              strokeLinecap="butt"
-              d="M0 57.683L380.717 57.683"
-              className="apexcharts-gridline"
-            ></path>
-            <path
-              stroke="#e1e3ea"
-              strokeDasharray="4"
-              strokeLinecap="butt"
-              d="M0 115.365L380.717 115.365"
-              className="apexcharts-gridline"
-            ></path>
-            <path
-              stroke="#e1e3ea"
-              strokeDasharray="4"
-              strokeLinecap="butt"
-              d="M0 173.048L380.717 173.048"
-              className="apexcharts-gridline"
-            ></path>
-            <path
-              stroke="#e1e3ea"
-              strokeDasharray="4"
-              strokeLinecap="butt"
-              d="M0 230.73L380.717 230.73"
-              className="apexcharts-gridline"
-            ></path>
-          </g>
-          <path
-            stroke="transparent"
-            strokeDasharray="0"
-            strokeLinecap="butt"
-            d="M0 230.73L380.717 230.73"
-          ></path>
-          <path
-            stroke="transparent"
-            strokeDasharray="0"
-            strokeLinecap="butt"
-            d="M0 1L0 230.73"
-          ></path>
-        </g>
-        <g className="apexcharts-area-series apexcharts-plot-series">
-          <g
-            className="apexcharts-series"
-            dataLongestSeries="true"
-            dataRealIndex="0"
-          >
-            <path
-              fill="url(#SvgjsLinearGradient3564)"
-              fillOpacity="1"
-              strokeDasharray="0"
-              strokeLinecap="butt"
-              strokeOpacity="1"
-              strokeWidth="0"
-              d="M0 230.73V92.292c9.518 0 17.676-61.528 27.194-61.528h27.194c9.518 0 17.676 46.146 27.194 46.146h27.194c9.518 0 17.676 15.382 27.194 15.382h27.194c9.518 0 17.676-15.382 27.194-15.382h27.194c9.518 0 17.677-30.764 27.194-30.764h27.194c9.518 0 17.677 30.764 27.195 30.764h27.194c9.517 0 17.676-15.382 27.194-15.382h27.194V230.73m0-169.202z"
-              className="apexcharts-area"
-              clipPath="url(#gridRectMaski60j3klu)"
-            ></path>
-            <path
-              fill="none"
-              fillOpacity="1"
-              fillRule="evenodd"
-              stroke="#7239ea"
-              strokeDasharray="0"
-              strokeLinecap="butt"
-              strokeOpacity="1"
-              strokeWidth="3"
-              d="M0 92.292c9.518 0 17.676-61.528 27.194-61.528h27.194c9.518 0 17.676 46.146 27.194 46.146h27.194c9.518 0 17.676 15.382 27.194 15.382h27.194c9.518 0 17.676-15.382 27.194-15.382h27.194c9.518 0 17.677-30.764 27.194-30.764h27.194c9.518 0 17.677 30.764 27.195 30.764h27.194c9.517 0 17.676-15.382 27.194-15.382h27.194"
-              className="apexcharts-area"
-              clipPath="url(#gridRectMaski60j3klu)"
-            ></path>
-          </g>
-        </g>
-        <path
-          fill="#b1b9c4"
-          fillOpacity="0.9"
-          stroke="#7239ea"
-          strokeDasharray="3"
-          strokeLinecap="butt"
-          strokeWidth="1"
-          d="M26.694 0L26.694 230.73"
-          className="apexcharts-xcrosshairs"
-          filter="none"
-        ></path>
-        <path
-          stroke="#b6b6b6"
-          strokeDasharray="0"
-          strokeLinecap="butt"
-          strokeWidth="1"
-          d="M0 0L380.717 0"
-          className="apexcharts-ycrosshairs"
-        ></path>
-        <path
-          strokeDasharray="0"
-          strokeLinecap="butt"
-          strokeWidth="0"
-          d="M0 0L380.717 0"
-          className="apexcharts-ycrosshairs-hidden"
-        ></path>
-      </g>
-      <g className="apexcharts-yaxis" transform="translate(21.083)">
-        <g className="apexcharts-yaxis-texts-g">
-          <text
-            x="20"
-            y="31.4"
-            fill="#a1a5b7"
-            className="apexcharts-text apexcharts-yaxis-label"
-            dominantBaseline="auto"
-            fontFamily="inherit"
-            fontSize="12"
-            fontWeight="400"
-            textAnchor="end"
-          >
-            <tspan>250</tspan>
-          </text>
-          <text
-            x="20"
-            y="89.083"
-            fill="#a1a5b7"
-            className="apexcharts-text apexcharts-yaxis-label"
-            dominantBaseline="auto"
-            fontFamily="inherit"
-            fontSize="12"
-            fontWeight="400"
-            textAnchor="end"
-          >
-            <tspan>212.5</tspan>
-          </text>
-          <text
-            x="20"
-            y="146.765"
-            fill="#a1a5b7"
-            className="apexcharts-text apexcharts-yaxis-label"
-            dominantBaseline="auto"
-            fontFamily="inherit"
-            fontSize="12"
-            fontWeight="400"
-            textAnchor="end"
-          >
-            <tspan>175</tspan>
-          </text>
-          <text
-            x="20"
-            y="204.448"
-            fill="#a1a5b7"
-            className="apexcharts-text apexcharts-yaxis-label"
-            dominantBaseline="auto"
-            fontFamily="inherit"
-            fontSize="12"
-            fontWeight="400"
-            textAnchor="end"
-          >
-            <tspan>137.5</tspan>
-          </text>
-          <text
-            x="20"
-            y="262.13"
-            fill="#a1a5b7"
-            className="apexcharts-text apexcharts-yaxis-label"
-            dominantBaseline="auto"
-            fontFamily="inherit"
-            fontSize="12"
-            fontWeight="400"
-            textAnchor="end"
-          >
-            <tspan>100</tspan>
-          </text>
-        </g>
-      </g>
-    </svg>
-        </div>
-        </div>
-        {/*end::Chart*/}   
-    </div>
-    {/*end::Body*/}
-</div>
-{/*end::Chart widget 28*/}
-
-
-     </div>
-    {/*end::Col*/}
-
-    {/*begin::Col*/}
-    <div className="col-xxl-4 mb-5 mb-xl-10">
-        
-{/*begin::List widget 9*/}
-<div className="card card-flush h-xl-100">
-    {/*begin::Header*/}
-    <div className="card-header py-7">
-                    
-            {/*begin::Statistics*/}
-            <div className="m-0">   
-                {/*begin::Heading*/}
-                <div className="d-flex align-items-center mb-2">          
-                    {/*begin::Title*/}     
-                    <span className="fs-2hx fw-bold text-gray-800 me-2 lh-1 ls-n2">5,037</span>
-                    {/*end::Title*/}
-
-                                            {/*begin::Label*/}  
-                        <span className="badge badge-light-success fs-base">                                
-                            {/*begin::Svg Icon | path: icons/duotune/arrows/arr066.svg*/}
-<span className="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor"/>
-<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}     
-                            2.2%
-                        </span>  
-                        {/*end::Label*/}            
-                                  
-                </div>
-                {/*end::Heading*/}
-
-                {/*begin::Description*/}
-                <span className="fs-6 fw-semibold text-gray-400">Visits by Social Networks</span>
-                {/*end::Description*/}
-            </div>
-            {/*end::Statistics*/}
-
-            {/*begin::Toolbar*/}
-            <div className="card-toolbar">   
-                {/*begin::Menu*/}
-                <button className="btn btn-icon btn-color-gray-400 btn-active-color-primary justify-content-end" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-overflow="true">                
-                    {/*begin::Svg Icon | path: icons/duotune/general/gen023.svg*/}
-<span className="svg-icon svg-icon-1 svg-icon-gray-300 me-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="4" fill="currentColor"/>
-<rect x="11" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-<rect x="15" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-<rect x="7" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                             
-                </button>
-
-                
-{/*begin::Menu 2*/}
-<div className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px" data-kt-menu="true">
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <div className="menu-content fs-6 text-dark fw-bold px-3 py-4">Quick Actions</div>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu separator*/}
-    <div className="separator mb-3 opacity-75"></div>
-    {/*end::Menu separator*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Ticket
-        </a>
-    </div>
-    {/*end::Menu item*/}
-    
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Customer
-        </a>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-start">
-        {/*begin::Menu item*/}
-        <a href="#" className="menu-link px-3">
-            <span className="menu-title">New Group</span>
-            <span className="menu-arrow"></span>
-        </a>
-        {/*end::Menu item*/}
-
-        {/*begin::Menu sub*/}
-        <div className="menu-sub menu-sub-dropdown w-175px py-4">
-            {/*begin::Menu item*/}
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Admin Group
-                </a>
-            </div>
-            {/*end::Menu item*/}
-
-            {/*begin::Menu item*/}
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Staff Group
-                </a>
-            </div>
-            {/*end::Menu item*/}
-
-            {/*begin::Menu item*/}            
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Member Group
-                </a>
-            </div>
-            {/*end::Menu item*/}
-        </div>
-        {/*end::Menu sub*/}
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Contact
-        </a>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu separator*/}
-    <div className="separator mt-3 opacity-75"></div>
-    {/*end::Menu separator*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <div className="menu-content px-3 py-3">
-            <a className="btn btn-primary  btn-sm px-4" href="#">
-                Generate Reports
-            </a>
-        </div>
-    </div>
-    {/*end::Menu item*/}
-</div>
-{/*end::Menu 2*/}
- 
-                {/*end::Menu*/}         
-            </div>
-            {/*end::Toolbar*/}             
-         
-    </div>
-    {/*end::Header*/}        
-
-    {/*begin::Body*/}
-    <div className="card-body card-body d-flex justify-content-between flex-column pt-3">                 
-                    
-            {/*begin::Item*/}
-            <div className="d-flex flex-stack">
-                {/*begin::Flag*/}                    
-                <img src="/assets/media/svg/brand-logos/dribbble-icon-1.svg" className="me-4 w-30px" style={{borderRadius: '4px'}} alt=""/>                     
-                {/*end::Flag*/}
-
-                {/*begin::Section*/}
-                <div className="d-flex align-items-center flex-stack flex-wrap flex-row-fluid d-grid gap-2">
-                    {/*begin::Content*/}
-                    <div className="me-5">
-                        {/*begin::Title*/}
-                        <a href="#" className="text-gray-800 fw-bold text-hover-primary fs-6">Dribbble</a>
-                        {/*end::Title*/}
-
-                        {/*begin::Desc*/}
-                        <span className="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Community</span>   
-                        {/*end::Desc*/}                                     
-                    </div>
-                    {/*end::Content*/}
-                    
-                    {/*begin::Wrapper*/}
-                    <div className="d-flex align-items-center"> 
-                        {/*begin::Number*/}
-                                                    <span className="text-gray-800 fw-bold fs-4 me-3">579</span>
-                                                    
-                        {/*end::Number*/}                        
-                        
-                        {/*begin::Info*/} 
-                        <div className="m-0">
-                                                            {/*begin::Label*/} 
-                                <span className="badge badge-light-success fs-base">                                
-                                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr066.svg*/}
-<span className="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor"/>
-<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                                                              
-                                    2.6%
-                                </span>  
-                                {/*end::Label*/}   
-                                                    
-                        </div>  
-                        {/*end::Info*/}                  
-                    </div>
-                    {/*end::Wrapper*/}  
-                </div>
-                {/*end::Section*/}                              
-            </div>
-            {/*end::Item*/}
-
-             
-                {/*begin::Separator*/}
-                <div className="separator separator-dashed my-3"></div>
-                {/*end::Separator*/}
-             
-                    
-            {/*begin::Item*/}
-            <div className="d-flex flex-stack">
-                {/*begin::Flag*/}                    
-                <img src="/assets/media/svg/brand-logos/linkedin-1.svg" className="me-4 w-30px" style={{borderRadius: '4px'}} alt=""/>                     
-                {/*end::Flag*/}
-
-                {/*begin::Section*/}
-                <div className="d-flex align-items-center flex-stack flex-wrap flex-row-fluid d-grid gap-2">
-                    {/*begin::Content*/}
-                    <div className="me-5">
-                        {/*begin::Title*/}
-                        <a href="#" className="text-gray-800 fw-bold text-hover-primary fs-6">Linked In</a>
-                        {/*end::Title*/}
-
-                        {/*begin::Desc*/}
-                        <span className="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Social Media</span>   
-                        {/*end::Desc*/}                                     
-                    </div>
-                    {/*end::Content*/}
-                    
-                    {/*begin::Wrapper*/}
-                    <div className="d-flex align-items-center"> 
-                        {/*begin::Number*/}
-                                                    <span className="text-gray-800 fw-bold fs-4 me-3">1,088</span>
-                                                    
-                        {/*end::Number*/}                        
-                        
-                        {/*begin::Info*/} 
-                        <div className="m-0">
-                                                            {/*begin::Label*/} 
-                                <span className="badge badge-light-danger fs-base">                           
-                                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr065.svg*/}
-<span className="svg-icon svg-icon-5 svg-icon-danger ms-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="11" y="18" width="13" height="2" rx="1" transform="rotate(-90 11 18)" fill="currentColor"/>
-<path d="M11.4343 15.4343L7.25 11.25C6.83579 10.8358 6.16421 10.8358 5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75L11.2929 18.2929C11.6834 18.6834 12.3166 18.6834 12.7071 18.2929L18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25C17.8358 10.8358 17.1642 10.8358 16.75 11.25L12.5657 15.4343C12.2533 15.7467 11.7467 15.7467 11.4343 15.4343Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                             
-                                    0.4%
-                                </span>  
-                                {/*end::Label*/}               
-                                                    
-                        </div>  
-                        {/*end::Info*/}                  
-                    </div>
-                    {/*end::Wrapper*/}  
-                </div>
-                {/*end::Section*/}                              
-            </div>
-            {/*end::Item*/}
-
-             
-                {/*begin::Separator*/}
-                <div className="separator separator-dashed my-3"></div>
-                {/*end::Separator*/}
-             
-                    
-            {/*begin::Item*/}
-            <div className="d-flex flex-stack">
-                {/*begin::Flag*/}                    
-                <img src="/assets/media/svg/brand-logos/slack-icon.svg" className="me-4 w-30px" style={{borderRadius: '4px'}} alt=""/>                     
-                {/*end::Flag*/}
-
-                {/*begin::Section*/}
-                <div className="d-flex align-items-center flex-stack flex-wrap flex-row-fluid d-grid gap-2">
-                    {/*begin::Content*/}
-                    <div className="me-5">
-                        {/*begin::Title*/}
-                        <a href="#" className="text-gray-800 fw-bold text-hover-primary fs-6">Slack</a>
-                        {/*end::Title*/}
-
-                        {/*begin::Desc*/}
-                        <span className="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Messanger</span>   
-                        {/*end::Desc*/}                                     
-                    </div>
-                    {/*end::Content*/}
-                    
-                    {/*begin::Wrapper*/}
-                    <div className="d-flex align-items-center"> 
-                        {/*begin::Number*/}
-                                                    <span className="text-gray-800 fw-bold fs-4 me-3">794</span>
-                                                    
-                        {/*end::Number*/}                        
-                        
-                        {/*begin::Info*/} 
-                        <div className="m-0">
-                                                            {/*begin::Label*/} 
-                                <span className="badge badge-light-success fs-base">                                
-                                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr066.svg*/}
-<span className="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor"/>
-<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                                                              
-                                    0.2%
-                                </span>  
-                                {/*end::Label*/}   
-                                                    
-                        </div>  
-                        {/*end::Info*/}                  
-                    </div>
-                    {/*end::Wrapper*/}  
-                </div>
-                {/*end::Section*/}                              
-            </div>
-            {/*end::Item*/}
-
-             
-                {/*begin::Separator*/}
-                <div className="separator separator-dashed my-3"></div>
-                {/*end::Separator*/}
-             
-                    
-            {/*begin::Item*/}
-            <div className="d-flex flex-stack">
-                {/*begin::Flag*/}                    
-                <img src="/assets/media/svg/brand-logos/youtube-3.svg" className="me-4 w-30px" style={{borderRadius: '4px'}} alt=""/>                     
-                {/*end::Flag*/}
-
-                {/*begin::Section*/}
-                <div className="d-flex align-items-center flex-stack flex-wrap flex-row-fluid d-grid gap-2">
-                    {/*begin::Content*/}
-                    <div className="me-5">
-                        {/*begin::Title*/}
-                        <a href="#" className="text-gray-800 fw-bold text-hover-primary fs-6">YouTube</a>
-                        {/*end::Title*/}
-
-                        {/*begin::Desc*/}
-                        <span className="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Video Channel</span>   
-                        {/*end::Desc*/}                                     
-                    </div>
-                    {/*end::Content*/}
-                    
-                    {/*begin::Wrapper*/}
-                    <div className="d-flex align-items-center"> 
-                        {/*begin::Number*/}
-                                                    <span className="text-gray-800 fw-bold fs-4 me-3">978</span>
-                                                    
-                        {/*end::Number*/}                        
-                        
-                        {/*begin::Info*/} 
-                        <div className="m-0">
-                                                            {/*begin::Label*/} 
-                                <span className="badge badge-light-success fs-base">                                
-                                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr066.svg*/}
-<span className="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor"/>
-<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                                                              
-                                    4.1%
-                                </span>  
-                                {/*end::Label*/}   
-                                                    
-                        </div>  
-                        {/*end::Info*/}                  
-                    </div>
-                    {/*end::Wrapper*/}  
-                </div>
-                {/*end::Section*/}                              
-            </div>
-            {/*end::Item*/}
-
-             
-                {/*begin::Separator*/}
-                <div className="separator separator-dashed my-3"></div>
-                {/*end::Separator*/}
-             
-                    
-            {/*begin::Item*/}
-            <div className="d-flex flex-stack">
-                {/*begin::Flag*/}                    
-                <img src="/assets/media/svg/brand-logos/instagram-2-1.svg" className="me-4 w-30px" style={{borderRadius: '4px'}} alt=""/>                     
-                {/*end::Flag*/}
-
-                {/*begin::Section*/}
-                <div className="d-flex align-items-center flex-stack flex-wrap flex-row-fluid d-grid gap-2">
-                    {/*begin::Content*/}
-                    <div className="me-5">
-                        {/*begin::Title*/}
-                        <a href="#" className="text-gray-800 fw-bold text-hover-primary fs-6">Instagram</a>
-                        {/*end::Title*/}
-
-                        {/*begin::Desc*/}
-                        <span className="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Social Network</span>   
-                        {/*end::Desc*/}                                     
-                    </div>
-                    {/*end::Content*/}
-                    
-                    {/*begin::Wrapper*/}
-                    <div className="d-flex align-items-center"> 
-                        {/*begin::Number*/}
-                                                    <span className="text-gray-800 fw-bold fs-4 me-3">1,458</span>
-                                                    
-                        {/*end::Number*/}                        
-                        
-                        {/*begin::Info*/} 
-                        <div className="m-0">
-                                                            {/*begin::Label*/} 
-                                <span className="badge badge-light-success fs-base">                                
-                                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr066.svg*/}
-<span className="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor"/>
-<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                                                              
-                                    8.3%
-                                </span>  
-                                {/*end::Label*/}   
-                                                    
-                        </div>  
-                        {/*end::Info*/}                  
-                    </div>
-                    {/*end::Wrapper*/}  
-                </div>
-                {/*end::Section*/}                              
-            </div>
-            {/*end::Item*/}
-
-             
-                        </div>
-    {/*end::Body*/}
-</div>
-{/*end::List widget 9*/}
-
-
-                                 </div>
-    {/*end::Col*/}
-</div>
-{/*end::Row*/}
-
-{/*begin::Row*/}
-<div className="row gx-5 gx-xl-10">
-    {/*begin::Col*/}
-    <div className="col-xl-6 mb-5 mb-xl-10">
-        
-{/*begin::Table widget 9*/}
-<div className="card card-flush h-xl-100">
-    {/*begin::Header*/}
-    <div className="card-header pt-5">        
-        {/*begin::Title*/}
-        <h3 className="card-title align-items-start flex-column">
-            <span className="card-label fw-bold text-gray-800">Top Referral Sources</span>
-            
-            <span className="text-gray-400 pt-1 fw-semibold fs-6">Counted in Millions</span>
-        </h3>
-        {/*end::Title*/}
-
-        {/*begin::Toolbar*/}
-        <div className="card-toolbar">   
-            <a href="#" className="btn btn-sm btn-light">PDF Report</a>             
-        </div>
-        {/*end::Toolbar*/}
-    </div>
-    {/*end::Header*/}
-
-    {/*begin::Body*/}
-	<div className="card-body py-3">
-        {/*begin::Table container*/}
-        <div className="table-responsive">
-            {/*begin::Table*/}
-            <table className="table table-row-dashed align-middle gs-0 gy-4">
-                {/*begin::Table head*/}
-                <thead>
-                    <tr className="fs-7 fw-bold border-0 text-gray-400">                                    
-                        <th className="min-w-150px" colspan="2">CAMPAIGN</th>
-                        <th className="min-w-150px text-end pe-0" colspan="2">SESSIONS</th>
-                        <th className="text-end min-w-150px" colspan="2">CONVERSION RATE</th>
-                    </tr>
-                </thead>
-                {/*end::Table head*/}
-
-                {/*begin::Table body*/}
-                <tbody>
-                                            <tr>
-                            <td className="" colspan="2">
-                                <a href="#" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Google</a>                                            
-                            </td>
-
-                            <td className="pe-0" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-gray-800 fw-bold fs-6 me-1">1,256</span>
-
-                                    <span className="text-danger min-w-50px d-block text-end fw-bold fs-6">-935</span>                                                              
-                                </div>                                                          
-                            </td>
-
-                            <td className="" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-dark fw-bold fs-6 me-3">23.63%</span>
-
-                                    <span className="text-danger min-w-60px d-block text-end fw-bold fs-6">-9.35%</span>                                                              
-                                </div>                                                          
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td className="" colspan="2">
-                                <a href="#" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Facebook</a>                                            
-                            </td>
-
-                            <td className="pe-0" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-gray-800 fw-bold fs-6 me-1">446</span>
-
-                                    <span className="text-danger min-w-50px d-block text-end fw-bold fs-6">-576</span>                                                              
-                                </div>                                                          
-                            </td>
-
-                            <td className="" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-dark fw-bold fs-6 me-3">12.45%</span>
-
-                                    <span className="text-danger min-w-60px d-block text-end fw-bold fs-6">-57.02%</span>                                                              
-                                </div>                                                          
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td className="" colspan="2">
-                                <a href="#" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Bol.com</a>                                            
-                            </td>
-
-                            <td className="pe-0" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-gray-800 fw-bold fs-6 me-1">67</span>
-
-                                    <span className="text-success min-w-50px d-block text-end fw-bold fs-6">+24</span>                                                              
-                                </div>                                                          
-                            </td>
-
-                            <td className="" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-dark fw-bold fs-6 me-3">73.63%</span>
-
-                                    <span className="text-success min-w-60px d-block text-end fw-bold fs-6">+28.73%</span>                                                              
-                                </div>                                                          
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td className="" colspan="2">
-                                <a href="#" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Dutchnews.nl</a>                                            
-                            </td>
-
-                            <td className="pe-0" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-gray-800 fw-bold fs-6 me-1">2,136</span>
-
-                                    <span className="text-danger min-w-50px d-block text-end fw-bold fs-6">-1,229</span>                                                              
-                                </div>                                                          
-                            </td>
-
-                            <td className="" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-dark fw-bold fs-6 me-3">3.67%</span>
-
-                                    <span className="text-danger min-w-60px d-block text-end fw-bold fs-6">-12.29%</span>                                                              
-                                </div>                                                          
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td className="" colspan="2">
-                                <a href="#" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Stackoverflow</a>                                            
-                            </td>
-
-                            <td className="pe-0" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-gray-800 fw-bold fs-6 me-1">945</span>
-
-                                    <span className="text-danger min-w-50px d-block text-end fw-bold fs-6">-634</span>                                                              
-                                </div>                                                          
-                            </td>
-
-                            <td className="" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-dark fw-bold fs-6 me-3">25.03%</span>
-
-                                    <span className="text-danger min-w-60px d-block text-end fw-bold fs-6">-9.35%</span>                                                              
-                                </div>                                                          
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td className="" colspan="2">
-                                <a href="#" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Themeforest</a>                                            
-                            </td>
-
-                            <td className="pe-0" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-gray-800 fw-bold fs-6 me-1">237</span>
-
-                                    <span className="text-success min-w-50px d-block text-end fw-bold fs-6">106</span>                                                              
-                                </div>                                                          
-                            </td>
-
-                            <td className="" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-dark fw-bold fs-6 me-3">36.52%</span>
-
-                                    <span className="text-success min-w-60px d-block text-end fw-bold fs-6">+3.06%</span>                                                              
-                                </div>                                                          
-                            </td>
-                        </tr>
-                                    </tbody>
-                {/*end::Table body*/}
-            </table>
-            {/*end::Table*/}
-        </div>
-        {/*end::Table container*/}
-	</div>
-	{/*end::Body*/}
-</div>
-{/*end::Table Widget 9*/}    </div>
-    {/*end::Col*/}
-
-     {/*begin::Col*/}
-     <div className="col-xl-6 mb-5 mb-xl-10">
-        
-{/*begin::Table widget 10*/}
-<div className="card card-flush h-xl-100">
-    {/*begin::Header*/}
-    <div className="card-header pt-5">        
-        {/*begin::Title*/}
-        <h3 className="card-title align-items-start flex-column">
-            <span className="card-label fw-bold text-gray-800">Top Performing Pages</span>
-            
-            <span className="text-gray-400 pt-1 fw-semibold fs-6">Counted in Millions</span>
-        </h3>
-        {/*end::Title*/}
-
-        {/*begin::Toolbar*/}
-        <div className="card-toolbar">   
-            <a href="#" className="btn btn-sm btn-light">PDF Report</a>             
-        </div>
-        {/*end::Toolbar*/}
-    </div>
-    {/*end::Header*/}
-
-    {/*begin::Body*/}
-	<div className="card-body py-3">
-        {/*begin::Table container*/}
-        <div className="table-responsive">
-            {/*begin::Table*/}
-            <table className="table table-row-dashed align-middle gs-0 gy-4">
-                {/*begin::Table head*/}
-                <thead>
-                    <tr className="fs-7 fw-bold border-0 text-gray-400">                                    
-                        <th className="min-w-200px" colspan="2">LANDING PAGE</th>
-                        <th className="min-w-100px text-end pe-0" colspan="2">CLICKS</th>
-                        <th className="text-end min-w-100px" colspan="2">AVG. POSITION</th>
-                    </tr>
-                </thead>
-                {/*end::Table head*/}
-
-                {/*begin::Table body*/}
-                <tbody>
-                                            <tr>
-                            <td className="" colspan="2">
-                                <a href="#" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Index</a>                                            
-                            </td>
-
-                            <td className="pe-0" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-gray-800 fw-bold fs-6">1,256</span>
-
-                                    <span className="text-danger min-w-50px d-block text-end fw-bold fs-6">-935</span>                                                              
-                                </div>                                                          
-                            </td>
-
-                            <td className="" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-dark fw-bold fs-6">2.63</span>
-
-                                    <span className="text-danger min-w-50px d-block text-end fw-bold fs-6">-1.35</span>                                                              
-                                </div>                                                          
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td className="" colspan="2">
-                                <a href="#" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Products</a>                                            
-                            </td>
-
-                            <td className="pe-0" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-gray-800 fw-bold fs-6">446</span>
-
-                                    <span className="text-danger min-w-50px d-block text-end fw-bold fs-6">-576</span>                                                              
-                                </div>                                                          
-                            </td>
-
-                            <td className="" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-dark fw-bold fs-6">1.45</span>
-
-                                    <span className="text-danger min-w-50px d-block text-end fw-bold fs-6">0.32</span>                                                              
-                                </div>                                                          
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td className="" colspan="2">
-                                <a href="#" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">devs.keenthemes.com</a>                                            
-                            </td>
-
-                            <td className="pe-0" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-gray-800 fw-bold fs-6">67</span>
-
-                                    <span className="text-success min-w-50px d-block text-end fw-bold fs-6">+24</span>                                                              
-                                </div>                                                          
-                            </td>
-
-                            <td className="" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-dark fw-bold fs-6">7.63</span>
-
-                                    <span className="text-success min-w-50px d-block text-end fw-bold fs-6">+8.73</span>                                                              
-                                </div>                                                          
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td className="" colspan="2">
-                                <a href="#" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">studio.keenthemes.com</a>                                            
-                            </td>
-
-                            <td className="pe-0" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-gray-800 fw-bold fs-6">2,136</span>
-
-                                    <span className="text-danger min-w-50px d-block text-end fw-bold fs-6">-1,229</span>                                                              
-                                </div>                                                          
-                            </td>
-
-                            <td className="" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-dark fw-bold fs-6">3.67</span>
-
-                                    <span className="text-danger min-w-50px d-block text-end fw-bold fs-6">-2.29</span>                                                              
-                                </div>                                                          
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td className="" colspan="2">
-                                <a href="#" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">graphics.keenthemes.com</a>                                            
-                            </td>
-
-                            <td className="pe-0" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-gray-800 fw-bold fs-6">945</span>
-
-                                    <span className="text-danger min-w-50px d-block text-end fw-bold fs-6">-634</span>                                                              
-                                </div>                                                          
-                            </td>
-
-                            <td className="" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-dark fw-bold fs-6">5.03</span>
-
-                                    <span className="text-danger min-w-50px d-block text-end fw-bold fs-6">-0.35</span>                                                              
-                                </div>                                                          
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td className="" colspan="2">
-                                <a href="#" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Licenses</a>                                            
-                            </td>
-
-                            <td className="pe-0" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-gray-800 fw-bold fs-6">237</span>
-
-                                    <span className="text-success min-w-50px d-block text-end fw-bold fs-6">106</span>                                                              
-                                </div>                                                          
-                            </td>
-
-                            <td className="" colspan="2">                                
-                                <div className="d-flex justify-content-end">                                
-                                    <span className="text-dark fw-bold fs-6">3.52</span>
-
-                                    <span className="text-success min-w-50px d-block text-end fw-bold fs-6">+3.06</span>                                                              
-                                </div>                                                          
-                            </td>
-                        </tr>
-                                    </tbody>
-                {/*end::Table body*/}
-            </table>
-            {/*end::Table*/}
-        </div>
-        {/*end::Table container*/}
-	</div>
-	{/*end::Body*/}
-</div>
-{/*end::Table Widget 10*/}    </div>
-    {/*end::Col*/}
-</div>
-{/*end::Row*/}
-
-{/*begin::Row*/}
-<div className="row gx-5 gx-xl-10">
-<div className="col-xl-6 mb-5 mb-xl-10">
-        
-{/*begin::Table Widget 5*/}
-<div className="card card-flush h-xl-100">
-    {/*begin::Card header*/}
-    <div className="card-header pt-7">
-        {/*begin::Title*/}
-        <h3 className="card-title align-items-start flex-column">
-            <span className="card-label fw-bold text-dark">Stock Report</span>
-            <span className="text-gray-400 mt-1 fw-semibold fs-6">Total 2,356 Items in the Stock</span>
-        </h3>
-        {/*end::Title*/}
-
-        {/*begin::Actions*/}
-        <div className="card-toolbar">
-            {/*begin::Filters*/}
-            <div className="d-flex flex-stack flex-wrap gap-4">
-                {/*begin::Destination*/}
-                <div className="d-flex align-items-center fw-bold">
-                    {/*begin::Label*/}
-                    <div className="text-muted fs-7 me-2">Cateogry</div>
-                    {/*end::Label*/}
-
-                    {/*begin::Select*/}
-                    <select className="form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto select2-hidden-accessible" data-control="select2" data-hide-search="true" data-dropdown-css-classname="w-150px" data-placeholder="Select an option" data-select2-id="select2-data-1-tymb" tabIndex="-1" aria-hidden="true" data-kt-initialized="1">
-                        <option></option>
-                        <option value="Show All" selected="" data-select2-id="select2-data-3-gwzo">Show All</option>
-                        <option value="a">Category A</option>
-                        <option value="b">Category B</option>
-                    </select><span className="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-2-vig8" style={{width: '100%',}}><span className="selection"><span className="select2-selection select2-selection--single form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto" role="combobox" aria-haspopup="true" aria-expanded="false" tabIndex="0" aria-disabled="false" aria-labelledby="select2-j2xb-container" aria-controls="select2-j2xb-container"><span className="select2-selection__rendered" id="select2-j2xb-container" role="textbox" aria-readonly="true" title="Show All">Show All</span><span className="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
-                    {/*end::Select*/}
-                </div>
-                {/*end::Destination*/}
-
-                {/*begin::Status*/}
-                <div className="d-flex align-items-center fw-bold">
-                    {/*begin::Label*/}
-                    <div className="text-muted fs-7 me-2">Status</div>
-                    {/*end::Label*/}
-
-                    {/*begin::Select*/}
-                    <select className="form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto select2-hidden-accessible" data-control="select2" data-hide-search="true" data-dropdown-css-classname="w-150px" data-placeholder="Select an option" data-kt-table-widget-5="filter_status" data-select2-id="select2-data-4-olhp" tabIndex="-1" aria-hidden="true" data-kt-initialized="1">
-                        <option></option>
-                        <option value="Show All" selected="" data-select2-id="select2-data-6-geks">Show All</option>
-                        <option value="In Stock">In Stock</option>
-                        <option value="Out of Stock">Out of Stock</option>
-                        <option value="Low Stock">Low Stock</option>
-                    </select><span className="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-5-eklo" style={{width: '100%',}}><span className="selection"><span className="select2-selection select2-selection--single form-select form-select-transparent text-dark fs-7 lh-1 fw-bold py-0 ps-3 w-auto" role="combobox" aria-haspopup="true" aria-expanded="false" tabIndex="0" aria-disabled="false" aria-labelledby="select2-6jj3-container" aria-controls="select2-6jj3-container"><span className="select2-selection__rendered" id="select2-6jj3-container" role="textbox" aria-readonly="true" title="Show All">Show All</span><span className="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
-                    {/*end::Select*/}
-                </div>
-                {/*end::Status*/}
-
-                {/*begin::Search*/}
-                <a href="apps/ecommerce/catalog/products.html" className="btn btn-light btn-sm">View Stock</a>
-                {/*end::Search*/}
-            </div>
-            {/*begin::Filters*/}
-        </div>
-        {/*end::Actions*/}
-    </div>
-    {/*end::Card header*/}
-
-    {/*begin::Card body*/}
-    <div className="card-body">
-        {/*begin::Table*/}
-        <div id="kt_table_widget_5_table_wrapper" className="dataTables_wrapper dt-bootstrap4 no-footer"><div className="table-responsive"><table className="table align-middle table-row-dashed fs-6 gy-3 dataTable no-footer" id="kt_table_widget_5_table">
-            {/*begin::Table head*/}
-            <thead>
-                {/*begin::Table row*/}
-                <tr className="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0"><th className="min-w-100px sorting" tabIndex="0" aria-controls="kt_table_widget_5_table" rowSpan="1" colspan="1" style={{width: '169.35px'}} aria-label="Item: activate to sort column ascending">Item</th><th className="text-end pe-3 min-w-100px sorting_disabled" rowSpan="1" colspan="1" style={{width: '132.85px'}} aria-label="Product ID">Product ID</th><th className="text-end pe-3 min-w-150px sorting" tabIndex="0" aria-controls="kt_table_widget_5_table" rowSpan="1" colspan="1" style={{width: '196.6px'}}aria-label="Date Added: activate to sort column ascending">Date Added</th><th className="text-end pe-3 min-w-100px sorting" tabIndex="0" aria-controls="kt_table_widget_5_table" rowSpan="1" colspan="1" style={{width: '132.85px'}} aria-label="Price: activate to sort column ascending">Price</th><th className="text-end pe-3 min-w-50px sorting" tabIndex="0" aria-controls="kt_table_widget_5_table" rowSpan="1" colspan="1" style={{width: '133.317px'}} aria-label="Status: activate to sort column ascending">Status</th><th className="text-end pe-0 min-w-25px sorting" tabIndex="0" aria-controls="kt_table_widget_5_table" rowSpan="1" colspan="1" style={{width: '77.95px'}} aria-label="Qty: activate to sort column ascending">Qty</th></tr>
-                {/*end::Table row*/}
-            </thead>
-            {/*end::Table head*/}
-
-            {/*begin::Table body*/}
-            <tbody className="fw-bold text-gray-600">
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                            <tr className="odd">
-                        {/*begin::Item*/}
-                        <td>
-                            <a href="apps/ecommerce/catalog/edit-product.html" className="text-dark text-hover-primary">Macbook Air M1</a>
-                        </td>
-                        {/*end::Item*/}
-
-                        {/*begin::Product ID*/}
-                        <td className="text-end">
-                            #XGY-356                        </td>
-                        {/*end::Product ID*/}
-
-                        {/*begin::Date added*/}
-                        <td className="text-end" data-order="2023-04-20T00:00:00+05:30">
-                            02 Apr, 2023                        </td>
-                        {/*end::Date added*/}
-
-                        {/*begin::Price*/}
-                        <td className="text-end">
-                            $1,230                        </td>
-                        {/*end::Price*/}
-
-                        {/*begin::Status*/}
-                        <td className="text-end">
-                            <span className="badge py-3 px-4 fs-7 badge-light-primary">In Stock</span>
-                        </td>
-                        {/*end::Status*/}
-
-                        {/*begin::Qty*/}
-                        <td className="text-end" data-order="58">
-                            <span className="text-dark fw-bold">58 PCS</span>
-                        </td>
-                        {/*end::Qty*/}                       
-                    </tr><tr className="even">
-                        {/*begin::Item*/}
-                        <td>
-                            <a href="apps/ecommerce/catalog/edit-product.html" className="text-dark text-hover-primary">Surface Laptop 4</a>
-                        </td>
-                        {/*end::Item*/}
-
-                        {/*begin::Product ID*/}
-                        <td className="text-end">
-                            #YHD-047                        </td>
-                        {/*end::Product ID*/}
-
-                        {/*begin::Date added*/}
-                        <td className="text-end" data-order="2023-04-20T00:00:00+05:30">
-                            01 Apr, 2023                        </td>
-                        {/*end::Date added*/}
-
-                        {/*begin::Price*/}
-                        <td className="text-end">
-                            $1,060                        </td>
-                        {/*end::Price*/}
-
-                        {/*begin::Status*/}
-                        <td className="text-end">
-                            <span className="badge py-3 px-4 fs-7 badge-light-danger">Out of Stock</span>
-                        </td>
-                        {/*end::Status*/}
-
-                        {/*begin::Qty*/}
-                        <td className="text-end" data-order="0">
-                            <span className="text-dark fw-bold">0 PCS</span>
-                        </td>
-                        {/*end::Qty*/}                       
-                    </tr><tr className="odd">
-                        {/*begin::Item*/}
-                        <td>
-                            <a href="apps/ecommerce/catalog/edit-product.html" className="text-dark text-hover-primary">Logitech MX 250</a>
-                        </td>
-                        {/*end::Item*/}
-
-                        {/*begin::Product ID*/}
-                        <td className="text-end">
-                            #SRR-678                        </td>
-                        {/*end::Product ID*/}
-
-                        {/*begin::Date added*/}
-                        <td className="text-end" data-order="2023-03-20T00:00:00+05:30">
-                            24 Mar, 2023                        </td>
-                        {/*end::Date added*/}
-
-                        {/*begin::Price*/}
-                        <td className="text-end">
-                            $64                        </td>
-                        {/*end::Price*/}
-
-                        {/*begin::Status*/}
-                        <td className="text-end">
-                            <span className="badge py-3 px-4 fs-7 badge-light-primary">In Stock</span>
-                        </td>
-                        {/*end::Status*/}
-
-                        {/*begin::Qty*/}
-                        <td className="text-end" data-order="290">
-                            <span className="text-dark fw-bold">290 PCS</span>
-                        </td>
-                        {/*end::Qty*/}                       
-                    </tr><tr className="even">
-                        {/*begin::Item*/}
-                        <td>
-                            <a href="apps/ecommerce/catalog/edit-product.html" className="text-dark text-hover-primary">AudioEngine HD3</a>
-                        </td>
-                        {/*end::Item*/}
-
-                        {/*begin::Product ID*/}
-                        <td className="text-end">
-                            #PXF-578                        </td>
-                        {/*end::Product ID*/}
-
-                        {/*begin::Date added*/}
-                        <td className="text-end" data-order="2023-03-20T00:00:00+05:30">
-                            24 Mar, 2023                        </td>
-                        {/*end::Date added*/}
-
-                        {/*begin::Price*/}
-                        <td className="text-end">
-                            $1,060                        </td>
-                        {/*end::Price*/}
-
-                        {/*begin::Status*/}
-                        <td className="text-end">
-                            <span className="badge py-3 px-4 fs-7 badge-light-danger">Out of Stock</span>
-                        </td>
-                        {/*end::Status*/}
-
-                        {/*begin::Qty*/}
-                        <td className="text-end" data-order="46">
-                            <span className="text-dark fw-bold">46 PCS</span>
-                        </td>
-                        {/*end::Qty*/}                       
-                    </tr><tr className="odd">
-                        {/*begin::Item*/}
-                        <td>
-                            <a href="apps/ecommerce/catalog/edit-product.html" className="text-dark text-hover-primary">HP Hyper LTR</a>
-                        </td>
-                        {/*end::Item*/}
-
-                        {/*begin::Product ID*/}
-                        <td className="text-end">
-                            #PXF-778                        </td>
-                        {/*end::Product ID*/}
-
-                        {/*begin::Date added*/}
-                        <td className="text-end" data-order="2023-01-20T00:00:00+05:30">
-                            16 Jan, 2023                        </td>
-                        {/*end::Date added*/}
-
-                        {/*begin::Price*/}
-                        <td className="text-end">
-                            $4500                        </td>
-                        {/*end::Price*/}
-
-                        {/*begin::Status*/}
-                        <td className="text-end">
-                            <span className="badge py-3 px-4 fs-7 badge-light-primary">In Stock</span>
-                        </td>
-                        {/*end::Status*/}
-
-                        {/*begin::Qty*/}
-                        <td className="text-end" data-order="78">
-                            <span className="text-dark fw-bold">78 PCS</span>
-                        </td>
-                        {/*end::Qty*/}                       
-                    </tr><tr className="even">
-                        {/*begin::Item*/}
-                        <td>
-                            <a href="apps/ecommerce/catalog/edit-product.html" className="text-dark text-hover-primary">Dell 32 UltraSharp</a>
-                        </td>
-                        {/*end::Item*/}
-
-                        {/*begin::Product ID*/}
-                        <td className="text-end">
-                            #XGY-356                        </td>
-                        {/*end::Product ID*/}
-
-                        {/*begin::Date added*/}
-                        <td className="text-end" data-order="2023-12-20T00:00:00+05:30">
-                            22 Dec, 2023                        </td>
-                        {/*end::Date added*/}
-
-                        {/*begin::Price*/}
-                        <td className="text-end">
-                            $1,060                        </td>
-                        {/*end::Price*/}
-
-                        {/*begin::Status*/}
-                        <td className="text-end">
-                            <span className="badge py-3 px-4 fs-7 badge-light-warning">Low Stock</span>
-                        </td>
-                        {/*end::Status*/}
-
-                        {/*begin::Qty*/}
-                        <td className="text-end" data-order="8">
-                            <span className="text-dark fw-bold">8 PCS</span>
-                        </td>
-                        {/*end::Qty*/}                       
-                    </tr>
-                    <tr className="odd">
-                        {/*begin::Item*/}
-                        <td>
-                            <a href="apps/ecommerce/catalog/edit-product.html" className="text-dark text-hover-primary">Google Pixel 6 Pro</a>
-                        </td>
-                        {/*end::Item*/}
-
-                        {/*begin::Product ID*/}
-                        <td className="text-end">
-                            #XVR-425                        </td>
-                        {/*end::Product ID*/}
-
-                        {/*begin::Date added*/}
-                        <td className="text-end" data-order="2023-12-20T00:00:00+05:30">
-                            27 Dec, 2023                        </td>
-                        {/*end::Date added*/}
-
-                        {/*begin::Price*/}
-                        <td className="text-end">
-                            $1,060                        </td>
-                        {/*end::Price*/}
-
-                        {/*begin::Status*/}
-                        <td className="text-end">
-                            <span className="badge py-3 px-4 fs-7 badge-light-primary">In Stock</span>
-                        </td>
-                        {/*end::Status*/}
-
-                        {/*begin::Qty*/}
-                        <td className="text-end" data-order="124">
-                            <span className="text-dark fw-bold">124 PCS</span>
-                        </td>
-                        {/*end::Qty*/}                       
-                    </tr>
-                    </tbody>
-            {/*end::Table body*/}
-        </table></div><div className="row"><div className="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start"></div><div className="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end"></div></div></div>
-        {/*end::Table*/}
-    </div>
-    {/*end::Card body*/}
-</div>
-{/*end::Table Widget 5*/}   
- </div>
-     {/*begin::Col*/}
-     <div className="col-xl-6 mb-5 mb-xl-10">
-        
-{/*begin::Table widget 11*/}
-<div className="card card-flush h-xl-100">
-    {/*begin::Header*/}
-    <div className="card-header pt-5">        
-        {/*begin::Title*/}
-        <h3 className="card-title align-items-start flex-column">
-            <span className="card-label fw-bold text-gray-800">Top Queries by Clicks</span>
-            
-            <span className="text-gray-400 pt-2 fw-semibold fs-6">Counted in Millions</span>
-        </h3>
-        {/*end::Title*/}
-
-        {/*begin::Toolbar*/}
-        <div className="card-toolbar">   
-            <a href="#" className="btn btn-sm btn-light">PDF Report</a>             
-        </div>
-        {/*end::Toolbar*/}
-    </div>
-    {/*end::Header*/}
-
-    {/*begin::Body*/}
-    <div className="card-body d-flex justify-content-between flex-column py-3">
-        {/*begin::Block*/}
-        {/* <div className="m-0"></div> */}
-        {/*end::Block*/}
-
-        {/*begin::Table container*/}
-        <div className="table-responsive mb-n2">
-            {/*begin::Table*/}
-            <table className="table table-row-dashed gs-0 gy-4">
-                {/*begin::Table head*/}
-                <thead>
-                    <tr className="fs-7 fw-bold border-0 text-gray-400">                                    
-                        <th className="min-w-300px">KEYWORD</th>
-                        <th className="min-w-100px">CLICKS</th>
-                    </tr>
-                </thead>
-                {/*end::Table head*/}
-
-                {/*begin::Table body*/}
-                <tbody>
-                                            <tr>
-                            <td>
-                                <a href="#" className="text-gray-600 fw-bold text-hover-primary mb-1 fs-6">Buy phone online</a>                                            
-                            </td>
-                            <td className="d-flex align-items-center border-0">                                
-                                <span className="fw-bold text-gray-800 fs-6 me-3">263</span> 
-
-                                <div className="progress rounded-start-0">
-                                    <div className="progress-bar bg-success m-0" role="progressbar" style={{height: '12px',width: '166px'}} aria-valuenow="166" aria-valuemin="0" aria-valuemax="166px"></div>
-                                </div>                                 
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td>
-                                <a href="#" className="text-gray-600 fw-bold text-hover-primary mb-1 fs-6">Top 10 Earbuds</a>                                            
-                            </td>
-                            <td className="d-flex align-items-center border-0">                                
-                                <span className="fw-bold text-gray-800 fs-6 me-3">238</span> 
-
-                                <div className="progress rounded-start-0">
-                                    <div className="progress-bar bg-success m-0" role="progressbar" style={{height: '12px',width: '158px'}} aria-valuenow="158" aria-valuemin="0" aria-valuemax="158px"></div>
-                                </div>                                 
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td>
-                                <a href="#" className="text-gray-600 fw-bold text-hover-primary mb-1 fs-6">Cyber Monday</a>                                            
-                            </td>
-                            <td className="d-flex align-items-center border-0">                                
-                                <span className="fw-bold text-gray-800 fs-6 me-3">189</span> 
-
-                                <div className="progress rounded-start-0">
-                                    <div className="progress-bar bg-success m-0" role="progressbar" style={{height: '12px',width: '129px'}} aria-valuenow="129" aria-valuemin="0" aria-valuemax="129px"></div>
-                                </div>                                 
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td>
-                                <a href="#" className="text-gray-600 fw-bold text-hover-primary mb-1 fs-6">OLED TV in Amsterdam</a>                                            
-                            </td>
-                            <td className="d-flex align-items-center border-0">                                
-                                <span className="fw-bold text-gray-800 fs-6 me-3">263</span> 
-
-                                <div className="progress rounded-start-0">
-                                    <div className="progress-bar bg-success m-0" role="progressbar" style={{height: '12px',width: '112px'}} aria-valuenow="112" aria-valuemin="0" aria-valuemax="112px"></div>
-                                </div>                                 
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td>
-                                <a href="#" className="text-gray-600 fw-bold text-hover-primary mb-1 fs-6">Macbook M1</a>                                            
-                            </td>
-                            <td className="d-flex align-items-center border-0">                                
-                                <span className="fw-bold text-gray-800 fs-6 me-3">263</span> 
-
-                                <div className="progress rounded-start-0">
-                                    <div className="progress-bar bg-success m-0" role="progressbar" style={{height: '12px',width: '107px'}} aria-valuenow="107" aria-valuemin="0" aria-valuemax="107px"></div>
-                                </div>                                 
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td>
-                                <a href="#" className="text-gray-600 fw-bold text-hover-primary mb-1 fs-6">Best noise cancelation headsets</a>                                            
-                            </td>
-                            <td className="d-flex align-items-center border-0">                                
-                                <span className="fw-bold text-gray-800 fs-6 me-3">263</span> 
-
-                                <div className="progress rounded-start-0">
-                                    <div className="progress-bar bg-success m-0" role="progressbar" style={{height: '12px',width: '74px'}} aria-valuenow="74" aria-valuemin="0" aria-valuemax="74px"></div>
-                                </div>                                 
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td>
-                                <a href="#" className="text-gray-600 fw-bold text-hover-primary mb-1 fs-6">Macbook M1</a>                                            
-                            </td>
-                            <td className="d-flex align-items-center border-0">                                
-                                <span className="fw-bold text-gray-800 fs-6 me-3">263</span> 
-
-                                <div className="progress rounded-start-0">
-                                    <div className="progress-bar bg-success m-0" role="progressbar" style={{height: '12px',width: '74px'}} aria-valuenow="74" aria-valuemin="0" aria-valuemax="74px"></div>
-                                </div>                                 
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td>
-                                <a href="#" className="text-gray-600 fw-bold text-hover-primary mb-1 fs-6">OLED TV in Amsterdam</a>                                            
-                            </td>
-                            <td className="d-flex align-items-center border-0">                                
-                                <span className="fw-bold text-gray-800 fs-6 me-3">263</span> 
-
-                                <div className="progress rounded-start-0">
-                                    <div className="progress-bar bg-success m-0" role="progressbar" style={{height: '12px',width: '74px'}} aria-valuenow="74" aria-valuemin="0" aria-valuemax="74px"></div>
-                                </div>                                 
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td>
-                                <a href="#" className="text-gray-600 fw-bold text-hover-primary mb-1 fs-6">Top 10 Earbuds</a>                                            
-                            </td>
-                            <td className="d-flex align-items-center border-0">                                
-                                <span className="fw-bold text-gray-800 fs-6 me-3">263</span> 
-
-                                <div className="progress rounded-start-0">
-                                    <div className="progress-bar bg-success m-0" role="progressbar" style={{height: '12px',width: '74px'}} aria-valuenow="74" aria-valuemin="0" aria-valuemax="74px"></div>
-                                </div>                                 
-                            </td>
-                        </tr>
-                                            <tr>
-                            <td>
-                                <a href="#" className="text-gray-600 fw-bold text-hover-primary mb-1 fs-6">Cyber Monday</a>                                            
-                            </td>
-                            <td className="d-flex align-items-center border-0">                                
-                                <span className="fw-bold text-gray-800 fs-6 me-3">263</span> 
-
-                                <div className="progress rounded-start-0">
-                                    <div className="progress-bar bg-success m-0" role="progressbar" style={{height: '12px',width: '74px'}} aria-valuenow="74" aria-valuemin="0" aria-valuemax="74px"></div>
-                                </div>                                 
-                            </td>
-                        </tr>
-                                    </tbody>
-                {/*end::Table body*/}
-            </table>
-            {/*end::Table*/}
-        </div>
-        {/*end::Table container*/}
-    </div>
-    {/*end::Body*/}
-</div>
-{/*end::Table Widget 11*/}
-
-
-
-
-
-    </div>
-    {/*end::Col*/}
-</div>
-{/*end::Row*/}
-
-{/*begin::Row*/}
-<div className="row gx-5 gx-xl-10">  
-    {/*begin::Col*/}
-    <div className="col-xl-4 mb-5 mb-xl-10">       
-        {/*begin::Chart widget 29*/}
-<div className="card card-flush h-xl-100">
-    {/*begin::Header*/}
-    <div className="card-header py-7">
-        {/*begin::Statistics*/}
-        <div className="m-0">   
-            {/*begin::Heading*/}
-            <div className="d-flex align-items-center mb-2">          
-                {/*begin::Title*/}     
-                <span className="fs-2hx fw-bold text-gray-800 me-2 lh-1 ls-n2">7,9</span>
-                {/*end::Title*/}
-                 
-                {/*begin::Label*/}  
-                <span className="badge badge-light-success fs-base">                                
-                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr066.svg*/}
-<span className="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor"/>
-<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}   
-                    2.2%
-                </span>  
-                {/*end::Label*/}                            
-            </div>
-            {/*end::Heading*/}
-
-            {/*begin::Description*/}
-            <span className="fs-6 fw-semibold text-gray-400">Avarage Position</span>
-            {/*end::Description*/}
-        </div>
-        {/*end::Statistics*/}
-
-        {/*begin::Toolbar*/}
-        <div className="card-toolbar">   
-            {/*begin::Menu*/}
-            <button className="btn btn-icon btn-color-gray-400 btn-active-color-primary justify-content-end" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-overflow="true">                
-                {/*begin::Svg Icon | path: icons/duotune/general/gen023.svg*/}
-<span className="svg-icon svg-icon-1 svg-icon-gray-300 me-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="4" fill="currentColor"/>
-<rect x="11" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-<rect x="15" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-<rect x="7" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                             
-            </button>
-
-            
-{/*begin::Menu 2*/}
-<div className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px" data-kt-menu="true">
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <div className="menu-content fs-6 text-dark fw-bold px-3 py-4">Quick Actions</div>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu separator*/}
-    <div className="separator mb-3 opacity-75"></div>
-    {/*end::Menu separator*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Ticket
-        </a>
-    </div>
-    {/*end::Menu item*/}
-    
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Customer
-        </a>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-start">
-        {/*begin::Menu item*/}
-        <a href="#" className="menu-link px-3">
-            <span className="menu-title">New Group</span>
-            <span className="menu-arrow"></span>
-        </a>
-        {/*end::Menu item*/}
-
-        {/*begin::Menu sub*/}
-        <div className="menu-sub menu-sub-dropdown w-175px py-4">
-            {/*begin::Menu item*/}
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Admin Group
-                </a>
-            </div>
-            {/*end::Menu item*/}
-
-            {/*begin::Menu item*/}
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Staff Group
-                </a>
-            </div>
-            {/*end::Menu item*/}
-
-            {/*begin::Menu item*/}            
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Member Group
-                </a>
-            </div>
-            {/*end::Menu item*/}
-        </div>
-        {/*end::Menu sub*/}
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Contact
-        </a>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu separator*/}
-    <div className="separator mt-3 opacity-75"></div>
-    {/*end::Menu separator*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <div className="menu-content px-3 py-3">
-            <a className="btn btn-primary  btn-sm px-4" href="#">
-                Generate Reports
-            </a>
-        </div>
-    </div>
-    {/*end::Menu item*/}
-</div>
-{/*end::Menu 2*/}
- 
-            {/*end::Menu*/}         
-        </div>
-        {/*end::Toolbar*/}
-    </div>
-    {/*end::Header*/}
-
-    {/*begin::Body*/}
-    <div className="card-body d-flex align-items-end p-0">                 
-        {/*begin::Chart*/}
-        <div id="kt_charts_widget_29" className="h-300px w-100 min-h-auto ps-7 pe-0 mb-5" style={{minHeight: '315px'}}>
-        <div id="apexcharts0golmeqi" className="apexcharts-canvas apexcharts0golmeqi apexcharts-theme-light" style={{width: '400.25px', height: '300px'}}>
-        <svg
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsData="ApexChartsNS"
-      width="270.25px"
-      height="300px"
-      className="apexcharts-svg apexcharts-zoomable hovering-zoom"
-      version="1.1"
-      style={{ background: "transparent" }}
-    >
-      <g
-        className="apexcharts-inner apexcharts-graphical"
-        transform="translate(42.067 30)"
-      >
-        <defs>
-          <clipPath id="gridRectMask0golmeqi">
-            <rect
-              width="389.158"
-              height="233.73"
-              x="-3.5"
-              y="-1.5"
-              fill="#fff"
-              stroke="none"
-              strokeDasharray="0"
-              strokeWidth="0"
-              opacity="1"
-              rx="0"
-              ry="0"
-            ></rect>
-          </clipPath>
-          <clipPath></clipPath>
-          <clipPath></clipPath>
-          <clipPath>
-            <rect
-              width="386.158"
-              height="234.73"
-              x="-2"
-              y="-2"
-              fill="#fff"
-              stroke="none"
-              strokeDasharray="0"
-              strokeWidth="0"
-              opacity="1"
-              rx="0"
-              ry="0"
-            ></rect>
-          </clipPath>
-          <linearGradient
-            id="SvgjsLinearGradient3667"
-            x1="0"
-            x2="0"
-            y1="0"
-            y2="1"
-          >
-            <stop
-              offset="0"
-              stopColor="rgba(255,199,0,0.4)"
-              stopOpacity="0.4"
-            ></stop>
-            <stop
-              offset="0.8"
-              stopColor="rgba(255,255,255,0)"
-              stopOpacity="0"
-            ></stop>
-            <stop
-              offset="1"
-              stopColor="rgba(255,255,255,0)"
-              stopOpacity="0"
-            ></stop>
-          </linearGradient>
-        </defs>
-        <g className="apexcharts-xaxis" transform="translate(20)">
-          <g className="apexcharts-xaxis-texts-g" transform="translate(0 -4)">
-            <text
-              x="0"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            >
-              <tspan>Apr 02</tspan>
-            </text>
-            <text
-              x="27.297"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="54.594"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="81.891"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            >
-              <tspan>Apr 05</tspan>
-            </text>
-            <text
-              x="109.188"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="136.485"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="163.782"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            >
-              <tspan>Apr 10</tspan>
-            </text>
-            <text
-              x="191.079"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="218.376"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="245.673"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            >
-              <tspan>Apr 17</tspan>
-            </text>
-            <text
-              x="272.97"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="300.267"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="327.564"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            >
-              <tspan>Apr 20</tspan>
-            </text>
-            <text
-              x="354.861"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-            <text
-              x="382.158"
-              y="259.73"
-              fill="#a1a5b7"
-              className="apexcharts-text apexcharts-xaxis-label"
-              dominantBaseline="auto"
-              fontFamily="inherit"
-              fontSize="12"
-              fontWeight="400"
-              textAnchor="middle"
-            ></text>
-          </g>
-        </g>
-        <g className="apexcharts-grid">
-          <g className="apexcharts-gridlines-horizontal">
-            <path
-              stroke="#e1e3ea"
-              strokeDasharray="4"
-              strokeLinecap="butt"
-              d="M0 0L382.158 0"
-              className="apexcharts-gridline"
-            ></path>
-            <path
-              stroke="#e1e3ea"
-              strokeDasharray="4"
-              strokeLinecap="butt"
-              d="M0 57.683L382.158 57.683"
-              className="apexcharts-gridline"
-            ></path>
-            <path
-              stroke="#e1e3ea"
-              strokeDasharray="4"
-              strokeLinecap="butt"
-              d="M0 115.365L382.158 115.365"
-              className="apexcharts-gridline"
-            ></path>
-            <path
-              stroke="#e1e3ea"
-              strokeDasharray="4"
-              strokeLinecap="butt"
-              d="M0 173.048L382.158 173.048"
-              className="apexcharts-gridline"
-            ></path>
-            <path
-              stroke="#e1e3ea"
-              strokeDasharray="4"
-              strokeLinecap="butt"
-              d="M0 230.73L382.158 230.73"
-              className="apexcharts-gridline"
-            ></path>
-          </g>
-          <path
-            stroke="transparent"
-            strokeDasharray="0"
-            strokeLinecap="butt"
-            d="M0 230.73L382.158 230.73"
-          ></path>
-          <path
-            stroke="transparent"
-            strokeDasharray="0"
-            strokeLinecap="butt"
-            d="M0 1L0 230.73"
-          ></path>
-        </g>
-        <g className="apexcharts-area-series apexcharts-plot-series">
-          <g
-            className="apexcharts-series"
-            dataLongestSeries="true"
-            dataRealIndex="0"
-          >
-            <path
-              fill="url(#SvgjsLinearGradient3667)"
-              fillOpacity="1"
-              strokeDasharray="0"
-              strokeLinecap="butt"
-              strokeOpacity="1"
-              strokeWidth="0"
-              d="M0 230.73v-76.91c9.554 0 17.743-89.728 27.297-89.728h27.297c9.554 0 17.743 38.455 27.297 38.455h27.297c9.554 0 17.743 51.273 27.297 51.273h27.297c9.554 0 17.743-51.273 27.297-51.273h27.297c9.554 0 17.743-51.274 27.297-51.274h27.297c9.554 0 17.743 51.274 27.297 51.274h27.297c9.554 0 17.743-25.637 27.297-25.637h27.297v153.82m0-153.82z"
-              className="apexcharts-area"
-              clipPath="url(#gridRectMask0golmeqi)"
-            ></path>
-            <path
-              fill="none"
-              fillOpacity="1"
-              fillRule="evenodd"
-              stroke="#ffc700"
-              strokeDasharray="0"
-              strokeLinecap="butt"
-              strokeOpacity="1"
-              strokeWidth="3"
-              d="M0 153.82c9.554 0 17.743-89.728 27.297-89.728h27.297c9.554 0 17.743 38.455 27.297 38.455h27.297c9.554 0 17.743 51.273 27.297 51.273h27.297c9.554 0 17.743-51.273 27.297-51.273h27.297c9.554 0 17.743-51.274 27.297-51.274h27.297c9.554 0 17.743 51.274 27.297 51.274h27.297c9.554 0 17.743-25.637 27.297-25.637h27.297"
-              className="apexcharts-area"
-              clipPath="url(#gridRectMask0golmeqi)"
-            ></path>
-          </g>
-        </g>
-        <path
-          fill="#b1b9c4"
-          fillOpacity="0.9"
-          stroke="#ffc700"
-          strokeDasharray="3"
-          strokeLinecap="butt"
-          strokeWidth="1"
-          d="M108.688 0L108.688 230.73"
-          className="apexcharts-xcrosshairs"
-          filter="none"
-        ></path>
-        <path
-          stroke="#b6b6b6"
-          strokeDasharray="0"
-          strokeLinecap="butt"
-          strokeWidth="1"
-          d="M0 0L382.158 0"
-          className="apexcharts-ycrosshairs"
-        ></path>
-        <path
-          strokeDasharray="0"
-          strokeLinecap="butt"
-          strokeWidth="0"
-          d="M0 0L382.158 0"
-          className="apexcharts-ycrosshairs-hidden"
-        ></path>
-      </g>
-      <g className="apexcharts-yaxis" transform="translate(12.067)">
-        <g className="apexcharts-yaxis-texts-g">
-          <text
-            x="20"
-            y="31.4"
-            fill="#a1a5b7"
-            className="apexcharts-text apexcharts-yaxis-label"
-            dominantBaseline="auto"
-            fontFamily="inherit"
-            fontSize="12"
-            fontWeight="400"
-            textAnchor="end"
-          >
-            <tspan>10</tspan>
-          </text>
-          <text
-            x="20"
-            y="89.083"
-            fill="#a1a5b7"
-            className="apexcharts-text apexcharts-yaxis-label"
-            dominantBaseline="auto"
-            fontFamily="inherit"
-            fontSize="12"
-            fontWeight="400"
-            textAnchor="end"
-          >
-            <tspan>7.75</tspan>
-          </text>
-          <text
-            x="20"
-            y="146.765"
-            fill="#a1a5b7"
-            className="apexcharts-text apexcharts-yaxis-label"
-            dominantBaseline="auto"
-            fontFamily="inherit"
-            fontSize="12"
-            fontWeight="400"
-            textAnchor="end"
-          >
-            <tspan>5.5</tspan>
-          </text>
-          <text
-            x="20"
-            y="204.448"
-            fill="#a1a5b7"
-            className="apexcharts-text apexcharts-yaxis-label"
-            dominantBaseline="auto"
-            fontFamily="inherit"
-            fontSize="12"
-            fontWeight="400"
-            textAnchor="end"
-          >
-            <tspan>3.25</tspan>
-          </text>
-          <text
-            x="20"
-            y="262.13"
-            fill="#a1a5b7"
-            className="apexcharts-text apexcharts-yaxis-label"
-            dominantBaseline="auto"
-            fontFamily="inherit"
-            fontSize="12"
-            fontWeight="400"
-            textAnchor="end"
-          >
-            <tspan>1</tspan>
-          </text>
-        </g>
-      </g>
-    </svg>
-        </div>
-        </div>
-        {/*end::Chart*/}   
-    </div>
-    {/*end::Body*/}
-</div>
-{/*end::Chart widget 29*/}
-
-
-     </div>
-    {/*end::Col*/}
-
-    {/*begin::Col*/}
-    <div className="col-xl-4 mb-5 mb-xl-10">       
-        
-        {/*begin::List widget 21*/}
-        <div className="card card-flush h-xl-100">
-            {/*begin::Header*/}
-            <div className="card-header border-0 pt-5">
-                <h3 className="card-title align-items-start flex-column">
-                    <span className="card-label fw-bold text-dark">Active Lessons</span>
-        
-                    <span className="text-muted mt-1 fw-semibold fs-7">Avg. 72% completed lessons</span>
-                </h3>
-        
-                {/*begin::Toolbar*/}
-                <div className="card-toolbar">   
-                    <a href="#" className="btn btn-sm btn-light">All Lessons</a>             
-                </div>
-                {/*end::Toolbar*/}
-            </div>
-            {/*end::Header*/}
-        
-            {/*begin::Body*/}
-            <div className="card-body pt-5">                 
-                            
-                    {/*begin::Item*/}
-                    <div className="d-flex flex-stack">                 
-                        {/*begin::Wrapper*/}                                  
-                        <div className="d-flex align-items-center me-3">
-                            {/*begin::Logo*/}                         
-                            <img src="/assets/media/svg/brand-logos/laravel-2.svg" className="me-4 w-30px" alt="" />                  
-                            {/*end::Logo*/}
-        
-                            {/*begin::Section*/}                                  
-                            <div className="flex-grow-1">
-                                {/*begin::Text*/}
-                                <a href="#" className="text-gray-800 text-hover-primary fs-5 fw-bold lh-0">Laravel</a>
-                                {/*end::Text*/}
-                                
-                                {/*begin::Description*/}
-                                <span className="text-gray-400 fw-semibold d-block fs-6">PHP Framework</span>
-                                {/*end::Description-*/}
-                            </div>                   
-                            {/*end::Section*/}
-                        </div>                   
-                        {/*end::Wrapper*/}
-                        
-                        {/*begin::Statistics*/}
-                        <div className="d-flex align-items-center w-100 mw-125px">  
-                            {/*begin::Progress*/}                  
-                            <div className="progress h-6px w-100 me-2 bg-light-success">
-                                <div className="progress-bar bg-success" role="progressbar" style={{width: '65%'}} aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            {/*end::Progress*/}
-        
-                            {/*begin::Value*/}
-                            <span className="text-gray-400 fw-semibold">
-                                65%
-                            </span>
-                            {/*end::Value*/}
-                        </div>
-                        {/*end::Statistics*/}
-                    </div>
-                    {/*end::Item*/}
-                    
-                                    {/*begin::Separator*/}
-                        <div className="separator separator-dashed my-3"></div>
-                        {/*end::Separator*/}
-                     
-                            
-                    {/*begin::Item*/}
-                    <div className="d-flex flex-stack">                 
-                        {/*begin::Wrapper*/}                                  
-                        <div className="d-flex align-items-center me-3">
-                            {/*begin::Logo*/}                         
-                            <img src="/assets/media/svg/brand-logos/vue-9.svg" className="me-4 w-30px" alt="" />                  
-                            {/*end::Logo*/}
-        
-                            {/*begin::Section*/}                                  
-                            <div className="flex-grow-1">
-                                {/*begin::Text*/}
-                                <a href="#" className="text-gray-800 text-hover-primary fs-5 fw-bold lh-0">Vue 3</a>
-                                {/*end::Text*/}
-                                
-                                {/*begin::Description*/}
-                                <span className="text-gray-400 fw-semibold d-block fs-6">JS Framework</span>
-                                {/*end::Description-*/}
-                            </div>                   
-                            {/*end::Section*/}
-                        </div>                   
-                        {/*end::Wrapper*/}
-                        
-                        {/*begin::Statistics*/}
-                        <div className="d-flex align-items-center w-100 mw-125px">  
-                            {/*begin::Progress*/}                  
-                            <div className="progress h-6px w-100 me-2 bg-light-warning">
-                                <div className="progress-bar bg-warning" role="progressbar" style={{width: '87%'}} aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            {/*end::Progress*/}
-        
-                            {/*begin::Value*/}
-                            <span className="text-gray-400 fw-semibold">
-                                87%
-                            </span>
-                            {/*end::Value*/}
-                        </div>
-                        {/*end::Statistics*/}
-                    </div>
-                    {/*end::Item*/}
-                    
-                                    {/*begin::Separator*/}
-                        <div className="separator separator-dashed my-3"></div>
-                        {/*end::Separator*/}
-                     
-                            
-                    {/*begin::Item*/}
-                    <div className="d-flex flex-stack">                 
-                        {/*begin::Wrapper*/}                                  
-                        <div className="d-flex align-items-center me-3">
-                            {/*begin::Logo*/}                         
-                            <img src="/assets/media/svg/brand-logos/bootstrap5.svg" className="me-4 w-30px" alt="" />                  
-                            {/*end::Logo*/}
-        
-                            {/*begin::Section*/}                                  
-                            <div className="flex-grow-1">
-                                {/*begin::Text*/}
-                                <a href="#" className="text-gray-800 text-hover-primary fs-5 fw-bold lh-0">Bootstrap 5</a>
-                                {/*end::Text*/}
-                                
-                                {/*begin::Description*/}
-                                <span className="text-gray-400 fw-semibold d-block fs-6">CSS Framework</span>
-                                {/*end::Description-*/}
-                            </div>                   
-                            {/*end::Section*/}
-                        </div>                   
-                        {/*end::Wrapper*/}
-                        
-                        {/*begin::Statistics*/}
-                        <div className="d-flex align-items-center w-100 mw-125px">  
-                            {/*begin::Progress*/}                  
-                            <div className="progress h-6px w-100 me-2 bg-light-primary">
-                                <div className="progress-bar bg-primary" role="progressbar" style={{width: '44%'}} aria-valuenow="44" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            {/*end::Progress*/}
-        
-                            {/*begin::Value*/}
-                            <span className="text-gray-400 fw-semibold">
-                                44%
-                            </span>
-                            {/*end::Value*/}
-                        </div>
-                        {/*end::Statistics*/}
-                    </div>
-                    {/*end::Item*/}
-                    
-                                    {/*begin::Separator*/}
-                        <div className="separator separator-dashed my-3"></div>
-                        {/*end::Separator*/}
-                     
-                            
-                    {/*begin::Item*/}
-                    <div className="d-flex flex-stack">                 
-                        {/*begin::Wrapper*/}                                  
-                        <div className="d-flex align-items-center me-3">
-                            {/*begin::Logo*/}                         
-                            <img src="/assets/media/svg/brand-logos/angular-icon.svg" className="me-4 w-30px" alt="" />                  
-                            {/*end::Logo*/}
-        
-                            {/*begin::Section*/}                                  
-                            <div className="flex-grow-1">
-                                {/*begin::Text*/}
-                                <a href="#" className="text-gray-800 text-hover-primary fs-5 fw-bold lh-0">Angular 13</a>
-                                {/*end::Text*/}
-                                
-                                {/*begin::Description*/}
-                                <span className="text-gray-400 fw-semibold d-block fs-6">JS Framework</span>
-                                {/*end::Description-*/}
-                            </div>                   
-                            {/*end::Section*/}
-                        </div>                   
-                        {/*end::Wrapper*/}
-                        
-                        {/*begin::Statistics*/}
-                        <div className="d-flex align-items-center w-100 mw-125px">  
-                            {/*begin::Progress*/}                  
-                            <div className="progress h-6px w-100 me-2 bg-light-info">
-                                <div className="progress-bar bg-info" role="progressbar" style={{width: '70%'}} aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            {/*end::Progress*/}
-        
-                            {/*begin::Value*/}
-                            <span className="text-gray-400 fw-semibold">
-                                70%
-                            </span>
-                            {/*end::Value*/}
-                        </div>
-                        {/*end::Statistics*/}
-                    </div>
-                    {/*end::Item*/}
-                    
-                                    {/*begin::Separator*/}
-                        <div className="separator separator-dashed my-3"></div>
-                        {/*end::Separator*/}
-                     
-                            
-                    {/*begin::Item*/}
-                    <div className="d-flex flex-stack">                 
-                        {/*begin::Wrapper*/}                                  
-                        <div className="d-flex align-items-center me-3">
-                            {/*begin::Logo*/}                         
-                            <img src="/assets/media/svg/brand-logos/spring-3.svg" className="me-4 w-30px" alt="" />                  
-                            {/*end::Logo*/}
-        
-                            {/*begin::Section*/}                                  
-                            <div className="flex-grow-1">
-                                {/*begin::Text*/}
-                                <a href="#" className="text-gray-800 text-hover-primary fs-5 fw-bold lh-0">Spring</a>
-                                {/*end::Text*/}
-                                
-                                {/*begin::Description*/}
-                                <span className="text-gray-400 fw-semibold d-block fs-6">Java Framework</span>
-                                {/*end::Description-*/}
-                            </div>                   
-                            {/*end::Section*/}
-                        </div>                   
-                        {/*end::Wrapper*/}
-                        
-                        {/*begin::Statistics*/}
-                        <div className="d-flex align-items-center w-100 mw-125px">  
-                            {/*begin::Progress*/}                  
-                            <div className="progress h-6px w-100 me-2 bg-light-danger">
-                                <div className="progress-bar bg-danger" role="progressbar" style={{width: '56%'}} aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            {/*end::Progress*/}
-        
-                            {/*begin::Value*/}
-                            <span className="text-gray-400 fw-semibold">
-                                56%
-                            </span>
-                            {/*end::Value*/}
-                        </div>
-                        {/*end::Statistics*/}
-                    </div>
-                    {/*end::Item*/}
-                    
-                                    {/*begin::Separator*/}
-                        <div className="separator separator-dashed my-3"></div>
-                        {/*end::Separator*/}
-                     
-                            
-                    {/*begin::Item*/}
-                    <div className="d-flex flex-stack">                 
-                        {/*begin::Wrapper*/}                                  
-                        <div className="d-flex align-items-center me-3">
-                            {/*begin::Logo*/}                         
-                            <img src="/assets/media/svg/brand-logos/typescript-1.svg" className="me-4 w-30px" alt="" />                  
-                            {/*end::Logo*/}
-        
-                            {/*begin::Section*/}                                  
-                            <div className="flex-grow-1">
-                                {/*begin::Text*/}
-                                <a href="#" className="text-gray-800 text-hover-primary fs-5 fw-bold lh-0">TypeScript</a>
-                                {/*end::Text*/}
-                                
-                                {/*begin::Description*/}
-                                <span className="text-gray-400 fw-semibold d-block fs-6">Better Tooling</span>
-                                {/*end::Description-*/}
-                            </div>                   
-                            {/*end::Section*/}
-                        </div>                   
-                        {/*end::Wrapper*/}
-                        
-                        {/*begin::Statistics*/}
-                        <div className="d-flex align-items-center w-100 mw-125px">  
-                            {/*begin::Progress*/}                  
-                            <div className="progress h-6px w-100 me-2 bg-light-success">
-                                <div className="progress-bar bg-success" role="progressbar" style={{width: '82%'}} aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            {/*end::Progress*/}
-        
-                            {/*begin::Value*/}
-                            <span className="text-gray-400 fw-semibold">
-                                82%
-                            </span>
-                            {/*end::Value*/}
-                        </div>
-                        {/*end::Statistics*/}
-                    </div>
-                    {/*end::Item*/}
-                    
-                     
-                   
-            </div>
-            {/*end::Body*/}
-        </div>
-        {/*end::List widget 21*/} 
-            </div>
-    {/*end::Col*/}
-
-    {/*begin::Col*/}
-    <div className="col-xxl-4 mb-5 mb-xl-0">
-        {/*begin::Chart widget 31*/}
-        {/*begin::Card widget 1*/}
-        
-       {/*begin::Engage widget 1*/}
-       {/* class name === h-md-100 */}
-        <div className="card" dir="ltr" style={{height : '93%'}}> 
-           {/*begin::Body*/}
-            <div className="card-body d-flex flex-column flex-center">  
-               {/*begin::Heading*/}
-                <div className="mb-2">
-                   {/*begin::Title*/}
-                    <h1 className="fw-semibold text-gray-800 text-center lh-lg">           
-                        Try out our <br /> new
-                        <span className="fw-bolder"> Invoice Manager</span>
-                    </h1>
-                   {/*end::Title*/} 
-                    
-                   {/*begin::Illustration*/}
-                    <div className="py-10 text-center">
-                                            <img src="../assets/media/svg/illustrations/easy/2.svg" className="theme-light-show w-200px" alt="" />
-                            <img src="../assets/media/svg/illustrations/easy/2-dark.svg" className="theme-dark-show w-200px" alt="" />
-                                    </div>
-                   {/*end::Illustration*/}
-                </div>
-               {/*end::Heading*/}
-        
-               {/*begin::Links*/}
-                <div className="text-center mb-1"> 
-                   {/*begin::Link*/}
-                    <a className="btn btn-sm btn-primary me-2" data-bs-target="#kt_modal_create_account" data-bs-toggle="modal">
-                        Try Now            </a>
-                   {/*end::Link*/}
-        
-                   {/*begin::Link*/}
-                    <a className="btn btn-sm btn-light" href="../apps/ecommerce/sales/listing.html">
-                        Learn More            </a>
-                   {/*end::Link*/}
-                </div>
-               {/*end::Links*/}
-            </div>
-           {/*end::Body*/}
-        </div>
-       {/*end::Engage widget 1*/}
-{/*end::Chart widget 31*/}
-    </div>
-    {/*end::Col*/}
-
-{/* human resource chart */}
-</div>
-{/*end::Row*/}
-
-{/*begin::Row*/}
-<div className="row gx-5 gx-xl-10">  
-    {/*begin::Col*/}
-    <div className="col-xl-4 mb-5 mb-xl-0">       
-        
-{/*begin::List widget 12*/}
-<div className="card card-flush h-xl-100">
-    {/*begin::Header*/}
-    <div className="card-header pt-7">
-        {/*begin::Title*/}
-        <h3 className="card-title align-items-start flex-column">
-			<span className="card-label fw-bold text-gray-800">Visits by Source</span>
-			<span className="text-gray-400 mt-1 fw-semibold fs-6">29.4k visitors</span>
-		</h3>
-        {/*end::Title*/}
-
-        {/*begin::Toolbar*/}
-        <div className="card-toolbar">   
-            {/*begin::Menu*/}
-            <button className="btn btn-icon btn-color-gray-400 btn-active-color-primary justify-content-end" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" data-kt-menu-overflow="true">                
-                {/*begin::Svg Icon | path: icons/duotune/general/gen023.svg*/}
-<span className="svg-icon svg-icon-1 svg-icon-gray-300 me-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="4" fill="currentColor"/>
-<rect x="11" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-<rect x="15" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-<rect x="7" y="11" width="2.6" height="2.6" rx="1.3" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                             
-            </button>
-
-            
-{/*begin::Menu 2*/}
-<div className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px" data-kt-menu="true">
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <div className="menu-content fs-6 text-dark fw-bold px-3 py-4">Quick Actions</div>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu separator*/}
-    <div className="separator mb-3 opacity-75"></div>
-    {/*end::Menu separator*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Ticket
-        </a>
-    </div>
-    {/*end::Menu item*/}
-    
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Customer
-        </a>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-start">
-        {/*begin::Menu item*/}
-        <a href="#" className="menu-link px-3">
-            <span className="menu-title">New Group</span>
-            <span className="menu-arrow"></span>
-        </a>
-        {/*end::Menu item*/}
-
-        {/*begin::Menu sub*/}
-        <div className="menu-sub menu-sub-dropdown w-175px py-4">
-            {/*begin::Menu item*/}
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Admin Group
-                </a>
-            </div>
-            {/*end::Menu item*/}
-
-            {/*begin::Menu item*/}
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Staff Group
-                </a>
-            </div>
-            {/*end::Menu item*/}
-
-            {/*begin::Menu item*/}            
-            <div className="menu-item px-3">
-                <a href="#" className="menu-link px-3">
-                    Member Group
-                </a>
-            </div>
-            {/*end::Menu item*/}
-        </div>
-        {/*end::Menu sub*/}
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <a href="#" className="menu-link px-3">
-            New Contact
-        </a>
-    </div>
-    {/*end::Menu item*/}
-
-    {/*begin::Menu separator*/}
-    <div className="separator mt-3 opacity-75"></div>
-    {/*end::Menu separator*/}
-
-    {/*begin::Menu item*/}
-    <div className="menu-item px-3">
-        <div className="menu-content px-3 py-3">
-            <a className="btn btn-primary  btn-sm px-4" href="#">
-                Generate Reports
-            </a>
-        </div>
-    </div>
-    {/*end::Menu item*/}
-</div>
-{/*end::Menu 2*/}
- 
-            {/*end::Menu*/}         
-        </div>
-        {/*end::Toolbar*/}
-    </div>
-    {/*end::Header*/}
-
-    {/*begin::Body*/}
-    <div className="card-body d-flex align-items-end">  
-        {/*begin::Wrapper*/}
-        <div className="w-100">           
-                                             
-               
-                {/*begin::Item*/}
-                <div className="d-flex align-items-center">                    
-                    {/*begin::Symbol*/}
-                    <div className="symbol symbol-30px me-5">
-                        <span className="symbol-label">  
-                            {/*begin::Svg Icon | path: icons/duotune/general/gen002.svg*/}
-<span className="svg-icon svg-icon-3 svg-icon-gray-600"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path opacity="0.3" d="M4.05424 15.1982C8.34524 7.76818 13.5782 3.26318 20.9282 2.01418C21.0729 1.98837 21.2216 1.99789 21.3618 2.04193C21.502 2.08597 21.6294 2.16323 21.7333 2.26712C21.8372 2.37101 21.9144 2.49846 21.9585 2.63863C22.0025 2.7788 22.012 2.92754 21.9862 3.07218C20.7372 10.4222 16.2322 15.6552 8.80224 19.9462L4.05424 15.1982ZM3.81924 17.3372L2.63324 20.4482C2.58427 20.5765 2.5735 20.7163 2.6022 20.8507C2.63091 20.9851 2.69788 21.1082 2.79503 21.2054C2.89218 21.3025 3.01536 21.3695 3.14972 21.3982C3.28408 21.4269 3.42387 21.4161 3.55224 21.3672L6.66524 20.1802L3.81924 17.3372ZM16.5002 5.99818C16.2036 5.99818 15.9136 6.08615 15.6669 6.25097C15.4202 6.41579 15.228 6.65006 15.1144 6.92415C15.0009 7.19824 14.9712 7.49984 15.0291 7.79081C15.0869 8.08178 15.2298 8.34906 15.4396 8.55884C15.6494 8.76862 15.9166 8.91148 16.2076 8.96935C16.4986 9.02723 16.8002 8.99753 17.0743 8.884C17.3484 8.77046 17.5826 8.5782 17.7474 8.33153C17.9123 8.08486 18.0002 7.79485 18.0002 7.49818C18.0002 7.10035 17.8422 6.71882 17.5609 6.43752C17.2796 6.15621 16.8981 5.99818 16.5002 5.99818Z" fill="currentColor"/>
-<path d="M4.05423 15.1982L2.24723 13.3912C2.15505 13.299 2.08547 13.1867 2.04395 13.0632C2.00243 12.9396 1.9901 12.8081 2.00793 12.679C2.02575 12.5498 2.07325 12.4266 2.14669 12.3189C2.22013 12.2112 2.31752 12.1219 2.43123 12.0582L9.15323 8.28918C7.17353 10.3717 5.4607 12.6926 4.05423 15.1982ZM8.80023 19.9442L10.6072 21.7512C10.6994 21.8434 10.8117 21.9129 10.9352 21.9545C11.0588 21.996 11.1903 22.0083 11.3195 21.9905C11.4486 21.9727 11.5718 21.9252 11.6795 21.8517C11.7872 21.7783 11.8765 21.6809 11.9402 21.5672L15.7092 14.8442C13.6269 16.8245 11.3061 18.5377 8.80023 19.9442ZM7.04023 18.1832L12.5832 12.6402C12.7381 12.4759 12.8228 12.2577 12.8195 12.032C12.8161 11.8063 12.725 11.5907 12.5653 11.4311C12.4057 11.2714 12.1901 11.1803 11.9644 11.1769C11.7387 11.1736 11.5205 11.2583 11.3562 11.4132L5.81323 16.9562L7.04023 18.1832Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                             
-                        </span>                
-                    </div>
-                    {/*end::Symbol*/}                   
-
-                    {/*begin::Container*/}
-                    <div className="d-flex align-items-center flex-stack flex-wrap d-grid gap-1 flex-row-fluid">
-                        {/*begin::Content*/}
-                        <div className="me-5">
-                            {/*begin::Title*/}
-                            <a href="#" className="text-gray-800 fw-bold text-hover-primary fs-6">Direct Source</a>
-                            {/*end::Title*/}
-
-                            {/*begin::Desc*/}
-                            <span className="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Direct link clicks</span>   
-                            {/*end::Desc*/}                                     
-                        </div>
-                        {/*end::Content*/} 
-
-                        {/*begin::Wrapper*/}
-                        <div className="d-flex align-items-center"> 
-                            {/*begin::Number*/}           
-                            <span className="text-gray-800 fw-bold fs-4 me-3">1,067</span> 
-                            {/*end::Number*/}                        
-                            
-                            {/*begin::Info*/} 
-                                                            {/*begin::label*/} 
-                                <span className="badge badge-light-success fs-base">                                
-                                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr066.svg*/}
-<span className="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor"/>
-<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                                                              
-                                        
-                                    2.6%
-                                </span>  
-                                {/*end::label*/}   
-                                      
-                            {/*end::Info*/}                  
-                        </div>
-                        {/*end::Wrapper*/}   
-                    </div>
-                    {/*end::Container*/}                                    
-                </div>
-                {/*end::Item*/}                           
-
-                                    {/*begin::Separator*/}
-                    <div className="separator separator-dashed my-3"></div>
-                    {/*end::Separator*/}
-                 
-                                             
-               
-                {/*begin::Item*/}
-                <div className="d-flex align-items-center">                    
-                    {/*begin::Symbol*/}
-                    <div className="symbol symbol-30px me-5">
-                        <span className="symbol-label">  
-                            {/*begin::Svg Icon | path: icons/duotune/social/soc008.svg*/}
-<span className="svg-icon svg-icon-3 svg-icon-gray-600"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path opacity="0.3" d="M5.72502 20.1899C5.71502 20.1829 5.70401 20.179 5.69401 20.173C4.66853 19.48 3.87892 18.4906 3.43067 17.3369C2.98243 16.1833 2.89688 14.9202 3.18546 13.7167C3.47405 12.5131 4.12303 11.4263 5.04569 10.6013C5.96836 9.77636 7.12077 9.25259 8.34901 9.09998C8.49301 9.08498 8.67602 9.07397 8.87602 9.06897C9.11095 9.06456 9.33992 9.14308 9.52278 9.29065C9.70563 9.43822 9.83071 9.64541 9.87602 9.87598C9.86302 9.87598 9.85301 9.86902 9.84001 9.86902C9.64001 9.87402 9.457 9.88502 9.313 9.90002C8.18466 10.0339 7.11668 10.4822 6.23097 11.194C5.34525 11.9057 4.67748 12.8521 4.30387 13.9252C3.93026 14.9982 3.86585 16.1548 4.11802 17.2627C4.37019 18.3706 4.92879 19.3854 5.73002 20.191L5.72502 20.1899ZM18.252 6.69495C18.6924 6.96887 19.1764 7.16543 19.683 7.276C19.6261 7.08315 19.5171 6.90974 19.368 6.77478C19.219 6.63982 19.0356 6.54852 18.838 6.51099C18.3152 6.40512 17.8149 6.20855 17.36 5.93005C17.6224 6.222 17.9212 6.47898 18.249 6.69495H18.252ZM8.779 18.395C9.202 18.608 9.67239 18.7093 10.1455 18.6895C10.6187 18.6696 11.0789 18.5292 11.4826 18.2816C11.8863 18.034 12.22 17.6873 12.4522 17.2745C12.6843 16.8618 12.8071 16.3965 12.809 15.923V3.80005C12.809 3.53483 12.9144 3.28043 13.1019 3.0929C13.2894 2.90536 13.5438 2.80005 13.809 2.80005H15.109C15.143 2.80005 15.171 2.81402 15.209 2.81702C15.1441 2.58472 15.0058 2.37967 14.8148 2.23242C14.6237 2.08518 14.3902 2.00361 14.149 2H12.849C12.5838 2 12.3295 2.10531 12.1419 2.29285C11.9544 2.48038 11.849 2.73478 11.849 3V15.126C11.8473 15.5988 11.725 16.0633 11.4937 16.4756C11.2624 16.8879 10.9297 17.2344 10.5271 17.4823C10.1246 17.7302 9.66541 17.8713 9.19309 17.8922C8.72078 17.9131 8.25094 17.8133 7.82801 17.6021C8.08083 17.9363 8.40592 18.2091 8.779 18.4V18.395ZM17.29 5.89502C17.312 5.90902 17.338 5.91705 17.36 5.93005C16.7829 5.31815 16.3857 4.55892 16.212 3.73596C16.1661 3.4943 16.0431 3.27412 15.8613 3.1084C15.6795 2.94268 15.4489 2.84042 15.204 2.81702C15.2215 2.85569 15.2365 2.89545 15.249 2.93604C15.3725 3.5419 15.617 4.11659 15.9676 4.62585C16.3183 5.13512 16.7681 5.56851 17.29 5.90002V5.89502ZM9.91102 11.355C9.90901 11.6105 9.80922 11.8556 9.63218 12.0399C9.45514 12.2242 9.21425 12.3337 8.95899 12.3459C8.24648 12.3859 7.57535 12.6935 7.0799 13.2072C6.58446 13.7208 6.30125 14.4025 6.287 15.116C6.28677 15.6307 6.42963 16.1354 6.69962 16.5737C6.96962 17.012 7.35616 17.3667 7.81602 17.598H7.826C7.45283 17.1152 7.25027 16.5222 7.25001 15.912C7.26404 15.1984 7.54715 14.5165 8.04264 14.0028C8.53814 13.4891 9.20941 13.1817 9.92201 13.142C10.1771 13.1295 10.4177 13.0198 10.5946 12.8356C10.7714 12.6513 10.871 12.4064 10.873 12.151V10.864C10.8711 10.6 10.765 10.3474 10.5776 10.1614C10.3903 9.97535 10.137 9.87097 9.87299 9.87097C9.89293 9.93376 9.90634 9.99843 9.913 10.064L9.91102 11.355ZM19.8 7.31104C19.76 7.30304 19.723 7.285 19.683 7.276C19.7148 7.36988 19.7327 7.46794 19.736 7.56702V8.87305C19.736 9.00783 19.7072 9.141 19.6517 9.26379C19.5961 9.38659 19.5149 9.49613 19.4137 9.58508C19.3124 9.67404 19.1934 9.74036 19.0644 9.77966C18.9355 9.81896 18.7997 9.83033 18.666 9.81299C17.3993 9.64132 16.1936 9.16274 15.154 8.41895V14.912C15.1748 16.4605 14.617 17.9611 13.5898 19.12C12.5625 20.2789 11.1398 21.0127 9.60002 21.178C8.23377 21.2965 6.86771 20.9482 5.72502 20.1899C6.00882 20.4809 6.32067 20.7433 6.65602 20.973C7.80538 21.7435 9.18352 22.0981 10.562 21.978C12.1019 21.8128 13.5247 21.0789 14.5521 19.92C15.5795 18.7612 16.1376 17.2606 16.117 15.712V9.21899C17.1563 9.96278 18.3616 10.4414 19.628 10.613C19.7617 10.6304 19.8975 10.619 20.0264 10.5797C20.1554 10.5404 20.2744 10.4741 20.3757 10.3851C20.4769 10.2962 20.5581 10.1866 20.6137 10.0638C20.6692 9.94105 20.698 9.80776 20.698 9.67297V8.36694C20.695 8.11381 20.6036 7.86973 20.4396 7.67688C20.2757 7.48403 20.0494 7.35465 19.8 7.31104Z" fill="currentColor"/>
-<path d="M15.149 14.912V8.41895C16.1886 9.16274 17.3943 9.64132 18.661 9.81299C18.7947 9.83033 18.9305 9.81896 19.0594 9.77966C19.1884 9.74036 19.3074 9.67404 19.4087 9.58508C19.5099 9.49613 19.5911 9.38659 19.6466 9.26379C19.7022 9.141 19.731 9.00783 19.731 8.87305V7.56702C19.7277 7.46794 19.7098 7.36988 19.678 7.276C19.1714 7.16543 18.6874 6.96887 18.247 6.69495C17.9182 6.47919 17.6184 6.22219 17.355 5.93005C17.333 5.91705 17.307 5.90902 17.285 5.89502C16.7636 5.56407 16.3142 5.13154 15.9635 4.62317C15.6129 4.1148 15.3681 3.541 15.244 2.93604C15.2315 2.89545 15.2165 2.85569 15.199 2.81702C15.166 2.81702 15.138 2.80005 15.099 2.80005H13.799C13.5338 2.80005 13.2794 2.90536 13.0919 3.0929C12.9044 3.28043 12.799 3.53483 12.799 3.80005V15.926C12.7986 16.5066 12.616 17.0725 12.277 17.5438C11.938 18.0152 11.4597 18.3683 10.9093 18.5533C10.359 18.7384 9.76452 18.7462 9.20957 18.5756C8.65462 18.4049 8.16721 18.0644 7.81602 17.6021H7.80601C7.34614 17.3707 6.95964 17.016 6.68964 16.5778C6.41964 16.1395 6.27679 15.6348 6.27701 15.12C6.29127 14.4065 6.57445 13.7247 7.06989 13.2111C7.56534 12.6974 8.2365 12.3899 8.94901 12.35C9.20427 12.3377 9.44516 12.2282 9.6222 12.0439C9.79924 11.8597 9.899 11.6146 9.90101 11.359V10.072C9.89434 10.0065 9.88093 9.94182 9.861 9.87903C9.848 9.87903 9.83802 9.87195 9.82502 9.87195C9.62502 9.87695 9.44201 9.88795 9.29801 9.90295C8.51517 9.85635 7.73118 9.97297 6.99573 10.2452C6.26029 10.5175 5.58941 10.9396 5.02564 11.4847C4.46187 12.0299 4.01752 12.6861 3.72071 13.412C3.42389 14.1379 3.2811 14.9176 3.3014 15.7015C3.32169 16.4855 3.50462 17.2568 3.8386 17.9663C4.17258 18.6759 4.6503 19.3082 5.24152 19.8235C5.83274 20.3387 6.52456 20.7255 7.27311 20.9594C8.02166 21.1932 8.81062 21.2691 9.59 21.182C11.1314 21.0179 12.5559 20.2839 13.5843 19.124C14.6127 17.9641 15.1707 16.462 15.149 14.912Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                             
-                        </span>                
-                    </div>
-                    {/*end::Symbol*/}                   
-
-                    {/*begin::Container*/}
-                    <div className="d-flex align-items-center flex-stack flex-wrap d-grid gap-1 flex-row-fluid">
-                        {/*begin::Content*/}
-                        <div className="me-5">
-                            {/*begin::Title*/}
-                            <a href="#" className="text-gray-800 fw-bold text-hover-primary fs-6">Social Networks</a>
-                            {/*end::Title*/}
-
-                            {/*begin::Desc*/}
-                            <span className="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">All Social Channels </span>   
-                            {/*end::Desc*/}                                     
-                        </div>
-                        {/*end::Content*/} 
-
-                        {/*begin::Wrapper*/}
-                        <div className="d-flex align-items-center"> 
-                            {/*begin::Number*/}           
-                            <span className="text-gray-800 fw-bold fs-4 me-3">24,588</span> 
-                            {/*end::Number*/}                        
-                            
-                            {/*begin::Info*/} 
-                                                            {/*begin::label*/} 
-                                <span className="badge badge-light-success fs-base">                                
-                                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr066.svg*/}
-<span className="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor"/>
-<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                                                              
-                                        
-                                    4.1%
-                                </span>  
-                                {/*end::label*/}   
-                                      
-                            {/*end::Info*/}                  
-                        </div>
-                        {/*end::Wrapper*/}   
-                    </div>
-                    {/*end::Container*/}                                    
-                </div>
-                {/*end::Item*/}                           
-
-                                    {/*begin::Separator*/}
-                    <div className="separator separator-dashed my-3"></div>
-                    {/*end::Separator*/}
-                 
-                                             
-               
-                {/*begin::Item*/}
-                <div className="d-flex align-items-center">                    
-                    {/*begin::Symbol*/}
-                    <div className="symbol symbol-30px me-5">
-                        <span className="symbol-label">  
-                            {/*begin::Svg Icon | path: icons/duotune/communication/com011.svg*/}
-<span className="svg-icon svg-icon-3 svg-icon-gray-600"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path opacity="0.3" d="M21 19H3C2.4 19 2 18.6 2 18V6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6V18C22 18.6 21.6 19 21 19Z" fill="currentColor"/>
-<path d="M21 5H2.99999C2.69999 5 2.49999 5.10005 2.29999 5.30005L11.2 13.3C11.7 13.7 12.4 13.7 12.8 13.3L21.7 5.30005C21.5 5.10005 21.3 5 21 5Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                             
-                        </span>                
-                    </div>
-                    {/*end::Symbol*/}                   
-
-                    {/*begin::Container*/}
-                    <div className="d-flex align-items-center flex-stack flex-wrap d-grid gap-1 flex-row-fluid">
-                        {/*begin::Content*/}
-                        <div className="me-5">
-                            {/*begin::Title*/}
-                            <a href="#" className="text-gray-800 fw-bold text-hover-primary fs-6">Email Newsletter</a>
-                            {/*end::Title*/}
-
-                            {/*begin::Desc*/}
-                            <span className="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Mailchimp Campaigns</span>   
-                            {/*end::Desc*/}                                     
-                        </div>
-                        {/*end::Content*/} 
-
-                        {/*begin::Wrapper*/}
-                        <div className="d-flex align-items-center"> 
-                            {/*begin::Number*/}           
-                            <span className="text-gray-800 fw-bold fs-4 me-3">794</span> 
-                            {/*end::Number*/}                        
-                            
-                            {/*begin::Info*/} 
-                                                            {/*begin::label*/} 
-                                <span className="badge badge-light-success fs-base">                                
-                                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr066.svg*/}
-<span className="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor"/>
-<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                                                              
-                                        
-                                    0.2%
-                                </span>  
-                                {/*end::label*/}   
-                                      
-                            {/*end::Info*/}                  
-                        </div>
-                        {/*end::Wrapper*/}   
-                    </div>
-                    {/*end::Container*/}                                    
-                </div>
-                {/*end::Item*/}                           
-
-                                    {/*begin::Separator*/}
-                    <div className="separator separator-dashed my-3"></div>
-                    {/*end::Separator*/}
-                 
-                                             
-               
-                {/*begin::Item*/}
-                <div className="d-flex align-items-center">                    
-                    {/*begin::Symbol*/}
-                    <div className="symbol symbol-30px me-5">
-                        <span className="symbol-label">  
-                            {/*begin::Svg Icon | path: icons/duotune/communication/com001.svg*/}
-<span className="svg-icon svg-icon-3 svg-icon-gray-600"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path opacity="0.3" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="currentColor"/>
-<path d="M19 10.4C19 10.3 19 10.2 19 10C19 8.9 18.1 8 17 8H16.9C15.6 6.2 14.6 4.29995 13.9 2.19995C13.3 2.09995 12.6 2 12 2C11.9 2 11.8 2 11.7 2C12.4 4.6 13.5 7.10005 15.1 9.30005C15 9.50005 15 9.7 15 10C15 11.1 15.9 12 17 12C17.1 12 17.3 12 17.4 11.9C18.6 13 19.9 14 21.4 14.8C21.4 14.8 21.5 14.8 21.5 14.9C21.7 14.2 21.8 13.5 21.9 12.7C20.9 12.1 19.9 11.3 19 10.4Z" fill="currentColor"/>
-<path d="M12 15C11 13.1 10.2 11.2 9.60001 9.19995C9.90001 8.89995 10 8.4 10 8C10 7.1 9.40001 6.39998 8.70001 6.09998C8.40001 4.99998 8.20001 3.90005 8.00001 2.80005C7.30001 3.10005 6.70001 3.40002 6.20001 3.90002C6.40001 4.80002 6.50001 5.6 6.80001 6.5C6.40001 6.9 6.10001 7.4 6.10001 8C6.10001 9 6.80001 9.8 7.80001 10C8.30001 11.6 9.00001 13.2 9.70001 14.7C7.10001 13.2 4.70001 11.5 2.40001 9.5C2.20001 10.3 2.10001 11.1 2.10001 11.9C4.60001 13.9 7.30001 15.7 10.1 17.2C10.2 18.2 11 19 12 19C12.6 20 13.2 20.9 13.9 21.8C14.6 21.7 15.3 21.5 15.9 21.2C15.4 20.5 14.9 19.8 14.4 19.1C15.5 19.5 16.5 19.9 17.6 20.2C18.3 19.8 18.9 19.2 19.4 18.6C17.6 18.1 15.7 17.5 14 16.7C13.9 15.8 13.1 15 12 15Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                             
-                        </span>                
-                    </div>
-                    {/*end::Symbol*/}                   
-
-                    {/*begin::Container*/}
-                    <div className="d-flex align-items-center flex-stack flex-wrap d-grid gap-1 flex-row-fluid">
-                        {/*begin::Content*/}
-                        <div className="me-5">
-                            {/*begin::Title*/}
-                            <a href="#" className="text-gray-800 fw-bold text-hover-primary fs-6">Referrals</a>
-                            {/*end::Title*/}
-
-                            {/*begin::Desc*/}
-                            <span className="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Impact Radius visits</span>   
-                            {/*end::Desc*/}                                     
-                        </div>
-                        {/*end::Content*/} 
-
-                        {/*begin::Wrapper*/}
-                        <div className="d-flex align-items-center"> 
-                            {/*begin::Number*/}           
-                            <span className="text-gray-800 fw-bold fs-4 me-3">6,578</span> 
-                            {/*end::Number*/}                        
-                            
-                            {/*begin::Info*/} 
-                                                            {/*begin::label*/} 
-                                <span className="badge badge-light-danger fs-base">                           
-                                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr065.svg*/}
-<span className="svg-icon svg-icon-5 svg-icon-danger ms-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="11" y="18" width="13" height="2" rx="1" transform="rotate(-90 11 18)" fill="currentColor"/>
-<path d="M11.4343 15.4343L7.25 11.25C6.83579 10.8358 6.16421 10.8358 5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75L11.2929 18.2929C11.6834 18.6834 12.3166 18.6834 12.7071 18.2929L18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25C17.8358 10.8358 17.1642 10.8358 16.75 11.25L12.5657 15.4343C12.2533 15.7467 11.7467 15.7467 11.4343 15.4343Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                             
-                                
-                                    0.4%
-                                </span>  
-                                {/*end::label*/}               
-                                      
-                            {/*end::Info*/}                  
-                        </div>
-                        {/*end::Wrapper*/}   
-                    </div>
-                    {/*end::Container*/}                                    
-                </div>
-                {/*end::Item*/}                           
-
-                                    {/*begin::Separator*/}
-                    <div className="separator separator-dashed my-3"></div>
-                    {/*end::Separator*/}
-                 
-                                             
-               
-                {/*begin::Item*/}
-                <div className="d-flex align-items-center">                    
-                    {/*begin::Symbol*/}
-                    <div className="symbol symbol-30px me-5">
-                        <span className="symbol-label">  
-                            {/*begin::Svg Icon | path: icons/duotune/abstract/abs026.svg*/}
-<span className="svg-icon svg-icon-3 svg-icon-gray-600"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path opacity="0.3" d="M7 20.5L2 17.6V11.8L7 8.90002L12 11.8V17.6L7 20.5ZM21 20.8V18.5L19 17.3L17 18.5V20.8L19 22L21 20.8Z" fill="currentColor"/>
-<path d="M22 14.1V6L15 2L8 6V14.1L15 18.2L22 14.1Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                             
-                        </span>                
-                    </div>
-                    {/*end::Symbol*/}                   
-
-                    {/*begin::Container*/}
-                    <div className="d-flex align-items-center flex-stack flex-wrap d-grid gap-1 flex-row-fluid">
-                        {/*begin::Content*/}
-                        <div className="me-5">
-                            {/*begin::Title*/}
-                            <a href="#" className="text-gray-800 fw-bold text-hover-primary fs-6">Other</a>
-                            {/*end::Title*/}
-
-                            {/*begin::Desc*/}
-                            <span className="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Many Sources</span>   
-                            {/*end::Desc*/}                                     
-                        </div>
-                        {/*end::Content*/} 
-
-                        {/*begin::Wrapper*/}
-                        <div className="d-flex align-items-center"> 
-                            {/*begin::Number*/}           
-                            <span className="text-gray-800 fw-bold fs-4 me-3">79,458</span> 
-                            {/*end::Number*/}                        
-                            
-                            {/*begin::Info*/} 
-                                                            {/*begin::label*/} 
-                                <span className="badge badge-light-success fs-base">                                
-                                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr066.svg*/}
-<span className="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor"/>
-<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                                                              
-                                        
-                                    8.3%
-                                </span>  
-                                {/*end::label*/}   
-                                      
-                            {/*end::Info*/}                  
-                        </div>
-                        {/*end::Wrapper*/}   
-                    </div>
-                    {/*end::Container*/}                                    
-                </div>
-                {/*end::Item*/}                           
-
-                                    {/*begin::Separator*/}
-                    <div className="separator separator-dashed my-3"></div>
-                    {/*end::Separator*/}
-                 
-                                             
-               
-                {/*begin::Item*/}
-                <div className="d-flex align-items-center">                    
-                    {/*begin::Symbol*/}
-                    <div className="symbol symbol-30px me-5">
-                        <span className="symbol-label">  
-                            {/*begin::Svg Icon | path: icons/duotune/abstract/abs049.svg*/}
-<span className="svg-icon svg-icon-3 svg-icon-gray-600"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path opacity="0.3" d="M8.70001 6C8.10001 5.7 7.39999 5.40001 6.79999 5.10001C7.79999 4.00001 8.90001 3 10.1 2.2C10.7 2.1 11.4 2 12 2C12.7 2 13.3 2.1 13.9 2.2C12 3.2 10.2 4.5 8.70001 6ZM12 8.39999C13.9 6.59999 16.2 5.30001 18.7 4.60001C18.1 4.00001 17.4 3.6 16.7 3.2C14.4 4.1 12.2 5.40001 10.5 7.10001C11 7.50001 11.5 7.89999 12 8.39999Z" fill="currentColor"/>
-<path d="M7 20C7 20.2 7 20.4 7 20.6C6.2 20.1 5.49999 19.6 4.89999 19C4.59999 18 4.00001 17.2 3.20001 16.6C2.80001 15.8 2.49999 15 2.29999 14.1C4.99999 14.7 7 17.1 7 20ZM10.6 9.89995C8.70001 8.09995 6.39999 6.89996 3.79999 6.29996C3.39999 6.89996 2.99999 7.49995 2.79999 8.19995C5.39999 8.59995 7.7 9.79996 9.5 11.6C9.8 10.9 10.2 10.3999 10.6 9.89995ZM2.20001 10.1C2.10001 10.7 2 11.4 2 12C2 12 2 12 2 12.1C4.3 12.4 6.40001 13.7 7.60001 15.6C7.80001 14.8 8.09999 14.0999 8.39999 13.3999C6.89999 11.5999 4.70001 10.4 2.20001 10.1ZM11 20C11 14 15.4 8.99996 21.2 8.09996C20.9 7.39996 20.6 6.79995 20.2 6.19995C13.8 7.49995 9 13.0999 9 19.8999C9 20.3999 9.00001 21 9.10001 21.5C9.80001 21.7 10.5 21.7999 11.2 21.8999C11.1 21.2999 11 20.7 11 20ZM19.1 19C19.4 18 20 17.2 20.8 16.6C21.2 15.8 21.5 15 21.7 14.1C19 14.7 16.9 17.1 16.9 20C16.9 20.2 16.9 20.4 16.9 20.6C17.8 20.2 18.5 19.6 19.1 19ZM15 20C15 15.9 18.1 12.6 22 12.1C22 12.1 22 12.1 22 12C22 11.3 21.9 10.7 21.8 10.1C16.8 10.7 13 14.9 13 20C13 20.7 13.1 21.2999 13.2 21.8999C13.9 21.7999 14.5 21.7 15.2 21.5C15.1 21 15 20.5 15 20Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                             
-                        </span>                
-                    </div>
-                    {/*end::Symbol*/}                   
-
-                    {/*begin::Container*/}
-                    <div className="d-flex align-items-center flex-stack flex-wrap d-grid gap-1 flex-row-fluid">
-                        {/*begin::Content*/}
-                        <div className="me-5">
-                            {/*begin::Title*/}
-                            <a href="#" className="text-gray-800 fw-bold text-hover-primary fs-6">Rising Networks</a>
-                            {/*end::Title*/}
-
-                            {/*begin::Desc*/}
-                            <span className="text-gray-400 fw-semibold fs-7 d-block text-start ps-0">Social Network</span>   
-                            {/*end::Desc*/}                                     
-                        </div>
-                        {/*end::Content*/} 
-
-                        {/*begin::Wrapper*/}
-                        <div className="d-flex align-items-center"> 
-                            {/*begin::Number*/}           
-                            <span className="text-gray-800 fw-bold fs-4 me-3">18,047</span> 
-                            {/*end::Number*/}                        
-                            
-                            {/*begin::Info*/} 
-                                                            {/*begin::label*/} 
-                                <span className="badge badge-light-success fs-base">                                
-                                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr066.svg*/}
-<span className="svg-icon svg-icon-5 svg-icon-success ms-n1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="13" y="6" width="13" height="2" rx="1" transform="rotate(90 13 6)" fill="currentColor"/>
-<path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                                                              
-                                        
-                                    1.9%
-                                </span>  
-                                {/*end::label*/}   
-                                      
-                            {/*end::Info*/}                  
-                        </div>
-                        {/*end::Wrapper*/}   
-                    </div>
-                    {/*end::Container*/}                                    
-                </div>
-                {/*end::Item*/}                           
-
-                 
-               
-
-                    </div>
-        {/*end::Wrapper*/}
-    </div>
-    {/*end::Body*/}
-</div>
-{/*end::List widget 12*/}    </div>
-    {/*end::Col*/}
-
-    {/*begin::Col*/}
-
-    {/*end::Col*/}
-
-    {/*begin::Col*/}
-    <div className="col-xl-8 mb-5 mb-xl-0">
-        {/*begin::Chart widget 30*/}
-        
-        {/*begin::Table widget 13*/}
-        <div className="card card-flush h-xl-100">
-            {/*begin::Header*/}
-            <div className="card-header pt-7">
-                {/*begin::Title*/}
-                <h3 className="card-title align-items-start flex-column">			
-                    <span className="card-label fw-bold text-gray-800">Most Popular Sellers</span>
-                    
-                    <span className="text-gray-400 mt-1 fw-semibold fs-6">Total 424,567 deliveries</span>
-                </h3>
-                {/*end::Title*/}
-        
-                {/*begin::Toolbar*/}
-                <div className="card-toolbar">   
-                    {/*begin::Daterangepicker(defined in src/js/layout/app.js)*/}
-                    <div data-kt-daterangepicker="true" data-kt-daterangepicker-opens="left" className="btn btn-sm btn-light d-flex align-items-center px-4" data-kt-initialized="1">           
-                        {/*begin::Display range*/}
-                        <div className="text-gray-600 fw-bold">14 Apr 2023 - 13 May 2023</div>
-                        {/*end::Display range*/}
-        
-                        {/*begin::Svg Icon | path: icons/duotune/general/gen014.svg*/}
-        <span className="svg-icon svg-icon-1 ms-2 me-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path opacity="0.3" d="M21 22H3C2.4 22 2 21.6 2 21V5C2 4.4 2.4 4 3 4H21C21.6 4 22 4.4 22 5V21C22 21.6 21.6 22 21 22Z" fill="currentColor"></path>
-        <path d="M6 6C5.4 6 5 5.6 5 5V3C5 2.4 5.4 2 6 2C6.6 2 7 2.4 7 3V5C7 5.6 6.6 6 6 6ZM11 5V3C11 2.4 10.6 2 10 2C9.4 2 9 2.4 9 3V5C9 5.6 9.4 6 10 6C10.6 6 11 5.6 11 5ZM15 5V3C15 2.4 14.6 2 14 2C13.4 2 13 2.4 13 3V5C13 5.6 13.4 6 14 6C14.6 6 15 5.6 15 5ZM19 5V3C19 2.4 18.6 2 18 2C17.4 2 17 2.4 17 3V5C17 5.6 17.4 6 18 6C18.6 6 19 5.6 19 5Z" fill="currentColor"></path>
-        <path d="M8.8 13.1C9.2 13.1 9.5 13 9.7 12.8C9.9 12.6 10.1 12.3 10.1 11.9C10.1 11.6 10 11.3 9.8 11.1C9.6 10.9 9.3 10.8 9 10.8C8.8 10.8 8.59999 10.8 8.39999 10.9C8.19999 11 8.1 11.1 8 11.2C7.9 11.3 7.8 11.4 7.7 11.6C7.6 11.8 7.5 11.9 7.5 12.1C7.5 12.2 7.4 12.2 7.3 12.3C7.2 12.4 7.09999 12.4 6.89999 12.4C6.69999 12.4 6.6 12.3 6.5 12.2C6.4 12.1 6.3 11.9 6.3 11.7C6.3 11.5 6.4 11.3 6.5 11.1C6.6 10.9 6.8 10.7 7 10.5C7.2 10.3 7.49999 10.1 7.89999 10C8.29999 9.90003 8.60001 9.80003 9.10001 9.80003C9.50001 9.80003 9.80001 9.90003 10.1 10C10.4 10.1 10.7 10.3 10.9 10.4C11.1 10.5 11.3 10.8 11.4 11.1C11.5 11.4 11.6 11.6 11.6 11.9C11.6 12.3 11.5 12.6 11.3 12.9C11.1 13.2 10.9 13.5 10.6 13.7C10.9 13.9 11.2 14.1 11.4 14.3C11.6 14.5 11.8 14.7 11.9 15C12 15.3 12.1 15.5 12.1 15.8C12.1 16.2 12 16.5 11.9 16.8C11.8 17.1 11.5 17.4 11.3 17.7C11.1 18 10.7 18.2 10.3 18.3C9.9 18.4 9.5 18.5 9 18.5C8.5 18.5 8.1 18.4 7.7 18.2C7.3 18 7 17.8 6.8 17.6C6.6 17.4 6.4 17.1 6.3 16.8C6.2 16.5 6.10001 16.3 6.10001 16.1C6.10001 15.9 6.2 15.7 6.3 15.6C6.4 15.5 6.6 15.4 6.8 15.4C6.9 15.4 7.00001 15.4 7.10001 15.5C7.20001 15.6 7.3 15.6 7.3 15.7C7.5 16.2 7.7 16.6 8 16.9C8.3 17.2 8.6 17.3 9 17.3C9.2 17.3 9.5 17.2 9.7 17.1C9.9 17 10.1 16.8 10.3 16.6C10.5 16.4 10.5 16.1 10.5 15.8C10.5 15.3 10.4 15 10.1 14.7C9.80001 14.4 9.50001 14.3 9.10001 14.3C9.00001 14.3 8.9 14.3 8.7 14.3C8.5 14.3 8.39999 14.3 8.39999 14.3C8.19999 14.3 7.99999 14.2 7.89999 14.1C7.79999 14 7.7 13.8 7.7 13.7C7.7 13.5 7.79999 13.4 7.89999 13.2C7.99999 13 8.2 13 8.5 13H8.8V13.1ZM15.3 17.5V12.2C14.3 13 13.6 13.3 13.3 13.3C13.1 13.3 13 13.2 12.9 13.1C12.8 13 12.7 12.8 12.7 12.6C12.7 12.4 12.8 12.3 12.9 12.2C13 12.1 13.2 12 13.6 11.8C14.1 11.6 14.5 11.3 14.7 11.1C14.9 10.9 15.2 10.6 15.5 10.3C15.8 10 15.9 9.80003 15.9 9.70003C15.9 9.60003 16.1 9.60004 16.3 9.60004C16.5 9.60004 16.7 9.70003 16.8 9.80003C16.9 9.90003 17 10.2 17 10.5V17.2C17 18 16.7 18.4 16.2 18.4C16 18.4 15.8 18.3 15.6 18.2C15.4 18.1 15.3 17.8 15.3 17.5Z" fill="currentColor"></path>
-        </svg>
-        </span>
-        {/*end::Svg Icon*/}          
-                    </div>  
-                    {/*end::Daterangepicker*/}            
-                </div>
-                {/*end::Toolbar*/}
-            </div>
-            {/*end::Header*/}
-        
-            {/*begin::Body*/}
-            <div className="card-body pt-3 pb-4">                
-                {/*begin::Table container*/}
-                <div className="table-responsive">
-                    {/*begin::Table*/}
-                    <table className="table table-row-dashed align-middle gs-0 gy-4 my-0">
-                        {/*begin::Table head*/}
-                        <thead>
-                            <tr className="fs-7 fw-bold text-gray-500 border-bottom-0">                                    
-                                <th className="p-0 w-200px w-xxl-450px"></th>
-                                <th className="p-0 min-w-150px"></th>
-                                <th className="p-0 min-w-125px"></th>
-                                <th className="p-0 min-w-125px"></th>                                     
-                                <th className="p-0 w-100px"></th>
-                            </tr>
-                        </thead>
-                        {/*end::Table head*/}
-        
-                        {/*begin::Table body*/}
-                        <tbody>
-                                                    <tr>                            
-                                    <td>
-                                        <div className="d-flex align-items-center">
-                                            <div className="symbol symbol-circle symbol-40px me-3">                                                   
-                                                <img src="/assets/media/avatars/300-1.jpg" className="" alt="" />                                                    
-                                            </div>
-                                            
-                                            <div className="d-flex justify-content-start flex-column">
-                                            <a href="../account/overview.html" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Brooklyn Simmons</a>
-                                                <span className="text-gray-400 fw-semibold d-block fs-7">Zuid Area</span>
-                                            </div>
-                                        </div>                                
-                                    </td>
-        
-                                    <td className="text-end">
-                                        <span className="text-gray-800 fw-bold d-block mb-1 fs-6">1,240</span>
-                                        <span className="fw-semibold text-gray-400 d-block">Deliveries</span>
-                                    </td>                                   
-        
-                                    <td className="text-end">
-                                        <a href="#" className="text-gray-800 fw-bold text-hover-primary d-block mb-1 fs-6">$5,400</a>
-                                        <span className="text-gray-400 fw-semibold d-block fs-7">Earnings</span>
-                                    </td>
-                                    
-                                    <td className="float-end text-end border-0">
-                                        <div className="rating gap-1">
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                            </div>
-                                        
-                                        <span className="text-gray-400 fw-semibold d-block fs-7 mt-1">Rating</span>
-                                    </td>                            
-        
-                                    <td className="text-end">
-                                        <a href="#" className="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-25px h-25px">
-                                            {/*begin::Svg Icon | path: icons/duotune/arrows/arr001.svg*/}
-        <span className="svg-icon svg-icon-5 svg-icon-gray-700"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"></path>
-        <path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"></path>
-        </svg>
-        </span>
-        {/*end::Svg Icon*/}                                </a>
-                                    </td>
-                                </tr>                        
-                                                    <tr>                            
-                                    <td>
-                                        <div className="d-flex align-items-center">
-                                            <div className="symbol symbol-circle symbol-40px me-3">                                                   
-                                                <img src="/assets/media/avatars/300-2.jpg" className="" alt="" />                                                    
-                                            </div>
-                                            
-                                            <div className="d-flex justify-content-start flex-column">
-                                            <a href="../account/overview.html" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Annette Black</a>
-                                                <span className="text-gray-400 fw-semibold d-block fs-7">Zuid Area</span>
-                                            </div>
-                                        </div>                                
-                                    </td>
-        
-                                    <td className="text-end">
-                                        <span className="text-gray-800 fw-bold d-block mb-1 fs-6">6,074</span>
-                                        <span className="fw-semibold text-gray-400 d-block">Deliveries</span>
-                                    </td>                                   
-        
-                                    <td className="text-end">
-                                        <a href="#" className="text-gray-800 fw-bold text-hover-primary d-block mb-1 fs-6">$174,074</a>
-                                        <span className="text-gray-400 fw-semibold d-block fs-7">Earnings</span>
-                                    </td>
-                                    
-                                    <td className="float-end text-end border-0">
-                                        <div className="rating gap-1">
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                            </div>
-                                        
-                                        <span className="text-gray-400 fw-semibold d-block fs-7 mt-1">Rating</span>
-                                    </td>                            
-        
-                                    <td className="text-end">
-                                        <a href="#" className="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-25px h-25px">
-                                            {/*begin::Svg Icon | path: icons/duotune/arrows/arr001.svg*/}
-        <span className="svg-icon svg-icon-5 svg-icon-gray-700"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"></path>
-        <path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"></path>
-        </svg>
-        </span>
-        {/*end::Svg Icon*/}                                </a>
-                                    </td>
-                                </tr>                        
-                                                    <tr>                            
-                                    <td>
-                                        <div className="d-flex align-items-center">
-                                            <div className="symbol symbol-circle symbol-40px me-3">                                                   
-                                                <img src="/assets/media/avatars/300-12.jpg" className="" alt="" />                                                    
-                                            </div>
-                                            
-                                            <div className="d-flex justify-content-start flex-column">
-                                            <a href="../account/overview.html" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Esther Howard</a>
-                                                <span className="text-gray-400 fw-semibold d-block fs-7">Zuid Area</span>
-                                            </div>
-                                        </div>                                
-                                    </td>
-        
-                                    <td className="text-end">
-                                        <span className="text-gray-800 fw-bold d-block mb-1 fs-6">357</span>
-                                        <span className="fw-semibold text-gray-400 d-block">Deliveries</span>
-                                    </td>                                   
-        
-                                    <td className="text-end">
-                                        <a href="#" className="text-gray-800 fw-bold text-hover-primary d-block mb-1 fs-6">$2,737</a>
-                                        <span className="text-gray-400 fw-semibold d-block fs-7">Earnings</span>
-                                    </td>
-                                    
-                                    <td className="float-end text-end border-0">
-                                        <div className="rating gap-1">
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                            </div>
-                                        
-                                        <span className="text-gray-400 fw-semibold d-block fs-7 mt-1">Rating</span>
-                                    </td>                            
-        
-                                    <td className="text-end">
-                                        <a href="#" className="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-25px h-25px">
-                                            {/*begin::Svg Icon | path: icons/duotune/arrows/arr001.svg*/}
-        <span className="svg-icon svg-icon-5 svg-icon-gray-700"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"></path>
-        <path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"></path>
-        </svg>
-        </span>
-        {/*end::Svg Icon*/}                                </a>
-                                    </td>
-                                </tr>                        
-                                                    <tr>                            
-                                    <td>
-                                        <div className="d-flex align-items-center">
-                                            <div className="symbol symbol-circle symbol-40px me-3">                                                   
-                                                <img src="/assets/media/avatars/300-11.jpg" className="" alt="" />                                                    
-                                            </div>
-                                            
-                                            <div className="d-flex justify-content-start flex-column">
-                                            <a href="../account/overview.html" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Guy Hawkins</a>
-                                                <span className="text-gray-400 fw-semibold d-block fs-7">Zuid Area</span>
-                                            </div>
-                                        </div>                                
-                                    </td>
-        
-                                    <td className="text-end">
-                                        <span className="text-gray-800 fw-bold d-block mb-1 fs-6">2,954</span>
-                                        <span className="fw-semibold text-gray-400 d-block">Deliveries</span>
-                                    </td>                                   
-        
-                                    <td className="text-end">
-                                        <a href="#" className="text-gray-800 fw-bold text-hover-primary d-block mb-1 fs-6">$59,634</a>
-                                        <span className="text-gray-400 fw-semibold d-block fs-7">Earnings</span>
-                                    </td>
-                                    
-                                    <td className="float-end text-end border-0">
-                                        <div className="rating gap-1">
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label ">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                            </div>
-                                        
-                                        <span className="text-gray-400 fw-semibold d-block fs-7 mt-1">Rating</span>
-                                    </td>                            
-        
-                                    <td className="text-end">
-                                        <a href="#" className="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-25px h-25px">
-                                            {/*begin::Svg Icon | path: icons/duotune/arrows/arr001.svg*/}
-        <span className="svg-icon svg-icon-5 svg-icon-gray-700"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"></path>
-        <path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"></path>
-        </svg>
-        </span>
-        {/*end::Svg Icon*/}                                </a>
-                                    </td>
-                                </tr>                        
-                                                    <tr>                            
-                                    <td>
-                                        <div className="d-flex align-items-center">
-                                            <div className="symbol symbol-circle symbol-40px me-3">                                                   
-                                                <img src="/assets/media/avatars/300-3.jpg" className="" alt="" />                                                    
-                                            </div>
-                                            
-                                            <div className="d-flex justify-content-start flex-column">
-                                            <a href="../account/overview.html" className="text-gray-800 fw-bold text-hover-primary mb-1 fs-6">Marvin McKinney</a>
-                                                <span className="text-gray-400 fw-semibold d-block fs-7">Zuid Area</span>
-                                            </div>
-                                        </div>                                
-                                    </td>
-        
-                                    <td className="text-end">
-                                        <span className="text-gray-800 fw-bold d-block mb-1 fs-6">822</span>
-                                        <span className="fw-semibold text-gray-400 d-block">Deliveries</span>
-                                    </td>                                   
-        
-                                    <td className="text-end">
-                                        <a href="#" className="text-gray-800 fw-bold text-hover-primary d-block mb-1 fs-6">$19,842</a>
-                                        <span className="text-gray-400 fw-semibold d-block fs-7">Earnings</span>
-                                    </td>
-                                    
-                                    <td className="float-end text-end border-0">
-                                        <div className="rating gap-1">
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                                    <div className="rating-label checked">
-                                                    <i className="bi bi-star-fill fs-6"></i>
-                                                </div>
-                                                                            </div>
-                                        
-                                        <span className="text-gray-400 fw-semibold d-block fs-7 mt-1">Rating</span>
-                                    </td>                            
-        
-                                    <td className="text-end">
-                                        <a href="#" className="btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-25px h-25px">
-                                            {/*begin::Svg Icon | path: icons/duotune/arrows/arr001.svg*/}
-        <span className="svg-icon svg-icon-5 svg-icon-gray-700"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M14.4 11H3C2.4 11 2 11.4 2 12C2 12.6 2.4 13 3 13H14.4V11Z" fill="currentColor"></path>
-        <path opacity="0.3" d="M14.4 20V4L21.7 11.3C22.1 11.7 22.1 12.3 21.7 12.7L14.4 20Z" fill="currentColor"></path>
-        </svg>
-        </span>
-        {/*end::Svg Icon*/}                                </a>
-                                    </td>
-                                </tr>                        
-                                            </tbody>
-                        {/*end::Table body*/}
-                    </table>
-                </div>
-                {/*end::Table container*/}                  
-            </div>
-            {/*end: Card Body*/}
-        </div>
-        {/*end::Table widget 13*/}  
-{/*end::Chart widget 30*/}
-    </div>
-    {/*end::Col*/}
-</div>
-{/*end::Row*/}
+<Row5Home />
 
  
 
@@ -4432,30 +58,9 @@ const Home = () => {
                 </div>
                 {/*end::Content wrapper*/}
 
-                                    
-{/*begin::Footer*/}
-<div id="kt_app_footer" className="app-footer " >
-            {/*begin::Footer container*/}
-        <div className="app-container  container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3 ">
-            {/*begin::Copyright*/}
-<div className="text-dark order-2 order-md-1">
-    <span className="text-muted fw-semibold me-1">2023&copy;</span>
-    <a href="https://keenthemes.com/" target="_blank" className="text-gray-800 text-hover-primary">Keenthemes</a>
-</div>
-{/*end::Copyright*/}
+                <Footer />                    
 
-{/*begin::Menu*/}
-<ul className="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-    <li className="menu-item"><a href="https://keenthemes.com/" target="_blank" className="menu-link px-2">About</a></li>
-
-    <li className="menu-item"><a href="https://devs.keenthemes.com/" target="_blank" className="menu-link px-2">Support</a></li>
-
-    <li className="menu-item"><a href="https://1.envato.market/EA4JP" target="_blank" className="menu-link px-2">Purchase</a></li>
-</ul>
-{/*end::Menu*/}        </div>
-        {/*end::Footer container*/}
-    </div>
-{/*end::Footer*/}                            </div>
+                           </div>
             {/*end:::Main*/}
 
             
@@ -11992,2406 +7597,864 @@ style={{backgroundImage:"url('/assets/media/misc/layout/header-bg.jpg')"}}>
 {/*end::Svg Icon*/}</div>
 {/*end::Scrolltop*/}
 
-                    {/*begin::Modals*/}
-            {/*begin::Modal - Create Campaign*/}
-<div className="modal fade" id="kt_modal_create_campaign" tabIndex="-1" aria-hidden="true">
+
+
+<CampaignModal />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div className={`modal fade ${createApp == true ? "show" : ""}`} id="kt_modal_create_app" tabIndex="-1" style={{display: createApp == true ? 'block' : 'none'}} aria-modal="true" role="dialog">
     {/*begin::Modal dialog*/}
-    <div className="modal-dialog modal-fullscreen p-9">
+    <div className="modal-dialog modal-dialog-centered mw-900px">
         {/*begin::Modal content*/}
-        <div className="modal-content modal-rounded">
+        <div className="modal-content">
             {/*begin::Modal header*/}
-            <div className="modal-header py-7 d-flex justify-content-between">
+            <div className="modal-header">
                 {/*begin::Modal title*/}
-                <h2>Create Campaign</h2>
+                <h2>Create App</h2>
                 {/*end::Modal title*/}
 
                 {/*begin::Close*/}
                 <div className="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
                     {/*begin::Svg Icon | path: icons/duotune/arrows/arr061.svg*/}
-<span className="svg-icon svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"/>
-<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"/>
+<span className="svg-icon svg-icon-1" onClick={()=>setCreateApp(false)}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"></rect>
+<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"></rect>
 </svg>
 
 </span>
 {/*end::Svg Icon*/}                </div>
                 {/*end::Close*/}
             </div>
-            {/*begin::Modal header*/}
+            {/*end::Modal header*/}
 
             {/*begin::Modal body*/}
-            <div className="modal-body scroll-y m-5">
+            <div className="modal-body py-lg-10 px-lg-10">
                 {/*begin::Stepper*/}
-                <div className="stepper stepper-links d-flex flex-column" id="kt_modal_create_campaign_stepper">
-                    {/*begin::Nav*/}
-                    <div className="stepper-nav justify-content-center py-2">
-                        {/*begin::Step 1*/}
-                        <div className="stepper-item me-5 me-md-15 current" data-kt-stepper-element="nav">
-                            <h3 className="stepper-title">
-                                Campaign Details
-                            </h3>
-                        </div>
-                        {/*end::Step 1*/}
+                <div className="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_app_stepper" data-kt-stepper="true">
+                    {/*begin::Aside*/}
+                    <div className="d-flex justify-content-center justify-content-xl-start flex-row-auto w-100 w-xl-300px">
+                        {/*begin::Nav*/}
+                        <div className="stepper-nav ps-lg-10">
+                            {/*begin::Step 1*/}
+                            <div className="stepper-item current" data-kt-stepper-element="nav">
+                                {/*begin::Wrapper*/}  
+                                <div className="stepper-wrapper">
+                                    {/*begin::Icon*/}
+                                    <div className="stepper-icon w-40px h-40px">
+                                        <i className="stepper-check fas fa-check"></i>
+                                        <span className="stepper-number">1</span>
+                                    </div>
+                                    {/*end::Icon*/}
 
-                        {/*begin::Step 2*/}
-                        <div className="stepper-item me-5 me-md-15" data-kt-stepper-element="nav">
-                            <h3 className="stepper-title">
-                                Creative Uploads
-                            </h3>
-                        </div>
-                        {/*end::Step 2*/}
+                                    {/*begin::Label*/}
+                                    <div className="stepper-label">
+                                        <h3 className="stepper-title">
+                                            Details
+                                        </h3>
 
-                        {/*begin::Step 3*/}
-                        <div className="stepper-item me-5 me-md-15" data-kt-stepper-element="nav">
-                            <h3 className="stepper-title">
-                                Audiences
-                            </h3>
-                        </div>
-                        {/*end::Step 3*/}
+                                        <div className="stepper-desc">
+                                            Name your App
+                                        </div>
+                                    </div>
+                                    {/*end::Label*/}
+                                </div>
+                                {/*end::Wrapper*/} 
+            
+                                {/*begin::Line*/}
+                                <div className="stepper-line h-40px"></div>
+                                {/*end::Line*/}                                 
+                            </div>
+                            {/*end::Step 1*/}
 
-                        {/*begin::Step 4*/}
-                        <div className="stepper-item me-5 me-md-15" data-kt-stepper-element="nav">
-                            <h3 className="stepper-title">
-                                Budget Estimates
-                            </h3>
-                        </div>
-                        {/*end::Step 4*/}
+                            {/*begin::Step 2*/}
+                            <div className="stepper-item" data-kt-stepper-element="nav">
+                                {/*begin::Wrapper*/}  
+                                <div className="stepper-wrapper">
+                                    {/*begin::Icon*/}
+                                    <div className="stepper-icon w-40px h-40px">
+                                        <i className="stepper-check fas fa-check"></i>
+                                        <span className="stepper-number">2</span>
+                                    </div>
+                                    {/*begin::Icon*/}
 
-                        {/*begin::Step 5*/}
-                        <div className="stepper-item" data-kt-stepper-element="nav">
-                            <h3 className="stepper-title">
-                                Completed
-                            </h3>
+                                    {/*begin::Label*/}
+                                    <div className="stepper-label">
+                                        <h3 className="stepper-title">
+                                            Frameworks
+                                        </h3>
+
+                                        <div className="stepper-desc">
+                                            Define your app framework
+                                        </div>
+                                    </div>
+                                    {/*begin::Label*/}
+                                </div>
+                                {/*end::Wrapper*/} 
+            
+                                {/*begin::Line*/}
+                                <div className="stepper-line h-40px"></div>
+                                {/*end::Line*/}                               
+                            </div>
+                            {/*end::Step 2*/}
+
+                            {/*begin::Step 3*/}
+                            <div className="stepper-item" data-kt-stepper-element="nav">
+                                {/*begin::Wrapper*/}  
+                                <div className="stepper-wrapper">
+                                    {/*begin::Icon*/}
+                                    <div className="stepper-icon w-40px h-40px">
+                                        <i className="stepper-check fas fa-check"></i>
+                                        <span className="stepper-number">3</span>
+                                    </div>
+                                    {/*end::Icon*/}
+
+                                    {/*begin::Label*/}
+                                    <div className="stepper-label">
+                                        <h3 className="stepper-title">
+                                            Database
+                                        </h3>
+
+                                        <div className="stepper-desc">
+                                            Select the app database type
+                                        </div>
+                                    </div>
+                                    {/*end::Label*/}
+                                </div>
+                                {/*end::Wrapper*/} 
+            
+                                {/*begin::Line*/}
+                                <div className="stepper-line h-40px"></div>
+                                {/*end::Line*/}                            
+                            </div>
+                            {/*end::Step 3*/}
+
+                            {/*begin::Step 4*/}
+                            <div className="stepper-item" data-kt-stepper-element="nav">
+                                {/*begin::Wrapper*/}  
+                                <div className="stepper-wrapper">
+                                    {/*begin::Icon*/}
+                                    <div className="stepper-icon w-40px h-40px">
+                                        <i className="stepper-check fas fa-check"></i>
+                                        <span className="stepper-number">4</span>
+                                    </div>
+                                    {/*end::Icon*/}
+
+                                    {/*begin::Label*/}
+                                    <div className="stepper-label">
+                                        <h3 className="stepper-title">
+                                            Billing
+                                        </h3>
+
+                                        <div className="stepper-desc">
+                                            Provide payment details
+                                        </div>
+                                    </div>
+                                    {/*end::Label*/}
+                                </div>
+                                {/*end::Wrapper*/} 
+            
+                                {/*begin::Line*/}
+                                <div className="stepper-line h-40px"></div>
+                                {/*end::Line*/}                            
+                            </div>
+                            {/*end::Step 4*/}
+
+                            {/*begin::Step 5*/}
+                            <div className="stepper-item mark-completed" data-kt-stepper-element="nav">
+                                {/*begin::Wrapper*/}  
+                                <div className="stepper-wrapper">
+                                    {/*begin::Icon*/}
+                                    <div className="stepper-icon w-40px h-40px">
+                                        <i className="stepper-check fas fa-check"></i>
+                                        <span className="stepper-number">5</span>
+                                    </div>
+                                    {/*end::Icon*/}
+
+                                    {/*begin::Label*/}
+                                    <div className="stepper-label">
+                                        <h3 className="stepper-title">
+                                            Completed
+                                        </h3>
+
+                                        <div className="stepper-desc">
+                                            Review and Submit
+                                        </div>
+                                    </div>
+                                    {/*end::Label*/}
+                                </div>
+                                {/*end::Wrapper*/}                                     
+                            </div>
+                            {/*end::Step 5*/}
                         </div>
-                        {/*end::Step 5*/}
+                        {/*end::Nav*/}
                     </div>
-                    {/*end::Nav*/}
+                    {/*begin::Aside*/}
 
-                    {/*begin::Form*/}
-                    <form className="mx-auto w-100 mw-600px pt-15 pb-10" noValidate="noValidate" id="kt_modal_create_campaign_stepper_form">
-                        
-{/*begin::Step 1*/}
+                    {/*begin::Content*/}
+                    <div className="flex-row-fluid py-lg-5 px-lg-15">
+                        {/*begin::Form*/}
+                        <form className="form fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate" id="kt_modal_create_app_form">
+                            {/*begin::Step 1*/}
 <div className="current" data-kt-stepper-element="content">
-    {/*begin::Wrapper*/}
     <div className="w-100">
-        {/*begin::Heading*/}
-        <div className="pb-10 pb-lg-15">
-            {/*begin::Title*/}
-            <h2 className="fw-bold d-flex align-items-center text-dark">
-                Setup Campaign Details
-                <i className="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Campaign name will be used as reference within your campaign reports"></i>
-            </h2>
-            {/*end::Title*/}
-
-            {/*begin::Notice*/}
-            <div className="text-muted fw-semibold fs-6">
-                If you need more info, please check out
-                <a href="#" className="link-primary fw-bold">Help Page</a>.
-            </div>
-            {/*end::Notice*/}
-        </div>
-        {/*end::Heading*/}
-
         {/*begin::Input group*/}
-        <div className="mb-10 fv-row">
+        <div className="fv-row mb-10 fv-plugins-icon-container">
             {/*begin::Label*/}
-            <label className="required form-label mb-3">Campaign Name</label>
+            <label className="d-flex align-items-center fs-5 fw-semibold mb-2">
+                <span className="required">App Name</span>
+                <i className="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" aria-label="Specify your unique app name" data-bs-original-title="Specify your unique app name" data-kt-initialized="1"></i>
+            </label>
             {/*end::Label*/}
 
             {/*begin::Input*/}
-            <input type="text" className="form-control form-control-lg form-control-solid" name="campaign_name" placeholder="" value="" />
+            <input type="text" className="form-control form-control-lg form-control-solid" name="name" placeholder="" value="" />
             {/*end::Input*/}
-        </div>
+        <div className="fv-plugins-message-container invalid-feedback"></div></div>
         {/*end::Input group*/}
 
         {/*begin::Input group*/}
-        <div className="fv-row mb-10">
+        <div className="fv-row">
             {/*begin::Label*/}
-            <label className="d-block fw-semibold fs-6 mb-5">
-                <span className="required">Company Logo</span>
-                <i className="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="E.g. Select a logo to represent the company that's running the campaign."></i>
+            <label className="d-flex align-items-center fs-5 fw-semibold mb-4">
+                <span className="required">Category</span>
+
+                <i className="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" aria-label="Select your app category" data-bs-original-title="Select your app category" data-kt-initialized="1"></i>
             </label>
             {/*end::Label*/}
 
-            {/*begin::Image input placeholder*/}
-            {/* <style>
-                .image-input-placeholder {
-                    background-image: url('/assets/media/svg/files/blank-image.svg');
-                }
-
-                [data-bs-theme="dark"] .image-input-placeholder {
-                    background-image: url('/assets/media/svg/files/blank-image-dark.svg');
-                }                
-            </style> */}
-            {/*end::Image input placeholder*/}
-
-            {/*begin::Image input*/}
-            <div className="image-input image-input-empty image-input-outline image-input-placeholder" data-kt-image-input="true">
-                {/*begin::Preview existing avatar*/}
-                <div className="image-input-wrapper w-125px h-125px"></div>
-                {/*end::Preview existing avatar*/}
-
-                {/*begin::Label*/}
-                <label className="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
-                    <i className="bi bi-pencil-fill fs-7"></i>
-
-                    {/*begin::Inputs*/}
-                    <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
-                    <input type="hidden" name="avatar_remove" />
-                    {/*end::Inputs*/}
-                </label>
-                {/*end::Label*/}
-
-                {/*begin::Cancel*/}
-                <span className="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
-                    <i className="bi bi-x fs-2"></i>
-                </span>
-                {/*end::Cancel*/}
-
-                {/*begin::Remove*/}
-                <span className="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
-                    <i className="bi bi-x fs-2"></i>
-                </span>
-                {/*end::Remove*/}
-            </div>
-            {/*end::Image input*/}
-
-            {/*begin::Hint*/}
-            <div className="form-text">Allowed file types: png, jpg, jpeg.</div>
-            {/*end::Hint*/}
-        </div>
-        {/*end::Input group*/}
-
-        {/*begin::Input group*/}
-        <div className="mb-10">
-            {/*begin::Label*/}
-            <label className="required fw-semibold fs-6 mb-5">Campaign Goal</label>
-            {/*end::Label*/}
-
-            {/*begin::Roles*/}
-                            {/*begin::Input row*/}
-                <div className="d-flex fv-row">
-                    {/*begin::Radio*/}
-                    <div className="form-check form-check-custom form-check-solid">
-                        {/*begin::Input*/}
-                        <input className="form-check-input me-3" name="user_role" type="radio" value="0" id="kt_modal_update_role_option_0" checked='checked' />
-                        {/*end::Input*/}
-
-                        {/*begin::Label*/}
-                        <label className="form-check-label" for="kt_modal_update_role_option_0">
-                            <div className="fw-bold text-gray-800">Get more visitors</div>
-                            <div className="text-gray-600">Increase impression traffic onto the platform</div>
-                        </label>
-                        {/*end::Label*/}
-                    </div>
-                    {/*end::Radio*/}
-                </div>
-                {/*end::Input row*/}
-
-                <div className='separator separator-dashed my-5'></div>                            {/*begin::Input row*/}
-                <div className="d-flex fv-row">
-                    {/*begin::Radio*/}
-                    <div className="form-check form-check-custom form-check-solid">
-                        {/*begin::Input*/}
-                        <input className="form-check-input me-3" name="user_role" type="radio" value="1" id="kt_modal_update_role_option_1"  />
-                        {/*end::Input*/}
-
-                        {/*begin::Label*/}
-                        <label className="form-check-label" for="kt_modal_update_role_option_1">
-                            <div className="fw-bold text-gray-800">Get more messages on chat</div>
-                            <div className="text-gray-600">Increase community interaction and communication</div>
-                        </label>
-                        {/*end::Label*/}
-                    </div>
-                    {/*end::Radio*/}
-                </div>
-                {/*end::Input row*/}
-
-                <div className='separator separator-dashed my-5'></div>                            {/*begin::Input row*/}
-                <div className="d-flex fv-row">
-                    {/*begin::Radio*/}
-                    <div className="form-check form-check-custom form-check-solid">
-                        {/*begin::Input*/}
-                        <input className="form-check-input me-3" name="user_role" type="radio" value="2" id="kt_modal_update_role_option_2"  />
-                        {/*end::Input*/}
-
-                        {/*begin::Label*/}
-                        <label className="form-check-label" for="kt_modal_update_role_option_2">
-                            <div className="fw-bold text-gray-800">Get more calls</div>
-                            <div className="text-gray-600">Boost telecommunication feedback to provide precise and accurate information</div>
-                        </label>
-                        {/*end::Label*/}
-                    </div>
-                    {/*end::Radio*/}
-                </div>
-                {/*end::Input row*/}
-
-                <div className='separator separator-dashed my-5'></div>                            {/*begin::Input row*/}
-                <div className="d-flex fv-row">
-                    {/*begin::Radio*/}
-                    <div className="form-check form-check-custom form-check-solid">
-                        {/*begin::Input*/}
-                        <input className="form-check-input me-3" name="user_role" type="radio" value="3" id="kt_modal_update_role_option_3"  />
-                        {/*end::Input*/}
-
-                        {/*begin::Label*/}
-                        <label className="form-check-label" for="kt_modal_update_role_option_3">
-                            <div className="fw-bold text-gray-800">Get more likes</div>
-                            <div className="text-gray-600">Increase positive interactivity on social media platforms</div>
-                        </label>
-                        {/*end::Label*/}
-                    </div>
-                    {/*end::Radio*/}
-                </div>
-                {/*end::Input row*/}
-
-                <div className='separator separator-dashed my-5'></div>                            {/*begin::Input row*/}
-                <div className="d-flex fv-row">
-                    {/*begin::Radio*/}
-                    <div className="form-check form-check-custom form-check-solid">
-                        {/*begin::Input*/}
-                        <input className="form-check-input me-3" name="user_role" type="radio" value="4" id="kt_modal_update_role_option_4"  />
-                        {/*end::Input*/}
-
-                        {/*begin::Label*/}
-                        <label className="form-check-label" for="kt_modal_update_role_option_4">
-                            <div className="fw-bold text-gray-800">Lead generation</div>
-                            <div className="text-gray-600">Collect contact information for potential customers</div>
-                        </label>
-                        {/*end::Label*/}
-                    </div>
-                    {/*end::Radio*/}
-                </div>
-                {/*end::Input row*/}
-
-                                        {/*end::Roles*/}
-        </div>
-        {/*end::Input group*/}
-    </div>
-    {/*end::Wrapper*/}
-</div>
-{/*end::Step 1*/}
-                        
-{/*begin::Step 2*/}
-<div data-kt-stepper-element="content">
-    {/*begin::Wrapper*/}   
-    <div className="w-100">
-        {/*begin::Heading*/}
-        <div className="pb-10 pb-lg-12">
-            {/*begin::Title*/}
-            <h1 className="fw-bold text-dark">Upload Files</h1>
-            {/*end::Title*/}
-
-            {/*begin::Description*/}
-            <div className="text-muted fw-semibold fs-4">
-                If you need more info, please check
-                <a href="#" className="link-primary">Campaign Guidelines</a>
-            </div>
-            {/*end::Description*/}
-        </div>
-        {/*end::Heading*/}
-
-        {/*begin::Input group*/}
-        <div className="fv-row mb-10">            
-            {/*begin::Dropzone*/}
-            <div className="dropzone" id="kt_modal_create_campaign_files_upload">
-                {/*begin::Message*/}
-                <div className="dz-message needsclick">
-                    {/*begin::Icon*/}
-                    {/*begin::Svg Icon | path: icons/duotune/files/fil010.svg*/}
-<span className="svg-icon svg-icon-3hx svg-icon-primary"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM14.5 12L12.7 9.3C12.3 8.9 11.7 8.9 11.3 9.3L10 12H11.5V17C11.5 17.6 11.4 18 12 18C12.6 18 12.5 17.6 12.5 17V12H14.5Z" fill="currentColor"/>
-<path d="M13 11.5V17.9355C13 18.2742 12.6 19 12 19C11.4 19 11 18.2742 11 17.9355V11.5H13Z" fill="currentColor"/>
-<path d="M8.2575 11.4411C7.82942 11.8015 8.08434 12.5 8.64398 12.5H15.356C15.9157 12.5 16.1706 11.8015 15.7425 11.4411L12.4375 8.65789C12.1875 8.44737 11.8125 8.44737 11.5625 8.65789L8.2575 11.4411Z" fill="currentColor"/>
-<path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="currentColor"/>
+            {/*begin:Options*/}
+            <div className="fv-row fv-plugins-icon-container">
+                {/*begin:Option*/}
+                <label className="d-flex flex-stack mb-5 cursor-pointer">
+                    {/*begin:Label*/}
+                    <span className="d-flex align-items-center me-2">
+                        {/*begin:Icon*/}
+                        <span className="symbol symbol-50px me-6">
+                            <span className="symbol-label bg-light-primary">
+                                {/*begin::Svg Icon | path: icons/duotune/maps/map004.svg*/}
+<span className="svg-icon svg-icon-1 svg-icon-primary"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.3" d="M18.4 5.59998C21.9 9.09998 21.9 14.8 18.4 18.3C14.9 21.8 9.2 21.8 5.7 18.3L18.4 5.59998Z" fill="currentColor"></path>
+<path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM19.9 11H13V8.8999C14.9 8.6999 16.7 8.00005 18.1 6.80005C19.1 8.00005 19.7 9.4 19.9 11ZM11 19.8999C9.7 19.6999 8.39999 19.2 7.39999 18.5C8.49999 17.7 9.7 17.2001 11 17.1001V19.8999ZM5.89999 6.90002C7.39999 8.10002 9.2 8.8 11 9V11.1001H4.10001C4.30001 9.4001 4.89999 8.00002 5.89999 6.90002ZM7.39999 5.5C8.49999 4.7 9.7 4.19998 11 4.09998V7C9.7 6.8 8.39999 6.3 7.39999 5.5ZM13 17.1001C14.3 17.3001 15.6 17.8 16.6 18.5C15.5 19.3 14.3 19.7999 13 19.8999V17.1001ZM13 4.09998C14.3 4.29998 15.6 4.8 16.6 5.5C15.5 6.3 14.3 6.80002 13 6.90002V4.09998ZM4.10001 13H11V15.1001C9.1 15.3001 7.29999 16 5.89999 17.2C4.89999 16 4.30001 14.6 4.10001 13ZM18.1 17.1001C16.6 15.9001 14.8 15.2 13 15V12.8999H19.9C19.7 14.5999 19.1 16.0001 18.1 17.1001Z" fill="currentColor"></path>
 </svg>
 </span>
-{/*end::Svg Icon*/}                    {/*end::Icon*/}
+{/*end::Svg Icon*/}                            </span>
+                        </span>
+                        {/*end:Icon*/}
 
-                    {/*begin::Info*/}
-                    <div className="ms-4">
-                        <h3 className="dfs-3 fw-bold text-gray-900 mb-1">Drop campaign files here or click to upload.</h3>
-                        <span className="fw-semibold fs-4 text-muted">Upload up to 10 files</span>
-                    </div>
-                    {/*end::Info*/}
-                </div>
-            </div>
-            {/*end::Dropzone*/}
-        </div>
-        {/*end::Input group*/}
+                        {/*begin:Info*/}
+                        <span className="d-flex flex-column">
+                            <span className="fw-bold fs-6">Quick Online Courses</span>
 
-        {/*begin::Input group*/}
-        <div className="mb-10">
-            {/*begin::Label*/}
-            <label className="fs-6 fw-semibold mb-2">Uploaded File</label>
-            {/*End::Label*/}
+                            <span className="fs-7 text-muted">Creating a clear text structure is just one SEO</span>
+                        </span>
+                        {/*end:Info*/}
+                    </span>
+                    {/*end:Label*/}
 
-            {/*begin::Files*/}
-            <div className="mh-300px scroll-y me-n7 pe-7">
-                                    {/*begin::File*/}
-                    <div className="d-flex flex-stack py-4 border border-top-0 border-left-0 border-right-0 border-dashed">
-                        <div className="d-flex align-items-center">
-                            {/*begin::Avatar*/}
-                            <div className="symbol symbol-35px">
-                                <img src="/assets/media/svg/files/pdf.svg" alt="icon" />
-                            </div>
-                            {/*end::Avatar*/}
+                    {/*begin:Input*/}
+                    <span className="form-check form-check-custom form-check-solid">
+                        <input className="form-check-input" type="radio" name="category" value="1" />
+                    </span>
+                    {/*end:Input*/}
+                </label>
+                {/*end::Option*/}
 
-                            {/*begin::Details*/}
-                            <div className="ms-6">
-                                <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Product Specifications</a>
-                                <div className="fw-semibold text-muted">230kb</div>
-                            </div>
-                            {/*end::Details*/}
-                        </div>
+                {/*begin:Option*/}
+                <label className="d-flex flex-stack mb-5 cursor-pointer">
+                    {/*begin:Label*/}
+                    <span className="d-flex align-items-center me-2">
+                        {/*begin:Icon*/}
+                        <span className="symbol symbol-50px me-6">
+                            <span className="symbol-label bg-light-danger  ">
+                                {/*begin::Svg Icon | path: icons/duotune/general/gen025.svg*/}
+<span className="svg-icon svg-icon-1 svg-icon-danger"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="2" y="2" width="9" height="9" rx="2" fill="currentColor"></rect>
+<rect opacity="0.3" x="13" y="2" width="9" height="9" rx="2" fill="currentColor"></rect>
+<rect opacity="0.3" x="13" y="13" width="9" height="9" rx="2" fill="currentColor"></rect>
+<rect opacity="0.3" x="2" y="13" width="9" height="9" rx="2" fill="currentColor"></rect>
+</svg>
+</span>
+{/*end::Svg Icon*/}                            </span>
+                        </span>
+                        {/*end:Icon*/}
 
-                        {/*begin::Menu*/}
-                        <div className="min-w-100px">
-                            <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true" data-placeholder="Edit">
-                                <option></option>
-                                <option value="1">Remove</option>
-                                <option value="2">Modify</option>
-                                <option value="3">Select</option>
-                            </select>
-                        </div>
-                        {/*end::Menu*/}
-                    </div>
-                    {/*end::File*/}
-                                    {/*begin::File*/}
-                    <div className="d-flex flex-stack py-4 border border-top-0 border-left-0 border-right-0 border-dashed">
-                        <div className="d-flex align-items-center">
-                            {/*begin::Avatar*/}
-                            <div className="symbol symbol-35px">
-                                <img src="/assets/media/svg/files/tif.svg" alt="icon" />
-                            </div>
-                            {/*end::Avatar*/}
+                        {/*begin:Info*/}
+                        <span className="d-flex flex-column">
+                            <span className="fw-bold fs-6">Face to Face Discussions</span>
 
-                            {/*begin::Details*/}
-                            <div className="ms-6">
-                                <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Campaign Creative Poster</a>
-                                <div className="fw-semibold text-muted">2.4mb</div>
-                            </div>
-                            {/*end::Details*/}
-                        </div>
+                            <span className="fs-7 text-muted">Creating a clear text structure is just one aspect</span>
+                        </span>
+                        {/*end:Info*/}
+                    </span>
+                    {/*end:Label*/}
 
-                        {/*begin::Menu*/}
-                        <div className="min-w-100px">
-                            <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true" data-placeholder="Edit">
-                                <option></option>
-                                <option value="1">Remove</option>
-                                <option value="2">Modify</option>
-                                <option value="3">Select</option>
-                            </select>
-                        </div>
-                        {/*end::Menu*/}
-                    </div>
-                    {/*end::File*/}
-                                    {/*begin::File*/}
-                    <div className="d-flex flex-stack py-4 border border-top-0 border-left-0 border-right-0 border-dashed">
-                        <div className="d-flex align-items-center">
-                            {/*begin::Avatar*/}
-                            <div className="symbol symbol-35px">
-                                <img src="/assets/media/svg/files/folder-document.svg" alt="icon" />
-                            </div>
-                            {/*end::Avatar*/}
+                    {/*begin:Input*/}
+                    <span className="form-check form-check-custom form-check-solid">
+                        <input className="form-check-input" type="radio" name="category" value="2" />
+                    </span>
+                    {/*end:Input*/}
+                </label>
+                {/*end::Option*/}
 
-                            {/*begin::Details*/}
-                            <div className="ms-6">
-                                <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Campaign Landing Page Source</a>
-                                <div className="fw-semibold text-muted">1.12mb</div>
-                            </div>
-                            {/*end::Details*/}
-                        </div>
+                {/*begin:Option*/}
+                <label className="d-flex flex-stack cursor-pointer">
+                    {/*begin:Label*/}
+                    <span className="d-flex align-items-center me-2">
+                        {/*begin:Icon*/}
+                        <span className="symbol symbol-50px me-6">
+                            <span className="symbol-label bg-light-success">
+                                {/*begin::Svg Icon | path: icons/duotune/general/gen013.svg*/}
+<span className="svg-icon svg-icon-1 svg-icon-success"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.3" d="M20.9 12.9C20.3 12.9 19.9 12.5 19.9 11.9C19.9 11.3 20.3 10.9 20.9 10.9H21.8C21.3 6.2 17.6 2.4 12.9 2V2.9C12.9 3.5 12.5 3.9 11.9 3.9C11.3 3.9 10.9 3.5 10.9 2.9V2C6.19999 2.5 2.4 6.2 2 10.9H2.89999C3.49999 10.9 3.89999 11.3 3.89999 11.9C3.89999 12.5 3.49999 12.9 2.89999 12.9H2C2.5 17.6 6.19999 21.4 10.9 21.8V20.9C10.9 20.3 11.3 19.9 11.9 19.9C12.5 19.9 12.9 20.3 12.9 20.9V21.8C17.6 21.3 21.4 17.6 21.8 12.9H20.9Z" fill="currentColor"></path>
+<path d="M16.9 10.9H13.6C13.4 10.6 13.2 10.4 12.9 10.2V5.90002C12.9 5.30002 12.5 4.90002 11.9 4.90002C11.3 4.90002 10.9 5.30002 10.9 5.90002V10.2C10.6 10.4 10.4 10.6 10.2 10.9H9.89999C9.29999 10.9 8.89999 11.3 8.89999 11.9C8.89999 12.5 9.29999 12.9 9.89999 12.9H10.2C10.4 13.2 10.6 13.4 10.9 13.6V13.9C10.9 14.5 11.3 14.9 11.9 14.9C12.5 14.9 12.9 14.5 12.9 13.9V13.6C13.2 13.4 13.4 13.2 13.6 12.9H16.9C17.5 12.9 17.9 12.5 17.9 11.9C17.9 11.3 17.5 10.9 16.9 10.9Z" fill="currentColor"></path>
+</svg>
+</span>
+{/*end::Svg Icon*/}                            </span>
+                        </span>
+                        {/*end:Icon*/}
 
-                        {/*begin::Menu*/}
-                        <div className="min-w-100px">
-                            <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true" data-placeholder="Edit">
-                                <option></option>
-                                <option value="1">Remove</option>
-                                <option value="2">Modify</option>
-                                <option value="3">Select</option>
-                            </select>
-                        </div>
-                        {/*end::Menu*/}
-                    </div>
-                    {/*end::File*/}
-                                    {/*begin::File*/}
-                    <div className="d-flex flex-stack py-4 border border-top-0 border-left-0 border-right-0 border-dashed">
-                        <div className="d-flex align-items-center">
-                            {/*begin::Avatar*/}
-                            <div className="symbol symbol-35px">
-                                <img src="/assets/media/svg/files/css.svg" alt="icon" />
-                            </div>
-                            {/*end::Avatar*/}
+                        {/*begin:Info*/}
+                        <span className="d-flex flex-column">
+                            <span className="fw-bold fs-6">Full Intro Training</span>
 
-                            {/*begin::Details*/}
-                            <div className="ms-6">
-                                <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Landing Page Styling</a>
-                                <div className="fw-semibold text-muted">85kb</div>
-                            </div>
-                            {/*end::Details*/}
-                        </div>
+                            <span className="fs-7 text-muted">Creating a clear text structure copywriting</span>
+                        </span>
+                        {/*end:Info*/}
+                    </span>
+                    {/*end:Label*/}
 
-                        {/*begin::Menu*/}
-                        <div className="min-w-100px">
-                            <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true" data-placeholder="Edit">
-                                <option></option>
-                                <option value="1">Remove</option>
-                                <option value="2">Modify</option>
-                                <option value="3">Select</option>
-                            </select>
-                        </div>
-                        {/*end::Menu*/}
-                    </div>
-                    {/*end::File*/}
-                                    {/*begin::File*/}
-                    <div className="d-flex flex-stack py-4 border border-top-0 border-left-0 border-right-0 border-dashed">
-                        <div className="d-flex align-items-center">
-                            {/*begin::Avatar*/}
-                            <div className="symbol symbol-35px">
-                                <img src="/assets/media/svg/files/ai.svg" alt="icon" />
-                            </div>
-                            {/*end::Avatar*/}
-
-                            {/*begin::Details*/}
-                            <div className="ms-6">
-                                <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Design Source Files</a>
-                                <div className="fw-semibold text-muted">48mb</div>
-                            </div>
-                            {/*end::Details*/}
-                        </div>
-
-                        {/*begin::Menu*/}
-                        <div className="min-w-100px">
-                            <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true" data-placeholder="Edit">
-                                <option></option>
-                                <option value="1">Remove</option>
-                                <option value="2">Modify</option>
-                                <option value="3">Select</option>
-                            </select>
-                        </div>
-                        {/*end::Menu*/}
-                    </div>
-                    {/*end::File*/}
-                                    {/*begin::File*/}
-                    <div className="d-flex flex-stack py-4 ">
-                        <div className="d-flex align-items-center">
-                            {/*begin::Avatar*/}
-                            <div className="symbol symbol-35px">
-                                <img src="/assets/media/svg/files/doc.svg" alt="icon" />
-                            </div>
-                            {/*end::Avatar*/}
-
-                            {/*begin::Details*/}
-                            <div className="ms-6">
-                                <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Campaign Plan Document</a>
-                                <div className="fw-semibold text-muted">27kb</div>
-                            </div>
-                            {/*end::Details*/}
-                        </div>
-
-                        {/*begin::Menu*/}
-                        <div className="min-w-100px">
-                            <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true" data-placeholder="Edit">
-                                <option></option>
-                                <option value="1">Remove</option>
-                                <option value="2">Modify</option>
-                                <option value="3">Select</option>
-                            </select>
-                        </div>
-                        {/*end::Menu*/}
-                    </div>
-                    {/*end::File*/}
-                            </div>
-            {/*end::Files*/}
+                    {/*begin:Input*/}
+                    <span className="form-check form-check-custom form-check-solid">
+                        <input className="form-check-input" type="radio" name="category" value="3" />
+                    </span>
+                    {/*end:Input*/}
+                </label>
+                {/*end::Option*/}
+            <div className="fv-plugins-message-container invalid-feedback"></div></div>
+            {/*end:Options*/}
         </div>
         {/*end::Input group*/}
     </div>
-    {/*end::Wrapper*/}   
+</div>
+{/*end::Step 1*/}
+                            {/*begin::Step 2*/}
+<div data-kt-stepper-element="content">
+    <div className="w-100">
+        {/*begin::Input group*/}
+        <div className="fv-row fv-plugins-icon-container">
+            {/*begin::Label*/}
+            <label className="d-flex align-items-center fs-5 fw-semibold mb-4">
+                <span className="required">Select Framework</span>
+                <i className="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" aria-label="Specify your apps framework" data-bs-original-title="Specify your apps framework" data-kt-initialized="1"></i>
+            </label>
+            {/*end::Label*/}
+
+            {/*begin:Option*/}
+            <label className="d-flex flex-stack cursor-pointer mb-5">
+                {/*begin:Label*/}
+                <span className="d-flex align-items-center me-2">
+                    {/*begin:Icon*/}
+                    <span className="symbol symbol-50px me-6">
+                        <span className="symbol-label bg-light-warning">
+                            <i className="fab fa-html5 text-warning fs-2x"></i>
+                        </span>
+                    </span>
+                    {/*end:Icon*/}
+
+                    {/*begin:Info*/}
+                    <span className="d-flex flex-column">
+                        <span className="fw-bold fs-6">HTML5</span>
+
+                        <span className="fs-7 text-muted">Base Web Projec</span>
+                    </span>
+                    {/*end:Info*/}
+                </span>
+                {/*end:Label*/}
+
+                {/*begin:Input*/}
+                <span className="form-check form-check-custom form-check-solid">
+                    <input className="form-check-input" type="radio" checked="" name="framework" value="1" />
+                </span>
+                {/*end:Input*/}
+            </label>
+            {/*end::Option*/}
+
+            {/*begin:Option*/}
+            <label className="d-flex flex-stack cursor-pointer mb-5">
+                {/*begin:Label*/}
+                <span className="d-flex align-items-center me-2">
+                    {/*begin:Icon*/}
+                    <span className="symbol symbol-50px me-6">
+                        <span className="symbol-label bg-light-success">
+                            <i className="fab fa-react text-success fs-2x"></i>
+                        </span>
+                    </span>
+                    {/*end:Icon*/}
+
+                    {/*begin:Info*/}
+                    <span className="d-flex flex-column">
+                        <span className="fw-bold fs-6">ReactJS</span>
+                        <span className="fs-7 text-muted">Robust and flexible app framework</span>
+                    </span>
+                    {/*end:Info*/}
+                </span>
+                {/*end:Label*/}
+
+                {/*begin:Input*/}
+                <span className="form-check form-check-custom form-check-solid">
+                    <input className="form-check-input" type="radio" name="framework" value="2" />
+                </span>
+                {/*end:Input*/}
+            </label>
+            {/*end::Option*/}
+
+            {/*begin:Option*/}
+            <label className="d-flex flex-stack cursor-pointer mb-5">
+                {/*begin:Label*/}
+                <span className="d-flex align-items-center me-2">
+                    {/*begin:Icon*/}
+                    <span className="symbol symbol-50px me-6">
+                        <span className="symbol-label bg-light-danger">
+                            <i className="fab fa-angular text-danger fs-2x"></i>
+                        </span>
+                    </span>
+                    {/*end:Icon*/}
+
+                    {/*begin:Info*/}
+                    <span className="d-flex flex-column">
+                        <span className="fw-bold fs-6">Angular</span>
+                        <span className="fs-7 text-muted">Powerful data mangement</span>
+                    </span>
+                    {/*end:Info*/}
+                </span>
+                {/*end:Label*/}
+
+                {/*begin:Input*/}
+                <span className="form-check form-check-custom form-check-solid">
+                    <input className="form-check-input" type="radio" name="framework" value="3" />
+                </span>
+                {/*end:Input*/}
+            </label>
+            {/*end::Option*/}
+
+            {/*begin:Option*/}
+            <label className="d-flex flex-stack cursor-pointer">
+                {/*begin:Label*/}
+                <span className="d-flex align-items-center me-2">
+                    {/*begin:Icon*/}
+                    <span className="symbol symbol-50px me-6">
+                        <span className="symbol-label bg-light-primary">
+                            <i className="fab fa-vuejs text-primary fs-2x"></i>
+                        </span>
+                    </span>
+                    {/*end:Icon*/}
+
+                    {/*begin:Info*/}
+                    <span className="d-flex flex-column">
+                        <span className="fw-bold fs-6">Vue</span>
+                        <span className="fs-7 text-muted">Lightweight and responsive framework</span>
+                    </span>
+                    {/*end:Info*/}
+                </span>
+                {/*end:Label*/}
+
+                {/*begin:Input*/}
+                <span className="form-check form-check-custom form-check-solid">
+                    <input className="form-check-input" type="radio" name="framework" value="4" />
+                </span>
+                {/*end:Input*/}
+            </label>
+            {/*end::Option*/}
+        <div className="fv-plugins-message-container invalid-feedback"></div></div>
+        {/*end::Input group*/}
+    </div>
 </div>
 {/*end::Step 2*/}
-                        {/*begin::Step 3*/}
+                            {/*begin::Step 3*/}
 <div data-kt-stepper-element="content">
-    {/*begin::Wrapper*/}
     <div className="w-100">
-        {/*begin::Heading*/}
-        <div className="pb-10 pb-lg-12">
-            {/*begin::Title*/}
-            <h1 className="fw-bold text-dark">Configure Audiences</h1>
-            {/*end::Title*/}
-
-            {/*begin::Description*/}
-            <div className="text-muted fw-semibold fs-4">
-                If you need more info, please check
-                <a href="#" className="link-primary">Campaign Guidelines</a>
-            </div>
-            {/*end::Description*/}
-        </div>
-        {/*end::Heading*/}
-
         {/*begin::Input group*/}
-        <div className="fv-row mb-10">
+        <div className="fv-row mb-10 fv-plugins-icon-container">
             {/*begin::Label*/}
-            <label className="fs-6 fw-semibold mb-2">
-                Gender
-                <i className="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Show your ads to either men or women, or select 'All' for both"></i>
+            <label className="required fs-5 fw-semibold mb-2">
+                Database Name
             </label>
-            {/*End::Label*/}
+            {/*end::Label*/}
 
-            {/*begin::Row*/}
-            <div className="row g-9" data-kt-buttons="true" data-kt-buttons-target="[data-kt-button='true']">
-                {/*begin::Col*/}
-                <div className="col">
-                    {/*begin::Option*/}
-                    <label className="btn btn-outline btn-outline-dashed btn-active-light-primary active d-flex text-start p-6" data-kt-button="true">
-                        {/*begin::Radio*/}
-                        <span className="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1">
-                            <input className="form-check-input" type="radio" name="campaign_gender" value="1" checked="checked" />
-                        </span>
-                        {/*end::Radio*/}
-
-                        {/*begin::Info*/}
-                        <span className="ms-5">
-                            <span className="fs-4 fw-bold text-gray-800 d-block">All</span>
-                        </span>
-                        {/*end::Info*/}
-                    </label>
-                    {/*end::Option*/}
-                </div>
-                {/*end::Col*/}
-
-                {/*begin::Col*/}
-                <div className="col">
-                    {/*begin::Option*/}
-                    <label className="btn btn-outline btn-outline-dashed btn-active-light-primary d-flex text-start p-6" data-kt-button="true">
-                        {/*begin::Radio*/}
-                        <span className="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1">
-                            <input className="form-check-input" type="radio" name="campaign_gender" value="2" />
-                        </span>
-                        {/*end::Radio*/}
-
-                        {/*begin::Info*/}
-                        <span className="ms-5">
-                            <span className="fs-4 fw-bold text-gray-800 d-block">Male</span>
-                        </span>
-                        {/*end::Info*/}
-                    </label>
-                    {/*end::Option*/}
-                </div>
-                {/*end::Col*/}
-
-                {/*begin::Col*/}
-                <div className="col">
-                    {/*begin::Option*/}
-                    <label className="btn btn-outline btn-outline-dashed btn-active-light-primary d-flex text-start p-6" data-kt-button="true">
-                        {/*begin::Radio*/}
-                        <span className="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1">
-                            <input className="form-check-input" type="radio" name="campaign_gender" value="3" />
-                        </span>
-                        {/*end::Radio*/}
-
-                        {/*begin::Info*/}
-                        <span className="ms-5">
-                            <span className="fs-4 fw-bold text-gray-800 d-block">Female</span>
-                        </span>
-                        {/*end::Info*/}
-                    </label>
-                    {/*end::Option*/}
-                </div>
-                {/*end::Col*/}
-            </div>
-            {/*end::Row*/}
-        </div>
+            {/*begin::Input*/}
+            <input type="text" className="form-control form-control-lg form-control-solid" name="dbname" placeholder="" value="master_db" />
+            {/*end::Input*/}
+        <div className="fv-plugins-message-container invalid-feedback"></div></div>
         {/*end::Input group*/}
 
         {/*begin::Input group*/}
-        <div className="fv-row mb-10">
+        <div className="fv-row fv-plugins-icon-container">
             {/*begin::Label*/}
-            <label className="fs-6 fw-semibold mb-2">
-                Age
-                <i className="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Select the minimum and maximum age of the people who will find your ad relevant."></i>
+            <label className="d-flex align-items-center fs-5 fw-semibold mb-4">
+                <span className="required">Select Database Engine</span>
+
+                <i className="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" aria-label="Select your app database engine" data-bs-original-title="Select your app database engine" data-kt-initialized="1"></i>
             </label>
-            {/*End::Label*/}
+            {/*end::Label*/}
 
-            {/*begin::Slider*/}
-            <div className="d-flex flex-stack">
-                <div id="kt_modal_create_campaign_age_min" className="fs-7 fw-semibold text-muted"></div>
-                <div id="kt_modal_create_campaign_age_slider" className="noUi-sm w-100 ms-5 me-8"></div>
-                <div id="kt_modal_create_campaign_age_max" className="fs-7 fw-semibold text-muted"></div>
-            </div>
-            {/*end::Slider*/}
-        </div>
-        {/*end::Input group*/}
+            {/*begin:Option*/}
+            <label className="d-flex flex-stack cursor-pointer mb-5">
+                {/*begin::Label*/}
+                <span className="d-flex align-items-center me-2">
+                    {/*begin::Icon*/}
+                    <span className="symbol symbol-50px me-6">
+                        <span className="symbol-label bg-light-success">
+                            <i className="fas fa-database text-success fs-2x"></i>
+                        </span>
+                    </span>
+                    {/*end::Icon*/}
 
-        {/*begin::Input group*/}
-        <div className="fv-row mb-10">
-            {/*begin::Label*/}
-            <label className="fs-6 fw-semibold mb-2">
-                Location
-                <i className="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Enter one or more location points for more specific targeting."></i>
+                    {/*begin::Info*/}
+                    <span className="d-flex flex-column">
+                        <span className="fw-bold fs-6">MySQL</span>
+
+                        <span className="fs-7 text-muted">Basic MySQL database</span>
+                    </span>
+                    {/*end::Info*/}
+                </span>
+                {/*end::Label*/}
+
+                {/*begin::Input*/}
+                <span className="form-check form-check-custom form-check-solid">
+                    <input className="form-check-input" type="radio" name="dbengine" checked="" value="1" />
+                </span>
+                {/*end::Input*/}
             </label>
-            {/*End::Label*/}
+            {/*end::Option*/}
 
-            {/*begin::Tagify*/}
-            <input className="form-control d-flex align-items-center" value="" id="kt_modal_create_campaign_location" data-kt-flags-path="/metronic8/demo27/assets/media/flags/"/>
-            {/*end::Tagify*/}
-        </div>
+            {/*begin:Option*/}
+            <label className="d-flex flex-stack cursor-pointer mb-5">
+                {/*begin::Label*/}
+                <span className="d-flex align-items-center me-2">
+                    {/*begin::Icon*/}
+                    <span className="symbol symbol-50px me-6">
+                        <span className="symbol-label bg-light-danger">
+                            <i className="fab fa-google text-danger fs-2x"></i>
+                        </span>
+                    </span>
+                    {/*end::Icon*/}
+
+                    {/*begin::Info*/}
+                    <span className="d-flex flex-column">
+                        <span className="fw-bold fs-6">Firebase</span>
+
+                        <span className="fs-7 text-muted">Google based app data management</span>
+                    </span>
+                    {/*end::Info*/}
+                </span>
+                {/*end::Label*/}
+
+                {/*begin::Input*/}
+                <span className="form-check form-check-custom form-check-solid">
+                    <input className="form-check-input" type="radio" name="dbengine" value="2" />
+                </span>
+                {/*end::Input*/}
+            </label>
+            {/*end::Option*/}
+
+            {/*begin:Option*/}
+            <label className="d-flex flex-stack cursor-pointer">
+                {/*begin::Label*/}
+                <span className="d-flex align-items-center me-2">
+                    {/*begin::Icon*/}
+                    <span className="symbol symbol-50px me-6">
+                        <span className="symbol-label bg-light-warning">
+                            <i className="fab fa-amazon text-warning fs-2x"></i>
+                        </span>
+                    </span>
+                    {/*end::Icon*/}
+
+                    {/*begin::Info*/}
+                    <span className="d-flex flex-column">
+                        <span className="fw-bold fs-6">DynamoDB</span>
+
+                        <span className="fs-7 text-muted">Amazon Fast NoSQL Database</span>
+                    </span>
+                    {/*end::Info*/}
+                </span>
+                {/*end::Label*/}
+
+                {/*begin::Input*/}
+                <span className="form-check form-check-custom form-check-solid">
+                    <input className="form-check-input" type="radio" name="dbengine" value="3" />
+                </span>
+                {/*end::Input*/}
+            </label>
+            {/*end::Option*/}
+        <div className="fv-plugins-message-container invalid-feedback"></div></div>
         {/*end::Input group*/}
-
     </div>
-    {/*end::Wrapper*/}
 </div>
 {/*end::Step 3*/}
-                        {/*begin::Step 4*/}
+                            {/*begin::Step 4*/}
 <div data-kt-stepper-element="content">
-    {/*begin::Wrapper*/}
     <div className="w-100">
-        {/*begin::Heading*/}
-        <div className="pb-10 pb-lg-12">
-            {/*begin::Title*/}
-            <h1 className="fw-bold text-dark">Budget Estimates</h1>
-            {/*end::Title*/}
-
-            {/*begin::Description*/}
-            <div className="text-muted fw-semibold fs-4">
-                If you need more info, please check
-                <a href="#" className="link-primary">Campaign Guidelines</a>
-            </div>
-            {/*end::Description*/}
-        </div>
-        {/*end::Heading*/}
-
         {/*begin::Input group*/}
-        <div className="fv-row mb-10">
-            {/*begin::Label*/}
-            <label className="fs-6 fw-semibold mb-2">
-                Campaign Duration
-                <i className="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Choose how long you want your ad to run for"></i>
-            </label>
-            {/*end::Label*/}
+<div className="d-flex flex-column mb-7 fv-row fv-plugins-icon-container">
+    {/*begin::Label*/}
+    <label className="d-flex align-items-center fs-6 fw-semibold form-label mb-2">
+        <span className="required">Name On Card</span>
+        <i className="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" aria-label="Specify a card holder's name" data-bs-original-title="Specify a card holder's name" data-kt-initialized="1"></i>
+    </label>
+    {/*end::Label*/}
 
-            {/*begin::Duration option*/}
-            <div className="d-flex gap-9 mb-7">
-                {/*begin::Button*/}
-                <button type="button" className="btn btn-outline btn-outline-dashed btn-active-light-primary active" id="kt_modal_create_campaign_duration_all">
-                    Continuous duration<br />
-                    <span className="fs-7">Your ad will run continuously for a daily budget.</span>
-                </button>
-                {/*end::Button*/}
+    <input type="text" className="form-control form-control-solid" placeholder="" name="card_name" value="Max Doe" />
+<div className="fv-plugins-message-container invalid-feedback"></div></div>
+{/*end::Input group*/}
 
-                {/*begin::Button*/}
-                <button type="button" className="btn btn-outline btn-outline-dashed btn-active-light-primary btn-outline-default" id="kt_modal_create_campaign_duration_fixed">
-                    Fixed duration<br />
-                    <span className="fs-7">Your ad will run on the specified dates only.</span>
-                </button>
-                {/*end::Button*/}
-            </div>
-            {/*end::Duration option*/}
+{/*begin::Input group*/}
+<div className="d-flex flex-column mb-7 fv-row fv-plugins-icon-container">
+    {/*begin::Label*/}
+    <label className="required fs-6 fw-semibold form-label mb-2">Card Number</label>
+    {/*end::Label*/}
+    
+    {/*begin::Input wrapper*/}
+    <div className="position-relative">
+        {/*begin::Input*/}
+        <input type="text" className="form-control form-control-solid" placeholder="Enter card number" name="card_number" value="4111 1111 1111 1111" />
+        {/*end::Input*/}
 
-            {/*begin::Datepicker*/}
-            <input className="form-control form-control-solid d-none" placeholder="Pick date & time" id="kt_modal_create_campaign_datepicker" />
-            {/*end::Datepicker*/}
+        {/*begin::Card logos*/}
+        <div className="position-absolute translate-middle-y top-50 end-0 me-5">
+            <img src="/assets/media/svg/card-logos/visa.svg" alt="" className="h-25px" />
+            <img src="/assets/media/svg/card-logos/mastercard.svg" alt="" className="h-25px" />
+            <img src="/assets/media/svg/card-logos/american-express.svg" alt="" className="h-25px" />
         </div>
-        {/*end::Input group*/}
-
-
-        {/*begin::Input group*/}
-        <div className="fv-row mb-10">
-            {/*begin::Label*/}
-            <label className="fs-6 fw-semibold mb-2">
-                Daily Budget
-                <i className="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Choose the budget allocated for each day. Higher budget will generate better results"></i>
-            </label>
-            {/*end::Label*/}
-
-            {/*begin::Slider*/}
-            <div className="d-flex flex-column text-center">
-                <div className="d-flex align-items-start justify-content-center mb-7">
-                    <span className="fw-bold fs-4 mt-1 me-2">$</span>
-                    <span className="fw-bold fs-3x" id="kt_modal_create_campaign_budget_label"></span>
-                    <span className="fw-bold fs-3x">.00</span>
-                </div>
-                <div id="kt_modal_create_campaign_budget_slider" className="noUi-sm"></div>
-            </div>
-            {/*end::Slider*/}
-
-        </div>
-        {/*end::Input group*/}
+        {/*end::Card logos*/}
     </div>
-    {/*end::Wrapper*/}
+    {/*end::Input wrapper*/}
+<div className="fv-plugins-message-container invalid-feedback"></div></div>
+{/*end::Input group*/}
+
+{/*begin::Input group*/}
+<div className="row mb-10">
+    {/*begin::Col*/}
+    <div className="col-md-8 fv-row">
+        {/*begin::Label*/}
+        <label className="required fs-6 fw-semibold form-label mb-2">Expiration Date</label>
+        {/*end::Label*/}
+
+        {/*begin::Row*/}
+        <div className="row fv-row fv-plugins-icon-container">
+            {/*begin::Col*/}
+            <div className="col-6">
+                <select name="card_expiry_month" className="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-hide-search="true" data-placeholder="Month" data-select2-id="select2-data-28-8e9g" tabIndex="-1" aria-hidden="true" data-kt-initialized="1">
+                    <option data-select2-id="select2-data-30-oaz8"></option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+                                    </select><span className="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-29-wekl" style={{width: '100%'}}><span className="selection"><span className="select2-selection select2-selection--single form-select form-select-solid" role="combobox" aria-haspopup="true" aria-expanded="false" tabIndex="0" aria-disabled="false" aria-labelledby="select2-card_expiry_month-fa-container" aria-controls="select2-card_expiry_month-fa-container"><span className="select2-selection__rendered" id="select2-card_expiry_month-fa-container" role="textbox" aria-readonly="true" title="Month"><span className="select2-selection__placeholder">Month</span></span><span className="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
+            <div className="fv-plugins-message-container invalid-feedback"></div></div>
+            {/*end::Col*/}
+
+            {/*begin::Col*/}
+            <div className="col-6">
+                <select name="card_expiry_year" className="form-select form-select-solid select2-hidden-accessible" data-control="select2" data-hide-search="true" data-placeholder="Year" data-select2-id="select2-data-31-aifi" tabIndex="-1" aria-hidden="true" data-kt-initialized="1">
+                    <option data-select2-id="select2-data-33-dro3"></option>
+                                            <option value="2023">2023</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2027">2027</option>
+                                            <option value="2028">2028</option>
+                                            <option value="2029">2029</option>
+                                            <option value="2030">2030</option>
+                                            <option value="2031">2031</option>
+                                            <option value="2032">2032</option>
+                                            <option value="2033">2033</option>
+                                    </select><span className="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-32-62cg" style={{width: '100%'}}><span className="selection"><span className="select2-selection select2-selection--single form-select form-select-solid" role="combobox" aria-haspopup="true" aria-expanded="false" tabIndex="0" aria-disabled="false" aria-labelledby="select2-card_expiry_year-5m-container" aria-controls="select2-card_expiry_year-5m-container"><span className="select2-selection__rendered" id="select2-card_expiry_year-5m-container" role="textbox" aria-readonly="true" title="Year"><span className="select2-selection__placeholder">Year</span></span><span className="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
+            <div className="fv-plugins-message-container invalid-feedback"></div></div>
+            {/*end::Col*/}
+        </div>
+        {/*end::Row*/}
+    </div>
+    {/*end::Col*/}
+
+    {/*begin::Col*/}
+    <div className="col-md-4 fv-row fv-plugins-icon-container">
+        {/*begin::Label*/}
+        <label className="d-flex align-items-center fs-6 fw-semibold form-label mb-2">
+            <span className="required">CVV</span>
+            <i className="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" aria-label="Enter a card CVV code" data-bs-original-title="Enter a card CVV code" data-kt-initialized="1"></i>
+        </label>
+        {/*end::Label*/}
+
+        {/*begin::Input wrapper*/}
+        <div className="position-relative">
+            {/*begin::Input*/}
+            <input type="text" className="form-control form-control-solid" minlength="3" maxlength="4" placeholder="CVV" name="card_cvv" />
+            {/*end::Input*/}
+
+            {/*begin::CVV icon*/}
+            <div className="position-absolute translate-middle-y top-50 end-0 me-3">
+                {/*begin::Svg Icon | path: icons/duotune/finance/fin002.svg*/}
+<span className="svg-icon svg-icon-2hx"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M22 7H2V11H22V7Z" fill="currentColor"></path>
+<path opacity="0.3" d="M21 19H3C2.4 19 2 18.6 2 18V6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6V18C22 18.6 21.6 19 21 19ZM14 14C14 13.4 13.6 13 13 13H5C4.4 13 4 13.4 4 14C4 14.6 4.4 15 5 15H13C13.6 15 14 14.6 14 14ZM16 15.5C16 16.3 16.7 17 17.5 17H18.5C19.3 17 20 16.3 20 15.5C20 14.7 19.3 14 18.5 14H17.5C16.7 14 16 14.7 16 15.5Z" fill="currentColor"></path>
+</svg>
+</span>
+{/*end::Svg Icon*/}            </div>
+            {/*end::CVV icon*/}
+        </div>
+        {/*end::Input wrapper*/}
+    <div className="fv-plugins-message-container invalid-feedback"></div></div>
+    {/*end::Col*/}
+</div>
+{/*end::Input group*/}
+
+{/*begin::Input group*/}
+<div className="d-flex flex-stack">
+    {/*begin::Label*/}
+    <div className="me-5">
+        <label className="fs-6 fw-semibold form-label">Save Card for further billing?</label>
+        <div className="fs-7 fw-semibold text-muted">If you need more info, please check budget planning</div>
+    </div>
+    {/*end::Label*/}
+
+    {/*begin::Switch*/}
+    <label className="form-check form-switch form-check-custom form-check-solid">
+        <input className="form-check-input" type="checkbox" value="1" checked="checked" />
+        <span className="form-check-label fw-semibold text-muted">
+            Save Card
+        </span>
+    </label>
+    {/*end::Switch*/}
+</div>
+{/*end::Input group*/}
+
+    </div>
 </div>
 {/*end::Step 4*/}
-                        {/*begin::Step 5*/}
+                            {/*begin::Step 5*/}
 <div data-kt-stepper-element="content">
-    {/*begin::Wrapper*/}
-    <div className="w-100">
+    <div className="w-100 text-center">
         {/*begin::Heading*/}
-        <div className="pb-12 text-center">
-            {/*begin::Title*/}
-            <h1 className="fw-bold text-dark">Campaign Created!</h1>
-            {/*end::Title*/}
-
-            {/*begin::Description*/}
-            <div className="fw-semibold text-muted fs-4">
-                You will receive an email with with the summary of your newly created campaign!
-            </div>
-            {/*end::Description*/}
-        </div>
+           <h1 className="fw-bold text-dark mb-3">Release!</h1>
         {/*end::Heading*/}
 
-         {/*begin::Actions*/}
-         <div className="d-flex flex-center pb-20">
-            <button id="kt_modal_create_campaign_create_new" type="button" className="btn btn-lg btn-light me-3" data-kt-element="complete-start">
-                Create New Campaign
-            </button>
-
-            <a href="#" className="btn btn-lg btn-primary" data-bs-toggle="tooltip" title="Coming Soon">
-                View Campaign
-            </a>
+        {/*begin::Description*/} 
+        <div className="text-muted fw-semibold fs-3">
+            Submit your app to kickstart your project.
         </div>
-        {/*end::Actions*/}
+        {/*end::Description*/} 
 
         {/*begin::Illustration*/}
-        <div className="text-center px-4">
-            <img src="/assets/media/illustrations/sketchy-1/9.png" alt="" className="mww-100 mh-350px"/>          
+        <div className="text-center px-4 py-15">       
+            <img src="/assets/media/illustrations/sketchy-1/9.png" alt="" className="mw-100 mh-300px" />
         </div>
         {/*end::Illustration*/}
     </div>
 </div>
 {/*end::Step 5*/}
-                        {/*begin::Actions*/}
-                        <div className="d-flex flex-stack pt-10">
-                            {/*begin::Wrapper*/}
-                            <div className="me-2">
-                                <button type="button" className="btn btn-lg btn-light-primary me-3" data-kt-stepper-action="previous">
-                                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr063.svg*/}
+
+ 
+                            {/*begin::Actions*/}
+                            <div className="d-flex flex-stack pt-10">
+                                {/*begin::Wrapper*/}
+                                <div className="me-2">
+                                    <button type="button" className="btn btn-lg btn-light-primary me-3" data-kt-stepper-action="previous">
+                                        {/*begin::Svg Icon | path: icons/duotune/arrows/arr063.svg*/}
 <span className="svg-icon svg-icon-3 me-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="currentColor"/>
-<path d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z" fill="currentColor"/>
+<rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="currentColor"></rect>
+<path d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z" fill="currentColor"></path>
 </svg>
 </span>
-{/*end::Svg Icon*/}                                    Back
-                                </button>
-                            </div>
-                            {/*end::Wrapper*/}
+{/*end::Svg Icon*/}                                        Back
+                                    </button>
+                                </div>
+                                {/*end::Wrapper*/}
 
-                            {/*begin::Wrapper*/}
-                            <div>
-                                <button type="button" className="btn btn-lg btn-primary" data-kt-stepper-action="submit">
-                                    <span className="indicator-label">
-                                        Submit
-                                        {/*begin::Svg Icon | path: icons/duotune/arrows/arr064.svg*/}
+                                {/*begin::Wrapper*/}
+                                <div>
+                                    <button type="button" className="btn btn-lg btn-primary" data-kt-stepper-action="submit">
+                                        <span className="indicator-label">
+                                            Submit
+                                            {/*begin::Svg Icon | path: icons/duotune/arrows/arr064.svg*/}
 <span className="svg-icon svg-icon-3 ms-2 me-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="currentColor"/>
-<path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="currentColor"/>
+<rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="currentColor"></rect>
+<path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="currentColor"></path>
 </svg>
 </span>
-{/*end::Svg Icon*/}                                    </span>
-                                    <span className="indicator-progress">
-                                        Please wait... <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
-                                    </span>
-                                </button>
+{/*end::Svg Icon*/}                                        </span>
+                                        <span className="indicator-progress">
+                                            Please wait... <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                        </span>
+                                    </button>
 
-                                <button type="button" className="btn btn-lg btn-primary" data-kt-stepper-action="next">
-                                    Continue
-                                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr064.svg*/}
+                                    <button type="button" className="btn btn-lg btn-primary" data-kt-stepper-action="next">
+                                        Continue
+                                        {/*begin::Svg Icon | path: icons/duotune/arrows/arr064.svg*/}
 <span className="svg-icon svg-icon-3 ms-1 me-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="currentColor"/>
-<path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="currentColor"/>
+<rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="currentColor"></rect>
+<path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="currentColor"></path>
 </svg>
 </span>
-{/*end::Svg Icon*/}                                </button>
+{/*end::Svg Icon*/}                                    </button>
+                                </div>
+                                {/*end::Wrapper*/}
                             </div>
-                            {/*end::Wrapper*/}
-                        </div>
-                        {/*end::Actions*/}
-                    </form>
-                    {/*end::Form*/}
+                            {/*end::Actions*/}
+                        </form>
+                        {/*end::Form*/}
+                    </div>
+                    {/*end::Content*/}
                 </div>
                 {/*end::Stepper*/}
             </div>
-            {/*begin::Modal body*/}
-        </div>
-    </div>
-</div>
-{/*end::Modal - Create Campaign*/}{/*begin::Modal - Users Search*/}
-<div className="modal fade" id="kt_modal_users_search" tabIndex="-1" aria-hidden="true">
-    {/*begin::Modal dialog*/}
-    <div className="modal-dialog modal-dialog-centered mw-650px">
-        {/*begin::Modal content*/}
-        <div className="modal-content">
-            {/*begin::Modal header*/}
-            <div className="modal-header pb-0 border-0 justify-content-end">
-                {/*begin::Close*/}
-                <div className="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr061.svg*/}
-<span className="svg-icon svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"/>
-<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"/>
-</svg>
-
-</span>
-{/*end::Svg Icon*/}                </div>
-                {/*end::Close*/}
-            </div>
-            {/*begin::Modal header*/}
-
-            {/*begin::Modal body*/}
-            <div className="modal-body scroll-y mx-5 mx-xl-18 pt-0 pb-15">
-                {/*begin::Content*/}
-                <div className="text-center mb-13">
-                    <h1 className="mb-3">Search Users</h1>
-
-                    <div className="text-muted fw-semibold fs-5">
-                        Invite Collaborators To Your Project
-                    </div>
-                </div>
-                {/*end::Content*/}
-
-                {/*begin::Search*/}
-                <div 
-                    id="kt_modal_users_search_handler" 
-                    
-                    data-kt-search-keypress="true"
-                    data-kt-search-min-length="2"
-                    data-kt-search-enter="enter"     
-                    data-kt-search-layout="inline">
-
-                    {/*begin::Form*/}
-                    <form data-kt-search-element="form" className="w-100 position-relative mb-5" autoComplete="off">	
-                        {/*begin::Hidden input(Added to disable form autoComplete)*/}
-                        <input type="hidden"/>
-                        {/*end::Hidden input*/}
-
-                        {/*begin::Icon*/}
-                        {/*begin::Svg Icon | path: icons/duotune/general/gen021.svg*/}
-<span className="svg-icon svg-icon-2 svg-icon-lg-1 svg-icon-gray-500 position-absolute top-50 ms-5 translate-middle-y"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="17.0365" y="15.1223" width="8.15546" height="2" rx="1" transform="rotate(45 17.0365 15.1223)" fill="currentColor"/>
-<path d="M11 19C6.55556 19 3 15.4444 3 11C3 6.55556 6.55556 3 11 3C15.4444 3 19 6.55556 19 11C19 15.4444 15.4444 19 11 19ZM11 5C7.53333 5 5 7.53333 5 11C5 14.4667 7.53333 17 11 17C14.4667 17 17 14.4667 17 11C17 7.53333 14.4667 5 11 5Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}                        {/*end::Icon*/}
-
-                        {/*begin::Input*/}
-                        <input type="text" className="form-control form-control-lg form-control-solid px-15" name="search" value="" placeholder="Search by username, full name or email..." data-kt-search-element="input"/>
-                        {/*end::Input*/}
-
-                        {/*begin::Spinner*/}
-                        <span className="position-absolute top-50 end-0 translate-middle-y lh-0 d-none me-5" data-kt-search-element="spinner">
-                            <span className="spinner-border h-15px w-15px align-middle text-muted"></span>
-                        </span>
-                        {/*end::Spinner*/}
-
-                        {/*begin::Reset*/}
-                        <span className="btn btn-flush btn-active-color-primary position-absolute top-50 end-0 translate-middle-y lh-0 me-5 d-none" data-kt-search-element="clear">
-                            {/*begin::Svg Icon | path: icons/duotune/arrows/arr061.svg*/}
-<span className="svg-icon svg-icon-2 svg-icon-lg-1 me-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"/>
-<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"/>
-</svg>
-
-</span>
-{/*end::Svg Icon*/}                        </span>
-                        {/*end::Reset*/}
-                    </form>
-                    {/*end::Form*/}
-
-                    {/*begin::Wrapper*/}
-                    <div className="py-5">                            
-                        {/*begin::Suggestions*/}
-<div data-kt-search-element="suggestions">
-    {/*begin::Heading*/}
-    <h3 className="fw-semibold mb-5">Recently searched:</h3>
-    {/*end::Heading*/}
-
-    {/*begin::Users*/}
-    <div className="mh-375px scroll-y me-n7 pe-7">
-                                {/*begin::User*/}
-            <a href="#" className="d-flex align-items-center p-3 rounded bg-state-light bg-state-opacity-50 mb-1">
-                {/*begin::Avatar*/}
-                <div className="symbol symbol-35px symbol-circle me-5">
-                                            <img alt="Pic" src="/assets/media/avatars/300-6.jpg" />
-                                    </div>
-                {/*end::Avatar*/}
-
-                {/*begin::Info*/}
-                <div className="fw-semibold">
-                    <span className="fs-6 text-gray-800 me-2">Emma Smith</span>
-                    <span className="badge badge-light">Art Director</span>
-                </div>
-                {/*end::Info*/}
-            </a>
-            {/*end::User*/}
-                                {/*begin::User*/}
-            <a href="#" className="d-flex align-items-center p-3 rounded bg-state-light bg-state-opacity-50 mb-1">
-                {/*begin::Avatar*/}
-                <div className="symbol symbol-35px symbol-circle me-5">
-                                            <span className="symbol-label bg-light-danger text-danger fw-semibold">
-                            M                        </span>
-                                    </div>
-                {/*end::Avatar*/}
-
-                {/*begin::Info*/}
-                <div className="fw-semibold">
-                    <span className="fs-6 text-gray-800 me-2">Melody Macy</span>
-                    <span className="badge badge-light">Marketing Analytic</span>
-                </div>
-                {/*end::Info*/}
-            </a>
-            {/*end::User*/}
-                                {/*begin::User*/}
-            <a href="#" className="d-flex align-items-center p-3 rounded bg-state-light bg-state-opacity-50 mb-1">
-                {/*begin::Avatar*/}
-                <div className="symbol symbol-35px symbol-circle me-5">
-                                            <img alt="Pic" src="/assets/media/avatars/300-1.jpg" />
-                                    </div>
-                {/*end::Avatar*/}
-
-                {/*begin::Info*/}
-                <div className="fw-semibold">
-                    <span className="fs-6 text-gray-800 me-2">Max Smith</span>
-                    <span className="badge badge-light">Software Enginer</span>
-                </div>
-                {/*end::Info*/}
-            </a>
-            {/*end::User*/}
-                                {/*begin::User*/}
-            <a href="#" className="d-flex align-items-center p-3 rounded bg-state-light bg-state-opacity-50 mb-1">
-                {/*begin::Avatar*/}
-                <div className="symbol symbol-35px symbol-circle me-5">
-                                            <img alt="Pic" src="/assets/media/avatars/300-5.jpg" />
-                                    </div>
-                {/*end::Avatar*/}
-
-                {/*begin::Info*/}
-                <div className="fw-semibold">
-                    <span className="fs-6 text-gray-800 me-2">Sean Bean</span>
-                    <span className="badge badge-light">Web Developer</span>
-                </div>
-                {/*end::Info*/}
-            </a>
-            {/*end::User*/}
-                                {/*begin::User*/}
-            <a href="#" className="d-flex align-items-center p-3 rounded bg-state-light bg-state-opacity-50 mb-1">
-                {/*begin::Avatar*/}
-                <div className="symbol symbol-35px symbol-circle me-5">
-                                            <img alt="Pic" src="/assets/media/avatars/300-25.jpg" />
-                                    </div>
-                {/*end::Avatar*/}
-
-                {/*begin::Info*/}
-                <div className="fw-semibold">
-                    <span className="fs-6 text-gray-800 me-2">Brian Cox</span>
-                    <span className="badge badge-light">UI/UX Designer</span>
-                </div>
-                {/*end::Info*/}
-            </a>
-            {/*end::User*/}
-            </div>
-    {/*end::Users*/}
-</div>
-{/*end::Suggestions*/}
-                        
-{/*begin::Results(add d-none to below element to hide the users list by default)*/}
-<div data-kt-search-element="results" className="d-none">
-    {/*begin::Users*/}
-    <div className="mh-375px scroll-y me-n7 pe-7">
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="0">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='0']" value="0"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <img alt="Pic" src="/assets/media/avatars/300-6.jpg" />
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Emma Smith</a>
-
-                        <div className="fw-semibold text-muted">smith@kpmg.com</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" >Guest</option>
-                        <option value="2" selected>Owner</option>
-                        <option value="3" >Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-                            {/*begin::Separator*/}
-                <div className="border-bottom border-gray-300 border-bottom-dashed"></div>
-                {/*end::Separator*/}
-            
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="1">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='1']" value="1"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <span className="symbol-label bg-light-danger text-danger fw-semibold">
-                                M                            </span>
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Melody Macy</a>
-
-                        <div className="fw-semibold text-muted">melody@altbox.com</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" selected>Guest</option>
-                        <option value="2" >Owner</option>
-                        <option value="3" >Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-                            {/*begin::Separator*/}
-                <div className="border-bottom border-gray-300 border-bottom-dashed"></div>
-                {/*end::Separator*/}
-            
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="2">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='2']" value="2"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <img alt="Pic" src="/assets/media/avatars/300-1.jpg" />
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Max Smith</a>
-
-                        <div className="fw-semibold text-muted">max@kt.com</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" >Guest</option>
-                        <option value="2" >Owner</option>
-                        <option value="3" selected>Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-                            {/*begin::Separator*/}
-                <div className="border-bottom border-gray-300 border-bottom-dashed"></div>
-                {/*end::Separator*/}
-            
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="3">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='3']" value="3"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <img alt="Pic" src="/assets/media/avatars/300-5.jpg" />
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Sean Bean</a>
-
-                        <div className="fw-semibold text-muted">sean@dellito.com</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" >Guest</option>
-                        <option value="2" selected>Owner</option>
-                        <option value="3" >Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-                            {/*begin::Separator*/}
-                <div className="border-bottom border-gray-300 border-bottom-dashed"></div>
-                {/*end::Separator*/}
-            
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="4">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='4']" value="4"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <img alt="Pic" src="/assets/media/avatars/300-25.jpg" />
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Brian Cox</a>
-
-                        <div className="fw-semibold text-muted">brian@exchange.com</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" >Guest</option>
-                        <option value="2" >Owner</option>
-                        <option value="3" selected>Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-                            {/*begin::Separator*/}
-                <div className="border-bottom border-gray-300 border-bottom-dashed"></div>
-                {/*end::Separator*/}
-            
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="5">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='5']" value="5"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <span className="symbol-label bg-light-warning text-warning fw-semibold">
-                                C                            </span>
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Mikaela Collins</a>
-
-                        <div className="fw-semibold text-muted">mik@pex.com</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" >Guest</option>
-                        <option value="2" selected>Owner</option>
-                        <option value="3" >Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-                            {/*begin::Separator*/}
-                <div className="border-bottom border-gray-300 border-bottom-dashed"></div>
-                {/*end::Separator*/}
-            
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="6">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='6']" value="6"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <img alt="Pic" src="/assets/media/avatars/300-9.jpg" />
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Francis Mitcham</a>
-
-                        <div className="fw-semibold text-muted">f.mit@kpmg.com</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" >Guest</option>
-                        <option value="2" >Owner</option>
-                        <option value="3" selected>Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-                            {/*begin::Separator*/}
-                <div className="border-bottom border-gray-300 border-bottom-dashed"></div>
-                {/*end::Separator*/}
-            
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="7">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='7']" value="7"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <span className="symbol-label bg-light-danger text-danger fw-semibold">
-                                O                            </span>
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Olivia Wild</a>
-
-                        <div className="fw-semibold text-muted">olivia@corpmail.com</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" >Guest</option>
-                        <option value="2" selected>Owner</option>
-                        <option value="3" >Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-                            {/*begin::Separator*/}
-                <div className="border-bottom border-gray-300 border-bottom-dashed"></div>
-                {/*end::Separator*/}
-            
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="8">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='8']" value="8"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <span className="symbol-label bg-light-primary text-primary fw-semibold">
-                                N                            </span>
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Neil Owen</a>
-
-                        <div className="fw-semibold text-muted">owen.neil@gmail.com</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" selected>Guest</option>
-                        <option value="2" >Owner</option>
-                        <option value="3" >Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-                            {/*begin::Separator*/}
-                <div className="border-bottom border-gray-300 border-bottom-dashed"></div>
-                {/*end::Separator*/}
-            
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="9">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='9']" value="9"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <img alt="Pic" src="/assets/media/avatars/300-23.jpg" />
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Dan Wilson</a>
-
-                        <div className="fw-semibold text-muted">dam@consilting.com</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" >Guest</option>
-                        <option value="2" >Owner</option>
-                        <option value="3" selected>Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-                            {/*begin::Separator*/}
-                <div className="border-bottom border-gray-300 border-bottom-dashed"></div>
-                {/*end::Separator*/}
-            
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="10">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='10']" value="10"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <span className="symbol-label bg-light-danger text-danger fw-semibold">
-                                E                            </span>
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Emma Bold</a>
-
-                        <div className="fw-semibold text-muted">emma@intenso.com</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" >Guest</option>
-                        <option value="2" selected>Owner</option>
-                        <option value="3" >Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-                            {/*begin::Separator*/}
-                <div className="border-bottom border-gray-300 border-bottom-dashed"></div>
-                {/*end::Separator*/}
-            
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="11">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='11']" value="11"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <img alt="Pic" src="/assets/media/avatars/300-12.jpg" />
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Ana Crown</a>
-
-                        <div className="fw-semibold text-muted">ana.cf@limtel.com</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" selected>Guest</option>
-                        <option value="2" >Owner</option>
-                        <option value="3" >Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-                            {/*begin::Separator*/}
-                <div className="border-bottom border-gray-300 border-bottom-dashed"></div>
-                {/*end::Separator*/}
-            
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="12">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='12']" value="12"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <span className="symbol-label bg-light-info text-info fw-semibold">
-                                A                            </span>
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Robert Doe</a>
-
-                        <div className="fw-semibold text-muted">robert@benko.com</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" >Guest</option>
-                        <option value="2" >Owner</option>
-                        <option value="3" selected>Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-                            {/*begin::Separator*/}
-                <div className="border-bottom border-gray-300 border-bottom-dashed"></div>
-                {/*end::Separator*/}
-            
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="13">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='13']" value="13"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <img alt="Pic" src="/assets/media/avatars/300-13.jpg" />
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">John Miller</a>
-
-                        <div className="fw-semibold text-muted">miller@mapple.com</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" >Guest</option>
-                        <option value="2" >Owner</option>
-                        <option value="3" selected>Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-                            {/*begin::Separator*/}
-                <div className="border-bottom border-gray-300 border-bottom-dashed"></div>
-                {/*end::Separator*/}
-            
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="14">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='14']" value="14"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <span className="symbol-label bg-light-success text-success fw-semibold">
-                                L                            </span>
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Lucy Kunic</a>
-
-                        <div className="fw-semibold text-muted">lucy.m@fentech.com</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" >Guest</option>
-                        <option value="2" selected>Owner</option>
-                        <option value="3" >Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-                            {/*begin::Separator*/}
-                <div className="border-bottom border-gray-300 border-bottom-dashed"></div>
-                {/*end::Separator*/}
-            
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="15">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='15']" value="15"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <img alt="Pic" src="/assets/media/avatars/300-21.jpg" />
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Ethan Wilder</a>
-
-                        <div className="fw-semibold text-muted">ethan@loop.com.au</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" selected>Guest</option>
-                        <option value="2" >Owner</option>
-                        <option value="3" >Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-                            {/*begin::Separator*/}
-                <div className="border-bottom border-gray-300 border-bottom-dashed"></div>
-                {/*end::Separator*/}
-            
-                                {/*begin::User*/}
-            <div className="rounded d-flex flex-stack bg-active-lighten p-4" data-user-id="16">
-                {/*begin::Details*/}
-                <div className="d-flex align-items-center">
-                    {/*begin::Checkbox*/}
-                    <label className="form-check form-check-custom form-check-solid me-5">
-                        <input className="form-check-input" type="checkbox" name="users" data-kt-check="true" data-kt-check-target="[data-user-id='16']" value="16"/>
-                    </label>
-                    {/*end::Checkbox*/}
-
-                    {/*begin::Avatar*/}
-                    <div className="symbol symbol-35px symbol-circle">
-                                                    <span className="symbol-label bg-light-info text-info fw-semibold">
-                                A                            </span>
-                                            </div>
-                    {/*end::Avatar*/}
-
-                    {/*begin::Details*/}
-                    <div className="ms-5">
-                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Robert Doe</a>
-
-                        <div className="fw-semibold text-muted">robert@benko.com</div>
-                    </div>
-                    {/*end::Details*/}
-                </div>
-                {/*end::Details*/}
-
-                {/*begin::Access menu*/}
-                <div className="ms-2 w-100px">
-                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-hide-search="true">
-                        <option value="1" >Guest</option>
-                        <option value="2" >Owner</option>
-                        <option value="3" selected>Can Edit</option>
-                    </select>
-                </div>
-                {/*end::Access menu*/}
-            </div>
-            {/*end::User*/}
-
-            
-            </div>
-    {/*end::Users*/}
-
-    {/*begin::Actions*/}
-    <div className="d-flex flex-center mt-15">
-        <button type="reset" id="kt_modal_users_search_reset" data-bs-dismiss="modal" className="btn btn-active-light me-3">
-            Cancel
-        </button>
-
-        <button type="submit" id="kt_modal_users_search_submit" className="btn btn-primary">
-            Add Selected Users
-        </button>
-    </div>
-    {/*end::Actions*/}
-</div>
-{/*end::Results*/}
-                        {/*begin::Empty*/}
-<div data-kt-search-element="empty" className="text-center d-none">
-    {/*begin::Message*/}
-    <div className="fw-semibold py-10">
-        <div className="text-gray-600 fs-3 mb-2">No users found</div>
-
-        <div className="text-muted fs-6">Try to search by username, full name or email...</div>
-    </div>
-    {/*end::Message*/}
-
-    {/*begin::Illustration*/}
-    <div className="text-center px-5">
-        <img src="/assets/media/illustrations/sketchy-1/1.png" alt="" className="w-100 h-200px h-sm-325px"/>        
-    </div>
-    {/*end::Illustration*/}
-</div>
-{/*end::Empty*/}                    </div>
-                    {/*end::Wrapper*/}
-                </div>
-                {/*end::Search*/}
-            </div>
             {/*end::Modal body*/}
         </div>
         {/*end::Modal content*/}
     </div>
     {/*end::Modal dialog*/}
 </div>
-{/*end::Modal - Users Search*/}
-{/*begin::Modal - Invite Friends*/}
-<div className="modal fade" id="kt_modal_invite_friends" tabIndex="-1" aria-hidden="true">
-    {/*begin::Modal dialog*/}
-    <div className="modal-dialog mw-650px">
-        {/*begin::Modal content*/}
-        <div className="modal-content">
-            {/*begin::Modal header*/}
-            <div className="modal-header pb-0 border-0 justify-content-end">
-                {/*begin::Close*/}
-                <div className="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
-                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr061.svg*/}
-<span className="svg-icon svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor"/>
-<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor"/>
-</svg>
-
-</span>
-{/*end::Svg Icon*/}                </div>
-                {/*end::Close*/}
-            </div>
-            {/*begin::Modal header*/}
-
-            {/*begin::Modal body*/}
-            <div className="modal-body scroll-y mx-5 mx-xl-18 pt-0 pb-15">
-                {/*begin::Heading*/}
-                <div className="text-center mb-13">
-                    {/*begin::Title*/}
-                    <h1 className="mb-3">Invite a Friend</h1>
-                    {/*end::Title*/}
-
-                    {/*begin::Description*/}
-                    <div className="text-muted fw-semibold fs-5">
-                        If you need more info, please check out
-                        <a href="#" className="link-primary fw-bold">FAQ Page</a>.
-                    </div>
-                    {/*end::Description*/}
-                </div>
-                {/*end::Heading*/}
-
-                {/*begin::Google Contacts Invite*/}
-                <div className="btn btn-light-primary fw-bold w-100 mb-8">
-                    <img alt="Logo" src="/assets/media/svg/brand-logos/google-icon.svg" className="h-20px me-3"/>
-                    Invite Gmail Contacts
-                </div>
-                {/*end::Google Contacts Invite*/}
-
-                {/*begin::Separator*/}
-                <div className="separator d-flex flex-center mb-8">
-                    <span className="text-uppercase bg-body fs-7 fw-semibold text-muted px-3">or</span>
-                </div>
-                {/*end::Separator*/}
-
-                {/*begin::Textarea*/}
-                <textarea className="form-control form-control-solid mb-8" rows="3" placeholder="Type or paste emails here">
-                </textarea>
-                {/*end::Textarea*/}
-
-                {/*begin::Users*/}
-                <div className="mb-10">
-                    {/*begin::Heading*/}
-                    <div className="fs-6 fw-semibold mb-2">Your Invitations</div>
-                    {/*end::Heading*/}
-
-                    {/*begin::List*/}
-                    <div className="mh-300px scroll-y me-n7 pe-7">
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <img alt="Pic" src="/assets/media/avatars/300-6.jpg" />
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Emma Smith</a>
-
-                                        <div className="fw-semibold text-muted">smith@kpmg.com</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" >Guest</option>
-                                        <option value="2" selected>Owner</option>
-                                        <option value="3" >Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <span className="symbol-label bg-light-danger text-danger fw-semibold">
-                                                M                                            </span>
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Melody Macy</a>
-
-                                        <div className="fw-semibold text-muted">melody@altbox.com</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" selected>Guest</option>
-                                        <option value="2" >Owner</option>
-                                        <option value="3" >Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <img alt="Pic" src="/assets/media/avatars/300-1.jpg" />
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Max Smith</a>
-
-                                        <div className="fw-semibold text-muted">max@kt.com</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" >Guest</option>
-                                        <option value="2" >Owner</option>
-                                        <option value="3" selected>Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <img alt="Pic" src="/assets/media/avatars/300-5.jpg" />
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Sean Bean</a>
-
-                                        <div className="fw-semibold text-muted">sean@dellito.com</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" >Guest</option>
-                                        <option value="2" selected>Owner</option>
-                                        <option value="3" >Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <img alt="Pic" src="/assets/media/avatars/300-25.jpg" />
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Brian Cox</a>
-
-                                        <div className="fw-semibold text-muted">brian@exchange.com</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" >Guest</option>
-                                        <option value="2" >Owner</option>
-                                        <option value="3" selected>Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <span className="symbol-label bg-light-warning text-warning fw-semibold">
-                                                C                                            </span>
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Mikaela Collins</a>
-
-                                        <div className="fw-semibold text-muted">mik@pex.com</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" >Guest</option>
-                                        <option value="2" selected>Owner</option>
-                                        <option value="3" >Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <img alt="Pic" src="/assets/media/avatars/300-9.jpg" />
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Francis Mitcham</a>
-
-                                        <div className="fw-semibold text-muted">f.mit@kpmg.com</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" >Guest</option>
-                                        <option value="2" >Owner</option>
-                                        <option value="3" selected>Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <span className="symbol-label bg-light-danger text-danger fw-semibold">
-                                                O                                            </span>
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Olivia Wild</a>
-
-                                        <div className="fw-semibold text-muted">olivia@corpmail.com</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" >Guest</option>
-                                        <option value="2" selected>Owner</option>
-                                        <option value="3" >Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <span className="symbol-label bg-light-primary text-primary fw-semibold">
-                                                N                                            </span>
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Neil Owen</a>
-
-                                        <div className="fw-semibold text-muted">owen.neil@gmail.com</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" selected>Guest</option>
-                                        <option value="2" >Owner</option>
-                                        <option value="3" >Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <img alt="Pic" src="/assets/media/avatars/300-23.jpg" />
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Dan Wilson</a>
-
-                                        <div className="fw-semibold text-muted">dam@consilting.com</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" >Guest</option>
-                                        <option value="2" >Owner</option>
-                                        <option value="3" selected>Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <span className="symbol-label bg-light-danger text-danger fw-semibold">
-                                                E                                            </span>
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Emma Bold</a>
-
-                                        <div className="fw-semibold text-muted">emma@intenso.com</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" >Guest</option>
-                                        <option value="2" selected>Owner</option>
-                                        <option value="3" >Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <img alt="Pic" src="/assets/media/avatars/300-12.jpg" />
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Ana Crown</a>
-
-                                        <div className="fw-semibold text-muted">ana.cf@limtel.com</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" selected>Guest</option>
-                                        <option value="2" >Owner</option>
-                                        <option value="3" >Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <span className="symbol-label bg-light-info text-info fw-semibold">
-                                                A                                            </span>
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Robert Doe</a>
-
-                                        <div className="fw-semibold text-muted">robert@benko.com</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" >Guest</option>
-                                        <option value="2" >Owner</option>
-                                        <option value="3" selected>Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <img alt="Pic" src="/assets/media/avatars/300-13.jpg" />
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">John Miller</a>
-
-                                        <div className="fw-semibold text-muted">miller@mapple.com</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" >Guest</option>
-                                        <option value="2" >Owner</option>
-                                        <option value="3" selected>Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <span className="symbol-label bg-light-success text-success fw-semibold">
-                                                L                                            </span>
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Lucy Kunic</a>
-
-                                        <div className="fw-semibold text-muted">lucy.m@fentech.com</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" >Guest</option>
-                                        <option value="2" selected>Owner</option>
-                                        <option value="3" >Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <img alt="Pic" src="/assets/media/avatars/300-21.jpg" />
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Ethan Wilder</a>
-
-                                        <div className="fw-semibold text-muted">ethan@loop.com.au</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" selected>Guest</option>
-                                        <option value="2" >Owner</option>
-                                        <option value="3" >Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                                                                {/*begin::User*/}
-                            <div className="d-flex flex-stack py-4 ">
-                                {/*begin::Details*/}
-                                <div className="d-flex align-items-center">
-                                    {/*begin::Avatar*/}
-                                    <div className="symbol symbol-35px symbol-circle">
-                                                                                    <span className="symbol-label bg-light-info text-info fw-semibold">
-                                                A                                            </span>
-                                                                            </div>
-                                    {/*end::Avatar*/}
-
-                                    {/*begin::Details*/}
-                                    <div className="ms-5">
-                                        <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary mb-2">Robert Doe</a>
-
-                                        <div className="fw-semibold text-muted">robert@benko.com</div>
-                                    </div>
-                                    {/*end::Details*/}
-                                </div>
-                                {/*end::Details*/}
-
-                                {/*begin::Access menu*/}
-                                <div className="ms-2 w-100px">
-                                    <select className="form-select form-select-solid form-select-sm" data-control="select2" data-dropdown-parent="#kt_modal_invite_friends" data-hide-search="true">
-                                        <option value="1" >Guest</option>
-                                        <option value="2" >Owner</option>
-                                        <option value="3" selected>Can Edit</option>
-                                    </select>
-                                </div>
-                                {/*end::Access menu*/}
-                            </div>
-                            {/*end::User*/}
-                                            </div>
-                    {/*end::List*/}
-                </div>
-                {/*end::Users*/}
-
-                {/*begin::Notice*/}
-                <div className="d-flex flex-stack">
-                    {/*begin::Label*/}                        
-                    <div className="me-5 fw-semibold">
-                        <label className="fs-6">Adding Users by Team Members</label>
-                        <div className="fs-7 text-muted">If you need more info, please check budget planning</div>
-                    </div>
-                    {/*end::Label*/}     
-
-                    {/*begin::Switch*/}
-                    <label className="form-check form-switch form-check-custom form-check-solid">
-                        <input className="form-check-input" type="checkbox" value="1" checked="checked"/>
-                        
-                        <span className="form-check-label fw-semibold text-muted">
-                            Allowed
-                        </span>
-                    </label>
-                    {/*end::Switch*/}
-                </div>
-                {/*end::Notice*/}
-            </div>
-            {/*end::Modal body*/}
-        </div>
-        {/*end::Modal content*/}
-    </div>
-    {/*end::Modal dialog*/}
-</div>
-{/*end::Modal - Invite Friend*/}            {/*end::Modals*/}
 
     </>
   )
