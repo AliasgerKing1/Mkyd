@@ -42099,6 +42099,9 @@ code:not([class*=language-]) {
 .svg-icon.svg-icon-gray-900 {
   color: var(--bs-text-gray-900);
 }
+.svg-icon.svg-icon-primary-600 {
+  color: var(--bs-primary );
+}
 .svg-icon.svg-icon-1 svg {
   height: 1.75rem !important;
   width: 1.75rem !important;
