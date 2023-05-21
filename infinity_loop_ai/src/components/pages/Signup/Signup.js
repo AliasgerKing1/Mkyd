@@ -1,7 +1,23 @@
 /*eslint-disable */
 import React from 'react'
 import {NavLink} from "react-router-dom"
+import {useFormik} from "formik"
+import SignupSchema from '../../../Schemas/SignupSchema'
+let initialValues = {
+    email : "",
+    password : "",
+    conf_pass : "",
+    isVerified : false
+}
 const Signup = () => {
+    let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
+        initialValues : initialValues,
+        validationSchema : SignupSchema,
+        onSubmit : async () => {
+console.log(values)
+    }
+
+})
   return (
     <>
     
@@ -88,7 +104,7 @@ const Signup = () => {
                 <div className="d-flex flex-center flex-column-fluid pb-15 pb-lg-20">
                     
 {/*begin::Form*/}
-<form className="form w-100" noValidate="noValidate" id="kt_sign_up_form" data-kt-redirect-url="/metronic8/demo27/../demo27/authentication/layouts/overlay/sign-in.html" action="#">
+<form className="form w-100" id="kt_sign_up_form" onSubmit={handleSubmit}>
     {/*begin::Heading*/}
     <div className="text-center mb-11">
         {/*begin::Title*/}
@@ -139,7 +155,8 @@ const Signup = () => {
     {/*begin::Input group-*/}
     <div className="fv-row mb-8">
         {/*begin::Email*/}
-        <input type="text" placeholder="Email" name="email" autoComplete="off" className="form-control bg-transparent"/> 
+        <input type="text" placeholder="Email" name="email" autoComplete="off" className={`form-control bg-transparent ${errors.email && touched.email ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur} value={values.email}/> 
+        <div>{errors.email && touched.email ? (<small className='text-danger'>{errors.email}</small>) : null}</div>
         {/*end::Email*/}
     </div>
 
@@ -149,13 +166,14 @@ const Signup = () => {
         <div className="mb-1">
             {/*begin::Input wrapper*/}
             <div className="position-relative mb-3">    
-                <input className="form-control bg-transparent" type="password" placeholder="Password" name="password" autoComplete="off"/>
+                <input className={`form-control bg-transparent ${errors.password && touched.password ? "is-invalid" : ""}`} type="password" placeholder="Password" name="password" autoComplete="off" onChange={handleChange} onBlur={handleBlur} value={values.password}/>
 
                 <span className="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
                     <i className="bi bi-eye-slash fs-2"></i>
                     <i className="bi bi-eye fs-2 d-none"></i>
                 </span>
             </div>
+            <div>{errors.password && touched.password ? (<small className='text-danger'>{errors.password}</small>) : null}</div>
             {/*end::Input wrapper*/}
 
             {/*begin::Meter*/}
@@ -180,7 +198,8 @@ const Signup = () => {
     {/*end::Input group-*/}
     <div className="fv-row mb-8">    
         {/*begin::Repeat Password*/}
-        <input placeholder="Repeat Password" name="confirm-password" type="password" autoComplete="off" className="form-control bg-transparent"/>
+        <input placeholder="Repeat Password" name="conf_pass" type="password" autoComplete="off" className={`form-control bg-transparent ${errors.conf_pass && touched.conf_pass ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur} value={values.conf_pass}/>
+        <div>{errors.conf_pass && touched.conf_pass ? (<small className='text-danger'>{errors.conf_pass}</small>) : null}</div>
         {/*end::Repeat Password*/}
     </div>
     {/*end::Input group-*/}
