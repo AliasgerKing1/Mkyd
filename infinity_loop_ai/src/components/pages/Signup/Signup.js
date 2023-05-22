@@ -1,23 +1,51 @@
 /*eslint-disable */
-import React from 'react'
-import {NavLink} from "react-router-dom"
+import React, { useEffect, useState } from 'react'
+import {NavLink, useNavigate} from "react-router-dom"
 import {useFormik} from "formik"
 import SignupSchema from '../../../Schemas/SignupSchema'
+import { addUser } from '../../../services/UserService'
 let initialValues = {
     email : "",
     password : "",
-    conf_pass : "",
-    isVerified : false
+    conf_pass: "",
 }
 const Signup = () => {
+    let [passLen, setPassLen] = useState(0)
+    let [passAlphaNumeric, setPassAlphaNumeric] = useState(0)
+    let [passSpecialCharacter, setPassSpecialCharacter] = useState(0)
+    let [strength, setStrength] = useState(1)
+    let [showAlert, setShowAlert] = useState(false);
+    let [msg, setMsg] = useState("");
+    let navigate = useNavigate();
     let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
         initialValues : initialValues,
         validationSchema : SignupSchema,
         onSubmit : async () => {
-console.log(values)
+        let result = await addUser(values);
+        if(result.data.status ? (result.data.status == 409) : null) {
+            showAlert(true)
+            setMsg("This email is already exist !");
+        } else {
+            navigate("/");
+        }
+        
     }
 
 })
+    let checkPassLen = (event) => {
+        setPassLen(event.target.value.length)
+        if (event.target.value) {
+            setStrength(strength + 1)
+        }
+        if (passLen == 8) {
+            setStrength(strength + 1);
+        }
+        else if (passLen < 8) {
+            setStrength(strength - 1);
+        }
+    }
+       
+
   return (
     <>
     
@@ -166,7 +194,10 @@ console.log(values)
         <div className="mb-1">
             {/*begin::Input wrapper*/}
             <div className="position-relative mb-3">    
-                <input className={`form-control bg-transparent ${errors.password && touched.password ? "is-invalid" : ""}`} type="password" placeholder="Password" name="password" autoComplete="off" onChange={handleChange} onBlur={handleBlur} value={values.password}/>
+                                                      <input className={`form-control bg-transparent ${errors.password && touched.password ? "is-invalid" : ""}`} type="password" placeholder="Password" name="password" autoComplete="off" onChange={(e) => {
+                                                          handleChange(e)
+                                                          checkPassLen(e)
+                                                      }} onBlur={handleBlur} value={values.password} />
 
                 <span className="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
                     <i className="bi bi-eye-slash fs-2"></i>
@@ -178,10 +209,10 @@ console.log(values)
 
             {/*begin::Meter*/}
             <div className="d-flex align-items-center mb-3" data-kt-password-meter-control="highlight">
-                <div className="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
-                <div className="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
-                <div className="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
-                <div className="flex-grow-1 bg-secondary bg-active-success rounded h-5px"></div>
+                                                      <div className={`flex-grow-1 bg-secondary bg-active-danger rounded h-5px me-2 ${strength > 0 ? "active" : ""}`}></div>
+                                                      <div className={`flex-grow-1 bg-secondary bg-active-warning rounded h-5px me-2 ${strength > 1 ? "active" : ""}`}></div>
+                                                      <div className={`flex-grow-1 bg-secondary bg-active-primary rounded h-5px me-2 ${strength > 2 ? "active" : ""}`}></div>
+                                                      <div className={`flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2 ${strength > 3 ? "active" : ""}`}></div>
             </div>
             {/*end::Meter*/}
         </div>
@@ -242,7 +273,9 @@ console.log(values)
     </div>
     {/*end::Sign up*/}
 </form>
-{/*end::Form*/} 
+{/*end::Form*/}
+
+{ showAlert ? (<AlertDanger msg={msg}/>) : ""}
 
                 </div>
                 {/*end::Wrapper*/}
