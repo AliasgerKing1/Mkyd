@@ -1,7 +1,50 @@
 /*eslint-disable */
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, {useState} from 'react'
+import {NavLink, useNavigate} from "react-router-dom"
+
+
+import {useDispatch} from "react-redux"
+import {getTokenRedux} from "../../../Redux/TokenReducer"
+
+import {useFormik} from "formik"
+import {AlertDanger} from "../../shared/Alert"
+import SigninSchema from '../../../Schemas/SigninSchema'
+import { loginUser } from '../../../services/AuthService'
+let initialValues = {
+    email : "",
+    password : "",
+}
 const Signin = () => {
+    let dispatch = useDispatch();
+    let [showAlert, setShowAlert] = useState(false);
+    let [msg, setMsg] = useState("");
+    let navigate = useNavigate();
+    let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
+        initialValues : initialValues,
+        validationSchema : SigninSchema,
+        onSubmit : async () => {
+   let result = await loginUser(values);
+   if(result.data.errType == 1) {
+setShowAlert(true)
+setMsg("This email or password is incorrect !")
+   }
+   else if(result.data.errType == 2) {
+setShowAlert(true)
+setMsg("This email or password is incorrect !")
+   }
+   else {
+    setShowAlert(false)
+    let tokens = [
+        {
+            Login_token : result.data.token
+        }
+    ]
+dispatch(getTokenRedux(tokens))
+navigate("/auth/home")
+   }
+    }
+
+})
   return (
     <>
     
@@ -87,7 +130,7 @@ const Signin = () => {
                 <div className="d-flex flex-center flex-column-fluid pb-15 pb-lg-20">
                     
 {/*begin::Form*/}
-<form className="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="/metronic8/demo27/../demo27/index.html" action="#">
+<form className="form w-100" onSubmit={handleSubmit}>
     {/*begin::Heading*/}
     <div className="text-center mb-11">
         {/*begin::Title*/}
@@ -139,15 +182,22 @@ const Signin = () => {
 
     {/*begin::Input group-*/}
     <div className="fv-row mb-8">
-        {/*begin::Email*/}
-        <input type="text" placeholder="Email" name="email" autocomplete="off" className="form-control bg-transparent"/> 
+            {/*begin::Email*/}
+            <input type="text" placeholder="Email" name="email" autoComplete="off" className={`form-control bg-transparent ${errors.email && touched.email ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur} value={values.email}/> 
+        <div>{errors.email && touched.email ? (<small className='text-danger'>{errors.email}</small>) : null}</div>
         {/*end::Email*/}
     </div>
 
     {/*end::Input group-*/}
     <div className="fv-row mb-3">    
         {/*begin::Password*/}
-        <input type="password" placeholder="Password" name="password" autocomplete="off" className="form-control bg-transparent"/>
+                   {/*begin::Input wrapper*/}
+                   <div className="position-relative mb-3">    
+                                                      <input className={`form-control bg-transparent ${errors.password && touched.password ? "is-invalid" : ""}`} type="password" placeholder="Password" name="password" autoComplete="off" onChange={handleChange} onBlur={handleBlur} value={values.password} />
+
+            </div>
+            <div>{errors.password && touched.password ? (<small className='text-danger'>{errors.password}</small>) : null}</div>
+            {/*end::Input wrapper*/}
         {/*end::Password*/}
     </div>
     {/*end::Input group-*/}
@@ -163,7 +213,7 @@ const Signin = () => {
         {/*end::Link*/}
     </div>
     {/*end::Wrapper*/}    
-
+    { showAlert ? (<AlertDanger msg={msg}/>) : ""}
     {/*begin::Submit button*/}
     <div className="d-grid mb-10">
         <button type="submit" id="kt_sign_in_submit" className="btn btn-primary">
