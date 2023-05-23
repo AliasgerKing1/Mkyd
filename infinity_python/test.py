@@ -218,3 +218,51 @@ with open("code/index.html", "w") as wFile:
     #div# 
 </body>
 </html>""".replace("#div#", div_str))
+# I:\Sar_loop_ai\python_scripts\image-to-code\codify-python
+# https://api.ocr.space/parse/imageurl?apikey=K81110801288957d&file=C:\Sar_loop_ai\python_scripts\image-to-code\codify-python\a.jpg&isOverlayRequired=true
+# https://3482-2409-4081-ab80-84a1-fda5-acd5-9a25-b427.ngrok-free.app/cut_image/
+
+# import cv2
+# import os
+
+# def detect_and_cut_rectangles(image_path, output_directory):
+#     # Load the image
+#     image = cv2.imread(image_path)
+
+#     # Convert the image to grayscale
+#     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+#     # Apply adaptive thresholding to obtain a binary image
+#     _, threshold = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+
+#     # Find contours in the binary image
+#     contours, _ = cv2.findContours(threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+#     # Create the output directory if it doesn't exist
+#     if not os.path.exists(output_directory):
+#         os.makedirs(output_directory)
+
+#     # Cut and save each detected rectangle as a separate image
+#     for i, contour in enumerate(contours):
+#         # Approximate the contour to a polygon
+#         perimeter = cv2.arcLength(contour, True)
+#         approx = cv2.approxPolyDP(contour, 0.04 * perimeter, True)
+
+#         # Check if the polygon has four sides (a rectangle)
+#         if len(approx) == 4:
+#             # Get the bounding box of the rectangle
+#             x, y, width, height = cv2.boundingRect(approx)
+
+#             # Crop the rectangle from the original image
+#             cropped_image = image[y:y+height, x:x+width]
+
+#             # Save the cropped image as a separate file
+#             output_path = os.path.join(output_directory, f"rectangle_{i+1}.png")
+#             cv2.imwrite(output_path, cropped_image)
+#             print(f"Saved rectangle {i+1} as {output_path}")
+
+# # Example usage
+# image_path = "new.png"
+# output_directory = "cut_image"
+# detect_and_cut_rectangles(image_path, output_directory)
+

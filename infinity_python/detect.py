@@ -1,52 +1,5 @@
-# I:\Sar_loop_ai\python_scripts\image-to-code\codify-python
-# https://api.ocr.space/parse/imageurl?apikey=K81110801288957d&file=C:\Sar_loop_ai\python_scripts\image-to-code\codify-python\a.jpg&isOverlayRequired=true
-# https://3482-2409-4081-ab80-84a1-fda5-acd5-9a25-b427.ngrok-free.app/cut_image/
-
-# import cv2
-# import os
-
-# def detect_and_cut_rectangles(image_path, output_directory):
-#     # Load the image
-#     image = cv2.imread(image_path)
-
-#     # Convert the image to grayscale
-#     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-#     # Apply adaptive thresholding to obtain a binary image
-#     _, threshold = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-
-#     # Find contours in the binary image
-#     contours, _ = cv2.findContours(threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-
-#     # Create the output directory if it doesn't exist
-#     if not os.path.exists(output_directory):
-#         os.makedirs(output_directory)
-
-#     # Cut and save each detected rectangle as a separate image
-#     for i, contour in enumerate(contours):
-#         # Approximate the contour to a polygon
-#         perimeter = cv2.arcLength(contour, True)
-#         approx = cv2.approxPolyDP(contour, 0.04 * perimeter, True)
-
-#         # Check if the polygon has four sides (a rectangle)
-#         if len(approx) == 4:
-#             # Get the bounding box of the rectangle
-#             x, y, width, height = cv2.boundingRect(approx)
-
-#             # Crop the rectangle from the original image
-#             cropped_image = image[y:y+height, x:x+width]
-
-#             # Save the cropped image as a separate file
-#             output_path = os.path.join(output_directory, f"rectangle_{i+1}.png")
-#             cv2.imwrite(output_path, cropped_image)
-#             print(f"Saved rectangle {i+1} as {output_path}")
-
-# # Example usage
-# image_path = "new.png"
-# output_directory = "cut_image"
-# detect_and_cut_rectangles(image_path, output_directory)
-
-
+# https://strapi.io/
+# https://orangedatamining.com/
 import cv2
 import os
 import requests
@@ -54,6 +7,7 @@ import requests
 anchor = []
 anchor2 = []
 anchor3 = []
+image_pos = []
 def detect_and_cut_rectangles(image_path, output_directory):
     # Load the image
     image = cv2.imread(image_path)
@@ -66,6 +20,8 @@ def detect_and_cut_rectangles(image_path, output_directory):
     anchor2.append(height1*0.4)
     anchor3.append(width1*0.5)
     anchor3.append(height1*0.4)
+    image_pos.append(width1*0.6)
+    image_pos.append(height1*0.5)
     
     # Convert the image to grayscale
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -118,6 +74,7 @@ def detect_and_cut_rectangles(image_path, output_directory):
 # Generate HTML code based on the detected text
 div_str = ""
 navUl = 0
+imageUl = 0
 nav_text = ["", "about", "contact", "services", "shop", "tournaments", "pricing"]
 # Example usage
 image_path = "test2.png"
@@ -129,7 +86,7 @@ for i, rectangle in enumerate(rectangles):
     # print(f"Width: {rectangle['width']}")
     # print(f"Height: {rectangle['height']}")
     # print(f"Saved image path: {rectangle['output_path']}")
-    response = requests.get(f"https://api.ocr.space/parse/imageurl?apikey=K85315406988957&url=https://1687-183-87-13-12.ngrok-free.app/cut_image/rectangle_{i+1}.png")
+    response = requests.get(f"https://api.ocr.space/parse/imageurl?apikey=K82315508888957&url=https://b715-103-17-99-137.ngrok-free.app//cut_image/rectangle_{i+1}.png")
 
 
     if response.status_code == 200:
@@ -148,15 +105,18 @@ for i, rectangle in enumerate(rectangles):
             "#x#", str(rectangles[i]['x'])).replace("#y#", str(rectangles[i]['y']))
         elif text == "button" :
             # print(rectangles[i])
-            div_str += "<button type='button' style='height:#h#px;width:#w#px; position : fixed; left : #x#px; top : #y#px; background : #9C27B0; border : none; border-radius : 50%; color : #fff;'>button</button>".replace("#h#", str(rectangles[i]['height'])).replace("#w#", str(rectangles[i]['width'])).replace(
-            "#x#", str(rectangles[i]['x'])).replace("#y#", str(rectangles[i]['y']))
+            div_str += "<button type='button' style='height:#h#px;width:#w#px; background : #9C27B0; border : none; border-radius : 50%; color : #fff;'>button</button>".replace("#h#", str(rectangles[i]['height'])).replace("#w#", str(rectangles[i]['width']))
         elif text == "sbutton" :
             # print(rectangles[i])
-            div_str += "<button type='submit' style='height:#h#px;width:#w#px; position : fixed; left : #x#px; top : #y#px; background : #9C27B0; border : none; border-radius : 50%; color : #fff;'>submit</button>".replace("#h#", str(rectangles[i]['height'])).replace("#w#", str(rectangles[i]['width'])).replace(
-            "#x#", str(rectangles[i]['x'])).replace("#y#", str(rectangles[i]['y']))
-        elif text == "image" :
+            div_str += "<button type='submit' style='height:#h#px;width:#w#px; background : #9C27B0; border : none; border-radius : 50%; color : #fff;'>submit</button>".replace("#h#", str(rectangles[i]['height'])).replace("#w#", str(rectangles[i]['width']))
             # print(rectangles[i])
-            div_str += "<img src='a.jpg' style='height:#h#px;width:#w#px; />".replace("#h#", str(rectangles[i]['height'])).replace("#w#", str(rectangles[i]['width']))
+        elif text == "image" :
+            if rectangles[i]['y'] < image_pos[1] and rectangles[i]['x'] > anchor[0] :
+                if imageUl == 0:
+                    div_str += """<div class='row'><div class='col-md-6'>"""
+                else :
+                    div_str += "<img src='./a.jpg' style='height : 500px'; width : '300px' />"
+                imageUl += 1
         elif text == "anchor":
             if rectangles[i]['y'] < anchor[1] and rectangles[i]['x'] > anchor[0]:
                 if navUl == 0:
