@@ -51,7 +51,7 @@ let dummy2 = [
 ]
 
 let languages = [
-    "Hindi (IND)", "English (IND)", "French", "Korean", "chinese"
+    "Hindi (IND)", "English (IND)", "French", "Korean", "Chinese"
 ]
 
 let languages_ind = ["Marathi", "Gujrati", "Telgu", "Tamil", "Mewari"]
