@@ -24,6 +24,7 @@ const Signin = () => {
         validationSchema : SigninSchema,
         onSubmit : async () => {
    let result = await loginUser(values);
+   console.log(result.data)
    if(result.data.errType == 1) {
 setShowAlert(true)
 setMsg("This email or password is incorrect !")

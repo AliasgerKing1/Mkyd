@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   page_number: 1,
-  website_name: ""
+  website_name: "",
+  image : null
 };
 
 const CreateDesignReducer2 = createSlice({
@@ -14,9 +15,12 @@ const CreateDesignReducer2 = createSlice({
     },
     updateWebsiteName: (state, action) => {
       state.website_name = action.payload;
+    },
+    updateLogo: (state, action) => {
+      state.website_name = action.payload;
     }
   }
 });
 
 export default CreateDesignReducer2.reducer;
-export const { updatePageNumber, updateWebsiteName } = CreateDesignReducer2.actions;
+export const { updatePageNumber, updateWebsiteName, updateLogo } = CreateDesignReducer2.actions;

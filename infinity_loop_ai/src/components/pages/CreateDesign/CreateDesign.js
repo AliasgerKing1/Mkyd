@@ -1,23 +1,30 @@
-
 /*eslint-disable */
 import React, { useEffect, useState } from 'react'
-
+import {NavLink} from "react-router-dom"
 import {useDispatch} from "react-redux"
+
+
 import {getCreateDesignRedux} from "../../../Redux/CreateDesignReducer"
 import { updatePageNumber, updateWebsiteName } from '../../../Redux/Step2CreateReducer'
 import { getCreateDesignstep3Redux } from '../../../Redux/Step3CreateReducer'
 import { getCreateDesignstep4edux } from '../../../Redux/Step4CreateReducer'
+
+import { dummy, dummy2, languages,languages_ind } from '../../../json/Bin'
 
 const CreateDesign = () => {
     let dispatch = useDispatch();
     let [checkStep, setCheckStep] = useState(1)
     let [checkTeamSize, setCheckTEamSize] = useState(1)
     let [checkAccount, setCheckAccount] = useState(1)
-    let [step2InfoState, setStep2InfoState] = useState([])
-    let [step3InfoState, setStep3InfoState] = useState([])
+    let [paletteSeq, setPaletteSeq] = useState(0)
     let [websiteName, setWebsiteName] = useState("")
     let [checkAccountStep1, setCheckAccountStep1] = useState("html")
+    let [isMenu, setIsMenu] = useState(false);
 
+
+    useEffect(()=> {
+setPaletteSeq(dummy.length)
+    }, [])
     let handleChange = (event) => {
 setCheckAccount(event.target.value)
     }
@@ -35,6 +42,10 @@ setCheckAccountStep1(event.target.value)
     }
 let setClicked22 = () => {
     dispatch(updateWebsiteName(websiteName))
+}
+
+let selectpalette = (palette) => {
+
 }
   return (
     <>
@@ -127,8 +138,8 @@ let setClicked22 = () => {
                     </div>
                     {/*end::Step 2*/}                
 
-                    {/*begin::Step 3*/}
-                    <div className={`stepper-item ${checkStep == 3 ? "current" : (checkStep > 3 ? "completed" : "")}`} data-kt-stepper-element="nav">
+      {/*begin::Step 3*/}
+      <div className={`stepper-item ${checkStep == 3 ? "current" : (checkStep > 3 ? "completed" : "")}`} data-kt-stepper-element="nav">
                         {/*begin::Wrapper*/}  
                         <div className="stepper-wrapper">
                             {/*begin::Icon*/}
@@ -141,10 +152,10 @@ let setClicked22 = () => {
                             {/*begin::Label*/}
                             <div className="stepper-label">
                                 <h3 className="stepper-title fs-2">
-                                                      Internal Website Details
+                                                      Colour  Selection
                                 </h3>
                                 <div className="stepper-desc fw-normal">
-                                                      Setup your internal eebsite details
+                                                      Setup colour for your website
                                 </div>
                             </div>
                             {/*end::Label*/}
@@ -174,10 +185,10 @@ let setClicked22 = () => {
                             {/*begin::Label*/}
                             <div className="stepper-label">
                                 <h3 className="stepper-title ">
-                                    Billing Details
+                                Conten Details
                                 </h3>
                                 <div className="stepper-desc fw-normal">
-                                    Provide your payment info
+                                    Provide content info
                                 </div>
                             </div>
                             {/*end::Label*/}
@@ -189,16 +200,45 @@ let setClicked22 = () => {
                         </div>
                         {/*end::Line*/}
                     </div>
-                    {/*end::Step 4*/}     
+                    {/*end::Step 4*/}   
                     
-                    {/*begin::Step 5*/}
-                    <div className={`stepper-item ${checkStep == 5 ? "current" : (checkStep > 5 ? "completed" : "")}`} data-kt-stepper-element="nav">      
+{/*begin::Step 5*/}
+<div className={`stepper-item ${checkStep == 5 ? "current" : (checkStep > 5 ? "completed" : "")}`} data-kt-stepper-element="nav">      
                         {/*begin::Wrapper*/}  
                         <div className="stepper-wrapper">              
                             {/*begin::Icon*/}
                             <div className="stepper-icon">
                                 <i className="stepper-check fas fa-check"></i>
                                 <span className="stepper-number">5</span>
+                            </div>
+                            {/*end::Icon*/}
+
+                            {/*begin::Label*/}
+                            <div className="stepper-label">
+                                <h3 className="stepper-title ">
+                                    Design Website
+                                </h3>
+                                <div className="stepper-desc fw-normal">
+                                    Design the Website
+                                </div>
+                            </div>
+                            {/*end::Label*/}
+                        </div>
+                        {/*end::Wrapper*/}               
+                                {/*begin::Line*/}
+                                <div className="stepper-line h-40px">
+                        </div>
+                        {/*end::Line*/}
+                    </div>
+                    {/*end::Step 5*/}     
+                              {/*begin::Step 6*/}
+                              <div className={`stepper-item ${checkStep == 6 ? "current" : (checkStep > 6 ? "completed" : "")}`} data-kt-stepper-element="nav">      
+                        {/*begin::Wrapper*/}  
+                        <div className="stepper-wrapper">              
+                            {/*begin::Icon*/}
+                            <div className="stepper-icon">
+                                <i className="stepper-check fas fa-check"></i>
+                                <span className="stepper-number">6</span>
                             </div>
                             {/*end::Icon*/}
 
@@ -215,7 +255,7 @@ let setClicked22 = () => {
                         </div>
                         {/*end::Wrapper*/}               
                     </div>
-                    {/*end::Step 5*/}     
+                    {/*end::Step 6*/}    
                 </div>
                 {/*end::Nav*/}
             </div>
@@ -527,7 +567,7 @@ let setClicked22 = () => {
     {/*begin::Heading*/}
     <div className="pb-10 pb-lg-12">
         {/*begin::Title*/}
-                                                  <h2 className="fw-bold text-dark">Internal Website Details</h2>
+                                                  <h2 className="fw-bold text-dark">Colour  Selection</h2>
         {/*end::Title*/}
 
         {/*begin::Notice*/}
@@ -538,64 +578,81 @@ let setClicked22 = () => {
         {/*end::Notice*/}
     </div>
     {/*end::Heading*/}
-                                              <div className='fv-row mb-5' style={{ display: 'flex', gap: '0' }}>
-                                                  <div style={{ backgroundColor: '#e5e5e5', width: '30rem', height: '6rem', borderRadius: '5% 0 0 5%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                                      60%
+    {dummy.map((x, n)=> {
+        return (
+            <>
+<div className="card mb-5" dir="ltr" style={{background : '#F9F9F9'}}> 
+    {/*}begin::Body*/}
+    <div className="card-body">  
+    <h3 className="align-items-start flex-column">
+   <span className="card-label fw-bold text-gray-800">Palette {n + 1}</span>
+  </h3>
+                                                      <div className='fv-row mb-5' style={{ display: 'flex', gap: '0', cursor : 'pointer' }} onClick={()=>selectpalette(`palette ${n + 1}`)}>
+                                                      <div style={{ backgroundColor: x.color_60, width: '30rem', height: '6rem', borderRadius: '3% 0 0 3%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                                          60%
+                                                      </div>
+                                                      <div style={{ backgroundColor: x.color_30, width: '15rem', height: '6rem', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }}>
+                                                          30%
+                                                      </div>
+                                                      <div style={{ backgroundColor: x.color_10, width: '5rem', height: '6rem', borderRadius: ' 0 8% 8% 0 ', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }}>
+                                                          10%
+                                                      </div>
                                                   </div>
-                                                  <div style={{ backgroundColor: '#191645', width: '15rem', height: '6rem', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }}>
-                                                      30%
+      
+        {/*}end::Links*/}
+    </div>
+    {/*}end::Body*/}
+</div>
+                                                  </>
+        )
+    })}
+
+    {dummy2.map((x, n)=> {
+        return (
+            <>
+<div className="card mb-5" dir="ltr" style={{background : '#F9F9F9'}}> 
+    {/*}begin::Body*/}
+    <div className="card-body">  
+    <h3 className="align-items-start flex-column">
+   <span className="card-label fw-bold text-gray-800">Palette {paletteSeq + n + 1}</span>
+  </h3>
+                                                      <div className='fv-row mb-5' style={{ display: 'flex', gap: '0', cursor : 'pointer' }} onClick={()=>selectpalette(`palette ${paletteSeq + n + 1}`)}>
+                                                      <div style={{ backgroundColor: x.color_60, width: '30rem', height: '6rem', borderRadius: '3% 0 0 3%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                                          60%
+                                                      </div>
+                                                      <div style={{ backgroundColor: x.color_15_1, width: '7.5rem', height: '6rem', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }}>
+                                                          15%
+                                                      </div>
+                                                      <div style={{ backgroundColor: x.color_15_2, width: '7.5rem', height: '6rem', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }}>
+                                                          15%
+                                                      </div>
+                                                      <div style={{ backgroundColor: x.color_10, width: '5rem', height: '6rem', borderRadius: ' 0 8% 8% 0 ', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }}>
+                                                          10%
+                                                      </div>
                                                   </div>
-                                                  <div style={{ backgroundColor: '#43c6ac', width: '5rem', height: '6rem', borderRadius: ' 0 8% 8% 0 ', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }}>
-                                                      10%
-                                                  </div>
-                                              </div>
-                                              <div className='fv-row mb-5' style={{ display: 'flex', gap: '0' }}>
-                                                  <div style={{ backgroundColor: '#e5e5e5', width: '30rem', height: '6rem', borderRadius: '5% 0 0 5%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                                      60%
-                                                  </div>
-                                                  <div style={{ backgroundColor: '#191645', width: '15rem', height: '6rem', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }}>
-                                                      30%
-                                                  </div>
-                                                  <div style={{ backgroundColor: '#43c6ac', width: '5rem', height: '6rem', borderRadius: ' 0 8% 8% 0 ', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }}>
-                                                      10%
-                                                  </div>
-                                              </div>
-                                              <div className='fv-row mb-5' style={{ display: 'flex', gap: '0' }}>
-                                                  <div style={{ backgroundColor: '#e5e5e5', width: '30rem', height: '6rem', borderRadius: '5% 0 0 5%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                                      60%
-                                                  </div>
-                                                  <div style={{ backgroundColor: '#191645', width: '15rem', height: '6rem', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }}>
-                                                      30%
-                                                  </div>
-                                                  <div style={{ backgroundColor: '#43c6ac', width: '5rem', height: '6rem', borderRadius: ' 0 8% 8% 0 ', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }}>
-                                                      10%
-                                                  </div>
-                                              </div>
-                                              <div className='fv-row' style={{ display: 'flex', gap: '0' }}>
-                                                  <div style={{ backgroundColor: '#e5e5e5', width: '30rem', height: '6rem', borderRadius: '5% 0 0 5%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                                      60%
-                                                  </div>
-                                                  <div style={{ backgroundColor: '#191645', width: '15rem', height: '6rem', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }}>
-                                                      30%
-                                                  </div>
-                                                  <div style={{ backgroundColor: '#43c6ac', width: '5rem', height: '6rem', borderRadius: ' 0 8% 8% 0 ', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#fff' }}>
-                                                      10%
-                                                  </div>
-                                              </div>
+      
+        {/*}end::Links*/}
+    </div>
+    {/*}end::Body*/}
+</div>
+                                                  </>
+        )
+    })}
+    
 
                                           </div>
                                           {/*end::Wrapper*/}
                     </div>              
                     {/*end::Step 3*/}
 
-                    {/*begin::Step 4*/}
-                    <div className={`${checkStep == 4 ? "current" : (checkStep > 4 ? "completed" : "")}`} data-kt-stepper-element="content">
+{/*begin::Step 4*/}
+<div className={`${checkStep == 4 ? "current" : (checkStep > 4 ? "completed" : "")}`} data-kt-stepper-element="content">
                         {/*begin::Wrapper*/}
 <div className="w-100">
     {/*begin::Heading*/}
     <div className="pb-10 pb-lg-15">
         {/*begin::Title*/}
-        <h2 className="fw-bold text-dark">Billing Details</h2>
+        <h2 className="fw-bold text-dark">Content Details</h2>
         {/*end::Title*/}
 
         {/*begin::Notice*/}
@@ -607,222 +664,746 @@ let setClicked22 = () => {
     </div>
     {/*end::Heading*/}
 
-    {/*begin::Input group*/}
-<div className="d-flex flex-column mb-7 fv-row">
-    {/*begin::Label*/}
-    <label className="d-flex align-items-center fs-6 fw-semibold form-label mb-2">
-        <span className="required">Name On Card</span>
-        <i className="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Specify a card holder's name"></i>
-    </label>
-    {/*end::Label*/}
-
-    <input type="text" className="form-control form-control-solid" placeholder="" name="card_name" value="Max Doe"/>
-</div>
 {/*end::Input group*/}
-
+<div className="row g-5 g-xl-8">
+    <div className="col-xl-6">
 {/*begin::Input group*/}
-<div className="d-flex flex-column mb-7 fv-row">
-    {/*begin::Label*/}
-    <label className="required fs-6 fw-semibold form-label mb-2">Card Number</label>
-    {/*end::Label*/}
-    
-    {/*begin::Input wrapper*/}
-    <div className="position-relative">
-        {/*begin::Input*/}
-        <input type="text" className="form-control form-control-solid" placeholder="Enter card number" name="card_number" value="4111 1111 1111 1111"/>
-        {/*end::Input*/}
+<div className="card card-xl-stretch mb-xl-8">
+    {/*begin::Header*/}
+    <div className="card-header border-0 pt-5">
+        <h3 className="card-title align-items-start flex-column">
+   <span className="card-label fw-bold text-dark">Content Tone</span>
+   <span className="text-muted mt-1 fw-semibold fs-7">choose <b>1</b> tone</span>
+  </h3>
 
-        {/*begin::Card logos*/}
-        <div className="position-absolute translate-middle-y top-50 end-0 me-5">
-            <img src="/assets/media/svg/card-logos/visa.svg" alt="" className="h-25px"/>
-            <img src="/assets/media/svg/card-logos/mastercard.svg" alt="" className="h-25px"/>
-            <img src="/assets/media/svg/card-logos/american-express.svg" alt="" className="h-25px"/>
-        </div>
-        {/*end::Card logos*/}
+        <div className="card-toolbar">
+            {/*begin::Menu*/}
+            {/* <button type="button" className="btn btn-sm btn-icon btn-color-primary btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end"> */}
+                {/*begin::Svg Icon | path: icons/duotune/general/gen024.svg*/}
+{/* <span className="svg-icon svg-icon-2"> */}
+    {/* <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"> */}
+    {/* <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> */}
+     {/* <rect x="5" y="5" width="5" height="5" rx="1" fill="currentColor"></rect> */}
+        {/* <rect x="14" y="5" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect> */}
+        {/* <rect x="5" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect> */}
+        {/* <rect x="14" y="14" width="5" height="5" rx="1" fill="currentColor" opacity="0.3"></rect> */}
+    {/* </g> */}
+{/* </svg></span> */}
+{/*end::Svg Icon*/}           
+ {/* </button> */}
+            
+
+{/*begin::Menu 1*/}
+<div className="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_63eda874daa77">
+    {/*begin::Header*/}
+    <div className="px-7 py-5">
+        <div className="fs-5 text-dark fw-bold">Filter Options</div>
     </div>
-    {/*end::Input wrapper*/}
-</div>
-{/*end::Input group*/}
+    {/*end::Header*/}
 
-{/*begin::Input group*/}
-<div className="row mb-10">
-    {/*begin::Col*/}
-    <div className="col-md-8 fv-row">
-        {/*begin::Label*/}
-        <label className="required fs-6 fw-semibold form-label mb-2">Expiration Date</label>
-        {/*end::Label*/}
+    {/*begin::Menu separator*/}
+    <div className="separator border-gray-200"></div>
+    {/*end::Menu separator*/}
 
-        {/*begin::Row*/}
-        <div className="row fv-row">
-            {/*begin::Col*/}
-            <div className="col-6">
-                <select name="card_expiry_month" className="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Month">
-                    <option></option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                    </select>
-            </div>
-            {/*end::Col*/}
+    {/*begin::Form*/}
+    <div className="px-7 py-5">
+        {/*begin::Input group*/}
+        <div className="mb-10">
+            {/*begin::Label*/}
+            <label className="form-label fw-semibold">Status:</label>
+            {/*end::Label*/}
 
-            {/*begin::Col*/}
-            <div className="col-6">
-                <select name="card_expiry_year" className="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Year">
-                    <option></option>
-                                            <option value="2023">2023</option>
-                                            <option value="2024">2024</option>
-                                            <option value="2025">2025</option>
-                                            <option value="2026">2026</option>
-                                            <option value="2027">2027</option>
-                                            <option value="2028">2028</option>
-                                            <option value="2029">2029</option>
-                                            <option value="2030">2030</option>
-                                            <option value="2031">2031</option>
-                                            <option value="2032">2032</option>
-                                            <option value="2033">2033</option>
-                                    </select>
-            </div>
-            {/*end::Col*/}
-        </div>
-        {/*end::Row*/}
-    </div>
-    {/*end::Col*/}
-
-    {/*begin::Col*/}
-    <div className="col-md-4 fv-row">
-        {/*begin::Label*/}
-        <label className="d-flex align-items-center fs-6 fw-semibold form-label mb-2">
-            <span className="required">CVV</span>
-            <i className="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Enter a card CVV code"></i>
-        </label>
-        {/*end::Label*/}
-
-        {/*begin::Input wrapper*/}
-        <div className="position-relative">
             {/*begin::Input*/}
-            <input type="text" className="form-control form-control-solid" minLength="3" maxLength="4" placeholder="CVV" name="card_cvv"/>
-            {/*end::Input*/}
-
-            {/*begin::CVV icon*/}
-            <div className="position-absolute translate-middle-y top-50 end-0 me-3">
-                {/*begin::Svg Icon | path: icons/duotune/finance/fin002.svg*/}
-<span className="svg-icon svg-icon-2hx"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M22 7H2V11H22V7Z" fill="currentColor"/>
-<path opacity="0.3" d="M21 19H3C2.4 19 2 18.6 2 18V6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6V18C22 18.6 21.6 19 21 19ZM14 14C14 13.4 13.6 13 13 13H5C4.4 13 4 13.4 4 14C4 14.6 4.4 15 5 15H13C13.6 15 14 14.6 14 14ZM16 15.5C16 16.3 16.7 17 17.5 17H18.5C19.3 17 20 16.3 20 15.5C20 14.7 19.3 14 18.5 14H17.5C16.7 14 16 14.7 16 15.5Z" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}            </div>
-            {/*end::CVV icon*/}
-        </div>
-        {/*end::Input wrapper*/}
-    </div>
-    {/*end::Col*/}
-</div>
-{/*end::Input group*/}
-
-{/*begin::Input group*/}
-<div className="d-flex flex-stack">
-    {/*begin::Label*/}
-    <div className="me-5">
-        <label className="fs-6 fw-semibold form-label">Save Card for further billing?</label>
-        <div className="fs-7 fw-semibold text-muted">If you need more info, please check budget planning</div>
-    </div>
-    {/*end::Label*/}
-
-    {/*begin::Switch*/}
-    <label className="form-check form-switch form-check-custom form-check-solid">
-        <input className="form-check-input" type="checkbox" value="1" checked="checked"/>
-        <span className="form-check-label fw-semibold text-muted">
-            Save Card
-        </span>
-    </label>
-    {/*end::Switch*/}
-</div>
-{/*end::Input group*/}
-
-</div> 
-{/*end::Wrapper*/}                    </div>            
-                    {/*end::Step 4*/}   
-                    
-                    {/*begin::Step 5*/}
-                    <div className={`${checkStep == 5 ? "current" : (checkStep > 5 ? "completed" : "")}`} data-kt-stepper-element="content">
-                         
-
-{/*begin::Wrapper*/}
-<div className="w-100">
-    {/*begin::Heading*/}
-    <div className="pb-8 pb-lg-10">
-        {/*begin::Title*/}
-        <h2 className="fw-bold text-dark">Your Are Done!</h2>      
-        {/*end::Title*/}
-
-        {/*begin::Notice*/}   
-        <div className="text-muted fw-semibold fs-6">
-            If you need more info, please  
-            <a href="#" className="link-primary fw-bold">&nbsp;<b>Sign In</b></a>.
-        </div>
-        {/*end::Notice*/}
-    </div>
-    {/*end::Heading*/}
-                    
-    {/*begin::Body*/}
-    <div className="mb-0">     
-        {/*begin::Text*/}
-        <div className="fs-6 text-gray-600 mb-5">
-            Writing headlines for blog posts is as much an art as it is a science 
-            and probably warrants its own post, but for all advise is with what 
-            works for your great & amazing audience. 
-        </div>
-        {/*end::Text*/}
-
-        {/*begin::Alert*/}
-        
-{/*begin::Notice*/}
-<div className="notice d-flex bg-light-warning rounded border-warning border border-dashed  p-6">
-            {/*begin::Icon*/}
-        {/*begin::Svg Icon | path: icons/duotune/general/gen044.svg*/}
-<span className="svg-icon svg-icon-2tx svg-icon-warning me-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
-<rect x="11" y="14" width="7" height="2" rx="1" transform="rotate(-90 11 14)" fill="currentColor"/>
-<rect x="11" y="17" width="2" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
-</svg>
-</span>
-{/*end::Svg Icon*/}        {/*end::Icon*/}
-    
-    {/*begin::Wrapper*/}
-    <div className="d-flex flex-stack flex-grow-1 ">
-                    {/*begin::Content*/}
-            <div className=" fw-semibold">
-                                    <h4 className="text-gray-900 fw-bold">We need your attention!</h4>
-                
-                                    <div className="fs-6 text-gray-700 ">To start using great tools, please, <a href="../../utilities/wizards/vertical.html" className="fw-bold">Create Team Platform</a></div>
-                            </div>
-            {/*end::Content*/}
-        
+            <div>
+                <select className="form-select form-select-solid select2-hidden-accessible" data-kt-select2="true" data-placeholder="Select option" data-dropdown-parent="#kt_menu_63eda874daa77" data-allow-clear="true" data-select2-id="select2-data-1-u352" tabIndex="-1" aria-hidden="true" data-kt-initialized="1">
+                    <option data-select2-id="select2-data-3-0d0r"></option>
+                    <option value="1">Approved</option>
+                    <option value="2">Pending</option>
+                    <option value="2">In Process</option>
+                    <option value="2">Rejected</option>
+                </select><span className="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-2-h6og" style={{width: '100%'}}><span className="selection"><span className="select2-selection select2-selection--single form-select form-select-solid" role="combobox" aria-haspopup="true" aria-expanded="false" tabIndex="0" aria-disabled="false" aria-labelledby="select2-adee-container" aria-controls="select2-adee-container"><span className="select2-selection__rendered" id="select2-adee-container" role="textbox" aria-readonly="true" title="Select option"><span className="select2-selection__placeholder">Select option</span></span><span className="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
             </div>
-    {/*end::Wrapper*/}  
+            {/*end::Input*/}
+        </div>
+        {/*end::Input group*/}
+
+        {/*begin::Input group*/}
+        <div className="mb-10">
+            {/*begin::Label*/}
+            <label className="form-label fw-semibold">Member Type:</label>
+            {/*end::Label*/}
+
+            {/*begin::Options*/}
+            <div className="d-flex">
+                {/*begin::Options*/}    
+                <label className="form-check form-check-sm form-check-custom form-check-solid me-5">
+                    <input className="form-check-input" type="checkbox" value="1" />
+                    <span className="form-check-label">
+                        Author
+                    </span>
+                </label>
+                {/*end::Options*/}    
+
+                {/*begin::Options*/}    
+                <label className="form-check form-check-sm form-check-custom form-check-solid">
+                    <input className="form-check-input" type="checkbox" value="2" checked="checked" />
+                    <span className="form-check-label">
+                        Customer
+                    </span>
+                </label>
+                {/*end::Options*/}    
+            </div>        
+            {/*end::Options*/}    
+        </div>
+        {/*end::Input group*/}
+
+        {/*begin::Input group*/}
+        <div className="mb-10">
+            {/*begin::Label*/}
+            <label className="form-label fw-semibold">Notifications:</label>
+            {/*end::Label*/}
+
+            {/*begin::Switch*/}
+            <div className="form-check form-switch form-switch-sm form-check-custom form-check-solid">
+                <input className="form-check-input" type="checkbox" value="" name="notifications" checked="" />
+                <label className="form-check-label">
+                    Enabled
+                </label>
+            </div>
+            {/*end::Switch*/}
+        </div>
+        {/*end::Input group*/} 
+        {/*begin::Actions*/}
+        <div className="d-flex justify-content-end">
+            <button type="reset" className="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true">Reset</button>
+
+            <button type="submit" className="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Apply</button>
+        </div>
+        {/*end::Actions*/}
+    </div>
+    {/*end::Form*/}
 </div>
-{/*end::Notice*/}
-        {/*end::Alert*/}
+{/*end::Menu 1*/}            {/*end::Menu*/}
+        </div>
+    </div>
+    {/*end::Header*/}
+
+    {/*begin::Body*/}
+    <div className="card-body pt-5">
+                    {/*begin::Item*/}
+            <div className="d-flex align-items-center mb-7">
+                {/*begin::Symbol*/}
+                <div className="symbol symbol-50px me-5">
+                    <span className="symbol-label bg-light-success">
+                        {/*begin::Svg Icon | path: icons/duotune/abstract/abs027.svg*/}
+<span className="svg-icon svg-icon-2x svg-icon-success"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.3" d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z" fill="currentColor"></path>
+<path d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z" fill="currentColor"></path>
+</svg>
+</span>
+{/*end::Svg Icon*/}                    </span>                
+                </div>
+                {/*end::Symbol*/}
+
+                {/*begin::Text*/}
+                <div className="d-flex flex-column">
+                    <a href="#" className="text-dark text-hover-primary fs-6 fw-bold">Professional tone</a>
+
+                    <span className="text-muted fw-bold">standard</span>
+                </div>
+                {/*end::Text*/}
+            </div>
+            {/*end::Item*/}
+                    {/*begin::Item*/}
+            <div className="d-flex align-items-center mb-7">
+                {/*begin::Symbol*/}
+                <div className="symbol symbol-50px me-5">
+                    <span className="symbol-label bg-light-warning">
+                        {/*begin::Svg Icon | path: icons/duotune/art/art005.svg*/}
+<span className="svg-icon svg-icon-2x svg-icon-warning"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor"></path>
+<path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor"></path>
+</svg>
+</span>
+{/*end::Svg Icon*/}                    </span>                
+                </div>
+                {/*end::Symbol*/}
+
+                {/*begin::Text*/}
+                <div className="d-flex flex-column">
+                    <a href="#" className="text-dark text-hover-primary fs-6 fw-bold">Poetic tone</a>
+
+                    <span className="text-muted fw-bold">Artistic tone</span>
+                </div>
+                {/*end::Text*/}
+            </div>
+            {/*end::Item*/}
+                    {/*begin::Item*/}
+            <div className="d-flex align-items-center mb-7">
+                {/*begin::Symbol*/}
+                <div className="symbol symbol-50px me-5">
+                    <span className="symbol-label bg-light-primary">
+                        {/*begin::Svg Icon | path: icons/duotune/communication/com012.svg*/}
+<span className="svg-icon svg-icon-2x svg-icon-primary"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.3" d="M20 3H4C2.89543 3 2 3.89543 2 5V16C2 17.1046 2.89543 18 4 18H4.5C5.05228 18 5.5 18.4477 5.5 19V21.5052C5.5 22.1441 6.21212 22.5253 6.74376 22.1708L11.4885 19.0077C12.4741 18.3506 13.6321 18 14.8167 18H20C21.1046 18 22 17.1046 22 16V5C22 3.89543 21.1046 3 20 3Z" fill="currentColor"></path>
+<rect x="6" y="12" width="7" height="2" rx="1" fill="currentColor"></rect>
+<rect x="6" y="7" width="12" height="2" rx="1" fill="currentColor"></rect>
+</svg>
+</span>
+{/*end::Svg Icon*/}                    </span>                
+                </div>
+                {/*end::Symbol*/}
+
+                {/*begin::Text*/}
+                <div className="d-flex flex-column">
+                    <a href="#" className="text-dark text-hover-primary fs-6 fw-bold">Communicational tone</a>
+
+                    <span className="text-muted fw-bold">general conversation</span>
+                </div>
+                {/*end::Text*/}
+            </div>
+            {/*end::Item*/}
+                    {/*begin::Item*/}
+            <div className="d-flex align-items-center mb-7">
+                {/*begin::Symbol*/}
+                <div className="symbol symbol-50px me-5">
+                    <span className="symbol-label bg-light-danger">
+                        {/*begin::Svg Icon | path: icons/duotune/coding/cod008.svg*/}
+                        <span className="svg-icon svg-icon-2x svg-icon-danger"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.2166 8.50002L10.5166 7.80007C10.1166 7.40007 10.1166 6.80005 10.5166 6.40005L13.4166 3.50002C15.5166 1.40002 18.9166 1.50005 20.8166 3.90005C22.5166 5.90005 22.2166 8.90007 20.3166 10.8001L17.5166 13.6C17.1166 14 16.5166 14 16.1166 13.6L15.4166 12.9C15.0166 12.5 15.0166 11.9 15.4166 11.5L18.3166 8.6C19.2166 7.7 19.1166 6.30002 18.0166 5.50002C17.2166 4.90002 16.0166 5.10007 15.3166 5.80007L12.4166 8.69997C12.2166 8.89997 11.6166 8.90002 11.2166 8.50002ZM11.2166 15.6L8.51659 18.3001C7.81659 19.0001 6.71658 19.2 5.81658 18.6C4.81658 17.9 4.71659 16.4 5.51659 15.5L8.31658 12.7C8.71658 12.3 8.71658 11.7001 8.31658 11.3001L7.6166 10.6C7.2166 10.2 6.6166 10.2 6.2166 10.6L3.6166 13.2C1.7166 15.1 1.4166 18.1 3.1166 20.1C5.0166 22.4 8.51659 22.5 10.5166 20.5L13.3166 17.7C13.7166 17.3 13.7166 16.7001 13.3166 16.3001L12.6166 15.6C12.3166 15.2 11.6166 15.2 11.2166 15.6Z" fill="currentColor"></path>
+<path opacity="0.3" d="M5.0166 9L2.81659 8.40002C2.31659 8.30002 2.0166 7.79995 2.1166 7.19995L2.31659 5.90002C2.41659 5.20002 3.21659 4.89995 3.81659 5.19995L6.0166 6.40002C6.4166 6.60002 6.6166 7.09998 6.5166 7.59998L6.31659 8.30005C6.11659 8.80005 5.5166 9.1 5.0166 9ZM8.41659 5.69995H8.6166C9.1166 5.69995 9.5166 5.30005 9.5166 4.80005L9.6166 3.09998C9.6166 2.49998 9.2166 2 8.5166 2H7.81659C7.21659 2 6.71659 2.59995 6.91659 3.19995L7.31659 4.90002C7.41659 5.40002 7.91659 5.69995 8.41659 5.69995ZM14.6166 18.2L15.1166 21.3C15.2166 21.8 15.7166 22.2 16.2166 22L17.6166 21.6C18.1166 21.4 18.4166 20.8 18.1166 20.3L16.7166 17.5C16.5166 17.1 16.1166 16.9 15.7166 17L15.2166 17.1C14.8166 17.3 14.5166 17.7 14.6166 18.2ZM18.4166 16.3L19.8166 17.2C20.2166 17.5 20.8166 17.3 21.0166 16.8L21.3166 15.9C21.5166 15.4 21.1166 14.8 20.5166 14.8H18.8166C18.0166 14.8 17.7166 15.9 18.4166 16.3Z" fill="currentColor"></path>
+</svg>
+</span>
+{/*end::Svg Icon*/}                    </span>                
+                </div>
+                {/*end::Symbol*/}
+
+                {/*begin::Text*/}
+                <div className="d-flex flex-column">
+                    <a href="#" className="text-dark text-hover-primary fs-6 fw-bold">Developer tone</a>
+
+                    <span className="text-muted fw-bold">DevOps</span>
+                </div>
+                {/*end::Text*/}
+            </div>
+            {/*end::Item*/}
+                    {/*begin::Item*/}
+            <div className="d-flex align-items-center ">
+                {/*begin::Symbol*/}
+                <div className="symbol symbol-50px me-5">
+                    <span className="symbol-label bg-light-info">
+                        {/*begin::Svg Icon | path: icons/duotune/general/gen049.svg*/}
+<span className="svg-icon svg-icon-2x svg-icon-info">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.3" d="M18.4 5.59998C21.9 9.09998 21.9 14.8 18.4 18.3C14.9 21.8 9.2 21.8 5.7 18.3L18.4 5.59998Z" fill="currentColor"></path>
+<path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM19.9 11H13V8.8999C14.9 8.6999 16.7 8.00005 18.1 6.80005C19.1 8.00005 19.7 9.4 19.9 11ZM11 19.8999C9.7 19.6999 8.39999 19.2 7.39999 18.5C8.49999 17.7 9.7 17.2001 11 17.1001V19.8999ZM5.89999 6.90002C7.39999 8.10002 9.2 8.8 11 9V11.1001H4.10001C4.30001 9.4001 4.89999 8.00002 5.89999 6.90002ZM7.39999 5.5C8.49999 4.7 9.7 4.19998 11 4.09998V7C9.7 6.8 8.39999 6.3 7.39999 5.5ZM13 17.1001C14.3 17.3001 15.6 17.8 16.6 18.5C15.5 19.3 14.3 19.7999 13 19.8999V17.1001ZM13 4.09998C14.3 4.29998 15.6 4.8 16.6 5.5C15.5 6.3 14.3 6.80002 13 6.90002V4.09998ZM4.10001 13H11V15.1001C9.1 15.3001 7.29999 16 5.89999 17.2C4.89999 16 4.30001 14.6 4.10001 13ZM18.1 17.1001C16.6 15.9001 14.8 15.2 13 15V12.8999H19.9C19.7 14.5999 19.1 16.0001 18.1 17.1001Z" fill="currentColor"></path>
+</svg>
+</span>
+{/*end::Svg Icon*/}                    </span>                
+                </div>
+                {/*end::Symbol*/}
+
+                {/*begin::Text*/}
+                <div className="d-flex flex-column">
+                    <a href="#" className="text-dark text-hover-primary fs-6 fw-bold">funny</a>
+
+                    <span className="text-muted fw-bold">Light and Humorous</span>
+                </div>
+                {/*end::Text*/}
+            </div>
+            {/*end::Item*/}
+            
     </div>
     {/*end::Body*/}
+</div>
+</div>
+
+<div className="col-xl-6">
+    {/*begin::Label*/}
+    <label className="required fs-6 fw-semibold form-label mb-2">Language</label>
+        {/*end::Label*/}
+<div className="app-sidebar-footer d-flex flex-stack pb-10" id="kt_app_sidebar_footer">   
+    {/*begin::User menu*/}
+    <div className="" onClick={()=> setIsMenu(isMenu == true ? false : true)} style={{cursor : "pointer"}}>
+       {/*begin::Menu wrapper*/}
+       
+        {/*begin::Select2*/}
+        <select className="form-select mb-2 select2-hidden-accessible" data-control="select2" data-placeholder="Select an option" data-allow-clear="true" multiple="" data-select2-id="select2-data-3-tn0u" tabindex="-1" aria-hidden="true" data-kt-initialized="1">
+            <option></option>
+                            <option value="Computers">Computers</option>
+                            <option value="Watches">Watches</option>
+                            <option value="Headphones">Headphones</option>
+                            <option value="Footwear">Footwear</option>
+                            <option value="Cameras">Cameras</option>
+                            <option value="Shirts">Shirts</option>
+                            <option value="Household">Household</option>
+                            <option value="Handbags">Handbags</option>
+                            <option value="Wines">Wines</option>
+                            <option value="Sandals">Sandals</option>
+                    </select><span className="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-4-cpoo" style={{width: '100%'}}><span className="selection"><span className="select2-selection select2-selection--multiple form-select mb-2" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false"><ul className="select2-selection__rendered" id="select2-nt4d-container"></ul><span className="select2-search select2-search--inline"><textarea className="select2-search__field" type="search" tabindex="0" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" autocomplete="off" aria-label="Search" aria-describedby="select2-nt4d-container" placeholder="Select an option" style={{width: '100%'}}></textarea></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
+        {/*end::Select2*/}
+        {/*end::Input group*/}
+
+ 
+{/*begin::User account menu*/}
+<div className={`menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-2 fs-6 w-275px ${isMenu == true ? "show" : ""}`} data-kt-menu="true" data-kt-menu-placement="top-start">
+    {/*begin::Menu item*/}
+         <div className="menu-item px-5">
+        <a href="../apps/projects/list.html" className="menu-link px-5">
+            <span className="menu-text">English (US)</span>
+            <span className="menu-badge">
+                <span className="badge badge-light-danger badge-circle fw-bold fs-9">hot</span>
+            </span>
+        </a>
+    </div>
+    {/*end::Menu item*/}
+      {/*begin::Menu item*/}
+   {languages.map((x)=> {
+    return (
+        <div className="menu-item px-5">
+        <a href="../account/overview.html" className="menu-link px-5">
+            {x}
+        </a>
+    </div>
+    )
+   })}
+    {/*end::Menu item*/}
+         {/*begin::Menu item*/}
+   {languages_ind.map((x)=> {
+    return (
+        <div className="menu-item px-5">
+        <a href="../account/overview.html" className="menu-link px-5">
+            {x + "\t(IND)"}
+        </a>
+    </div>
+    )
+   })}
+    {/*end::Menu item*/}
+
+</div>
+{/*end::User account menu*/}
+        {/*end::Menu wrapper*/}
+    </div>
+    {/*end::User menu*/} 
+
+
+</div>
+</div>
+
+</div>
+
 </div> 
-{/*end::Wrapper*/}
+{/*end::Wrapper*/}  
+                  </div>            
+                    {/*end::Step 4*/} 
+                    
+{/*begin::Step 5*/}
+<div className={`${checkStep == 5 ? "current" : (checkStep > 5 ? "completed" : "")}`} data-kt-stepper-element="content">
+                         
+
+                         {/*begin::Wrapper*/}
+                         <div className="w-100">
+     {/*begin::Heading*/}
+     <div className="pb-10 pb-lg-15">
+         {/*begin::Title*/}
+         <h2 className="fw-bold text-dark">Content Details</h2>
+         {/*end::Title*/}
+ 
+         {/*begin::Notice*/}
+         <div className="text-muted fw-semibold fs-6">
+             If you need more info, please check out 
+             <a href="#" className="text-primary fw-bold">&nbsp;<b>Help Page</b></a>.
+         </div>
+         {/*end::Notice*/}
+     </div>
+     {/*end::Heading*/}
+ 
+ {/*end::Input group*/}
+ <div className="row g-5 g-xl-8">
+     <div className="col-xl-6">
+ {/*begin::Input group*/}
+ <div className="card card-xl-stretch mb-xl-8">
+     {/*begin::Header*/}
+     <div className="card-header border-0 pt-5">
+         <h3 className="card-title align-items-start flex-column">
+    <span className="card-label fw-bold text-dark">Content Tone</span>
+    <span className="text-muted mt-1 fw-semibold fs-7">choose <b>1</b> tone</span>
+   </h3>
+ 
+         <div className="card-toolbar">
+ 
+ {/*begin::Menu 1*/}
+ <div className="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_63eda874daa77">
+     {/*begin::Header*/}
+     <div className="px-7 py-5">
+         <div className="fs-5 text-dark fw-bold">Filter Options</div>
+     </div>
+     {/*end::Header*/}
+ 
+     {/*begin::Menu separator*/}
+     <div className="separator border-gray-200"></div>
+     {/*end::Menu separator*/}
+ 
+     {/*begin::Form*/}
+     <div className="px-7 py-5">
+         {/*begin::Input group*/}
+         <div className="mb-10">
+             {/*begin::Label*/}
+             <label className="form-label fw-semibold">Status:</label>
+             {/*end::Label*/}
+ 
+             {/*begin::Input*/}
+             <div>
+                 <select className="form-select form-select-solid select2-hidden-accessible" data-kt-select2="true" data-placeholder="Select option" data-dropdown-parent="#kt_menu_63eda874daa77" data-allow-clear="true" data-select2-id="select2-data-1-u352" tabIndex="-1" aria-hidden="true" data-kt-initialized="1">
+                     <option data-select2-id="select2-data-3-0d0r"></option>
+                     <option value="1">Approved</option>
+                     <option value="2">Pending</option>
+                     <option value="2">In Process</option>
+                     <option value="2">Rejected</option>
+                 </select><span className="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-2-h6og" style={{width: '100%'}}><span className="selection"><span className="select2-selection select2-selection--single form-select form-select-solid" role="combobox" aria-haspopup="true" aria-expanded="false" tabIndex="0" aria-disabled="false" aria-labelledby="select2-adee-container" aria-controls="select2-adee-container"><span className="select2-selection__rendered" id="select2-adee-container" role="textbox" aria-readonly="true" title="Select option"><span className="select2-selection__placeholder">Select option</span></span><span className="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
+             </div>
+             {/*end::Input*/}
+         </div>
+         {/*end::Input group*/}
+ 
+         {/*begin::Input group*/}
+         <div className="mb-10">
+             {/*begin::Label*/}
+             <label className="form-label fw-semibold">Member Type:</label>
+             {/*end::Label*/}
+ 
+             {/*begin::Options*/}
+             <div className="d-flex">
+                 {/*begin::Options*/}    
+                 <label className="form-check form-check-sm form-check-custom form-check-solid me-5">
+                     <input className="form-check-input" type="checkbox" value="1" />
+                     <span className="form-check-label">
+                         Author
+                     </span>
+                 </label>
+                 {/*end::Options*/} 
+                 {/*begin::Options*/}    
+                <label className="form-check form-check-sm form-check-custom form-check-solid">
+                    <input className="form-check-input" type="checkbox" value="2" checked="checked" />
+                    <span className="form-check-label">
+                        Customer
+                    </span>
+                </label>
+                {/*end::Options*/}    
+            </div>        
+            {/*end::Options*/}    
+        </div>
+        {/*end::Input group*/}
+
+        {/*begin::Input group*/}
+        <div className="mb-10">
+            {/*begin::Label*/}
+            <label className="form-label fw-semibold">Notifications:</label>
+            {/*end::Label*/}
+
+            {/*begin::Switch*/}
+            <div className="form-check form-switch form-switch-sm form-check-custom form-check-solid">
+                <input className="form-check-input" type="checkbox" value="" name="notifications" checked="" />
+                <label className="form-check-label">
+                    Enabled
+                </label>
+            </div>
+            {/*end::Switch*/}
+        </div>
+        {/*end::Input group*/}
+
+        {/*begin::Actions*/}
+        <div className="d-flex justify-content-end">
+            <button type="reset" className="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true">Reset</button>
+
+            <button type="submit" className="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Apply</button>
+        </div>
+        {/*end::Actions*/}
+    </div>
+    {/*end::Form*/}
+</div>
+{/*end::Menu 1*/}            {/*end::Menu*/}
+        </div>
+    </div>
+    {/*end::Header*/}
+
+    {/*begin::Body*/}
+    <div className="card-body pt-5">
+                    {/*begin::Item*/}
+            <div className="d-flex align-items-center mb-7">
+                {/*begin::Symbol*/}
+                <div className="symbol symbol-50px me-5">
+                    <span className="symbol-label bg-light-success">
+                        {/*begin::Svg Icon | path: icons/duotune/abstract/abs027.svg*/}
+<span className="svg-icon svg-icon-2x svg-icon-success"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.3" d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z" fill="currentColor"></path>
+<path d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z" fill="currentColor"></path>
+</svg>
+</span>
+{/*end::Svg Icon*/}                    </span>                
+                </div>
+                {/*end::Symbol*/}
+                {/*begin::Text*/}
+                <div className="d-flex flex-column">
+                    <a href="#" className="text-dark text-hover-primary fs-6 fw-bold">Professional tone</a>
+
+                    <span className="text-muted fw-bold">standard</span>
+                </div>
+                {/*end::Text*/}
+            </div>
+            {/*end::Item*/}
+                    {/*begin::Item*/}
+            <div className="d-flex align-items-center mb-7">
+                {/*begin::Symbol*/}
+                <div className="symbol symbol-50px me-5">
+                    <span className="symbol-label bg-light-warning">
+                        {/*begin::Svg Icon | path: icons/duotune/art/art005.svg*/}
+<span className="svg-icon svg-icon-2x svg-icon-warning"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.3" d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z" fill="currentColor"></path>
+<path d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z" fill="currentColor"></path>
+</svg>
+</span>
+{/*end::Svg Icon*/}                    </span>                
+                </div>
+                {/*end::Symbol*/}
+
+                {/*begin::Text*/}
+                <div className="d-flex flex-column">
+                    <a href="#" className="text-dark text-hover-primary fs-6 fw-bold">Poetic tone</a>
+
+                    <span className="text-muted fw-bold">Artistic tone</span>
+                </div>
+                {/*end::Text*/}
+            </div>
+            {/*end::Item*/}
+                    {/*begin::Item*/}
+            <div className="d-flex align-items-center mb-7">
+                {/*begin::Symbol*/}
+                <div className="symbol symbol-50px me-5">
+                    <span className="symbol-label bg-light-primary">
+                        {/*begin::Svg Icon | path: icons/duotune/communication/com012.svg*/}
+<span className="svg-icon svg-icon-2x svg-icon-primary"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.3" d="M20 3H4C2.89543 3 2 3.89543 2 5V16C2 17.1046 2.89543 18 4 18H4.5C5.05228 18 5.5 18.4477 5.5 19V21.5052C5.5 22.1441 6.21212 22.5253 6.74376 22.1708L11.4885 19.0077C12.4741 18.3506 13.6321 18 14.8167 18H20C21.1046 18 22 17.1046 22 16V5C22 3.89543 21.1046 3 20 3Z" fill="currentColor"></path>
+<rect x="6" y="12" width="7" height="2" rx="1" fill="currentColor"></rect>
+<rect x="6" y="7" width="12" height="2" rx="1" fill="currentColor"></rect>
+</svg>
+</span>
+{/*end::Svg Icon*/}                    </span>                
+                </div>
+                {/*end::Symbol*/}
+
+                {/*begin::Text*/}
+                <div className="d-flex flex-column">
+                    <a href="#" className="text-dark text-hover-primary fs-6 fw-bold">Communicational tone</a>
+
+                    <span className="text-muted fw-bold">general conversation</span>
+                </div>
+                {/*end::Text*/}
+            </div>
+            {/*end::Item*/}
+                    {/*begin::Item*/}
+            <div className="d-flex align-items-center mb-7">
+                {/*begin::Symbol*/}
+                <div className="symbol symbol-50px me-5">
+                    <span className="symbol-label bg-light-danger">
+                        {/*begin::Svg Icon | path: icons/duotune/coding/cod008.svg*/}
+<span className="svg-icon svg-icon-2x svg-icon-danger"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.2166 8.50002L10.5166 7.80007C10.1166 7.40007 10.1166 6.80005 10.5166 6.40005L13.4166 3.50002C15.5166 1.40002 18.9166 1.50005 20.8166 3.90005C22.5166 5.90005 22.2166 8.90007 20.3166 10.8001L17.5166 13.6C17.1166 14 16.5166 14 16.1166 13.6L15.4166 12.9C15.0166 12.5 15.0166 11.9 15.4166 11.5L18.3166 8.6C19.2166 7.7 19.1166 6.30002 18.0166 5.50002C17.2166 4.90002 16.0166 5.10007 15.3166 5.80007L12.4166 8.69997C12.2166 8.89997 11.6166 8.90002 11.2166 8.50002ZM11.2166 15.6L8.51659 18.3001C7.81659 19.0001 6.71658 19.2 5.81658 18.6C4.81658 17.9 4.71659 16.4 5.51659 15.5L8.31658 12.7C8.71658 12.3 8.71658 11.7001 8.31658 11.3001L7.6166 10.6C7.2166 10.2 6.6166 10.2 6.2166 10.6L3.6166 13.2C1.7166 15.1 1.4166 18.1 3.1166 20.1C5.0166 22.4 8.51659 22.5 10.5166 20.5L13.3166 17.7C13.7166 17.3 13.7166 16.7001 13.3166 16.3001L12.6166 15.6C12.3166 15.2 11.6166 15.2 11.2166 15.6Z" fill="currentColor"></path>
+<path opacity="0.3" d="M5.0166 9L2.81659 8.40002C2.31659 8.30002 2.0166 7.79995 2.1166 7.19995L2.31659 5.90002C2.41659 5.20002 3.21659 4.89995 3.81659 5.19995L6.0166 6.40002C6.4166 6.60002 6.6166 7.09998 6.5166 7.59998L6.31659 8.30005C6.11659 8.80005 5.5166 9.1 5.0166 9ZM8.41659 5.69995H8.6166C9.1166 5.69995 9.5166 5.30005 9.5166 4.80005L9.6166 3.09998C9.6166 2.49998 9.2166 2 8.5166 2H7.81659C7.21659 2 6.71659 2.59995 6.91659 3.19995L7.31659 4.90002C7.41659 5.40002 7.91659 5.69995 8.41659 5.69995ZM14.6166 18.2L15.1166 21.3C15.2166 21.8 15.7166 22.2 16.2166 22L17.6166 21.6C18.1166 21.4 18.4166 20.8 18.1166 20.3L16.7166 17.5C16.5166 17.1 16.1166 16.9 15.7166 17L15.2166 17.1C14.8166 17.3 14.5166 17.7 14.6166 18.2ZM18.4166 16.3L19.8166 17.2C20.2166 17.5 20.8166 17.3 21.0166 16.8L21.3166 15.9C21.5166 15.4 21.1166 14.8 20.5166 14.8H18.8166C18.0166 14.8 17.7166 15.9 18.4166 16.3Z" fill="currentColor"></path>
+</svg>
+</span>
+{/*end::Svg Icon*/}                    </span>                
+                </div>
+                {/*end::Symbol*/}
+
+                {/*begin::Text*/}
+                <div className="d-flex flex-column">
+                    <a href="#" className="text-dark text-hover-primary fs-6 fw-bold">Developer tone</a>
+
+                    <span className="text-muted fw-bold">DevOps</span>
+                </div>
+                {/*end::Text*/}
+            </div>
+            {/*end::Item*/}
+                    {/*begin::Item*/}
+                    <div className="d-flex align-items-center ">
+                {/*begin::Symbol*/}
+                <div className="symbol symbol-50px me-5">
+                    <span className="symbol-label bg-light-info">
+                        {/*begin::Svg Icon | path: icons/duotune/general/gen049.svg*/}
+<span className="svg-icon svg-icon-2x svg-icon-info">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.3" d="M18.4 5.59998C21.9 9.09998 21.9 14.8 18.4 18.3C14.9 21.8 9.2 21.8 5.7 18.3L18.4 5.59998Z" fill="currentColor"></path>
+<path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2ZM19.9 11H13V8.8999C14.9 8.6999 16.7 8.00005 18.1 6.80005C19.1 8.00005 19.7 9.4 19.9 11ZM11 19.8999C9.7 19.6999 8.39999 19.2 7.39999 18.5C8.49999 17.7 9.7 17.2001 11 17.1001V19.8999ZM5.89999 6.90002C7.39999 8.10002 9.2 8.8 11 9V11.1001H4.10001C4.30001 9.4001 4.89999 8.00002 5.89999 6.90002ZM7.39999 5.5C8.49999 4.7 9.7 4.19998 11 4.09998V7C9.7 6.8 8.39999 6.3 7.39999 5.5ZM13 17.1001C14.3 17.3001 15.6 17.8 16.6 18.5C15.5 19.3 14.3 19.7999 13 19.8999V17.1001ZM13 4.09998C14.3 4.29998 15.6 4.8 16.6 5.5C15.5 6.3 14.3 6.80002 13 6.90002V4.09998ZM4.10001 13H11V15.1001C9.1 15.3001 7.29999 16 5.89999 17.2C4.89999 16 4.30001 14.6 4.10001 13ZM18.1 17.1001C16.6 15.9001 14.8 15.2 13 15V12.8999H19.9C19.7 14.5999 19.1 16.0001 18.1 17.1001Z" fill="currentColor"></path>
+</svg>
+</span>
+{/*end::Svg Icon*/}                    </span>                
+                </div>
+                {/*end::Symbol*/}
+
+                {/*begin::Text*/}
+                <div className="d-flex flex-column">
+                    <a href="#" className="text-dark text-hover-primary fs-6 fw-bold">funny</a>
+
+                    <span className="text-muted fw-bold">Light and Humorous</span>
+                </div>
+                {/*end::Text*/}
+            </div>
+            {/*end::Item*/}
+            
+    </div>
+    {/*end::Body*/}
+</div>
+</div>
+
+<div className="col-xl-6">
+    {/*begin::Label*/}
+    <label className="required fs-6 fw-semibold form-label mb-2">Language</label>
+        {/*end::Label*/}
+<div className="app-sidebar-footer d-flex flex-stack pb-10" id="kt_app_sidebar_footer">   
+    {/*begin::User menu*/}
+    <div className="" onClick={()=> setIsMenu(isMenu == true ? false : true)} style={{cursor : "pointer"}}>
+       {/*begin::Menu wrapper*/}
+       
+        {/*begin::Select2*/}
+        <select className="form-select mb-2 select2-hidden-accessible" data-control="select2" data-placeholder="Select an option" data-allow-clear="true" multiple="" data-select2-id="select2-data-3-tn0u" tabindex="-1" aria-hidden="true" data-kt-initialized="1">
+            <option></option>
+                            <option value="Computers">Computers</option>
+                            <option value="Watches">Watches</option>
+                            <option value="Headphones">Headphones</option>
+                            <option value="Footwear">Footwear</option>
+                            <option value="Cameras">Cameras</option>
+                            <option value="Shirts">Shirts</option>
+                            <option value="Household">Household</option>
+                            <option value="Handbags">Handbags</option>
+                            <option value="Wines">Wines</option>
+                            <option value="Sandals">Sandals</option>
+                    </select><span className="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-4-cpoo" style={{width: '100%'}}><span className="selection"><span className="select2-selection select2-selection--multiple form-select mb-2" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false"><ul className="select2-selection__rendered" id="select2-nt4d-container"></ul><span className="select2-search select2-search--inline"><textarea className="select2-search__field" type="search" tabindex="0" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" autocomplete="off" aria-label="Search" aria-describedby="select2-nt4d-container" placeholder="Select an option" style={{width: '100%'}}></textarea></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
+        {/*end::Select2*/}
+        {/*end::Input group*/}
+
+ 
+{/*begin::User account menu*/}
+<div className={`menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-2 fs-6 w-275px ${isMenu == true ? "show" : ""}`} data-kt-menu="true" data-kt-menu-placement="top-start">
+    {/*begin::Menu item*/}
+         <div className="menu-item px-5">
+        <a href="../apps/projects/list.html" className="menu-link px-5">
+            <span className="menu-text">English (US)</span>
+            <span className="menu-badge">
+                <span className="badge badge-light-danger badge-circle fw-bold fs-9">hot</span>
+            </span>
+        </a>
+    </div>
+    {/*end::Menu item*/}
+      {/*begin::Menu item*/}
+   {languages.map((x)=> {
+    return (
+        <div className="menu-item px-5">
+        <a href="../account/overview.html" className="menu-link px-5">
+            {x}
+        </a>
+    </div>
+    )
+   })}
+    {/*end::Menu item*/}
+    {/*begin::Menu item*/}
+   {languages_ind.map((x)=> {
+    return (
+        <div className="menu-item px-5">
+        <a href="../account/overview.html" className="menu-link px-5">
+            {x + "\t(IND)"}
+        </a>
+    </div>
+    )
+   })}
+    {/*end::Menu item*/}
+
+</div>
+{/*end::User account menu*/}
+        {/*end::Menu wrapper*/}
+    </div>
+    {/*end::User menu*/} 
+
+
+</div>
+</div>
+
+</div>
+
+</div> 
+{/*end::Wrapper*/}  
 
                      </div>            
                     {/*end::Step 5*/}   
+                       {/*begin::Step 6*/}
+                       <div className={`${checkStep == 6 ? "current" : (checkStep > 6 ? "completed" : "")}`} data-kt-stepper-element="content">
+                         
 
-                    {/*begin::Actions*/}
-                    <div className="d-flex flex-stack pt-15"> 
+                         {/*begin::Wrapper*/}
+                         <div className="w-100">
+                             {/*begin::Heading*/}
+                             <div className="pb-8 pb-lg-10">
+                                 {/*begin::Title*/}
+                                 <h2 className="fw-bold text-dark">Your Are Done!</h2>      
+                                 {/*end::Title*/}
+                         
+                                 {/*begin::Notice*/}   
+                                 <div className="text-muted fw-semibold fs-6">
+                                     Go to home page 
+                                     <NavLink to="/auth/home" className="link-primary fw-bold">&nbsp;<b> home</b></NavLink>.
+                                 </div>
+                                 {/*end::Notice*/}
+                             </div>
+                             {/*end::Heading*/}
+                                             
+                             {/*begin::Body*/}
+                             <div className="mb-0">     
+                                 {/*begin::Text*/}
+                                 <div className="fs-6 text-gray-600 mb-5">
+                                     Writing headlines for blog posts is as much an art as it is a science 
+                                     and probably warrants its own post, but for all advise is with what 
+                                     works for your great & amazing audience. 
+                                 </div>
+                                 {/*end::Text*/}
+                         
+                                 {/*begin::Alert*/}
+                                 
+                         {/*begin::Notice*/}
+                         <div className="notice d-flex bg-light-warning rounded border-warning border border-dashed  p-6">
+                                     {/*begin::Icon*/}
+                                 {/*begin::Svg Icon | path: icons/duotune/general/gen044.svg*/}
+                         <span className="svg-icon svg-icon-2tx svg-icon-warning me-4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="10" fill="currentColor"/>
+                         <rect x="11" y="14" width="7" height="2" rx="1" transform="rotate(-90 11 14)" fill="currentColor"/>
+                         <rect x="11" y="17" width="2" height="2" rx="1" transform="rotate(-90 11 17)" fill="currentColor"/>
+                         </svg>
+                         </span>
+                         {/*end::Svg Icon*/}        {/*end::Icon*/}
+                             
+                             {/*begin::Wrapper*/}
+                             <div className="d-flex flex-stack flex-grow-1 ">
+                                             {/*begin::Content*/}
+                                     <div className=" fw-semibold">
+                                                             <h4 className="text-gray-900 fw-bold">We need your attention!</h4>
+                                         
+                                                             <div className="fs-6 text-gray-700 ">To start using great tools, please, <a href="../../utilities/wizards/vertical.html" className="fw-bold">Create Team Platform</a></div>
+                                                     </div>
+                                     {/*end::Content*/}
+                                 
+                                     </div>
+                             {/*end::Wrapper*/}  
+                         </div>
+                         {/*end::Notice*/}
+                                 {/*end::Alert*/}
+                             </div>
+                             {/*end::Body*/}
+                         </div> 
+                         {/*end::Wrapper*/}
+                         
+                                              </div>            
+                                             {/*end::Step 6*/} 
+{/*begin::Actions*/}
+<div className="d-flex flex-stack pt-15"> 
                         <div className="mr-2">
                         {/* data-kt-stepper-action="previous" */}
                             <button type="button" className="btn btn-lg btn-light-primary me-3" style={{display : (checkStep == 1 ? "none" : "block")}} onClick={()=> {
@@ -839,21 +1420,25 @@ let setClicked22 = () => {
                         </div>
 
                         <div>
-                            <button type="button" className="btn btn-lg btn-primary" data-kt-stepper-action="submit">
+                        {/* <div class="spinner-border" role="status" style={{display : (checkStep == 6 ? "block" : "none")}}>
+  <span class="visually-hidden">Loading...</span>
+</div> */}
+                            <button type="button" className="btn btn-lg btn-primary" style={{display : (checkStep == 6 ? "block" : "none")}}>
                                 <span className="indicator-label">
-                                    Submit
-                                    {/*begin::Svg Icon | path: icons/duotune/arrows/arr064.svg*/}
+                                    View Site
+                                    {/* begin::Svg Icon | path: icons/duotune/arrows/arr064.svg */}
 <span className="svg-icon svg-icon-4 ms-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="currentColor"/>
 <path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="currentColor"/>
 </svg>
 </span>
-{/*end::Svg Icon*/}                                </span>
+{/* end::Svg Icon         */}
+                        </span>
                                 <span className="indicator-progress">
                                     Please wait... <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
                                 </span>
                             </button>
-                            <button type="button" className="btn btn-lg btn-primary" data-kt-stepper-action="next" style={{display : (checkStep == 5 ? "none" : "block")}} onClick={()=> {
+                            <button type="button" className="btn btn-lg btn-primary" data-kt-stepper-action="next" style={{display : (checkStep == 6 ? "none" : "block")}} onClick={()=> {
                                 setCheckStep(checkStep + 1)
                             }}>
                                 Continue
