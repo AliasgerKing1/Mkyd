@@ -26,7 +26,7 @@ routes.post("/loginauth", async (req, res)=> {
         const result = await User.find({email : email})
         if(result.length == 1) {
             if(result[0].password == password) {
-                let obj = {id : result[0]._id, email : result[0].email};
+                let obj = {_id : result[0]._id, email : result[0].email};
                 let token = jwt.sign(obj , "Aliasger web");
                 res.send({success : true, status : 200, token : token});
             }else {
@@ -42,5 +42,17 @@ routes.post("/loginauth", async (req, res)=> {
         console.log(error)
     }
 })
+routes.get("/signin",async (req, res) => {
+    if(req.headers.token) {
+        let token = req.headers.token;
+        let obj = jwt.decode(token, "Aliasger web");
+        try {
+            let result = await User.find({_id : obj._id})
+            res.send(result)
+        }catch (error) {
+            res.send({success : false, status : 401, err : error});
+        }
+    
+}});
 
 module.exports = routes;

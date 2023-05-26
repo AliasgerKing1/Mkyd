@@ -7,11 +7,11 @@ import { Outlet,useNavigate } from 'react-router-dom'
 const Layouts = () => {
   let state = useSelector(state=>state.TokenReducer)
   let navigate = useNavigate();
-  useEffect(()=> {
-    if(! state[0].Login_token) {
-      navigate("/")
-      }
-  })
+  // useEffect(()=> {
+  //   if(! state[0].Login_token) {
+  //     navigate("/")
+  //     }
+  // })
 
   return (
     <div>

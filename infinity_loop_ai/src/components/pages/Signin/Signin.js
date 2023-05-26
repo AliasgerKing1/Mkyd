@@ -5,11 +5,13 @@ import {NavLink, useNavigate} from "react-router-dom"
 
 import {useDispatch} from "react-redux"
 import {getTokenRedux} from "../../../Redux/TokenReducer"
+import {getSignInUserRedux} from "../../../Redux/SignInReducer"
 
 import {useFormik} from "formik"
 import {AlertDanger} from "../../shared/Alert"
 import SigninSchema from '../../../Schemas/SigninSchema'
 import { loginUser } from '../../../services/AuthService'
+import { getCurrentUser } from '../../../services/UserService'
 let initialValues = {
     email : "",
     password : "",
@@ -24,7 +26,6 @@ const Signin = () => {
         validationSchema : SigninSchema,
         onSubmit : async () => {
    let result = await loginUser(values);
-   console.log(result.data)
    if(result.data.errType == 1) {
 setShowAlert(true)
 setMsg("This email or password is incorrect !")
@@ -41,6 +42,8 @@ setMsg("This email or password is incorrect !")
         }
     ]
 dispatch(getTokenRedux(tokens))
+let result2 = await getCurrentUser(tokens[0].Login_token);
+dispatch(getSignInUserRedux(result2.data[0]))
 navigate("/auth/home")
    }
     }

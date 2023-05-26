@@ -5,4 +5,8 @@ let addUser = async (obj) => {
     return await axios.post(apiUrl, obj)
 }
 
-export { addUser };
+let getCurrentUser = async (token) => {
+    return await axios.get(`${apiUrl}/signin`, { headers: { token } })
+}
+
+export { addUser, getCurrentUser };

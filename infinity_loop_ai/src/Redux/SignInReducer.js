@@ -7,7 +7,7 @@ let SignInUserReducer = createSlice({
     initialState,
     reducers: {
         getSignInUserRedux(state, action) {
-            return [...state, ...action.payload];
+            return action.payload;
         }
     }
 })

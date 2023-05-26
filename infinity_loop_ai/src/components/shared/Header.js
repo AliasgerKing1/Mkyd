@@ -1,7 +1,14 @@
 /*eslint-disable */
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from "react-redux"
+import { getSidebarRedux } from "../../Redux/SidebarReducer"
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
+    let dispatch = useDispatch()
+    let sideBarTrue = () => {
+        dispatch(getSidebarRedux(true))
+    }
     return (
         <>
             <div id="kt_app_header" className="app-header "
@@ -12,7 +19,7 @@ const Header = () => {
                 <div className="app-container  container-fluid d-flex flex-stack " id="kt_app_header_container">
                     {/*begin::Sidebar toggle*/}
                     <div className="d-flex align-items-center d-block d-lg-none ms-n3" title="Show sidebar menu">
-                        <div className="btn btn-icon btn-active-color-primary w-35px h-35px me-2" id="kt_app_sidebar_mobile_toggle">
+                        <div className="btn btn-icon btn-active-color-primary w-35px h-35px me-2" id="kt_app_sidebar_mobile_toggle" onClick={sideBarTrue}>
                             {/*begin::Svg Icon | path: icons/duotune/abstract/abs015.svg*/}
                             <span className="svg-icon svg-icon-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z" fill="currentColor" />
@@ -77,7 +84,7 @@ const Header = () => {
 
                                 {/*begin::Item*/}
                                 <li className="breadcrumb-item text-gray-600 fw-bold lh-1">
-                                    Social                                            </li>
+                                    Designs                                            </li>
                                 {/*end::Item*/}
 
 
@@ -86,15 +93,15 @@ const Header = () => {
 
                             {/*begin::Title*/}
                             <h1 className="text-gray-900 fw-bolder m-0">
-                                Social Feeds
+                                Designs
                             </h1>
                             {/*end::Title*/}
                         </div>
                         {/*end::Page title*/}
                         {/*begin::Action*/}
-                        <a href="/auth/create/design" className="btn btn-primary d-flex flex-center h-35px h-lg-40px">
+                        <NavLink to="/auth/create/design" className="btn btn-primary d-flex flex-center h-35px h-lg-40px">
                             Create <span className="d-none d-sm-inline ps-2">New Design</span>
-                        </a>
+                        </NavLink>
                         {/*end::Action*/}
                     </div>
                     {/*end::Header wrapper*/}            </div>

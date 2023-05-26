@@ -1,20 +1,42 @@
 /*eslint-disable */
 import React, { useEffect, useState } from 'react'
-
+import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
+import { getSidebarConditionRedux } from "../../Redux/SidebarReducer"
 const Sidebar = () => {
+    let state = useSelector(state => state.SidebarReducer)
+    let dispatch = useDispatch()
     let [isMenu, setIsMenu] = useState(false);
     let [isChangeWorkSpace, setIsChangeWorkSpace] = useState(false);
     let [isInternalMenu1, setIsInternalMenu1] = useState(false);
     let [isInternalMenu2, setIsInternalMenu2] = useState(false);
     let [isInternalMenu3, setIsInternalMenu3] = useState(false);
+    let [drawer, setDrawer] = useState(false);
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        function handleResize() {
+            setScreenWidth(window.innerWidth);
+        }
+        if (screenWidth > 991) {
+            setDrawer(false)
+            dispatch(getSidebarConditionRedux(false))
+        } else {
+            setDrawer(true)
+            dispatch(getSidebarConditionRedux(true))
+        }
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
     return (
         <>
-            <div id="kt_app_sidebar" className="app-sidebar  flex-column"
+            <div id="kt_app_sidebar" className={`app-sidebar  flex-column drawer drawer-start ${state && state.stateVar == true ? "drawer-on" : ""}`}
                 data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle"
+                style={{ width: '250px !important', transform: drawer == true && state.stateVar == false ? "translateX(-100%)" : "none" }}
             >
 
                 {/*begin::Header*/}
-                <div className="app-sidebar-header d-none d-lg-flex px-6 pt-8 pb-4" id="kt_app_sidebar_header">
+                <div className={`app-sidebar-header d-none d-lg-flex px-6 pt-8 pb-4 ${state && state.stateVar == true ? "d-none" : ""}`} id="kt_app_sidebar_header">
                     {/*begin::Toggle*/}
                     <button type="button" data-kt-element="selected" className="btn btn-outline btn-custom btn-flex w-100 show menu-dropdown" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" data-kt-menu-offset="0px, -1px" onClick={() => isChangeWorkSpace == false ? setIsChangeWorkSpace(true) : setIsChangeWorkSpace(false)}>
                         {/*begin::Logo*/}
@@ -35,7 +57,8 @@ const Sidebar = () => {
                         {/*begin::Arrows*/}
                         <span className="d-flex flex-column me-n4">
                             {/*begin::Svg Icon | path: icons/duotune/arrows/arr073.svg*/}
-                            <span className="svg-icon svg-icon-3 svg-icon-gray-700"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <span className="svg-icon svg-icon-3 svg-icon-gray-700">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12.5657 11.3657L16.75 15.55C17.1642 15.9643 17.8358 15.9643 18.25 15.55C18.6642 15.1358 18.6642 14.4643 18.25 14.05L12.7071 8.50716C12.3166 8.11663 11.6834 8.11663 11.2929 8.50715L5.75 14.05C5.33579 14.4643 5.33579 15.1358 5.75 15.55C6.16421 15.9643 6.83579 15.9643 7.25 15.55L11.4343 11.3657C11.7467 11.0533 12.2533 11.0533 12.5657 11.3657Z" fill="currentColor" />
                             </svg>
                             </span>
@@ -2150,7 +2173,6 @@ const Sidebar = () => {
 
                             {/*begin::Collapsible items*/}
                             <div className="menu-inner flex-column collapse" id="kt_app_sidebar_menu_projects_collapse">
-
                                 {/*begin::Menu Item*/}
                                 <div className="menu-item">
                                     {/*begin::Menu link*/}

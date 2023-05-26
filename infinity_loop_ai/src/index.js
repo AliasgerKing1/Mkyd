@@ -12,6 +12,7 @@ import CreateDesignReducer from './Redux/CreateDesignReducer';
 import Step2CreateReducer from "./Redux/Step2CreateReducer"
 import Step3CreateReducer from "./Redux/Step3CreateReducer"
 import Step4CreateReducer from "./Redux/Step4CreateReducer"
+import SidebarReducer from "./Redux/SidebarReducer"
 
 
 import reportWebVitals from './reportWebVitals';
@@ -23,7 +24,8 @@ let rootReducer = combineReducers({
   CreateDesignReducer,
   Step2CreateReducer,
   Step3CreateReducer,
-  Step4CreateReducer
+  Step4CreateReducer,
+  SidebarReducer
 })
 let store = configureStore ({
   reducer : rootReducer

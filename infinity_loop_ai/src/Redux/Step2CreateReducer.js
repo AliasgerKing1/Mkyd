@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   page_number: 1,
   website_name: "",
-  image : null
 };
 
 const CreateDesignReducer2 = createSlice({
@@ -16,9 +15,6 @@ const CreateDesignReducer2 = createSlice({
     updateWebsiteName: (state, action) => {
       state.website_name = action.payload;
     },
-    updateLogo: (state, action) => {
-      state.website_name = action.payload;
-    }
   }
 });
 

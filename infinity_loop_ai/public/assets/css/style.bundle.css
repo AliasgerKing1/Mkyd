@@ -42998,7 +42998,7 @@ code:not([class*=language-]) {
 }
 .drawer.drawer-start {
   left: 0;
-  transform: translateX(-100%);
+  transform: translateX(-100%)
 }
 .drawer.drawer-end {
   right: 0;
