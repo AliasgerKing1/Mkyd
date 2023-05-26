@@ -11,6 +11,7 @@ import Sidebar from "../../shared/Sidebar"
 const Home = () => {
     let [chLink, setChLink] = useState(1)
     let state = useSelector(state => state.SidebarReducer)
+    let state2 = useSelector(state => state.SigininReducer)
     let dispatch = useDispatch()
     let sideBarTrue = () => {
         if (state.condition == true) {
@@ -71,7 +72,7 @@ const Home = () => {
             {/*begin::Info*/}
             <div className="text-center">
                 {/*begin::Name*/}
-                                                                  <NavLink to="#" className="text-gray-800 fw-bold text-hover-primary fs-4">Aliasger Barood</NavLink>
+                                                                  <NavLink to="#" className="text-gray-800 fw-bold text-hover-primary fs-4">{state2 && state2.name}</NavLink>
                 {/*end::Name*/}
 
                 {/*begin::Position*/}    
@@ -3273,7 +3274,7 @@ const Home = () => {
                                                                           {/*begin::Info*/}
                                                                           <div className="text-center">
                                                                               {/*begin::Name*/}
-                                                                              <NavLink to="#" className="text-gray-800 fw-bold text-hover-primary fs-4">Aliasger Barood</NavLink>
+                                                                              <NavLink to="#" className="text-gray-800 fw-bold text-hover-primary fs-4">{state2 && state2.name}</NavLink>
                                                                               {/*end::Name*/}
 
                                                                               {/*begin::Position*/}
