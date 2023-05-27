@@ -1,16 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-let initialState = [];
+let initialState = {
+    tone: 1,
+    language: 1,
+};
 
 let CreateDesignReducer4 = createSlice({
     name: "create design step 4",
     initialState,
     reducers: {
-        getCreateDesignstep4Redux(state, action) {
-            return action.payload;
-        }
+        updateTone: (state, action) => {
+            state.tone = action.payload;
+        },
+        updateLanguage: (state, action) => {
+            state.language = action.payload;
+        },
     }
 })
 
 export default CreateDesignReducer4.reducer
-export const { getCreateDesignstep4Redux } = CreateDesignReducer4.actions
+export const { updateTone, updateLanguage } = CreateDesignReducer4.actions

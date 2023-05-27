@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from "react-redux"
 
 import { getCreateDesignRedux } from "../../../Redux/CreateDesignReducer"
 import { updatePageNumber, updateWebsiteName} from '../../../Redux/Step2CreateReducer'
-import { getCreateDesignstep3Redux } from '../../../Redux/Step3CreateReducer'
-import { getCreateDesignstep4edux } from '../../../Redux/Step4CreateReducer'
+import { updatePaletteRedux } from '../../../Redux/Step3CreateReducer'
+import { updateLanguage, updateTone } from '../../../Redux/Step4CreateReducer'
 
 import { dummy, dummy2, languages, languages_ind } from '../../../json/Bin'
 import DrawCanvas from '../DrawCanvas/DrawCanvas'
@@ -18,16 +18,26 @@ const CreateDesign = () => {
     let state2 = useSelector(state => state.CreateDesignReducer)
     let state3 = useSelector(state => state.Step2CreateReducer)
     let dispatch = useDispatch();
-    let [checkStep, setCheckStep] = useState(1)
+    let [checkStep, setCheckStep] = useState(2)
     let [checkTeamSize, setCheckTEamSize] = useState(1)
     let [checkAccount, setCheckAccount] = useState(1)
     let [modalOpen, setModalOpen] = useState(false)
     let [paletteSeq, setPaletteSeq] = useState(0)
     let [websiteName, setWebsiteName] = useState("")
     let [checkAccountStep1, setCheckAccountStep1] = useState("html")
+    let [languageSelected, setLanguageSelected] = useState(1)
+    let [toneSelected, setToneSelected] = useState(1)
     let [isMenu, setIsMenu] = useState(false);
+    let [isErrMenu, setIsErrMenu] = useState(false);
+    let [isPalette, setIsPalette] = useState(false)
+    let [isLanguage, setIsLanguage] = useState(false)
 
-
+    useEffect(() => {
+        dispatch(updateLanguage(languageSelected))
+    }, [languageSelected])
+    useEffect(() => {
+        dispatch(updateTone(toneSelected))
+    }, [toneSelected])
     useEffect(()=> {
 setPaletteSeq(dummy.length)
     }, [])
@@ -46,18 +56,18 @@ setCheckAccountStep1(event.target.value)
   
         dispatch(updatePageNumber(val))
     }
-    let form = new FormData();
     let setClicked3 = async (val) => {
         let step1_2 = {
-step_1 : state2[0].step_1,
-step_2 : {
-    website_name : state3.website_name,
-    page_number : state3.page_number,
-}
+            step_1 : state2[0].step_1,
+            step_2 : {
+                website_name : state3.website_name,
+                page_number : state3.page_number,
+            }
         }
-    form.append("photo",val.target.files[0]);
-    form.append("data",JSON.stringify(step1_2))
-    let resultOfPhoto = await addDesign(state._id, form)
+    //     let form = new FormData();
+    //     form.append("photo",val.target.files[0]);
+    //     form.append("data",step1_2)
+    // let resultOfPhoto = await addDesign(form)
 // console.log(val.target.files[0])
     }
 let setClicked22 = () => {
@@ -65,7 +75,10 @@ let setClicked22 = () => {
 }
 
 let selectpalette = (palette) => {
-
+    if (palette) {
+        setIsPalette(true)
+        dispatch(updatePaletteRedux({ palette_selected: palette }))
+    }
 }
   return (
     <>
@@ -419,7 +432,7 @@ let selectpalette = (palette) => {
             {/*begin::Col*/}
             <div className="col">
                 {/*begin::Option*/}
-                <label className={`btn btn-outline btn-outline-dashed btn-active-light-primary w-100 p-4 ${checkTeamSize == 1 ? "active" : ""}`} onClick={()=> {
+                                                          <label className={`btn btn-outline btn-outline-dashed btn-active-light-primary w-100 p-4 ${checkTeamSize == 1 ? "active" : ""}`} onClick={() => {
                     setCheckTEamSize(1)
                 }}>
                     <input type="radio" className="btn-check" name="account_team_size" value="1-1" onClick={()=>setClicked2(1)} />    
@@ -432,7 +445,7 @@ let selectpalette = (palette) => {
             {/*begin::Col*/}
             <div className="col">
                 {/*begin::Option*/}
-                <label className={`btn btn-outline btn-outline-dashed btn-active-light-primary w-100 p-4 ${checkTeamSize == 2 ? "active" : ""}`} onClick={()=> {
+                                                          <label className={`btn btn-outline btn-outline-dashed btn-active-light-primary w-100 p-4 ${checkTeamSize == 2 ? "active" : ""}`} onClick={() => {
                     setCheckTEamSize(2)
                 }}>
                     <input type="radio" className="btn-check" name="account_team_size" checked value="2-4" onClick={()=>setClicked2(2)} />  
@@ -445,7 +458,7 @@ let selectpalette = (palette) => {
             {/*begin::Col*/}
                                                       <div className="col yes-disabled">                            
                 {/*begin::Option*/}
-                <label className={`btn btn-outline btn-outline-dashed btn-active-light-primary w-100 p-4 ${checkTeamSize == 3 ? "active" : ""}`} onClick={()=> {
+                                                          <label className={`btn btn-outline btn-outline-dashed btn-active-light-primary w-100 p-4 ${checkTeamSize == 3 ? "active" : ""}`} onClick={() => {
                     setCheckTEamSize(3)
                 }}>
                     <input type="radio" className="btn-check" name="account_team_size" value="4-10" onClick={()=>setClicked2(3)} />     
@@ -458,7 +471,7 @@ let selectpalette = (palette) => {
             {/*begin::Col*/}
                                                       <div className="col yes-disabled">                                      
                 {/*begin::Option*/}
-                <label className={`btn btn-outline btn-outline-dashed btn-active-light-primary w-100 p-4 ${checkTeamSize == 4 ? "active" : ""}`} onClick={()=> {
+                                                          <label className={`btn btn-outline btn-outline-dashed btn-active-light-primary w-100 p-4 ${checkTeamSize == 4 ? "active" : ""}`} onClick={() => {
                     setCheckTEamSize(4)
                 }}>
                     <input type="radio" className="btn-check" name="account_team_size" value="10+" onClick={()=>setClicked2(4)} /> 
@@ -587,7 +600,7 @@ let selectpalette = (palette) => {
     {/*begin::Heading*/}
     <div className="pb-10 pb-lg-12">
         {/*begin::Title*/}
-                                                  <h2 className="fw-bold text-dark">Colour  Selection</h2>
+                                                  <h2 className="fw-bold text-dark">Colour  Selection <span className='text-danger'>*</span></h2>
         {/*end::Title*/}
 
         {/*begin::Notice*/}
@@ -607,7 +620,7 @@ let selectpalette = (palette) => {
     <h3 className="align-items-start flex-column">
    <span className="card-label fw-bold text-gray-800">Palette {n + 1}</span>
   </h3>
-                                                      <div className='fv-row mb-5' style={{ display: 'flex', gap: '0', cursor : 'pointer' }} onClick={()=>selectpalette(`palette ${n + 1}`)}>
+                        <div className='fv-row mb-5' style={{ display: 'flex', gap: '0', cursor: 'pointer' }} onClick={() => selectpalette(n + 1)}>
                                                       <div style={{ backgroundColor: x.color_60, width: '30rem', height: '6rem', borderRadius: '3% 0 0 3%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                                           60%
                                                       </div>
@@ -827,7 +840,7 @@ let selectpalette = (palette) => {
 
                 {/*begin::Text*/}
                 <div className="d-flex flex-column">
-                    <a href="#" className="text-dark text-hover-primary fs-6 fw-bold">Professional tone</a>
+                                                                      <a href="#" className={`text-dark text-hover-primary fs-6 fw-bold text-active-primary ${toneSelected == 1 ? "active" : ""}`} onClick={() => setToneSelected(1)}>Professional tone</a>
 
                     <span className="text-muted fw-bold">standard</span>
                 </div>
@@ -851,7 +864,7 @@ let selectpalette = (palette) => {
 
                 {/*begin::Text*/}
                 <div className="d-flex flex-column">
-                    <a href="#" className="text-dark text-hover-primary fs-6 fw-bold">Poetic tone</a>
+                                                                      <a href="#" className={`text-dark text-hover-primary fs-6 fw-bold text-active-primary ${toneSelected == 2 ? "active" : ""}`} onClick={() => setToneSelected(2)}>Poetic tone</a>
 
                     <span className="text-muted fw-bold">Artistic tone</span>
                 </div>
@@ -876,7 +889,7 @@ let selectpalette = (palette) => {
 
                 {/*begin::Text*/}
                 <div className="d-flex flex-column">
-                    <a href="#" className="text-dark text-hover-primary fs-6 fw-bold">Communicational tone</a>
+                                                                      <a href="#" className={`text-dark text-hover-primary fs-6 fw-bold text-active-primary ${toneSelected == 3 ? "active" : ""}`} onClick={() => setToneSelected(3)}>Communicational tone</a>
 
                     <span className="text-muted fw-bold">general conversation</span>
                 </div>
@@ -900,7 +913,7 @@ let selectpalette = (palette) => {
 
                 {/*begin::Text*/}
                 <div className="d-flex flex-column">
-                    <a href="#" className="text-dark text-hover-primary fs-6 fw-bold">Developer tone</a>
+                                                                      <a href="#" className={`text-dark text-hover-primary fs-6 fw-bold text-active-primary ${toneSelected == 4 ? "active" : ""}`} onClick={() => setToneSelected(4)}>Developer tone</a>
 
                     <span className="text-muted fw-bold">DevOps</span>
                 </div>
@@ -925,7 +938,7 @@ let selectpalette = (palette) => {
 
                 {/*begin::Text*/}
                 <div className="d-flex flex-column">
-                    <a href="#" className="text-dark text-hover-primary fs-6 fw-bold">funny</a>
+                                                                      <a href="#" className={`text-dark text-hover-primary fs-6 fw-bold text-active-primary ${toneSelected == 5 ? "active" : ""}`} onClick={() => setToneSelected(5)}>funny</a>
 
                     <span className="text-muted fw-bold">Light and Humorous</span>
                 </div>
@@ -969,7 +982,7 @@ let selectpalette = (palette) => {
 <div className={`menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-2 fs-6 w-275px ${isMenu == true ? "show" : ""}`} data-kt-menu="true" data-kt-menu-placement="top-start">
     {/*begin::Menu item*/}
          <div className="menu-item px-5">
-        <a href="../apps/projects/list.html" className="menu-link px-5">
+                                                                      <a href="#" className="menu-link px-5" onClick={() => setLanguageSelected(1)}>
             <span className="menu-text">English (US)</span>
             <span className="menu-badge">
                 <span className="badge badge-light-danger badge-circle fw-bold fs-9">hot</span>
@@ -978,10 +991,13 @@ let selectpalette = (palette) => {
     </div>
     {/*end::Menu item*/}
       {/*begin::Menu item*/}
-   {languages.map((x)=> {
+                                                                  {languages.map((x, n) => {
     return (
         <div className="menu-item px-5">
-        <a href="../account/overview.html" className="menu-link px-5">
+            <a href="#" className="menu-link px-5" onClick={() => {
+                setLanguageSelected(n + 2)
+            }
+            }>
             {x}
         </a>
     </div>
@@ -989,10 +1005,10 @@ let selectpalette = (palette) => {
    })}
     {/*end::Menu item*/}
          {/*begin::Menu item*/}
-   {languages_ind.map((x)=> {
+                                                                  {languages_ind.map((x, n) => {
     return (
         <div className="menu-item px-5">
-        <a href="../account/overview.html" className="menu-link px-5">
+            <a href="#" className="menu-link px-5" onClick={() => setLanguageSelected(5 + n + 2)}>
             {x + "\t(IND)"}
         </a>
     </div>
@@ -1188,7 +1204,7 @@ let selectpalette = (palette) => {
                                 </span>
                             </button>
                             <button type="button" className="btn btn-lg btn-primary" data-kt-stepper-action="next" style={{display : (checkStep == 6 ? "none" : "block")}} onClick={()=> {
-                                setCheckStep(checkStep + 1)
+                                                  checkStep == 2 && websiteName.length == 0 || checkStep == 3 && isPalette == false ? (setIsErrMenu(true)) : (setCheckStep(checkStep + 1))
                             }}>
                                 Continue
                                 {/*begin::Svg Icon | path: icons/duotune/arrows/arr064.svg*/}
@@ -1220,7 +1236,6 @@ let selectpalette = (palette) => {
         
 </div>
 
-          {/* --------------------------------------Modal start---------------------------- */}
           {/* --------------------------------------Modal start---------------------------- */}
           {/* --------------------------------------Modal start---------------------------- */}
           {/* --------------------------------------Modal start---------------------------- */}
@@ -1262,6 +1277,18 @@ let selectpalette = (palette) => {
               </div>
           </div>
           {/* --------------------------------------Modal end---------------------------- */}
+
+
+          {/* --------------------------------------Modal start---------------------------- */}
+          <div class="swal2-container swal2-center swal2-backdrop-show" style={{ overflowY: 'auto', display: isErrMenu == false ? "none" : "" }}>
+              <div aria-labelledby="swal2-title" aria-describedby="swal2-html-container" class="swal2-popup swal2-modal swal2-icon-error swal2-show" tabindex="-1" role="dialog" aria-live="assertive" aria-modal="true" style={{ display: 'grid' }}><ul class="swal2-progress-steps" style={{ display: 'block' }}></ul><div class="swal2-icon swal2-error swal2-icon-show" style={{ display: 'flex' }}><span class="swal2-x-mark">
+                  <span class="swal2-x-mark-line-left"></span>
+                  <span class="swal2-x-mark-line-right"></span>
+              </span>
+              </div><img class="swal2-image" style={{ display: 'block' }} /><h2 class="swal2-title" id="swal2-title" style={{ display: 'block' }}></h2>
+
+                  <div class="swal2-html-container" id="swal2-html-container" style={{ display: 'block' }}>Sorry, looks like there are some <span style={{ color: '#F1416C' }}>mandatory detailed not filled</span>, please fill and try again.</div>
+                  <div class="swal2-loader"></div><button type="button" class="swal2-confirm btn btn-light" style={{ display: 'inline-block' }} aria-label="" onClick={() => setIsErrMenu(false)}>Ok, got it!</button></div></div>
           {/* --------------------------------------Modal end---------------------------- */}
           {/* --------------------------------------Modal end---------------------------- */}
           {/* --------------------------------------Modal end---------------------------- */}

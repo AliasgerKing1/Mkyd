@@ -1,5 +1,5 @@
                                  /*eslint-disable */
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {NavLink} from "react-router-dom"
 
 import { useDispatch, useSelector } from "react-redux"
@@ -11,7 +11,7 @@ import Sidebar from "../../shared/Sidebar"
 const Home = () => {
     let [chLink, setChLink] = useState(1)
     let state = useSelector(state => state.SidebarReducer)
-    let state2 = useSelector(state => state.SigininReducer)
+    let state2 = useSelector(state2 => state2.SignInReducer)
     let dispatch = useDispatch()
     let sideBarTrue = () => {
         if (state.condition == true) {
@@ -65,14 +65,14 @@ const Home = () => {
         <div className="d-flex flex-column text-center mb-9 px-9">
             {/*begin::Photo*/}
             <div className="symbol symbol-80px symbol-lg-150px mb-4">
-                <img src="../../assets/media/avatars/300-3.jpg" className="" alt="" /> 
+                <img src={state2.profile_photo} className="" alt="" /> 
             </div>
             {/*end::Photo*/}
 
             {/*begin::Info*/}
             <div className="text-center">
                 {/*begin::Name*/}
-                                                                  <NavLink to="#" className="text-gray-800 fw-bold text-hover-primary fs-4">{state2 && state2.name}</NavLink>
+                            <NavLink to="#" className="text-gray-800 fw-bold text-hover-primary fs-4">{state2 && state2.name}</NavLink>
                 {/*end::Name*/}
 
                 {/*begin::Position*/}    
@@ -3267,7 +3267,7 @@ const Home = () => {
                                                                       <div className="d-flex flex-column text-center mb-9 px-9">
                                                                           {/*begin::Photo*/}
                                                                           <div className="symbol symbol-80px symbol-lg-150px mb-4">
-                                                                              <img src="../../assets/media/avatars/300-3.jpg" className="" alt="" />
+                                                                              <img src={state2.profile_photo} className="" alt="" />
                                                                           </div>
                                                                           {/*end::Photo*/}
 
@@ -3733,7 +3733,7 @@ const Home = () => {
                                                                   <div className="card-header justify-content-start align-items-center pt-4">
                                                                       {/*begin::Photo*/}
                                                                       <div className="symbol symbol-45px me-5">
-                                                                          <img src="../../assets/media/avatars/300-3.jpg" className="" alt="" />
+                                                                          <img src={state2.profile_photo} className="" alt="" />
                                                                       </div>
                                                                       {/*end::Photo*/}
 

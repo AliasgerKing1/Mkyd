@@ -148,7 +148,8 @@ const DrawCanvas = () => {
                                     top: rectangle.startY,
                                     width: rectangle.width,
                                     height: rectangle.height,
-                                    background: 'green'
+                                    border: isFill == false ? '2px solid green' : "",
+                                    background: isFill == true ? 'green' : ""
                                 }}
 
                             />

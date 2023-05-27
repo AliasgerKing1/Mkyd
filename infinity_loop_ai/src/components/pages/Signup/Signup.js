@@ -10,6 +10,7 @@ let initialValues = {
     email : "",
     password : "",
     conf_pass: "",
+    profile_photo : ""
 }
 const Signup = () => {
     const [strength, setStrength] = useState(0);
@@ -194,6 +195,12 @@ const Signup = () => {
     {/*end::Separator*/}
 
     {/*begin::Input group-*/}
+    <div className="fv-row mb-8">
+        {/*begin::Email*/}
+        <input type="text" placeholder="Name" name="name" autoComplete="off" className={`form-control bg-transparent ${errors.name && touched.name ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur} value={values.name}/> 
+        <div>{errors.name && touched.name ? (<small className='text-danger'>{errors.name}</small>) : null}</div>
+        {/*end::Email*/}
+    </div>
     <div className="fv-row mb-8">
         {/*begin::Email*/}
         <input type="text" placeholder="Email" name="email" autoComplete="off" className={`form-control bg-transparent ${errors.email && touched.email ? "is-invalid" : ""}`} onChange={handleChange} onBlur={handleBlur} value={values.email}/> 
