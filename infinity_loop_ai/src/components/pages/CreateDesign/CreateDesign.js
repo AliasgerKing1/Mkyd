@@ -68,7 +68,11 @@ setCheckAccountStep1(event.target.value)
     //     form.append("photo",val.target.files[0]);
     //     form.append("data",step1_2)
     // let resultOfPhoto = await addDesign(form)
-// console.log(val.target.files[0])
+        if (resultOfPhoto.status == 500) {
+
+        } else {
+            // console.log(val.target.files[0])
+        }
     }
 let setClicked22 = () => {
     dispatch(updateWebsiteName(websiteName))

@@ -68,7 +68,7 @@ const Header = () => {
 
                                 {/*begin::Item*/}
                                 <li className="breadcrumb-item text-gray-600 fw-bold lh-1">
-                                    Pages                                            </li>
+                                    Social                                            </li>
                                 {/*end::Item*/}
 
                                 {/*begin::Item*/}
