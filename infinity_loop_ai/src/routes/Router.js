@@ -5,6 +5,7 @@ import Layouts from "../Layouts/Layouts";
 import userRoutes from "./User/User";
 import Signin from "../components/pages/Signin/Signin";
 import Signup from "../components/pages/Signup/Signup";
+import Pricing from "../components/pages/Pricing/Pricing"
 
 const Router = () => {
 const router = useRoutes([
@@ -17,6 +18,10 @@ const router = useRoutes([
       path : "/signup",
       element: <Signup />
     },
+  {
+    path: "/pricing",
+    element: <Pricing />
+  },
 {
   path : "auth",
   element: <Layouts/>,

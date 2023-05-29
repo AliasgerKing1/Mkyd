@@ -21766,6 +21766,10 @@ textarea.form-control-lg {
   .position-xl-sticky {
     position: sticky !important;
   }
+  .app-prebuilts-thumbnail {
+  border: 1px solid var(--kt-body-bg);
+  filter: drop-shadow(0px 0px 50px rgba(49, 52, 122, 0.12));
+}
   .w-xl-unset {
     width: unset !important;
   }

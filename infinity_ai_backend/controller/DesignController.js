@@ -4,12 +4,13 @@ const User = require("../models/User");
 const randstr = require("random-string");
 const path = require("path");
 
-// routes.put("/", (req,res)=> {
+routes.put("/", (req, res) => {
     // let id = req.params.id;
     // console.log(req.body)
     // if(req.body.length > 0) {
     //     let body = JSON.parse(req.body.data);
     // }
+    try {
         // let image = req.files.photo;
 
     // randorm_string = randstr({length : 50 });
@@ -24,5 +25,9 @@ const path = require("path");
     //      res.send(obj);
     //  })
     // })
-// })
+    } catch (error) {
+        res.send({ status: 500, err: error, success: false })
+    }
+
+})
 module.exports = routes;

@@ -68,7 +68,7 @@ const Header = () => {
 
                                 {/*begin::Item*/}
                                 <li className="breadcrumb-item text-gray-600 fw-bold lh-1">
-                                    Pages                                            </li>
+                                    Social                                            </li>
                                 {/*end::Item*/}
 
                                 {/*begin::Item*/}
@@ -99,7 +99,7 @@ const Header = () => {
                         </div>
                         {/*end::Page title*/}
                         {/*begin::Action*/}
-                        <NavLink to="/auth/create/design" className="btn btn-primary d-flex flex-center h-35px h-lg-40px">
+                        <NavLink to="/auth/create/design/draw" className="btn btn-primary d-flex flex-center h-35px h-lg-40px">
                             Create <span className="d-none d-sm-inline ps-2">New Design</span>
                         </NavLink>
                         {/*end::Action*/}

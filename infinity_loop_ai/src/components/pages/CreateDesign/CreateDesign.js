@@ -18,7 +18,7 @@ const CreateDesign = () => {
     let state2 = useSelector(state => state.CreateDesignReducer)
     let state3 = useSelector(state => state.Step2CreateReducer)
     let dispatch = useDispatch();
-    let [checkStep, setCheckStep] = useState(2)
+    let [checkStep, setCheckStep] = useState(5)
     let [checkTeamSize, setCheckTEamSize] = useState(1)
     let [checkAccount, setCheckAccount] = useState(1)
     let [modalOpen, setModalOpen] = useState(false)
@@ -68,7 +68,11 @@ setCheckAccountStep1(event.target.value)
     //     form.append("photo",val.target.files[0]);
     //     form.append("data",step1_2)
     // let resultOfPhoto = await addDesign(form)
-// console.log(val.target.files[0])
+        if (resultOfPhoto.status == 500) {
+
+        } else {
+            // console.log(val.target.files[0])
+        }
     }
 let setClicked22 = () => {
     dispatch(updateWebsiteName(websiteName))
@@ -1079,12 +1083,12 @@ let selectpalette = (palette) => {
                                                               {/*begin::Links*/}
                                                               <div className="text-center mb-1">
                                                                   {/*begin::Link*/}
-                                                                  <a className="btn btn-sm btn-primary me-2" onClick={() => setModalOpen(true)}>
-                                                                      Create now           </a>
+                                                                  <NavLink to="/create/design/draw" className="btn btn-sm btn-primary me-2">
+                                                                      Create now           </NavLink>
                                                                   {/*end::Link*/}
 
                                                                   {/*begin::Link*/}
-                                                                  <a className="btn btn-sm btn-light" href="../apps/user-management/users/view.html">
+                                                                  <a className="btn btn-sm btn-light" href="/documentation">
                                                                       Learn More            </a>
                                                                   {/*end::Link*/}
                                                               </div>
@@ -1270,7 +1274,6 @@ let selectpalette = (palette) => {
                       {/*begin::Modal body*/}
                       <div className="modal-body scroll-y m-5">
 
-                          <DrawCanvas />
                       </div>
                       {/*begin::Modal body*/}
                   </div>
