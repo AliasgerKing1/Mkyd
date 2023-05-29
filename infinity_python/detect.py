@@ -72,33 +72,84 @@ def detect_and_cut_rectangles(image_path, output_directory):
     # Store the rectangles' information in a list
     rectangles = []
     last_i = None  # Initialize last_i variable
-    # Cut and save each detected rectangle as a separate image
+# Cut and save each detected rectangle as a separate image
+    img_num = [1]
     for i, contour in enumerate(contours):
-        # Approximate the contour to a polygon
-        perimeter = cv2.arcLength(contour, True)
-        approx = cv2.approxPolyDP(contour, 0.04 * perimeter, True)
-        # Check if the polygon has four sides (a rectangle)
-        if len(approx) == 4:
-            # Get the bounding box of the rectangle
-            x, y, width, height = cv2.boundingRect(approx)
-            # Crop the rectangle from the original image
-            cropped_image = image[y:y + height, x:x + width]
+      # Approximate the contour to a polygon
+      perimeter = cv2.arcLength(contour, True)
+      approx = cv2.approxPolyDP(contour, 0.04 * perimeter, True)
+      # Check if the polygon has four sides (a rectangle)
+      if len(approx) == 4:
+          # Get the bounding box of the rectangle
+          x, y, width, height = cv2.boundingRect(approx)
+          # Crop the rectangle from the original image
+          cropped_image = image[y:y + height, x:x + width]
 
-            # Save the cropped image as a separate file
-            output_path = os.path.join(output_directory, f"rectangle_{i + 1}.png")
-            cv2.imwrite(output_path, cropped_image)
-            print(f"Saved rectangle {i + 1} as {output_path}")
-        # Store the rectangle's information
-            rectangle_info = {
-            'x': x,
-            'y': y,
-            'width': width,
-            'height': height,
-            'output_path': output_path
-        }
-        rectangles.append(rectangle_info)
-        last_i = i + 1  # Update last_i with the current value of i
-    return rectangles, last_i 
+          # Save the cropped image as a separate file
+          output_path = os.path.join(output_directory, f"rectangle_{i + 1}.png")
+          cv2.imwrite(output_path, cropped_image)
+          print(f"Saved rectangle {i + 1} as {output_path}")
+          
+          # Store the rectangle's information
+          rectangle_info = {
+              'x': x,
+              'y': y,
+              'width': width,
+              'height': height,
+              'output_path': output_path
+          }
+          rectangles.append(rectangle_info)
+          last_i = i + 1  # Update last_i with the current value of i
+          
+          for img_child in img_num:
+              img = crop_image(f"cut_image/rectangle_{last_i}.png", 20)
+              cv2.imwrite(output_path, img)
+              # Convert the image to grayscale
+              gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+              
+              # Apply adaptive thresholding to obtain a binary image
+              _, threshold = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+              
+              # Find contours in the binary image
+              child_contours, _ = cv2.findContours(threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+              
+              for j, child_contour in enumerate(child_contours):
+                  # Approximate the contour to a polygon
+                  child_perimeter = cv2.arcLength(child_contour, True)
+                  child_approx = cv2.approxPolyDP(child_contour, 0.04 * child_perimeter, True)
+                  # Check if the polygon has four sides (a rectangle)
+                  if len(child_approx) == 4:
+                      # Get the bounding box of the child rectangle
+                      child_x, child_y, child_width, child_height = cv2.boundingRect(child_approx)
+                      # Crop the child rectangle from the original image
+                      child_cropped_image = img[child_y:child_y + child_height, child_x:child_x + child_width]
+                      
+                      # Save the child cropped image as a separate file
+                      child_output_path = os.path.join(output_directory, f"rectangle_{last_i}_{last_i + i}_{j + 1}.png")
+                      cv2.imwrite(child_output_path, child_cropped_image)
+                      print(f"Saved child rectangle {last_i + i + 1}_{j + 1} as {child_output_path}")
+                      
+                      # Store the child rectangle's information
+                      child_rectangle_info = {
+                          'x': child_x,
+                          'y': child_y,
+                          'width': child_width,
+                          'height': child_height,
+                          'output_path': child_output_path
+                      }
+                      rectangles.append(child_rectangle_info)
+                      
+                                          # Remove the parent rectangle image
+                      if os.path.exists(os.path.join(output_directory, f"rectangle_{last_i}.png")):
+                        os.remove(os.path.join(output_directory, f"rectangle_{last_i}.png"))
+                        rectangles.pop(last_i - 1)
+
+                      # Add rectangle_info2 (parent rectangle) back to rectangles list
+                      rectangles.append(child_rectangle_info)
+
+                  rectangles.append(child_rectangle_info)
+
+    return rectangles
 
 # # Example usage
 # rect1 = (10, 10, 100, 100)
@@ -114,75 +165,26 @@ navUl = 0
 imageUl = 0
 nav_text = ["", "about", "contact", "services", "shop", "tournaments", "pricing"]
 # Example usage
-image_path = "test5.png"
+image_path = "test.png"
 output_directory = "cut_image"
-rectangles,last_i = detect_and_cut_rectangles(image_path, output_directory)
-img = crop_image("cut_image/rectangle_1.png", 20)
-output_path2 = os.path.join("test", f"rectangle_xxxxx1.png")
-cv2.imwrite(output_path2, img)
-print(f"Saved rectangle x1 as {output_path2}")
-nested_output_directory = "cut_image"
-nest_rect = []
-# Convert the image to grayscale
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-
-# Apply adaptive thresholding to obtain a binary image
-_, threshold = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-
-# Find contours in the binary image
-contours, _ = cv2.findContours(threshold, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-
-for i, contour in enumerate(contours):
-
-        # Approximate the contour to a polygon
-        perimeter = cv2.arcLength(contour, True)
-        approx = cv2.approxPolyDP(contour, 0.04 * perimeter, True)
-        nest_rect.append(approx)
-        # Check if the polygon has four sides (a rectangle)
-        if len(approx) == 4:
-            # Get the bounding box of the rectangle
-            x, y, width, height = cv2.boundingRect(approx)
-            # Crop the rectangle from the original image
-            cropped_image = img[y:y + height, x:x + width]
-
-            # Save the cropped image as a separate file
-            output_path = os.path.join(nested_output_directory, f"rectangle_{last_i + i + 1}.png")
-            cv2.imwrite(output_path, cropped_image)
-            print(f"Saved rectangle {last_i + i + 1} as {output_path}")
-        # Store the rectangle's information
-            rectangle_info2 = {
-            'x': x,
-            'y': y,
-            'width': width,
-            'height': height,
-            'output_path': output_path
-        }
-        nest_rect.append(rectangle_info2)
-        response2 = requests.get(f"https://api.ocr.space/parse/imageurl?apikey=K84422514688957&url=https://30fe-183-87-13-244.ngrok-free.app/dummy/rectangle_{last_i + i+1}.png")
-
-
-        if response2.status_code == 200:
-            # Success: Extract text from the response
-            response_data = response2.json()
-            parsed_text2 = response_data['ParsedResults'][0]['ParsedText']
-            text2 = parsed_text2.strip()
-            print("detected text -", text2)
-            
+rectangles = detect_and_cut_rectangles(image_path, output_directory)
 for i, rectangle in enumerate(rectangles):
     # print(f"Rectangle {i+1}:")
     # print(f"Position: ({rectangle['x']}, {rectangle['y']})")
     # print(f"Width: {rectangle['width']}")
     # print(f"Height: {rectangle['height']}")
     # print(f"Saved image path: {rectangle['output_path']}")
-    response = requests.get(f"https://api.ocr.space/parse/imageurl?apikey=K82315508888957&url=https://30fe-183-87-13-244.ngrok-free.app/cut_image/rectangle_{i+1}.png")
+    # response = requests.get(f"https://api.ocr.space/parse/imageurl?apikey=K88933154488957&url=https://389a-103-103-215-24.ngrok-free.app/cut_image/rectangle_{i+2}.png")
 
-
-    if response.status_code == 200:
-        # Success: Extract text from the response
-        response_data = response.json()
-        parsed_text = response_data['ParsedResults'][0]['ParsedText']
-        text = parsed_text.strip()
-        print("detected text -", text)
+    response = 200
+    if response == 200 :
+    # if response.status_code == 200:
+    #     # Success: Extract text from the response
+    #     response_data = response.json()
+    #     parsed_text = response_data['ParsedResults'][0]['ParsedText']
+    #     text = parsed_text.strip()
+    #     print("detected text -", text)
+        text = "head"
         if text == "head" :
             # print(rectangles[i]['x'])
             div_str += "<h1 style='height:#h#px;width:#w#px; position : fixed; left : #x#px; top : #y#px;'>heading</h1>".replace("#h#", str(rectangles[i]['height'])).replace("#w#", str(rectangles[i]['width'])).replace(
@@ -277,54 +279,7 @@ with open("code/index.html", "w") as wFile:
     <title>Document</title>
 </head>
 <body>
-    <!--#div#--> 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
-<div class="row">
-<div class="col-md-2">
-<div style="background-color : aqua; height : 570px; width : auto"></div>
-</div>
-<div class="col-md-4">
-<h2>hii</h2>
-</div>
-<div class="col-md-6">
-<img src="./a.jpg" class="img-thumbnail" alt="image" style="height : 200px; width : 400px" />
-</div>
-</div>
+    #div#
             <!--bootstrap js-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
