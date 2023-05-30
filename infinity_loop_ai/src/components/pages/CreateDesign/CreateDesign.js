@@ -18,7 +18,7 @@ const CreateDesign = () => {
     let state2 = useSelector(state => state.CreateDesignReducer)
     let state3 = useSelector(state => state.Step2CreateReducer)
     let dispatch = useDispatch();
-    let [checkStep, setCheckStep] = useState(5)
+    let [checkStep, setCheckStep] = useState(1)
     let [checkTeamSize, setCheckTEamSize] = useState(1)
     let [checkAccount, setCheckAccount] = useState(1)
     let [modalOpen, setModalOpen] = useState(false)
@@ -1083,7 +1083,7 @@ let selectpalette = (palette) => {
                                                               {/*begin::Links*/}
                                                               <div className="text-center mb-1">
                                                                   {/*begin::Link*/}
-                                                                  <NavLink to="/create/design/draw" className="btn btn-sm btn-primary me-2">
+                                                                  <NavLink to="/auth/create/design/draw" className="btn btn-sm btn-primary me-2">
                                                                       Create now           </NavLink>
                                                                   {/*end::Link*/}
 

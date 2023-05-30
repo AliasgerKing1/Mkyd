@@ -143,12 +143,15 @@ def detect_and_cut_rectangles(image_path, output_directory):
                       if os.path.exists(os.path.join(output_directory, f"rectangle_{last_i}.png")):
                         os.remove(os.path.join(output_directory, f"rectangle_{last_i}.png"))
                         rectangles.pop(last_i - 1)
+                        # for popNum in range(len(rectangles)) :
+                        #     print(popNum + len(os.listdir("cut_image")))
+                        #     print(len(rectangles))
+                        #     rectangles.pop(popNum + len(os.listdir("cut_image")))
 
                       # Add rectangle_info2 (parent rectangle) back to rectangles list
                       rectangles.append(child_rectangle_info)
-
+                  
                   rectangles.append(child_rectangle_info)
-
     return rectangles
 
 # # Example usage
@@ -278,9 +281,10 @@ with open("code/index.html", "w") as wFile:
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" .>
     <title>Document</title>
 </head>
-<body>
+<body style="position : relative">
     #div#
             <!--bootstrap js-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>""".replace("#div#", div_str))
+    

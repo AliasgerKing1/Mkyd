@@ -128,7 +128,7 @@ const Pricing = () => {
                                             </div>
                                             {/*end::Page title*/}
                                             {/*begin::Action*/}
-                                            <NavLink to="/auth/create/design/draw" className="btn btn-primary d-flex flex-center h-35px h-lg-40px">
+                                            <NavLink to="/auth/create/design" className="btn btn-primary d-flex flex-center h-35px h-lg-40px">
                                                 Create <span className="d-none d-sm-inline ps-2">New Design</span>
                                             </NavLink>
                                             {/*end::Action*/}

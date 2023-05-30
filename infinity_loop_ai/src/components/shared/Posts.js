@@ -23,7 +23,7 @@ const Posts = () => {
                             {/*begin::Info*/}
                             <div className="flex-grow-1">
                                 {/*begin::Name*/}
-                                <a href="#" className="text-gray-800 text-hover-primary fs-4 fw-bold">Grace Logan</a>
+                                <a href="#" target="_blank" className="text-gray-800 text-hover-primary fs-4 fw-bold">Grace Logan</a>
                                 {/*end::Name*/}
 
                                 {/*begin::Date*/}
@@ -68,7 +68,7 @@ const Posts = () => {
 
                                     {/*begin::Menu item*/}
                                     <div className="menu-item px-3">
-                                        <a href="#" className="menu-link px-3">
+                                        <a href="#" target="_blank" className="menu-link px-3">
                                             New Ticket
                                         </a>
                                     </div>
@@ -76,7 +76,7 @@ const Posts = () => {
 
                                     {/*begin::Menu item*/}
                                     <div className="menu-item px-3">
-                                        <a href="#" className="menu-link px-3">
+                                        <a href="#" target="_blank" className="menu-link px-3">
                                             New Customer
                                         </a>
                                     </div>
@@ -85,7 +85,7 @@ const Posts = () => {
                                     {/*begin::Menu item*/}
                                     <div className="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-start">
                                         {/*begin::Menu item*/}
-                                        <a href="#" className="menu-link px-3">
+                                        <a href="#" target="_blank" className="menu-link px-3">
                                             <span className="menu-title">New Group</span>
                                             <span className="menu-arrow"></span>
                                         </a>
@@ -95,7 +95,7 @@ const Posts = () => {
                                         <div className="menu-sub menu-sub-dropdown w-175px py-4">
                                             {/*begin::Menu item*/}
                                             <div className="menu-item px-3">
-                                                <a href="#" className="menu-link px-3">
+                                                <a href="#" target="_blank" className="menu-link px-3">
                                                     Admin Group
                                                 </a>
                                             </div>
@@ -103,7 +103,7 @@ const Posts = () => {
 
                                             {/*begin::Menu item*/}
                                             <div className="menu-item px-3">
-                                                <a href="#" className="menu-link px-3">
+                                                <a href="#" target="_blank" className="menu-link px-3">
                                                     Staff Group
                                                 </a>
                                             </div>
@@ -111,7 +111,7 @@ const Posts = () => {
 
                                             {/*begin::Menu item*/}
                                             <div className="menu-item px-3">
-                                                <a href="#" className="menu-link px-3">
+                                                <a href="#" target="_blank" className="menu-link px-3">
                                                     Member Group
                                                 </a>
                                             </div>
@@ -123,7 +123,7 @@ const Posts = () => {
 
                                     {/*begin::Menu item*/}
                                     <div className="menu-item px-3">
-                                        <a href="#" className="menu-link px-3">
+                                        <a href="#" target="_blank" className="menu-link px-3">
                                             New Contact
                                         </a>
                                     </div>
@@ -136,7 +136,7 @@ const Posts = () => {
                                     {/*begin::Menu item*/}
                                     <div className="menu-item px-3">
                                         <div className="menu-content px-3 py-3">
-                                            <a className="btn btn-primary  btn-sm px-4" href="#">
+                                            <a className="btn btn-primary  btn-sm px-4" href="#" target="_blank">
                                                 Generate Reports
                                             </a>
                                         </div>
@@ -169,7 +169,7 @@ const Posts = () => {
                             {/*begin::Col*/}
                             <div className="col-6">
                                 {/*begin::Item*/}
-                                <a className="d-block card-rounded overlay h-100" data-fslightbox="lightbox-projects" href="../../assets/media/stock/600x600/img-23.jpg">
+                                <a className="d-block card-rounded overlay h-100" data-fslightbox="lightbox-projects" href="../../assets/media/stock/600x600/img-23.jpg" target='_blank'>
                                     {/*begin::Image*/}
                                     <div className="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded h-100" style={{ backgroundImage: "url('../../assets/media/stock/600x600/img-23.jpg')" }}>
                                     </div>
@@ -192,7 +192,7 @@ const Posts = () => {
                                     {/*begin::Col*/}
                                     <div className="col-lg-12">
                                         {/*begin::Item*/}
-                                        <a className="d-block card-rounded overlay h-100" data-fslightbox="lightbox-projects" href="../../assets/media/stock/600x600/img-22.jpg">
+                                        <a className="d-block card-rounded overlay h-100" data-fslightbox="lightbox-projects" href="../../assets/media/stock/600x600/img-22.jpg" target='_blank'>
                                             {/*begin::Image*/}
                                             <div className="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded h-100" style={{ backgroundImage: "url('../../assets/media/stock/600x400/img-71.jpg')" }}>
                                             </div>
@@ -211,7 +211,7 @@ const Posts = () => {
                                     {/*begin::Col*/}
                                     <div className="col-lg-12">
                                         {/*begin::Item*/}
-                                        <a className="d-block card-rounded overlay h-100" data-fslightbox="lightbox-projects" href="../../assets/media/stock/600x600/img-21.jpg">
+                                        <a className="d-block card-rounded overlay h-100" data-fslightbox="lightbox-projects" href="../../assets/media/stock/600x600/img-21.jpg" target='_blank'>
                                             {/*begin::Image*/}
                                             <div className="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded h-100" style={{ backgroundImage: "url('../../assets/media/stock/600x400/img-79.jpg')" }}>
                                             </div>
@@ -258,7 +258,7 @@ const Posts = () => {
 
                                 {/*begin::Item*/}
                                 <li className="nav-item">
-                                    <a href="#" className="nav-link btn btn-sm btn-color-gray-600 btn-active-color-primary fw-bold px-4 me-1">
+                                    <a href="#" target="_blank" className="nav-link btn btn-sm btn-color-gray-600 btn-active-color-primary fw-bold px-4 me-1">
                                         <i className="bi bi-heart fs-2 me-1"></i>
 
                                         47k Likes
@@ -268,7 +268,7 @@ const Posts = () => {
 
                                 {/*begin::Item*/}
                                 <li className="nav-item">
-                                    <a href="#" className="nav-link btn btn-sm btn-color-gray-600 btn-active-color-primary fw-bold px-4">
+                                    <a href="#" target="_blank" className="nav-link btn btn-sm btn-color-gray-600 btn-active-color-primary fw-bold px-4">
                                         <i className="bi bi-bookmark fs-2 me-1"></i>
 
                                         900 Saves
@@ -298,7 +298,7 @@ const Posts = () => {
                                         {/*begin::Info*/}
                                         <div className="d-flex align-items-center flex-wrap mb-0">
                                             {/*begin::Name*/}
-                                            <a href="#" className="text-gray-800 text-hover-primary fw-bold me-6">Mr. Anderson</a>
+                                            <a href="#" target="_blank" className="text-gray-800 text-hover-primary fw-bold me-6">Mr. Anderson</a>
                                             {/*end::Name*/}
 
                                             {/*begin::Date*/}
@@ -306,7 +306,7 @@ const Posts = () => {
                                             {/*end::Date*/}
 
                                             {/*begin::Reply*/}
-                                            <a href="#" className="ms-auto text-gray-400 text-hover-primary fw-semibold fs-7">Reply</a>
+                                            <a href="#" target="_blank" className="ms-auto text-gray-400 text-hover-primary fw-semibold fs-7">Reply</a>
                                             {/*end::Reply*/}
                                         </div>
                                         {/*end::Info*/}
@@ -331,7 +331,7 @@ const Posts = () => {
                                         {/*begin::Info*/}
                                         <div className="d-flex align-items-center flex-wrap mb-0">
                                             {/*begin::Name*/}
-                                            <a href="#" className="text-gray-800 text-hover-primary fw-bold me-6">Mrs. Anderson</a>
+                                            <a href="#" target="_blank" className="text-gray-800 text-hover-primary fw-bold me-6">Mrs. Anderson</a>
                                             {/*end::Name*/}
 
                                             {/*begin::Date*/}
@@ -339,7 +339,7 @@ const Posts = () => {
                                             {/*end::Date*/}
 
                                             {/*begin::Reply*/}
-                                            <a href="#" className="ms-auto text-gray-400 text-hover-primary fw-semibold fs-7">Reply</a>
+                                            <a href="#" target="_blank" className="ms-auto text-gray-400 text-hover-primary fw-semibold fs-7">Reply</a>
                                             {/*end::Reply*/}
                                         </div>
                                         {/*end::Info*/}
