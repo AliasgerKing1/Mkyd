@@ -209,7 +209,6 @@ routes.get("/signin",async (req, res) => {
         let token = req.headers.token;
         let obj = jwt.decode(token, "Aliasger web");
         try {
-            console.log(obj._id)
             let result = await User.find({_id : obj._id})
             res.send(result)
         }catch (error) {
