@@ -138,15 +138,14 @@ def detect_and_cut_rectangles(image_path, output_directory):
                           'output_path': child_output_path
                       }
                       rectangles.append(child_rectangle_info)
-                      
                                           # Remove the parent rectangle image
-                      if os.path.exists(os.path.join(output_directory, f"rectangle_{last_i}.png")):
-                        os.remove(os.path.join(output_directory, f"rectangle_{last_i}.png"))
-                        rectangles.pop(last_i - 1)
+                    #   if os.path.exists(os.path.join(output_directory, f"rectangle_{last_i}.png")):
+                    #     os.remove(os.path.join(output_directory, f"rectangle_{last_i}.png"))
+                    #     rectangles.pop(last_i - 1)
                         # for popNum in range(len(rectangles)) :
-                        #     print(popNum + len(os.listdir("cut_image")))
-                        #     print(len(rectangles))
-                        #     rectangles.pop(popNum + len(os.listdir("cut_image")))
+                            # print(popNum + len(os.listdir("cut_image")))
+                            # print(len(rectangles))
+                            # rectangles.pop(popNum + len(os.listdir("cut_image")))
 
                       # Add rectangle_info2 (parent rectangle) back to rectangles list
                       rectangles.append(child_rectangle_info)
