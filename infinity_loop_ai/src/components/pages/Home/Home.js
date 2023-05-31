@@ -4,18 +4,62 @@ import { NavLink } from "react-router-dom"
 
 import { useDispatch, useSelector } from "react-redux"
 import { getSidebarRedux } from "../../../Redux/SidebarReducer"
+import { getPostRedux } from '../../../Redux/PostReducer'
 
 import Header from "../../shared/Header"
 import Footer from "../../shared/Footer"
 import Sidebar from "../../shared/Sidebar"
 import Posts from '../../shared/Posts'
 import Posts2 from '../../shared/Posts2'
+import { getFirstPost } from '../../../services/SocialService'
 const Home = () => {
     let [chLink, setChLink] = useState(1)
+    let state3 = useSelector(state=>state.PostReducer)
     let state = useSelector(state => state.SidebarReducer)
     let state2 = useSelector(state2 => state2.SignInReducer)
     let dispatch = useDispatch()
     let [message, setMessage] = useState("")
+    let [showSpinner, setShowSpinner] = useState(false)
+    const [isScrolledToFixedHeight, setIsScrolledToFixedHeight] = useState(false);
+    const [pages, setPages] = useState(2);
+    const [infheight, setInfHeight] = useState(700)
+    const fixedHeight = infheight; // the fixed height to check against
+
+    useEffect(()=> {
+        if(state3.length == 0) {
+getFirstPost().then(result => {
+dispatch(getPostRedux(result.data))
+},[])
+        }
+        function handleScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const isFixedHeightReached = scrollTop >= fixedHeight;
+            setIsScrolledToFixedHeight(isFixedHeightReached);
+          }
+      
+          window.addEventListener("scroll", handleScroll);
+      
+          return () => {
+            window.removeEventListener("scroll", handleScroll);
+          };
+    },[])
+
+    useEffect(() => {
+        if (isScrolledToFixedHeight) {
+            setShowSpinner(true);
+          // Calling API
+          fetch(`http://localhost:4000/api/social/?limit=2&page=${pages}`)
+            .then((response) => response.json())
+            .then((newData) => {
+    // let uniqueArr = [...new Set(arr.map(obj => JSON.stringify(obj)))].map(str => JSON.parse(str));
+    console.log(newData)
+    dispatch(getPostRedux(newData));
+    setShowSpinner(false);
+    setPages(pages + 2);
+    setInfHeight(infheight + 500);
+              });
+        }
+      }, [isScrolledToFixedHeight]);
     let sideBarTrue = () => {
         if (state.condition == true) {
             dispatch(getSidebarRedux(false))
@@ -839,20 +883,25 @@ const Home = () => {
                                                         {/*end::Post New*/} </div>
                                                     {/*end::More posts*/}
                                                     {/*begin::Show more feeds*/}
-                                                    <div className="d-flex flex-center">
-                                                        <a href="#" className="btn btn-primary fw-bold px-6" id="kt_social_feeds_more_posts_btn">
+                                                    <div class="spinner-border text-primary" role="status" style={{display : showSpinner == true ? "block" : "none"}}>
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+                                                    {/* <div className="d-flex flex-center">
+                                                        <a href="#" className="btn btn-primary fw-bold px-6" id="kt_social_feeds_more_posts_btn"> */}
 
                                                             {/*begin::Indicator label*/}
-                                                            <span className="indicator-label">
-                                                                Show more</span>
+                                                            {/* <span className="indicator-label">
+                                                                Show more</span> */}
                                                             {/*end::Indicator label*/}
 
                                                             {/*begin::Indicator progress*/}
-                                                            <span className="indicator-progress">
+                                                            {/* <span className="indicator-progress">
                                                                 Please wait...    <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
-                                                            </span>
-                                                            {/*end::Indicator progress*/}    </a>
-                                                    </div>
+                                                            </span> */}
+                                                            {/*end::Indicator progress*/}    
+                                                            {/* </a>
+                                                    </div> */}
                                                     {/*end::Show more feeds*/}
                                                 </div>
                                                 {/*end::Content*/}
@@ -1015,7 +1064,7 @@ const Home = () => {
                                                                                         </span>
                                                                                         {/*end::Svg Icon*/}
 
-                                                                                        Followers
+                                                                                        Search
                                                                                         {/*begin::Bullet*/}
                                                                                         <span className="bullet-custom position-absolute start-0 top-0 w-3px h-100 bg-primary rounded-end"></span>
                                                                                         {/*end::Bullet*/}
@@ -1680,20 +1729,25 @@ const Home = () => {
                                                                     {/*end::Post New*/} </div>
                                                                 {/*end::More posts*/}
                                                                 {/*begin::Show more feeds*/}
-                                                                <div className="d-flex flex-center">
-                                                                    <a href="#" className="btn btn-primary fw-bold px-6" id="kt_social_feeds_more_posts_btn">
+                                                                <div class="spinner-border text-primary" role="status" style={{display : showSpinner == true ? "block" : "none"}}>
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+                                                                {/* <div className="d-flex flex-center">
+                                                                    <a href="#" className="btn btn-primary fw-bold px-6" id="kt_social_feeds_more_posts_btn"> */}
 
                                                                         {/*begin::Indicator label*/}
-                                                                        <span className="indicator-label">
-                                                                            Show more</span>
+                                                                        {/* <span className="indicator-label">
+                                                                            Show more</span> */}
                                                                         {/*end::Indicator label*/}
 
                                                                         {/*begin::Indicator progress*/}
-                                                                        <span className="indicator-progress">
+                                                                        {/* <span className="indicator-progress">
                                                                             Please wait...    <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
-                                                                        </span>
-                                                                        {/*end::Indicator progress*/}    </a>
-                                                                </div>
+                                                                        </span> */}
+                                                                        {/*end::Indicator progress*/} 
+                                                                           {/* </a>
+                                                                </div> */}
                                                                 {/*end::Show more feeds*/}
                                                             </div>
                                                             {/*end::Content*/}

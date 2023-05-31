@@ -2,12 +2,18 @@
 import React from 'react'
 
 const Posts = () => {
+    let [comment, setComment] = useState(false)
+    let [like, setLike] = useState(false)
+    let [save, setSave] = useState(false)
+    let [userComment, setUserComment] = useState("")
     return (
         <>
             <div className="mb-10" id="kt_social_feeds_posts">
                 {/*begin::Post 1*/}
                 {/*begin::Card*/}
-                <div className="card card-flush mb-10">
+                {posts && posts.map((x)=> {
+                    return (
+                        <div className="card card-flush mb-10">
                     {/*begin::Card header*/}
                     <div className="card-header pt-9">
                         {/*begin::Author*/}
@@ -23,7 +29,7 @@ const Posts = () => {
                             {/*begin::Info*/}
                             <div className="flex-grow-1">
                                 {/*begin::Name*/}
-                                <a href="#" target="_blank" className="text-gray-800 text-hover-primary fs-4 fw-bold">Grace Logan</a>
+                                <a href="#" className="text-gray-800 text-hover-primary fs-4 fw-bold">{x.name}</a>
                                 {/*end::Name*/}
 
                                 {/*begin::Date*/}
@@ -68,7 +74,7 @@ const Posts = () => {
 
                                     {/*begin::Menu item*/}
                                     <div className="menu-item px-3">
-                                        <a href="#" target="_blank" className="menu-link px-3">
+                                        <a href="#" className="menu-link px-3">
                                             New Ticket
                                         </a>
                                     </div>
@@ -76,7 +82,7 @@ const Posts = () => {
 
                                     {/*begin::Menu item*/}
                                     <div className="menu-item px-3">
-                                        <a href="#" target="_blank" className="menu-link px-3">
+                                        <a href="#" className="menu-link px-3">
                                             New Customer
                                         </a>
                                     </div>
@@ -85,7 +91,7 @@ const Posts = () => {
                                     {/*begin::Menu item*/}
                                     <div className="menu-item px-3" data-kt-menu-trigger="hover" data-kt-menu-placement="right-start">
                                         {/*begin::Menu item*/}
-                                        <a href="#" target="_blank" className="menu-link px-3">
+                                        <a href="#" className="menu-link px-3">
                                             <span className="menu-title">New Group</span>
                                             <span className="menu-arrow"></span>
                                         </a>
@@ -95,7 +101,7 @@ const Posts = () => {
                                         <div className="menu-sub menu-sub-dropdown w-175px py-4">
                                             {/*begin::Menu item*/}
                                             <div className="menu-item px-3">
-                                                <a href="#" target="_blank" className="menu-link px-3">
+                                                <a href="#" className="menu-link px-3">
                                                     Admin Group
                                                 </a>
                                             </div>
@@ -103,7 +109,7 @@ const Posts = () => {
 
                                             {/*begin::Menu item*/}
                                             <div className="menu-item px-3">
-                                                <a href="#" target="_blank" className="menu-link px-3">
+                                                <a href="#" className="menu-link px-3">
                                                     Staff Group
                                                 </a>
                                             </div>
@@ -111,7 +117,7 @@ const Posts = () => {
 
                                             {/*begin::Menu item*/}
                                             <div className="menu-item px-3">
-                                                <a href="#" target="_blank" className="menu-link px-3">
+                                                <a href="#" className="menu-link px-3">
                                                     Member Group
                                                 </a>
                                             </div>
@@ -123,7 +129,7 @@ const Posts = () => {
 
                                     {/*begin::Menu item*/}
                                     <div className="menu-item px-3">
-                                        <a href="#" target="_blank" className="menu-link px-3">
+                                        <a href="#" className="menu-link px-3">
                                             New Contact
                                         </a>
                                     </div>
@@ -136,7 +142,7 @@ const Posts = () => {
                                     {/*begin::Menu item*/}
                                     <div className="menu-item px-3">
                                         <div className="menu-content px-3 py-3">
-                                            <a className="btn btn-primary  btn-sm px-4" href="#" target="_blank">
+                                            <a className="btn btn-primary  btn-sm px-4" href="#">
                                                 Generate Reports
                                             </a>
                                         </div>
@@ -158,9 +164,7 @@ const Posts = () => {
 
                         {/*begin::Post content*/}
                         <div className="fs-6 fw-normal text-gray-700 mb-5">
-                            There are two main approaches you can take to writing amazing blog
-                            post headlines. You can either decide on your final headline before
-                            outstanding you write the most of the rest of your creative post
+                            {x.email}
                         </div>
                         {/*end::Post content*/}
 
@@ -169,7 +173,7 @@ const Posts = () => {
                             {/*begin::Col*/}
                             <div className="col-6">
                                 {/*begin::Item*/}
-                                <a className="d-block card-rounded overlay h-100" data-fslightbox="lightbox-projects" href="../../assets/media/stock/600x600/img-23.jpg" target='_blank'>
+                                <a className="d-block card-rounded overlay h-100" data-fslightbox="lightbox-projects" target='_blank' href="../../assets/media/stock/600x600/img-23.jpg">
                                     {/*begin::Image*/}
                                     <div className="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded h-100" style={{ backgroundImage: "url('../../assets/media/stock/600x600/img-23.jpg')" }}>
                                     </div>
@@ -192,7 +196,7 @@ const Posts = () => {
                                     {/*begin::Col*/}
                                     <div className="col-lg-12">
                                         {/*begin::Item*/}
-                                        <a className="d-block card-rounded overlay h-100" data-fslightbox="lightbox-projects" href="../../assets/media/stock/600x600/img-22.jpg" target='_blank'>
+                                        <a className="d-block card-rounded overlay h-100" data-fslightbox="lightbox-projects" target='_blank' href="../../assets/media/stock/600x600/img-22.jpg">
                                             {/*begin::Image*/}
                                             <div className="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded h-100" style={{ backgroundImage: "url('../../assets/media/stock/600x400/img-71.jpg')" }}>
                                             </div>
@@ -211,7 +215,7 @@ const Posts = () => {
                                     {/*begin::Col*/}
                                     <div className="col-lg-12">
                                         {/*begin::Item*/}
-                                        <a className="d-block card-rounded overlay h-100" data-fslightbox="lightbox-projects" href="../../assets/media/stock/600x600/img-21.jpg" target='_blank'>
+                                        <a className="d-block card-rounded overlay h-100" data-fslightbox="lightbox-projects" target='_blank' href="../../assets/media/stock/600x600/img-21.jpg">
                                             {/*begin::Image*/}
                                             <div className="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded h-100" style={{ backgroundImage: "url('../../assets/media/stock/600x400/img-79.jpg')" }}>
                                             </div>
@@ -247,8 +251,9 @@ const Posts = () => {
                             {/*begin::Nav*/}
                             <ul className="nav py-3">
                                 {/*begin::Item*/}
-                                <li className="nav-item">
-                                    <a className="nav-link btn btn-sm btn-color-gray-600 btn-active-color-primary btn-active-light-primary fw-bold px-4 me-1 collapsible active" data-bs-toggle="collapse" href="#kt_social_feeds_comments_1">
+                                <li className="nav-item" onClick={()=> setComment(comment == false ? true : false)}>
+                                    <a
+                                     className={`nav-link btn btn-sm btn-color-gray-600 fw-bold px-4 me-1 collapsible ${comment == true ? "btn-active-color-primary btn-active-light-primary active" : ""}`} data-bs-toggle="collapse" href="#kt_social_feeds_comments_1">
 
                                         <i className="bi bi-chat-square fs-2 me-1"></i>
                                         2 Comments
@@ -257,9 +262,9 @@ const Posts = () => {
                                 {/*end::Item*/}
 
                                 {/*begin::Item*/}
-                                <li className="nav-item">
-                                    <a href="#" target="_blank" className="nav-link btn btn-sm btn-color-gray-600 btn-active-color-primary fw-bold px-4 me-1">
-                                        <i className="bi bi-heart fs-2 me-1"></i>
+                                <li className="nav-item" onClick={()=> setLike(like == false ? true : false)}>
+                                    <a className={`nav-link btn btn-sm btn-color-gray-600 fw-bold px-4 me-1 ${like == true ? "btn-active-color-primary active" : ""}`}>
+                                        <i className="bi bi-heart fs-2 me-1" ></i>
 
                                         47k Likes
                                     </a>
@@ -267,8 +272,8 @@ const Posts = () => {
                                 {/*end::Item*/}
 
                                 {/*begin::Item*/}
-                                <li className="nav-item">
-                                    <a href="#" target="_blank" className="nav-link btn btn-sm btn-color-gray-600 btn-active-color-primary fw-bold px-4">
+                                <li className="nav-item" onClick={()=> setSave(save == false ? true : false)}>
+                                    <a className={`nav-link btn btn-sm btn-color-gray-600 btn-active-color-primary fw-bold px-4 ${save == true ? "btn-active-color-primary active" : ""}`}>
                                         <i className="bi bi-bookmark fs-2 me-1"></i>
 
                                         900 Saves
@@ -283,7 +288,7 @@ const Posts = () => {
                             {/*end::Separator*/}
 
                             {/*begin::Comments*/}
-                            <div className="collapse show" id="kt_social_feeds_comments_1">
+                            <div className="collapse" id="kt_social_feeds_comments_1" style={{display : comment == false ? "none" : "block"}}>
 
                                 {/*begin::Comment*/}
                                 <div className="d-flex pt-6">
@@ -298,7 +303,7 @@ const Posts = () => {
                                         {/*begin::Info*/}
                                         <div className="d-flex align-items-center flex-wrap mb-0">
                                             {/*begin::Name*/}
-                                            <a href="#" target="_blank" className="text-gray-800 text-hover-primary fw-bold me-6">Mr. Anderson</a>
+                                            <a href="#" className="text-gray-800 text-hover-primary fw-bold me-6">Mr. Anderson</a>
                                             {/*end::Name*/}
 
                                             {/*begin::Date*/}
@@ -306,7 +311,7 @@ const Posts = () => {
                                             {/*end::Date*/}
 
                                             {/*begin::Reply*/}
-                                            <a href="#" target="_blank" className="ms-auto text-gray-400 text-hover-primary fw-semibold fs-7">Reply</a>
+                                            <a href="#" className="ms-auto text-gray-400 text-hover-primary fw-semibold fs-7">Reply</a>
                                             {/*end::Reply*/}
                                         </div>
                                         {/*end::Info*/}
@@ -331,7 +336,7 @@ const Posts = () => {
                                         {/*begin::Info*/}
                                         <div className="d-flex align-items-center flex-wrap mb-0">
                                             {/*begin::Name*/}
-                                            <a href="#" target="_blank" className="text-gray-800 text-hover-primary fw-bold me-6">Mrs. Anderson</a>
+                                            <a href="#" className="text-gray-800 text-hover-primary fw-bold me-6">Mrs. Anderson</a>
                                             {/*end::Name*/}
 
                                             {/*begin::Date*/}
@@ -339,7 +344,7 @@ const Posts = () => {
                                             {/*end::Date*/}
 
                                             {/*begin::Reply*/}
-                                            <a href="#" target="_blank" className="ms-auto text-gray-400 text-hover-primary fw-semibold fs-7">Reply</a>
+                                            <a href="#" className="ms-auto text-gray-400 text-hover-primary fw-semibold fs-7">Reply</a>
                                             {/*end::Reply*/}
                                         </div>
                                         {/*end::Info*/}
@@ -368,7 +373,7 @@ const Posts = () => {
                             {/*begin::Input group*/}
                             <div className="position-relative w-100">
                                 {/*begin::Input*/}
-                                <textarea type="text" className="form-control form-control-solid border ps-5" rows="1" name="search" value="" data-kt-autosize="true" placeholder="Write your comment.." style={{ overflow: 'hidden', overflowWrap: 'break-word', resize: 'none', height: '44px' }} data-kt-initialized="1">                </textarea>
+                                <textarea type="text" className="form-control form-control-solid border ps-5" rows="1" name="search" value={userComment} data-kt-autosize="true" placeholder="Write your comment.." style={{ overflow: 'hidden', overflowWrap: 'break-word', resize: 'none', height: '44px' }} data-kt-initialized="1" onChange={(e)=> setUserComment(e.target.value)}>                </textarea>
                                 {/*end::Input*/}
 
                                 {/*begin::Actions*/}
@@ -405,9 +410,13 @@ const Posts = () => {
                     </div>
                     {/*end::Card footer*/}
                 </div>
+                    )
+                })}
                 {/*end::Card*/}
                 {/*end::Post 1*/}
             </div>
+
+          
         </>
     )
 }

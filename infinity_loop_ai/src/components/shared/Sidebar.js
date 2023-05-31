@@ -483,7 +483,7 @@ const Sidebar = () => {
 </span>
 
 </span>
-    <span className="menu-title" >My Profile
+    <span className="menu-title" >Website Creation
     </span>
 
 </span>
