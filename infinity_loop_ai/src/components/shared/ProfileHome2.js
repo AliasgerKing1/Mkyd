@@ -21,15 +21,17 @@ const ProfileHome2 = () => {
                             {/*end::Photo*/}
 
                             {/*begin::Info*/}
+                            <NavLink to="/auth/profile">
                             <div className="text-center">
                                 {/*begin::Name*/}
-                                <NavLink to="#" className="text-gray-800 fw-bold text-hover-primary fs-4">{state2 && state2.name}</NavLink>
+                                <a className="text-gray-800 fw-bold text-hover-primary fs-4">{state2 && state2.name}</a>
                                 {/*end::Name*/}
 
                                 {/*begin::Position*/}
                                 <span className="text-muted d-block fw-semibold">Grade 8, AE3 Student</span>
                                 {/*end::Position*/}
                             </div>
+                            </NavLink>
                             {/*end::Info*/}
                         </div>
                         {/*end::Member*/}

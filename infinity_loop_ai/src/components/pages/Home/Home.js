@@ -27,39 +27,39 @@ const Home = () => {
     const fixedHeight = infheight; // the fixed height to check against
 
     useEffect(()=> {
-//         if(state3.length == 0) {
-// getFirstPost().then(result => {
-// dispatch(getPostRedux(result.data))
-// })
-//         }
+        if(state3.length == 0) {
+getFirstPost().then(result => {
+dispatch(getPostRedux(result.data))
+})
+        }
 
-//         function handleScroll() {
-//             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//             const isFixedHeightReached = scrollTop >= fixedHeight;
-//             setIsScrolledToFixedHeight(isFixedHeightReached);
-//           }
+        function handleScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const isFixedHeightReached = scrollTop >= fixedHeight;
+            setIsScrolledToFixedHeight(isFixedHeightReached);
+          }
       
-//           window.addEventListener("scroll", handleScroll);
+          window.addEventListener("scroll", handleScroll);
       
-//           return () => {
-//             window.removeEventListener("scroll", handleScroll);
-//           };
+          return () => {
+            window.removeEventListener("scroll", handleScroll);
+          };
     },[])
 
     useEffect(() => {
-        // if (isScrolledToFixedHeight) {
-            // setShowSpinner(true);
-          // Calling API
-    //       fetch(`http://localhost:4000/api/social/?limit=2&page=${pages}`)
-    //         .then((response) => response.json())
-    //         .then((newData) => {
-    // console.log(newData)
-    // dispatch(getPostRedux(newData));
-    // setShowSpinner(false);
-    // setPages(pages + 2);
-    // setInfHeight(infheight + 500);
-    //           });
-    //     }
+        if (isScrolledToFixedHeight) {
+            setShowSpinner(true);
+        //   Calling API
+          fetch(`http://localhost:4000/api/social/?limit=2&page=${pages}`)
+            .then((response) => response.json())
+            .then((newData) => {
+    console.log(newData)
+    dispatch(getPostRedux(newData));
+    setShowSpinner(false);
+    setPages(pages + 2);
+    setInfHeight(infheight + 500);
+              });
+        }
       }, [isScrolledToFixedHeight]);
     let sideBarTrue = () => {
         if (state.condition == true) {

@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
@@ -18,8 +21,25 @@
       href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700"
     />
     <!--end::Fonts-->
-
     <!--begin::Vendor Stylesheets(used for this page only)-->
+    <link
+      href="/assets/plugins/custom/prismjs/prismjs.bundle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!--end::Vendor Stylesheets-->
+
+    <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
+    <link
+      href="/assets/plugins/global/plugins.bundle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="/assets/css/style.bundle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <link
       href="/assets/plugins/custom/datatables/datatables.bundle.css"
       rel="stylesheet"
@@ -50,7 +70,7 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="stylesheet" href="/assets/css/drawing-style.css">
+    <link rel="stylesheet" href="/assets/css/drawing-style.css" />
     <title>React App</title>
   </head>
   <body>
@@ -86,21 +106,31 @@
     <!-- {/*begin::Vendors Javascript(used for this page only)*/ } -->
     <script src="/assets/plugins/custom/datatables/datatables.bundle.js"></script>
     <!-- {/*end::Vendors Javascript*/ } -->
-    
+
     <!-- {/*begin::Custom Javascript(used for this page only)*/ } -->
     <script src="/assets/js/custom/pages/pricing/general.js"></script>
-                        <!--begin::Vendors Javascript(used for this page only)-->
-                        <script src="../../assets/plugins/custom/datatables/datatables.bundle.js"></script>
-                        <!--end::Vendors Javascript-->
-                        <script src="../../assets/js/custom/pages/user-profile/general.js"></script>
-                        <script src="../../assets/js/custom/utilities/modals/create-campaign.js"></script>
-                        <script src="../../assets/js/custom/utilities/modals/offer-a-deal/type.js"></script>
-                        <script src="../../assets/js/custom/utilities/modals/offer-a-deal/details.js"></script>
-                        <script src="../../assets/js/custom/utilities/modals/offer-a-deal/finance.js"></script>
-                        <script src="../../assets/js/custom/utilities/modals/offer-a-deal/complete.js"></script>
-                        <script src="../../assets/js/custom/utilities/modals/offer-a-deal/main.js"></script>
-                        <!--end::Custom Javascript-->
-                        <!--end::Javascript-->
+    <!--begin::Vendors Javascript(used for this page only)-->
+    <script src="/assets/plugins/custom/datatables/datatables.bundle.js"></script>
+    <!--end::Vendors Javascript-->
+    <script src="/assets/js/custom/pages/user-profile/general.js"></script>
+    <script src="/assets/js/custom/utilities/modals/create-campaign.js"></script>
+    <script src="/assets/js/custom/utilities/modals/offer-a-deal/type.js"></script>
+    <script src="/assets/js/custom/utilities/modals/offer-a-deal/details.js"></script>
+    <script src="/assets/js/custom/utilities/modals/offer-a-deal/finance.js"></script>
+    <script src="/assets/js/custom/utilities/modals/offer-a-deal/complete.js"></script>
+    <script src="/assets/js/custom/utilities/modals/offer-a-deal/main.js"></script>
+    <!--begin::Global Javascript Bundle(mandatory for all pages)-->
+    <script src="/assets/plugins/global/plugins.bundle.js"></script>
+    <script src="/assets/js/scripts.bundle.js"></script>
+    <script src="/assets/js/custom/documentation/documentation.js"></script>
+    <script src="/assets/js/custom/documentation/search.js"></script>
+    <!--end::Global Javascript Bundle-->
+
+    <!--begin::Vendors Javascript(used for this page only)-->
+    <script src="/assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
+    <!--end::Vendors Javascript-->
+    <!--end::Custom Javascript-->
+    <!--end::Javascript-->
     <!-- {/*end::Custom Javascript*/ } -->
   </body>
 </html>

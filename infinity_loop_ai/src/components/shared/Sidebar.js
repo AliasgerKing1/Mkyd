@@ -261,7 +261,6 @@ const Sidebar = () => {
                                     {/*begin::Badge*/}
                                     <span className="menu-badge">
                                         <span className="badge badge-primary">
-                                            6
                                             {state2 && state2.website?.length}
                                         </span>
                                     </span>
@@ -395,8 +394,12 @@ const Sidebar = () => {
                                 </span>
 
                             </span>
-                                {/*end:Menu link*/}{/*begin:Menu sub*/}
+                                {/*end:Menu link*/}
+                                {/*begin:Menu sub*/}
                                 <div className="menu-sub menu-sub-accordion" style={{ display: showPages == false ? "none" : "", overflow: showPages == false ? "hidden" : "" }}>
+                                <NavLink to="/auth/profile/">
+
+                                
                                 {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
 
                                 </span>
@@ -408,6 +411,7 @@ const Sidebar = () => {
                                 </span>
                                     {/*end:Menu link*/}
                                     </div>{/*end:Menu item*/}
+                                </NavLink>
                                     
                                 
                                         
@@ -905,8 +909,10 @@ const Sidebar = () => {
                                     {/*begin::Username*/}
                                     <div className="d-flex flex-column">
                                         <div className="fw-bold d-flex align-items-center fs-5">
-
+                                        <NavLink to="/auth/profile">
                                             {state2 && state2?.name}
+                                        </NavLink>
+                                            
                                             <span className="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span>
                                         </div>
 
@@ -926,9 +932,12 @@ const Sidebar = () => {
 
                             {/*begin::Menu item*/}
                             <div className="menu-item px-5">
-                                <a href="../account/overview.html" className="menu-link px-5">
+                            <a className="menu-link px-5">
+                                <NavLink to="/auth/profile/">
                                     My Profile
+                                </NavLink>
                                 </a>
+
                             </div>
                             {/*end::Menu item*/}
 

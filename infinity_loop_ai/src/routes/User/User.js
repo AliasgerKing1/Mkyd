@@ -7,6 +7,7 @@ import Faq from "../../components/pages/Faq/Faq"
 import Error404 from '../../components/pages/Error404/Error404';
 import Error500 from '../../components/pages/Error500/Error500';
 import DrawCanvas from '../../components/pages/DrawCanvas/DrawCanvas';
+import UserProfile from "../../components/pages/UserProfile/UserProfile"
 let userRoutes = [
   {
     path : "home",
@@ -23,6 +24,10 @@ let userRoutes = [
   {
     path: "faq",
     element: <Faq />
+  },
+  {
+    path: "profile",
+    element: <UserProfile />
   },
   {
     path: "error500",
