@@ -140,6 +140,7 @@ def detect_and_cut_rectangles(image_path, output_directory):
         #   for img_child in img_num:
           img = crop_image(f"cut_image/rectangle_{last_i}.png", 20)
           cv2.imwrite(output_path, img)
+          
           # Convert the image to grayscale
           gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         

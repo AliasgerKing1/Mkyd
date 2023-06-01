@@ -1,6 +1,7 @@
 import cv2
 import os
 
+from cropImages import crop_image
 def detection(image_path, output_directory) :
     # read input image
     image = cv2.imread(image_path)
@@ -34,9 +35,26 @@ def detection(image_path, output_directory) :
             # Crop the rectangle from the original image
             cropped_image = image[y : y + height, x : x + width]
             # Save the cropped image as a separate file
-            output_path = os.path.join("parent_rectangles", f"rectangele{i + 1}.png")
+            output_path = os.path.join("parent_rectangles", f"rectangle{i + 1}.png")
             cv2.imwrite(output_path, cropped_image)
             print(f"Saved rectangle{i + 1} as {output_path}")
+            # Store the rectangle's information
+            all_rectangele_info = {
+                "X" : x,
+                "Y" : y,
+                "Width" : width,
+                "Height" : height,
+                "Output_path" : output_path
+            }
+            all_rectangles.append(all_rectangele_info)
+            img = crop_image(f"parent_rectangles/rectangle{i + 1}.png", 20)
+
+            # Get the width height, x and y coordinate
+            
+
+
+
+
 image_path = "input_1.png"
 output_directory = "cut_rectangles"
 detection(image_path, output_directory)
