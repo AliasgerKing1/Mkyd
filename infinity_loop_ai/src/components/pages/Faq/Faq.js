@@ -4,6 +4,18 @@ import { NavLink } from "react-router-dom"
 import Footer from "../../shared/Footer"
 import Sidebar from "../../shared/Sidebar"
 const Faq = () => {
+    let [faq1, setFaq1] = useState(false)
+    let [faq2, setFaq2] = useState(false)
+    let [faq3, setFaq3] = useState(false)
+    let [faq4, setFaq4] = useState(false)
+    let [faq5, setFaq5] = useState(false)
+    let [faq6, setFaq6] = useState(false)
+    let [faq7, setFaq7] = useState(false)
+    let [faq8, setFaq8] = useState(false)
+    let [faq9, setFaq9] = useState(false)
+    let [faq10, setFaq10] = useState(false)
+    let [faq11, setFaq11] = useState(false)
+    let [faq12, setFaq12] = useState(false)
     return (
         <>
             {/*begin::Body*/}
@@ -19,7 +31,7 @@ const Faq = () => {
 <Sidebar />
                             {/*end::Sidebar*/}
     </div>
-    <div className="col-md-10">
+    <div className="col-md-9 offset-md-1">
                                 {/*begin::Header*/}
                                 <div id="kt_app_header" className="app-header "
                             data-kt-sticky="true" data-kt-sticky-activate="{default: false, lg: true}" data-kt-sticky-name="app-header-sticky" data-kt-sticky-offset="{default: false, lg: '300px'}"
@@ -122,12 +134,6 @@ const Faq = () => {
 </div>
                         {/*begin::Wrapper*/}
                         <div className="app-wrapper  flex-column flex-row-fluid " id="kt_app_wrapper">
-
-
-
-
-
-
 
                             {/*begin::Main*/}
                             <div className="app-main flex-column flex-row-fluid" id="kt_app_main">
@@ -254,7 +260,7 @@ const Faq = () => {
                                                                     {/*begin::Symbol*/}
 
                                                                     <div className="symbol symbol-60px symbol-2by3 me-4">
-                                                                        <div className="symbol-label" style={{ backgroundImage: "url('/assetsmedia/stock/600x400/img-2.jpg')" }}></div>
+                                                                        <div className="symbol-label" style={{ backgroundImage: "url('/assets/media/stock/600x400/img-2.jpg')" }}></div>
                                                                     </div>
                                                                     {/*end::Symbol*/}
 
@@ -272,7 +278,7 @@ const Faq = () => {
                                                                     {/*begin::Symbol*/}
 
                                                                     <div className="symbol symbol-60px symbol-2by3 me-4">
-                                                                        <div className="symbol-label" style={{ backgroundImage: "url('/assetsmedia/stock/600x400/img-3.jpg')" }}></div>
+                                                                        <div className="symbol-label" style={{ backgroundImage: "url('/assets/media/stock/600x400/img-3.jpg')" }}></div>
                                                                     </div>
                                                                     {/*end::Symbol*/}
 
@@ -290,7 +296,7 @@ const Faq = () => {
                                                                     {/*begin::Symbol*/}
 
                                                                     <div className="symbol symbol-60px symbol-2by3 me-4">
-                                                                        <div className="symbol-label" style={{ backgroundImage: "url('/assetsmedia/stock/600x400/img-4.jpg')" }}></div>
+                                                                        <div className="symbol-label" style={{ backgroundImage: "url('/assets/media/stock/600x400/img-4.jpg')" }}></div>
                                                                     </div>
                                                                     {/*end::Symbol*/}
 
@@ -343,24 +349,25 @@ const Faq = () => {
                                                                     {/*begin::Section*/}
                                                                     <div className="m-0">
                                                                         {/*begin::Heading*/}
-                                                                        <div className="d-flex align-items-center collapsible py-3 toggle  mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_8_1">
+                                                                        <div className="d-flex align-items-center collapsible py-3 toggle  mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_8_1" onClick={() => setFaq1(faq1 == false ? true : false)}>
                                                                             {/*begin::Icon*/}
                                                                             <div className="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
                                                                                 {/*begin::Svg Icon | path: icons/duotune/general/gen036.svg*/}
-                                                                                <span className="svg-icon toggle-on svg-icon-primary svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                <span className={`svg-icon  svg-icon-1 ${faq1 == true ? "svg-icon-primary" : ""}`}>
+
+                                                                                    {faq1 == true ? (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                                     <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
                                                                                     <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
-                                                                                </span>
-                                                                                {/*end::Svg Icon*/}
-                                                                                {/*begin::Svg Icon | path: icons/duotune/general/gen035.svg*/}
-                                                                                <span className="svg-icon toggle-off svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                    </svg>) : (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                                     <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
                                                                                     <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
                                                                                     <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
+                                                                                    </svg>)}
                                                                                 </span>
-                                                                                {/*end::Svg Icon*/}            </div>
+                                                                                {/*end::Svg Icon*/}
+
+
+                                                                            </div>
                                                                             {/*end::Icon*/}
 
                                                                             {/*begin::Title*/}
@@ -372,7 +379,7 @@ const Faq = () => {
                                                                         {/*end::Heading*/}
 
                                                                         {/*begin::Body*/}
-                                                                        <div id="kt_job_8_1" className="collapse show fs-6 ms-1">
+                                                                        <div id="kt_job_8_1" className={`collapse fs-6 ms-1 ${faq1 == true ? "show" : ""}`} style={{ display: faq1 == true ? "block" : "none" }}>
                                                                             {/*begin::Text*/}
                                                                             <div className="mb-4 text-gray-600 fw-semibold fs-6 ps-10">
                                                                                 First, a disclaimer – the entire process of writing a blog post often takes more than a couple of hours, even if you can type eighty words as per minute and your writing skills are sharp.                </div>
@@ -391,24 +398,23 @@ const Faq = () => {
                                                                     {/*begin::Section*/}
                                                                     <div className="m-0">
                                                                         {/*begin::Heading*/}
-                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_8_2">
+                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_8_2" onClick={() => setFaq2(faq2 == false ? true : false)}>
                                                                             {/*begin::Icon*/}
                                                                             <div className="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
                                                                                 {/*begin::Svg Icon | path: icons/duotune/general/gen036.svg*/}
-                                                                                <span className="svg-icon toggle-on svg-icon-primary svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
+                                                                                <span className={`svg-icon  svg-icon-1 ${faq2 == true ? "svg-icon-primary" : ""}`}>
+
+                                                                                    {faq2 == true ? (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>) : (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
+                                                                                        <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>)}
                                                                                 </span>
                                                                                 {/*end::Svg Icon*/}
-                                                                                {/*begin::Svg Icon | path: icons/duotune/general/gen035.svg*/}
-                                                                                <span className="svg-icon toggle-off svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
-                                                                                    <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
-                                                                                </span>
-                                                                                {/*end::Svg Icon*/}            </div>
+                                                                            </div>
                                                                             {/*end::Icon*/}
 
                                                                             {/*begin::Title*/}
@@ -420,7 +426,7 @@ const Faq = () => {
                                                                         {/*end::Heading*/}
 
                                                                         {/*begin::Body*/}
-                                                                        <div id="kt_job_8_2" className="collapse  fs-6 ms-1">
+                                                                        <div id="kt_job_8_2" className={`collapse fs-6 ms-1 ${faq2 == true ? "show" : ""}`} style={{ display: faq2 == true ? "block" : "none" }}>
                                                                             {/*begin::Text*/}
                                                                             <div className="mb-4 text-gray-600 fw-semibold fs-6 ps-10">
                                                                                 First, a disclaimer – the entire process of writing a blog post often takes more than a couple of hours, even if you can type eighty words as per minute and your writing skills are sharp.                </div>
@@ -439,24 +445,23 @@ const Faq = () => {
                                                                     {/*begin::Section*/}
                                                                     <div className="m-0">
                                                                         {/*begin::Heading*/}
-                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_8_3">
+                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_8_3" onClick={() => setFaq3(faq3 == false ? true : false)}>
                                                                             {/*begin::Icon*/}
                                                                             <div className="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
                                                                                 {/*begin::Svg Icon | path: icons/duotune/general/gen036.svg*/}
-                                                                                <span className="svg-icon toggle-on svg-icon-primary svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
+                                                                                <span className={`svg-icon  svg-icon-1 ${faq3 == true ? "svg-icon-primary" : ""}`}>
+
+                                                                                    {faq3 == true ? (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>) : (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
+                                                                                        <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>)}
                                                                                 </span>
                                                                                 {/*end::Svg Icon*/}
-                                                                                {/*begin::Svg Icon | path: icons/duotune/general/gen035.svg*/}
-                                                                                <span className="svg-icon toggle-off svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
-                                                                                    <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
-                                                                                </span>
-                                                                                {/*end::Svg Icon*/}            </div>
+                                                                            </div>
                                                                             {/*end::Icon*/}
 
                                                                             {/*begin::Title*/}
@@ -468,7 +473,7 @@ const Faq = () => {
                                                                         {/*end::Heading*/}
 
                                                                         {/*begin::Body*/}
-                                                                        <div id="kt_job_8_3" className="collapse  fs-6 ms-1">
+                                                                        <div id="kt_job_8_3" className={`collapse fs-6 ms-1 ${faq3 == true ? "show" : ""}`} style={{ display: faq3 == true ? "block" : "none" }}>
                                                                             {/*begin::Text*/}
                                                                             <div className="mb-4 text-gray-600 fw-semibold fs-6 ps-10">
                                                                                 First, a disclaimer – the entire process of writing a blog post often takes more than a couple of hours, even if you can type eighty words as per minute and your writing skills are sharp.                </div>
@@ -487,24 +492,24 @@ const Faq = () => {
                                                                     {/*begin::Section*/}
                                                                     <div className="m-0">
                                                                         {/*begin::Heading*/}
-                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_8_4">
+                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_8_4" onClick={() => setFaq4(faq4 == false ? true : false)}>
                                                                             {/*begin::Icon*/}
                                                                             <div className="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
                                                                                 {/*begin::Svg Icon | path: icons/duotune/general/gen036.svg*/}
-                                                                                <span className="svg-icon toggle-on svg-icon-primary svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
+                                                                                <span className={`svg-icon  svg-icon-1 ${faq4 == true ? "svg-icon-primary" : ""}`}>
+
+                                                                                    {faq4 == true ? (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>) : (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
+                                                                                        <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>)}
                                                                                 </span>
                                                                                 {/*end::Svg Icon*/}
-                                                                                {/*begin::Svg Icon | path: icons/duotune/general/gen035.svg*/}
-                                                                                <span className="svg-icon toggle-off svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
-                                                                                    <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
-                                                                                </span>
-                                                                                {/*end::Svg Icon*/}            </div>
+
+                                                                            </div>
                                                                             {/*end::Icon*/}
 
                                                                             {/*begin::Title*/}
@@ -516,7 +521,7 @@ const Faq = () => {
                                                                         {/*end::Heading*/}
 
                                                                         {/*begin::Body*/}
-                                                                        <div id="kt_job_8_4" className="collapse  fs-6 ms-1">
+                                                                        <div id="kt_job_8_4" className={`collapse fs-6 ms-1 ${faq4 == true ? "show" : ""}`} style={{ display: faq4 == true ? "block" : "none" }}>
                                                                             {/*begin::Text*/}
                                                                             <div className="mb-4 text-gray-600 fw-semibold fs-6 ps-10">
                                                                                 First, a disclaimer – the entire process of writing a blog post often takes more than a couple of hours, even if you can type eighty words as per minute and your writing skills are sharp.                </div>
@@ -545,24 +550,24 @@ const Faq = () => {
                                                                     {/*begin::Section*/}
                                                                     <div className="m-0">
                                                                         {/*begin::Heading*/}
-                                                                        <div className="d-flex align-items-center collapsible py-3 toggle  mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_9_1">
+                                                                        <div className="d-flex align-items-center collapsible py-3 toggle  mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_9_1" onClick={() => setFaq5(faq5 == false ? true : false)}>
                                                                             {/*begin::Icon*/}
                                                                             <div className="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
                                                                                 {/*begin::Svg Icon | path: icons/duotune/general/gen036.svg*/}
-                                                                                <span className="svg-icon toggle-on svg-icon-primary svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
+                                                                                <span className={`svg-icon  svg-icon-1 ${faq5 == true ? "svg-icon-primary" : ""}`}>
+
+                                                                                    {faq5 == true ? (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>) : (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
+                                                                                        <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>)}
                                                                                 </span>
                                                                                 {/*end::Svg Icon*/}
-                                                                                {/*begin::Svg Icon | path: icons/duotune/general/gen035.svg*/}
-                                                                                <span className="svg-icon toggle-off svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
-                                                                                    <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
-                                                                                </span>
-                                                                                {/*end::Svg Icon*/}            </div>
+
+                                                                            </div>
                                                                             {/*end::Icon*/}
 
                                                                             {/*begin::Title*/}
@@ -574,7 +579,7 @@ const Faq = () => {
                                                                         {/*end::Heading*/}
 
                                                                         {/*begin::Body*/}
-                                                                        <div id="kt_job_9_1" className="collapse show fs-6 ms-1">
+                                                                        <div id="kt_job_9_1" className={`collapse fs-6 ms-1 ${faq5 == true ? "show" : ""}`} style={{ display: faq5 == true ? "block" : "none" }}>
                                                                             {/*begin::Text*/}
                                                                             <div className="mb-4 text-gray-600 fw-semibold fs-6 ps-10">
                                                                                 First, a disclaimer – the entire process of writing a blog post often takes more than a couple of hours, even if you can type eighty words as per minute and your writing skills are sharp.                </div>
@@ -593,24 +598,24 @@ const Faq = () => {
                                                                     {/*begin::Section*/}
                                                                     <div className="m-0">
                                                                         {/*begin::Heading*/}
-                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_9_2">
+                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_9_2" onClick={() => setFaq6(faq6 == false ? true : false)}>
                                                                             {/*begin::Icon*/}
                                                                             <div className="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
                                                                                 {/*begin::Svg Icon | path: icons/duotune/general/gen036.svg*/}
-                                                                                <span className="svg-icon toggle-on svg-icon-primary svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                <span className={`svg-icon  svg-icon-1 ${faq6 == true ? "svg-icon-primary" : ""}`}>
+
+                                                                                    {faq6 == true ? (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                                     <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
                                                                                     <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
-                                                                                </span>
-                                                                                {/*end::Svg Icon*/}
-                                                                                {/*begin::Svg Icon | path: icons/duotune/general/gen035.svg*/}
-                                                                                <span className="svg-icon toggle-off svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                    </svg>) : (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                                     <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
                                                                                     <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
                                                                                     <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
+                                                                                    </svg>)}
                                                                                 </span>
-                                                                                {/*end::Svg Icon*/}            </div>
+                                                                                {/*end::Svg Icon*/}
+
+                                                                            </div>
                                                                             {/*end::Icon*/}
 
                                                                             {/*begin::Title*/}
@@ -622,7 +627,7 @@ const Faq = () => {
                                                                         {/*end::Heading*/}
 
                                                                         {/*begin::Body*/}
-                                                                        <div id="kt_job_9_2" className="collapse  fs-6 ms-1">
+                                                                        <div id="kt_job_9_2" className={`collapse fs-6 ms-1 ${faq6 == true ? "show" : ""}`} style={{ display: faq6 == true ? "block" : "none" }}>
                                                                             {/*begin::Text*/}
                                                                             <div className="mb-4 text-gray-600 fw-semibold fs-6 ps-10">
                                                                                 First, a disclaimer – the entire process of writing a blog post often takes more than a couple of hours, even if you can type eighty words as per minute and your writing skills are sharp.                </div>
@@ -641,24 +646,24 @@ const Faq = () => {
                                                                     {/*begin::Section*/}
                                                                     <div className="m-0">
                                                                         {/*begin::Heading*/}
-                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_9_3">
+                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_9_3" onClick={() => setFaq7(faq7 == false ? true : false)}>
                                                                             {/*begin::Icon*/}
                                                                             <div className="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
                                                                                 {/*begin::Svg Icon | path: icons/duotune/general/gen036.svg*/}
-                                                                                <span className="svg-icon toggle-on svg-icon-primary svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                <span className={`svg-icon  svg-icon-1 ${faq7 == true ? "svg-icon-primary" : ""}`}>
+
+                                                                                    {faq7 == true ? (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                                     <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
                                                                                     <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
-                                                                                </span>
-                                                                                {/*end::Svg Icon*/}
-                                                                                {/*begin::Svg Icon | path: icons/duotune/general/gen035.svg*/}
-                                                                                <span className="svg-icon toggle-off svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                    </svg>) : (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                                     <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
                                                                                     <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
                                                                                     <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
+                                                                                    </svg>)}
                                                                                 </span>
-                                                                                {/*end::Svg Icon*/}            </div>
+                                                                                {/*end::Svg Icon*/}
+
+                                                                            </div>
                                                                             {/*end::Icon*/}
 
                                                                             {/*begin::Title*/}
@@ -670,7 +675,7 @@ const Faq = () => {
                                                                         {/*end::Heading*/}
 
                                                                         {/*begin::Body*/}
-                                                                        <div id="kt_job_9_3" className="collapse  fs-6 ms-1">
+                                                                        <div id="kt_job_9_3" className={`collapse fs-6 ms-1 ${faq7 == true ? "show" : ""}`} style={{ display: faq7 == true ? "block" : "none" }}>
                                                                             {/*begin::Text*/}
                                                                             <div className="mb-4 text-gray-600 fw-semibold fs-6 ps-10">
                                                                                 First, a disclaimer – the entire process of writing a blog post often takes more than a couple of hours, even if you can type eighty words as per minute and your writing skills are sharp.                </div>
@@ -689,24 +694,24 @@ const Faq = () => {
                                                                     {/*begin::Section*/}
                                                                     <div className="m-0">
                                                                         {/*begin::Heading*/}
-                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_9_4">
+                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_9_4" onClick={() => setFaq8(faq8 == false ? true : false)}>
                                                                             {/*begin::Icon*/}
                                                                             <div className="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
                                                                                 {/*begin::Svg Icon | path: icons/duotune/general/gen036.svg*/}
-                                                                                <span className="svg-icon toggle-on svg-icon-primary svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
+                                                                                <span className={`svg-icon  svg-icon-1 ${faq8 == true ? "svg-icon-primary" : ""}`}>
+
+                                                                                    {faq8 == true ? (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>) : (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
+                                                                                        <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>)}
                                                                                 </span>
                                                                                 {/*end::Svg Icon*/}
-                                                                                {/*begin::Svg Icon | path: icons/duotune/general/gen035.svg*/}
-                                                                                <span className="svg-icon toggle-off svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
-                                                                                    <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
-                                                                                </span>
-                                                                                {/*end::Svg Icon*/}            </div>
+
+                                                                            </div>
                                                                             {/*end::Icon*/}
 
                                                                             {/*begin::Title*/}
@@ -718,7 +723,7 @@ const Faq = () => {
                                                                         {/*end::Heading*/}
 
                                                                         {/*begin::Body*/}
-                                                                        <div id="kt_job_9_4" className="collapse  fs-6 ms-1">
+                                                                        <div id="kt_job_9_4" className={`collapse fs-6 ms-1 ${faq8 == true ? "show" : ""}`} style={{ display: faq8 == true ? "block" : "none" }}>
                                                                             {/*begin::Text*/}
                                                                             <div className="mb-4 text-gray-600 fw-semibold fs-6 ps-10">
                                                                                 First, a disclaimer – the entire process of writing a blog post often takes more than a couple of hours, even if you can type eighty words as per minute and your writing skills are sharp.                </div>
@@ -747,24 +752,24 @@ const Faq = () => {
                                                                     {/*begin::Section*/}
                                                                     <div className="m-0">
                                                                         {/*begin::Heading*/}
-                                                                        <div className="d-flex align-items-center collapsible py-3 toggle  mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_10_1">
+                                                                        <div className="d-flex align-items-center collapsible py-3 toggle  mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_10_1" onClick={() => setFaq9(faq9 == false ? true : false)}>
                                                                             {/*begin::Icon*/}
                                                                             <div className="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
                                                                                 {/*begin::Svg Icon | path: icons/duotune/general/gen036.svg*/}
-                                                                                <span className="svg-icon toggle-on svg-icon-primary svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
+                                                                                <span className={`svg-icon  svg-icon-1 ${faq9 == true ? "svg-icon-primary" : ""}`}>
+
+                                                                                    {faq9 == true ? (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>) : (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
+                                                                                        <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>)}
                                                                                 </span>
                                                                                 {/*end::Svg Icon*/}
-                                                                                {/*begin::Svg Icon | path: icons/duotune/general/gen035.svg*/}
-                                                                                <span className="svg-icon toggle-off svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
-                                                                                    <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
-                                                                                </span>
-                                                                                {/*end::Svg Icon*/}            </div>
+
+                                                                            </div>
                                                                             {/*end::Icon*/}
 
                                                                             {/*begin::Title*/}
@@ -776,7 +781,7 @@ const Faq = () => {
                                                                         {/*end::Heading*/}
 
                                                                         {/*begin::Body*/}
-                                                                        <div id="kt_job_10_1" className="collapse show fs-6 ms-1">
+                                                                        <div id="kt_job_10_1" className={`collapse fs-6 ms-1 ${faq9 == true ? "show" : ""}`} style={{ display: faq9 == true ? "block" : "none" }}>
                                                                             {/*begin::Text*/}
                                                                             <div className="mb-4 text-gray-600 fw-semibold fs-6 ps-10">
                                                                                 First, a disclaimer – the entire process of writing a blog post often takes more than a couple of hours, even if you can type eighty words as per minute and your writing skills are sharp.                </div>
@@ -795,24 +800,23 @@ const Faq = () => {
                                                                     {/*begin::Section*/}
                                                                     <div className="m-0">
                                                                         {/*begin::Heading*/}
-                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_10_2">
+                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_10_2" onClick={() => setFaq10(faq10 == false ? true : false)}>
                                                                             {/*begin::Icon*/}
                                                                             <div className="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
                                                                                 {/*begin::Svg Icon | path: icons/duotune/general/gen036.svg*/}
-                                                                                <span className="svg-icon toggle-on svg-icon-primary svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
+                                                                                <span className={`svg-icon  svg-icon-1 ${faq10 == true ? "svg-icon-primary" : ""}`}>
+
+                                                                                    {faq10 == true ? (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>) : (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
+                                                                                        <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>)}
                                                                                 </span>
                                                                                 {/*end::Svg Icon*/}
-                                                                                {/*begin::Svg Icon | path: icons/duotune/general/gen035.svg*/}
-                                                                                <span className="svg-icon toggle-off svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
-                                                                                    <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
-                                                                                </span>
-                                                                                {/*end::Svg Icon*/}            </div>
+                                                                            </div>
                                                                             {/*end::Icon*/}
 
                                                                             {/*begin::Title*/}
@@ -824,7 +828,7 @@ const Faq = () => {
                                                                         {/*end::Heading*/}
 
                                                                         {/*begin::Body*/}
-                                                                        <div id="kt_job_10_2" className="collapse  fs-6 ms-1">
+                                                                        <div id="kt_job_10_2" className={`collapse fs-6 ms-1 ${faq10 == true ? "show" : ""}`} style={{ display: faq10 == true ? "block" : "none" }}>
                                                                             {/*begin::Text*/}
                                                                             <div className="mb-4 text-gray-600 fw-semibold fs-6 ps-10">
                                                                                 First, a disclaimer – the entire process of writing a blog post often takes more than a couple of hours, even if you can type eighty words as per minute and your writing skills are sharp.                </div>
@@ -843,24 +847,24 @@ const Faq = () => {
                                                                     {/*begin::Section*/}
                                                                     <div className="m-0">
                                                                         {/*begin::Heading*/}
-                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_10_3">
+                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_10_3" onClick={() => setFaq11(faq11 == false ? true : false)}>
                                                                             {/*begin::Icon*/}
                                                                             <div className="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
                                                                                 {/*begin::Svg Icon | path: icons/duotune/general/gen036.svg*/}
-                                                                                <span className="svg-icon toggle-on svg-icon-primary svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
+                                                                                <span className={`svg-icon  svg-icon-1 ${faq11 == true ? "svg-icon-primary" : ""}`}>
+
+                                                                                    {faq11 == true ? (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>) : (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
+                                                                                        <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>)}
                                                                                 </span>
                                                                                 {/*end::Svg Icon*/}
-                                                                                {/*begin::Svg Icon | path: icons/duotune/general/gen035.svg*/}
-                                                                                <span className="svg-icon toggle-off svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
-                                                                                    <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
-                                                                                </span>
-                                                                                {/*end::Svg Icon*/}            </div>
+
+                                                                            </div>
                                                                             {/*end::Icon*/}
 
                                                                             {/*begin::Title*/}
@@ -872,7 +876,7 @@ const Faq = () => {
                                                                         {/*end::Heading*/}
 
                                                                         {/*begin::Body*/}
-                                                                        <div id="kt_job_10_3" className="collapse  fs-6 ms-1">
+                                                                        <div id="kt_job_10_3" className={`collapse fs-6 ms-1 ${faq11 == true ? "show" : ""}`} style={{ display: faq11 == true ? "block" : "none" }}>
                                                                             {/*begin::Text*/}
                                                                             <div className="mb-4 text-gray-600 fw-semibold fs-6 ps-10">
                                                                                 First, a disclaimer – the entire process of writing a blog post often takes more than a couple of hours, even if you can type eighty words as per minute and your writing skills are sharp.                </div>
@@ -891,24 +895,24 @@ const Faq = () => {
                                                                     {/*begin::Section*/}
                                                                     <div className="m-0">
                                                                         {/*begin::Heading*/}
-                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_10_4">
+                                                                        <div className="d-flex align-items-center collapsible py-3 toggle collapsed mb-0" data-bs-toggle="collapse" data-bs-target="#kt_job_10_4" onClick={() => setFaq12(faq12 == false ? true : false)}>
                                                                             {/*begin::Icon*/}
                                                                             <div className="btn btn-sm btn-icon mw-20px btn-active-color-primary me-5">
                                                                                 {/*begin::Svg Icon | path: icons/duotune/general/gen036.svg*/}
-                                                                                <span className="svg-icon toggle-on svg-icon-primary svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
+                                                                                <span className={`svg-icon  svg-icon-1 ${faq12 == true ? "svg-icon-primary" : ""}`}>
+
+                                                                                    {faq12 == true ? (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>) : (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                        <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
+                                                                                        <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
+                                                                                        <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
+                                                                                    </svg>)}
                                                                                 </span>
                                                                                 {/*end::Svg Icon*/}
-                                                                                {/*begin::Svg Icon | path: icons/duotune/general/gen035.svg*/}
-                                                                                <span className="svg-icon toggle-off svg-icon-1"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
-                                                                                    <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
-                                                                                    <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
-                                                                                </svg>
-                                                                                </span>
-                                                                                {/*end::Svg Icon*/}            </div>
+
+                                                                            </div>
                                                                             {/*end::Icon*/}
 
                                                                             {/*begin::Title*/}
@@ -920,7 +924,7 @@ const Faq = () => {
                                                                         {/*end::Heading*/}
 
                                                                         {/*begin::Body*/}
-                                                                        <div id="kt_job_10_4" className="collapse  fs-6 ms-1">
+                                                                        <div id="kt_job_10_4" className={`collapse fs-6 ms-1 ${faq12 == true ? "show" : ""}`} style={{ display: faq12 == true ? "block" : "none" }}>
                                                                             {/*begin::Text*/}
                                                                             <div className="mb-4 text-gray-600 fw-semibold fs-6 ps-10">
                                                                                 First, a disclaimer – the entire process of writing a blog post often takes more than a couple of hours, even if you can type eighty words as per minute and your writing skills are sharp.                </div>
@@ -948,43 +952,43 @@ const Faq = () => {
                                                         <div className="card-body py-12">
                                                             {/*begin::Icon*/}
                                                             <a href="#" className="mx-4">
-                                                                <img src="/assetsmedia/svg/brand-logos/facebook-4.svg" className="h-30px my-2" alt="" />
+                                                                <img src="/assets/media/svg/brand-logos/facebook-4.svg" className="h-30px my-2" alt="" />
                                                             </a>
                                                             {/*end::Icon*/}
 
                                                             {/*begin::Icon*/}
                                                             <a href="#" className="mx-4">
-                                                                <img src="/assetsmedia/svg/brand-logos/instagram-2-1.svg" className="h-30px my-2" alt="" />
+                                                                <img src="/assets/media/svg/brand-logos/instagram-2-1.svg" className="h-30px my-2" alt="" />
                                                             </a>
                                                             {/*end::Icon*/}
 
                                                             {/*begin::Icon*/}
                                                             <a href="#" className="mx-4">
-                                                                <img src="/assetsmedia/svg/brand-logos/github.svg" className="h-30px my-2" alt="" />
+                                                                <img src="/assets/media/svg/brand-logos/github.svg" className="h-30px my-2" alt="" />
                                                             </a>
                                                             {/*end::Icon*/}
 
                                                             {/*begin::Icon*/}
                                                             <a href="#" className="mx-4">
-                                                                <img src="/assetsmedia/svg/brand-logos/behance.svg" className="h-30px my-2" alt="" />
+                                                                <img src="/assets/media/svg/brand-logos/behance.svg" className="h-30px my-2" alt="" />
                                                             </a>
                                                             {/*end::Icon*/}
 
                                                             {/*begin::Icon*/}
                                                             <a href="#" className="mx-4">
-                                                                <img src="/assetsmedia/svg/brand-logos/pinterest-p.svg" className="h-30px my-2" alt="" />
+                                                                <img src="/assets/media/svg/brand-logos/pinterest-p.svg" className="h-30px my-2" alt="" />
                                                             </a>
                                                             {/*end::Icon*/}
 
                                                             {/*begin::Icon*/}
                                                             <a href="#" className="mx-4">
-                                                                <img src="/assetsmedia/svg/brand-logos/twitter.svg" className="h-30px my-2" alt="" />
+                                                                <img src="/assets/media/svg/brand-logos/twitter.svg" className="h-30px my-2" alt="" />
                                                             </a>
                                                             {/*end::Icon*/}
 
                                                             {/*begin::Icon*/}
                                                             <a href="#" className="mx-4">
-                                                                <img src="/assetsmedia/svg/brand-logos/dribbble-icon-1.svg" className="h-30px my-2" alt="" />
+                                                                <img src="/assets/media/svg/brand-logos/dribbble-icon-1.svg" className="h-30px my-2" alt="" />
                                                             </a>
                                                             {/*end::Icon*/}
                                                         </div>
@@ -1163,7 +1167,7 @@ const Faq = () => {
                                                     {/*end::Image input placeholder*/}
 
                                                     {/*begin::Image input*/}
-                                                    <div className="image-input image-input-empty image-input-outline image-input-placeholder" data-kt-image-input="true" style={{ backgroundImage: "url('/assetsmedia/svg/files/blank-image.svg')" }}>
+                                                    <div className="image-input image-input-empty image-input-outline image-input-placeholder" data-kt-image-input="true" style={{ backgroundImage: "url('/assets/media/svg/files/blank-image.svg')" }}>
                                                         {/*begin::Preview existing avatar*/}
                                                         <div className="image-input-wrapper w-125px h-125px"></div>
                                                         {/*end::Preview existing avatar*/}
@@ -2837,7 +2841,7 @@ const Faq = () => {
 
                                 {/*begin::Google Contacts Invite*/}
                                 <div className="btn btn-light-primary fw-bold w-100 mb-8">
-                                    <img alt="Logo" src="/assetsmedia/svg/brand-logos/google-icon.svg" className="h-20px me-3" />
+                                    <img alt="Logo" src="/assets/media/svg/brand-logos/google-icon.svg" className="h-20px me-3" />
                                     Invite Gmail Contacts
                                 </div>
                                 {/*end::Google Contacts Invite*/}

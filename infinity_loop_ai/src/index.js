@@ -15,6 +15,7 @@ import Step4CreateReducer from "./Redux/Step4CreateReducer"
 import SidebarReducer from "./Redux/SidebarReducer"
 import PlanSelectedReducer from "./Redux/PlanSelectedReducer"
 import PostReducer from './Redux/PostReducer';
+import HomeChangeLinkReducer from './Redux/HomeChangeLinkReducer';
 
 
 import reportWebVitals from './reportWebVitals';
@@ -29,7 +30,8 @@ let rootReducer = combineReducers({
   Step4CreateReducer,
   SidebarReducer,
   PlanSelectedReducer,
-  PostReducer
+  PostReducer,
+  HomeChangeLinkReducer
 })
 let store = configureStore ({
   reducer : rootReducer

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 let initialState = [];
 
-let getTokenReducer = createSlice({
+let TokenReducer = createSlice({
     name: "tokens",
     initialState,
     reducers: {
@@ -12,5 +12,5 @@ let getTokenReducer = createSlice({
     }
 })
 
-export default getTokenReducer.reducer
-export const { getTokenRedux } = getTokenReducer.actions
+export default TokenReducer.reducer
+export const { getTokenRedux } = TokenReducer.actions

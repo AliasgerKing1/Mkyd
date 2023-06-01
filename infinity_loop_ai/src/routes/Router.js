@@ -6,6 +6,7 @@ import userRoutes from "./User/User";
 import Signin from "../components/pages/Signin/Signin";
 import Signup from "../components/pages/Signup/Signup";
 import Pricing from "../components/pages/Pricing/Pricing"
+import Help from "../components/pages/Help/Help";
 
 const Router = () => {
 const router = useRoutes([
@@ -21,6 +22,10 @@ const router = useRoutes([
   {
     path: "/pricing",
     element: <Pricing />
+  },
+  {
+    path: "/help",
+    element: <Help />
   },
 {
   path : "auth",

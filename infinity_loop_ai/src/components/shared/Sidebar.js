@@ -1,11 +1,17 @@
 /*eslint-disable */
 import React, { useEffect, useState } from 'react'
-import { useSelector } from "react-redux"
-import { useDispatch } from "react-redux"
+import { useNavigate, NavLink } from "react-router-dom"
+
+import { useSelector, useDispatch } from "react-redux"
 import { getSidebarConditionRedux } from "../../Redux/SidebarReducer"
+import { HomeChangeLinkRedux } from "../../Redux/HomeChangeLinkReducer"
+import { getTokenRedux } from "../../Redux/TokenReducer"
+
 const Sidebar = () => {
     let state = useSelector(state => state.SidebarReducer)
+    let state2 = useSelector(state => state.SignInReducer)
     let dispatch = useDispatch()
+    let navigate = useNavigate()
     let [isMenu, setIsMenu] = useState(false);
     let [isChangeWorkSpace, setIsChangeWorkSpace] = useState(false);
     let [isInternalMenu1, setIsInternalMenu1] = useState(false);
@@ -36,6 +42,11 @@ const Sidebar = () => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
+
+    let logout = () => {
+        dispatch(getTokenRedux([]))
+        navigate("/")
+    }
     return (
         <>
             <div id="kt_app_sidebar" className={`app-sidebar  flex-column drawer drawer-start ${state && state.stateVar == true ? "drawer-on" : ""}`}
@@ -243,13 +254,16 @@ const Sidebar = () => {
 
                                     {/*begin::Title*/}
                                     <span className="menu-title">
-                                        Tasks                </span>
+                                        website created
+                                    </span>
                                     {/*end::Title*/}
 
                                     {/*begin::Badge*/}
                                     <span className="menu-badge">
                                         <span className="badge badge-primary">
-                                            6                    </span>
+                                            6
+                                            {state2 && state2.website?.length}
+                                        </span>
                                     </span>
                                     {/*end::Badge*/}
                                 </a>
@@ -411,36 +425,73 @@ const Sidebar = () => {
                                         </span>
                                         {/*end:Menu link*/}
                                         
-                                        {/*begin:Menu sub*/}<div className="menu-sub menu-sub-accordion" style={{ display: showPagesSocial == false ? "none" : "", overflow: showPagesSocial == false ? "hidden" : "" }}>{/*begin:Menu item*/}<div className="menu-item" >{/*begin:Menu link*/}<a className="menu-link" href="../pages/social/feeds.html" ><span className="menu-bullet" ><span className="bullet bullet-dot">
+
+                                        {/*begin:Menu sub*/}<div className="menu-sub menu-sub-accordion" style={{ display: showPagesSocial == false ? "none" : "", overflow: showPagesSocial == false ? "hidden" : "" }}>
+                                            <NavLink to="/auth/home" onClick={() => dispatch(HomeChangeLinkRedux(1))}>
+
+                                                {/*begin:Menu item*/}<div className="menu-item">{/*begin:Menu link*/}
+                                                    <a className="menu-link">
+                                                        <span className="menu-bullet" ><span className="bullet bullet-dot">
 
                                         </span>
 
                                         </span>
-                                            <span className="menu-title" >Feeds
+                                                        <span className="menu-title" >Inspiration
                                             </span>
-                                        </a>{/*end:Menu link*/}</div>{/*end:Menu item*/}{/*begin:Menu item*/}<div className="menu-item" >{/*begin:Menu link*/}<a className="menu-link" href="../pages/social/activity.html" ><span className="menu-bullet" ><span className="bullet bullet-dot">
+                                                    </a>
+                                                    {/*end:Menu link*/}</div>{/*end:Menu item*/}
+                                            </NavLink>
+
+                                            {/*begin:Menu item*/}
+                                            <NavLink to="/auth/home" onClick={() => dispatch(HomeChangeLinkRedux(2))}>
+                                                <div className="menu-item" >{/*begin:Menu link*/}
+                                                    <a className="menu-link">
+                                                        <span className="menu-bullet" ><span className="bullet bullet-dot">
 
                                         </span>
 
                                         </span>
                                             <span className="menu-title" >Activty
                                             </span>
-                                        </a>{/*end:Menu link*/}</div>{/*end:Menu item*/}{/*begin:Menu item*/}<div className="menu-item" >{/*begin:Menu link*/}<a className="menu-link" href="../pages/social/followers.html" ><span className="menu-bullet" ><span className="bullet bullet-dot">
+                                                    </a>
+                                                    {/*end:Menu link*/}</div>{/*end:Menu item*/}
+                                            </NavLink>
+
+                                            <NavLink to="/auth/home" onClick={() => dispatch(HomeChangeLinkRedux(3))}>
+
+                                                {/*begin:Menu item*/}
+                                                <div className="menu-item" >{/*begin:Menu link*/}
+                                                    <a className="menu-link">
+                                                        <span className="menu-bullet" ><span className="bullet bullet-dot">
 
                                         </span>
 
                                         </span>
                                             <span className="menu-title" >Search
                                             </span>
-                                        </a>{/*end:Menu link*/}</div>{/*end:Menu item*/}{/*begin:Menu item*/}<div className="menu-item" >{/*begin:Menu link*/}<a className="menu-link" href="../pages/social/settings.html" ><span className="menu-bullet" ><span className="bullet bullet-dot">
+                                                    </a>
+                                                    {/*end:Menu link*/}</div>{/*end:Menu item*/}
+                                            </NavLink>
 
+                                            <NavLink to="/auth/home" onClick={() => dispatch(HomeChangeLinkRedux(4))}>
+                                                {/*begin:Menu item*/}
+                                                <div className="menu-item" >{/*begin:Menu link*/}
+                                                    <a className="menu-link">
+                                                        <span className="menu-bullet"><span className="bullet bullet-dot">
+
+                                                        </span>
                                         </span>
 
-                                        </span>
                                             <span className="menu-title" >Settings
                                             </span>
-                                        </a>{/*end:Menu link*/}</div>{/*end:Menu item*/}</div>{/*end:Menu sub*/}</div>{/*end:Menu item*/}
+                                                    </a>
+                                                    {/*end:Menu link*/}</div>{/*end:Menu item*/}
+                                            </NavLink>
+
+
+                                        </div>{/*end:Menu sub*/}</div>{/*end:Menu item*/}
                                         
+                                    <NavLink to="/pricing">
                                         {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
 
                                         </span>
@@ -452,6 +503,8 @@ const Sidebar = () => {
                                         </span>
                                         {/*end:Menu link*/}
                                         </div>{/*end:Menu item*/}
+                                    </NavLink>
+                                    <NavLink to="/auth/faq">
                                         {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
 
                                         </span>
@@ -463,6 +516,7 @@ const Sidebar = () => {
                                         </span>
                                         {/*end:Menu link*/}
                                         </div>{/*end:Menu item*/}
+                                    </NavLink>
                                         </div>{/*end:Menu sub*/}
                                             </div>{/*end:Menu item*/}
                                             
@@ -477,7 +531,7 @@ const Sidebar = () => {
                                         </span>
                                 {/*end:Menu link*/}
                                 {/*begin:Menu sub*/}<div className="menu-sub menu-sub-accordion" style={{ display: showApps == false ? "none" : "", overflow: showApps == false ? "hidden" : "" }}>
-                                
+                                    <NavLink to="/auth/create/design">
 {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
 
 </span>
@@ -489,6 +543,7 @@ const Sidebar = () => {
 </span>
     {/*end:Menu link*/}
     </div>{/*end:Menu item*/}
+                                    </NavLink>
 {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
 
 </span>
@@ -850,11 +905,15 @@ const Sidebar = () => {
                                     {/*begin::Username*/}
                                     <div className="d-flex flex-column">
                                         <div className="fw-bold d-flex align-items-center fs-5">
-                                            Max Smith                    <span className="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span>
+
+                                            {state2 && state2?.name}
+                                            <span className="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span>
                                         </div>
 
                                         <a href="#" className="fw-semibold text-muted text-hover-primary fs-7">
-                                            max@kt.com                </a>
+                                            {state2 && state2?.email}
+
+                                        </a>
                                     </div>
                                     {/*end::Username*/}
                                 </div>
@@ -1143,7 +1202,7 @@ const Sidebar = () => {
 
                             {/*begin::Menu item*/}
                             <div className="menu-item px-5">
-                                <a href="../authentication/layouts/corporate/sign-in.html" className="menu-link px-5">
+                                <a className="menu-link px-5" onClick={logout}>
                                     Sign Out
                                 </a>
                             </div>

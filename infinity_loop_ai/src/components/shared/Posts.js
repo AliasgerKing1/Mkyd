@@ -1,7 +1,10 @@
 /*eslint-disable */
 import React from 'react'
 
+import { useSelector } from 'react-redux'
+
 const Posts = () => {
+    let state = useSelector(state => state.PostReducer)
     let [comment, setComment] = useState(false)
     let [like, setLike] = useState(false)
     let [save, setSave] = useState(false)
@@ -11,7 +14,7 @@ const Posts = () => {
             <div className="mb-10" id="kt_social_feeds_posts">
                 {/*begin::Post 1*/}
                 {/*begin::Card*/}
-                {posts && posts.map((x)=> {
+                {state && state.map((x) => {
                     return (
                         <div className="card card-flush mb-10">
                     {/*begin::Card header*/}
