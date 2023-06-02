@@ -52,9 +52,6 @@ def detection(image_path, output_directory) :
             # Get the width height, x and y coordinate
             
 
-
-
-
 image_path = "input_1.png"
 output_directory = "cut_rectangles"
 detection(image_path, output_directory)

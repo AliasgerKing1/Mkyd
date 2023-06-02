@@ -418,13 +418,13 @@ dispatch(getPostRedux(result.data))
 
                                                                         {/*begin::Avatar*/}
                                                                         <div className="symbol symbol-35px me-3">
-                                                                            <img src="../../assets/media/avatars/300-1.jpg" alt="" />
+                                                                            <img src="/assets/media/avatars/300-1.jpg" alt="" />
                                                                         </div>
                                                                         {/*end::Avatar*/}
 
                                                                         {/*begin::Avatar*/}
                                                                         <div className="symbol symbol-35px">
-                                                                            <img src="../../assets/media/avatars/300-2.jpg" alt="" />
+                                                                            <img src="/assets/media/avatars/300-2.jpg" alt="" />
                                                                         </div>
                                                                         {/*end::Avatar*/}
                                                                     </div>
@@ -571,15 +571,13 @@ dispatch(getPostRedux(result.data))
                                                         </div>
                                                     </div>
                                                     {/*end::Mobile toolbar*/}
-
-
                                                     {/*begin::Main form*/}
                                                     <div className="card card-flush mb-10">
                                                         {/*begin::Header*/}
                                                         <div className="card-header justify-content-start align-items-center pt-4">
                                                             {/*begin::Photo*/}
                                                             <div className="symbol symbol-45px me-5">
-                                                                <img src="../../assets/media/avatars/300-3.jpg" className="" alt="" />
+                                                                <img src="/assets/media/avatars/300-3.jpg" className="" alt="" />
                                                             </div>
                                                             {/*end::Photo*/}
 
@@ -632,7 +630,7 @@ dispatch(getPostRedux(result.data))
                                                                     {/*begin::Avatar*/}
                                                                     <div className="symbol symbol-50px me-5">
 
-                                                                        <img src="../../assets/media/avatars/300-3.jpg" className="" alt="" />
+                                                                        <img src="/assets/media/avatars/300-3.jpg" className="" alt="" />
 
                                                                     </div>
                                                                     {/*end::Avatar*/}
@@ -836,7 +834,7 @@ dispatch(getPostRedux(result.data))
                                                                 <div className="d-flex align-items-center">
                                                                     {/*begin::Author*/}
                                                                     <div className="symbol symbol-35px me-3">
-                                                                        <img src="../../assets/media/avatars/300-3.jpg" alt="" />
+                                                                        <img src="/assets/media/avatars/300-3.jpg" alt="" />
                                                                     </div>
                                                                     {/*end::Author*/}
 
@@ -913,6 +911,7 @@ dispatch(getPostRedux(result.data))
                                         {/*end::Content container*/}
                                     </div>
                                     {/*end::Content*/}
+
                                 </div>
                                 {/*end::Content wrapper*/}
 
@@ -1264,13 +1263,13 @@ dispatch(getPostRedux(result.data))
 
                                                                                     {/*begin::Avatar*/}
                                                                                     <div className="symbol symbol-35px me-3">
-                                                                                        <img src="../../assets/media/avatars/300-1.jpg" alt="" />
+                                                                                        <img src="/assets/media/avatars/300-1.jpg" alt="" />
                                                                                     </div>
                                                                                     {/*end::Avatar*/}
 
                                                                                     {/*begin::Avatar*/}
                                                                                     <div className="symbol symbol-35px">
-                                                                                        <img src="../../assets/media/avatars/300-2.jpg" alt="" />
+                                                                                        <img src="/assets/media/avatars/300-2.jpg" alt="" />
                                                                                     </div>
                                                                                     {/*end::Avatar*/}
                                                                                 </div>
@@ -1478,7 +1477,7 @@ dispatch(getPostRedux(result.data))
                                                                                 {/*begin::Avatar*/}
                                                                                 <div className="symbol symbol-50px me-5">
 
-                                                                                    <img src="../../assets/media/avatars/300-3.jpg" className="" alt="" />
+                                                                                    <img src="/assets/media/avatars/300-3.jpg" className="" alt="" />
 
                                                                                 </div>
                                                                                 {/*end::Avatar*/}
@@ -1682,7 +1681,7 @@ dispatch(getPostRedux(result.data))
                                                                             <div className="d-flex align-items-center">
                                                                                 {/*begin::Author*/}
                                                                                 <div className="symbol symbol-35px me-3">
-                                                                                    <img src="../../assets/media/avatars/300-3.jpg" alt="" />
+                                                                                    <img src="/assets/media/avatars/300-3.jpg" alt="" />
                                                                                 </div>
                                                                                 {/*end::Author*/}
 
