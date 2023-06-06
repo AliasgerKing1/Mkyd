@@ -6,6 +6,7 @@ import {useFormik} from "formik"
 import {AlertDanger} from "../../shared/Alert"
 import SignupSchema from '../../../Schemas/SignupSchema'
 import { addUser } from '../../../services/UserService'
+import { otpGen } from '../../../services/AuthService'
 let initialValues = {
     email : "",
     password : "",
@@ -23,10 +24,13 @@ const Signup = () => {
         validationSchema : SignupSchema,
         onSubmit : async () => {
         let result = await addUser(values);
+        let id = result.data._id;
         if(result.data.status ? (result.data.status == 409) : null) {
             setShowAlert(true)
             setMsg("This email is already exist, please login !");
         } else {
+            let validOtop = await otpGen(id)
+            console.log(validOtop)
             setShowAlert(false)
             navigate("/");
         }

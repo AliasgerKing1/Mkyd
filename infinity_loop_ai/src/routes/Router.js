@@ -8,6 +8,7 @@ import Signup from "../components/pages/Signup/Signup";
 import Pricing from "../components/pages/Pricing/Pricing"
 import Help from "../components/pages/Help/Help";
 import Documentation from "../components/pages/Documentation/Documentation";
+import VerifyOtp from "../components/pages/VerifyOtp/VerifyOtp"
 
 const Router = () => {
 const router = useRoutes([
@@ -19,6 +20,10 @@ const router = useRoutes([
     {
       path : "/signup",
       element: <Signup />
+    },
+    {
+      path : "/verify/otp",
+      element: <VerifyOtp />
     },
   {
     path: "/pricing",
