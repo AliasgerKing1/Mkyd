@@ -2,7 +2,7 @@
 
   "scripts": {
 
-    "start": "nodemon App.js",
+    "start": "node App.js",
 
     "build": "npm i"
 

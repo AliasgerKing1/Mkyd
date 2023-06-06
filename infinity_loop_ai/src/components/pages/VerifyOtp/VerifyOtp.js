@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React from 'react'
 
 const VerifyOtp = () => {
@@ -8,7 +9,6 @@ const VerifyOtp = () => {
   {/*begin::Root*/}
   <div className="d-flex flex-column flex-root" id="kt_app_root">
     {/*begin::Page bg image*/}
-    {/* <style dangerouslySetInnerHTML={{__html: "\n    body {\n        background-image: url('/assets/media/auth/bg5.jpg');\n    }\n\n    [data-bs-theme=\"dark\"] body {\n        background-image: url('/assets/media/auth/bg5-dark.jpg');\n    }\n" }} /> */}
     {/*end::Page bg image*/}
     {/*begin::Authentication - Signup Welcome Message */}
     <div className="d-flex flex-column flex-center flex-column-fluid">    
