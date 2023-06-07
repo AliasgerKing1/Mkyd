@@ -1,7 +1,60 @@
 /*eslint-disable */
-import React from 'react'
-
+import React, { useState } from 'react'
+import {NavLink, useNavigate} from "react-router-dom"
+import {useSelector} from "react-redux"
+import { otpVerification } from '../../../services/AuthService';
 const VerifyOtp = () => {
+  let state = useSelector(state => state.OtpReducer)
+  const [current, setCurrent] = useState(1);
+  let navigate = useNavigate();
+
+  const restrictOtp = (event, currentInput) => {
+    let otp = '';
+  
+    if (event.key === 'Backspace' && event.target.value === '') {
+      const previousInputElement = document.getElementById(`input-${currentInput - 1}`);
+      if (previousInputElement) {
+        previousInputElement.focus();
+      }
+    } else {
+      if (isNaN(parseFloat(event.target.value))) {
+        event.target.value = '';
+      } else {
+        const inputValue = event.target.value;
+        event.target.value = inputValue.charAt(0);
+        otp += inputValue.charAt(0);
+  
+        const nextInputElement = document.getElementById(`input-${currentInput + 1}`);
+        if (nextInputElement && inputValue.length > 0) {
+          nextInputElement.focus();
+          nextInputElement.value = inputValue.substring(1);
+          otp += inputValue.substring(1);
+          setCurrent(currentInput + 1);
+        }
+      }
+    }
+
+  };
+  const handleButtonClick = () => {
+    let otp = '';
+    for (let i = 1; i <= 6; i++) {
+      const inputElement = document.getElementById(`input-${i}`);
+      if (inputElement) {
+        otp += inputElement.value;
+      }
+    }
+    let obj = {
+      email : state.email,
+      otp : otp
+    }
+    let result = otpVerification(obj) 
+        navigate("/");
+
+  }
+  
+  
+  
+
   return (
     <>
    {/*begin::Body*/}
@@ -35,9 +88,20 @@ const VerifyOtp = () => {
               <a href="../layouts/corporate/sign-up.html" className="link-primary fw-bold"> Try Again</a>
             </div>
             {/*end::Action*/}
+
+            <div className="input-field mb-8">
+  <input className='otp_input' type="text" id="input-1" onKeyUp={(e)=> restrictOtp(e, 1)} style={{pointerEvents :  current !== 1 ? 'none' : "", opacity : current !== 1 ? '0.6' : ""}} />
+  <input className='otp_input' type="text" id="input-2" onKeyUp={(e)=> restrictOtp(e, 2)} style={{pointerEvents :  current !== 2 ? 'none' : "", opacity : current !== 2 ? '0.6' : ""}} />
+  <input className='otp_input' type="text" id="input-3" onKeyUp={(e)=> restrictOtp(e, 3)} style={{pointerEvents :  current !== 3 ? 'none' : "", opacity : current !== 3 ? '0.6' : ""}} />
+  <input className='otp_input' type="text" id="input-4" onKeyUp={(e)=> restrictOtp(e, 4)} style={{pointerEvents :  current !== 4 ? 'none' : "", opacity : current !== 4 ? '0.6' : ""}} />
+  <input className='otp_input' type="text" id="input-5" onKeyUp={(e)=> restrictOtp(e, 5)} style={{pointerEvents :  current !== 5 ? 'none' : "", opacity : current !== 5 ? '0.6' : ""}} />
+  <input className='otp_input' type="text" id="input-6" onKeyUp={(e)=> restrictOtp(e, 6)} style={{pointerEvents :  current !== 6 ? 'none' : "", opacity : current !== 6 ? '0.6' : ""}} />
+</div>
+
+
             {/*begin::Link*/}
             <div className="mb-11">
-              <a href="/index.html" className="btn btn-sm btn-primary">Skip for now</a>
+              <a className="btn btn-sm btn-primary" onClick={handleButtonClick}>Submit</a>
             </div>    
             {/*end::Link*/}
             {/*begin::Illustration*/}

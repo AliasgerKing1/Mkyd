@@ -8,4 +8,7 @@ let loginUser = async (obj) => {
 let otpGen = async (id) => {
     return await axios.get(`${apiUrl2}/${id}`)
 }
-export { loginUser, otpGen };
+let otpVerification = async (obj) => {
+    return await axios.post(`${apiUrl2}/checkotp`, obj)
+}
+export { loginUser, otpGen, otpVerification };

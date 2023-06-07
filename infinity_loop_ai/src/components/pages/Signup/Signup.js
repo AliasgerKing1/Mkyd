@@ -2,6 +2,9 @@
 import React, { useEffect, useState } from 'react'
 import {NavLink, useNavigate} from "react-router-dom"
 import {useFormik} from "formik"
+import {useDispatch} from "react-redux"
+
+import {OtpRedux} from "../../../Redux/OtpReducer"
 
 import {AlertDanger} from "../../shared/Alert"
 import SignupSchema from '../../../Schemas/SignupSchema'
@@ -19,6 +22,7 @@ const Signup = () => {
     let [showAlert, setShowAlert] = useState(false);
     let [msg, setMsg] = useState("");
     let navigate = useNavigate();
+    let dispatch = useDispatch();
     let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
         initialValues : initialValues,
         validationSchema : SignupSchema,
@@ -30,9 +34,9 @@ const Signup = () => {
             setMsg("This email is already exist, please login !");
         } else {
             let validOtop = await otpGen(id)
-            console.log(validOtop)
+            dispatch(OtpRedux({email :result.data.email }))
             setShowAlert(false)
-            navigate("/");
+            navigate("/verify/otp");
         }
         
     }

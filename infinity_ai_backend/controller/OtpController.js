@@ -333,24 +333,30 @@ let random = gen()
 
 });
 
-// routes.post("/checkotp", async (req,res)=> {
+routes.post("/checkotp", async (req,res)=> {
 
-//     let otp = req.body.data.otp;
-//     let email = req.body.email;
-//     try {
-//         let verifyEmail = await User.find({email : email })
-//         if(verifyEmail.length == 1) {
-//     let result = await User.find({otp : otp})
-// if(result.length == 1) {
-//     res.send({status : 200, success : true})
-// }else {
-//     res.send({status : 401, success : false})
-// }
-//         }
-//    }catch (error) {
-//     console.log(error)
-// }
-// })
+    let otp = req.body.otp;
+    let email = req.body.email;
+    try {
+        let verifyEmail = await User.find({ email: email });
+        if (verifyEmail.length == 1) {
+          let result = await User.find({ otp: otp });
+          if (result.length == 1) {
+            await User.updateOne({ email: email }, { $set: { is_verified: true } });
+            console.log('User verified');
+            res.send({ status: 200, success: true });
+          } else {
+            res.send({ status: 401, success: false });
+          }
+        } else {
+          res.send({ status: 401, success: false });
+        }
+      } catch (error) {
+        console.error(error);
+        res.send({ status: 500, success: false, error: 'Internal Server Error' });
+      }
+      
+})
 
 // routes.get("/otpverified/:id", async (req,res)=> {
 //     let id = req.params.id;

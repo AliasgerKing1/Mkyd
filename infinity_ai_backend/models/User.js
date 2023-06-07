@@ -9,6 +9,10 @@ const User = mongoose.Schema({
         type : String,
         default: null
     },
+    is_verified : {
+        type : Boolean,
+        default: false
+    },
     website : Array,
     profile_photo : String,
     social : Array

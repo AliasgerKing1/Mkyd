@@ -16,6 +16,7 @@ import SidebarReducer from "./Redux/SidebarReducer"
 import PlanSelectedReducer from "./Redux/PlanSelectedReducer"
 import PostReducer from './Redux/PostReducer';
 import HomeChangeLinkReducer from './Redux/HomeChangeLinkReducer';
+import OtpReducer from './Redux/OtpReducer';
 
 
 import reportWebVitals from './reportWebVitals';
@@ -31,7 +32,8 @@ let rootReducer = combineReducers({
   SidebarReducer,
   PlanSelectedReducer,
   PostReducer,
-  HomeChangeLinkReducer
+  HomeChangeLinkReducer,
+  OtpReducer
 })
 let store = configureStore ({
   reducer : rootReducer

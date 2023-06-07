@@ -4,6 +4,8 @@ import {NavLink, useNavigate} from "react-router-dom"
 
 
 import {useDispatch} from "react-redux"
+
+import {OtpRedux} from "../../../Redux/OtpReducer"
 import {getTokenRedux} from "../../../Redux/TokenReducer"
 import {getSignInUserRedux} from "../../../Redux/SignInReducer"
 
@@ -20,6 +22,7 @@ const Signin = () => {
     let dispatch = useDispatch();
     let [showAlert, setShowAlert] = useState(false);
     let [msg, setMsg] = useState("");
+    let [verify, setVerify] = useState(false)
     let navigate = useNavigate();
     let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
         initialValues : initialValues,
@@ -33,6 +36,12 @@ setMsg("This email or password is incorrect !")
    else if(result.data.errType == 2) {
 setShowAlert(true)
 setMsg("This email or password is incorrect !")
+   }
+   else if(result.data.errType == 3) {
+setShowAlert(true)
+setMsg("Please varify your account first !")
+dispatch(OtpRedux({email : result.data.value.email }))
+setVerify(false)
    }
    else {
     setShowAlert(false)
@@ -238,10 +247,12 @@ navigate("/auth/home")
     {/*begin::Sign up*/}
     <div className="text-gray-500 text-center fw-semibold fs-6">
         Not a Member yet?
-
-        <NavLink to="/signup" className="link-primary">
+        {verify == false ? ("Not a Member yet?") : ("Not Verify yet?")}
+        {verify == false ? (<NavLink to="/signup" className="link-primary">
             &nbsp; <b>Sign up</b>
-        </NavLink>
+        </NavLink>) : (<NavLink to="/verify/otp" className="link-primary">
+            &nbsp; <b>Verify</b>
+        </NavLink>)}
     </div>
     {/*end::Sign up*/}
 </form>

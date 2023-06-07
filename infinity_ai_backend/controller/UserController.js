@@ -184,7 +184,7 @@ routes.post("/loginauth", async (req, res)=> {
     let password = sha1(req.body.password);
     try {
         const verify = await User.find({email : email})
-        // if(verify[0] ? (verify[0].isVerified == true) : "hello") {
+        if(verify[0] ? (verify[0].isVerified == true) : "hello") {
         const result = await User.find({email : email})
         if(result.length == 1) {
             if(result[0].password == password) {
@@ -197,9 +197,10 @@ routes.post("/loginauth", async (req, res)=> {
         }else {
             res.send({success : false, status : 401, errType : 1});
         }
-        // } else {
-        //     res.send({success : false, status : 401, errType : 3});
-        // }
+        } else {
+            const result2 = await User.find({email : email})
+            res.send({success : false, status : 401, errType : 3, value : result2[0].email});
+        }
     }catch(error) {
         console.log(error)
     }
