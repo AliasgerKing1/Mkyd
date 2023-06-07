@@ -23,6 +23,8 @@ const CreateDesign = () => {
     let [checkAccount, setCheckAccount] = useState(1)
     let [modalOpen, setModalOpen] = useState(false)
     let [paletteSeq, setPaletteSeq] = useState(0)
+    let [selectedP, setSelectedP] = useState(0)
+    let [selectedLang, setSelectedLang] = useState(0)
     let [websiteName, setWebsiteName] = useState("")
     let [checkAccountStep1, setCheckAccountStep1] = useState("html")
     let [languageSelected, setLanguageSelected] = useState(1)
@@ -81,6 +83,7 @@ let setClicked22 = () => {
 let selectpalette = (palette) => {
     if (palette) {
         setIsPalette(true)
+        setSelectedP(palette)
         dispatch(updatePaletteRedux({ palette_selected: palette }))
     }
 }
@@ -460,7 +463,7 @@ let selectpalette = (palette) => {
             {/*end::Col*/}
 
             {/*begin::Col*/}
-                                                      <div className="col yes-disabled">                            
+            <div className={`col ${state.plan == "free" ?"yes-disabled" : ""}`}>                                  
                 {/*begin::Option*/}
                                                           <label className={`btn btn-outline btn-outline-dashed btn-active-light-primary w-100 p-4 ${checkTeamSize == 3 ? "active" : ""}`} onClick={() => {
                     setCheckTEamSize(3)
@@ -473,7 +476,7 @@ let selectpalette = (palette) => {
             {/*end::Col*/}
 
             {/*begin::Col*/}
-                                                      <div className="col yes-disabled">                                      
+                                                      <div className={`col ${state.plan == "free" ?"yes-disabled" : ""}`}>                                      
                 {/*begin::Option*/}
                                                           <label className={`btn btn-outline btn-outline-dashed btn-active-light-primary w-100 p-4 ${checkTeamSize == 4 ? "active" : ""}`} onClick={() => {
                     setCheckTEamSize(4)
@@ -616,15 +619,16 @@ let selectpalette = (palette) => {
     </div>
     {/*end::Heading*/}
     {dummy.map((x, n)=> {
+          const isSelected = selectedP === n + 1;
         return (
             <>
-<div className="card mb-5" dir="ltr" style={{background : '#F9F9F9'}}> 
+<div className="card mb-5" dir="ltr" style={{background: isSelected ? '#C0C0C0' :'#F9F9F9' }}> 
     {/*}begin::Body*/}
     <div className="card-body">  
     <h3 className="align-items-start flex-column">
    <span className="card-label fw-bold text-gray-800">Palette {n + 1}</span>
   </h3>
-                        <div className='fv-row mb-5' style={{ display: 'flex', gap: '0', cursor: 'pointer' }} onClick={() => selectpalette(n + 1)}>
+                        <div className='fv-row mb-5' style={{ display: 'flex', gap: '0', cursor: 'pointer' }} onClick={() => selectpalette(n + 1)} >
                                                       <div style={{ backgroundColor: x.color_60, width: '30rem', height: '6rem', borderRadius: '3% 0 0 3%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                                           60%
                                                       </div>
@@ -645,15 +649,16 @@ let selectpalette = (palette) => {
     })}
 
     {dummy2.map((x, n)=> {
+                  const isSelected = selectedP === paletteSeq + n + 1;
         return (
             <>
-<div className="card mb-5" dir="ltr" style={{background : '#F9F9F9'}}> 
+<div className="card mb-5" dir="ltr" style={{background: isSelected ? '#C0C0C0' :'#F9F9F9' }}> 
     {/*}begin::Body*/}
     <div className="card-body">  
     <h3 className="align-items-start flex-column">
    <span className="card-label fw-bold text-gray-800">Palette {paletteSeq + n + 1}</span>
   </h3>
-                                                      <div className='fv-row mb-5' style={{ display: 'flex', gap: '0', cursor : 'pointer' }} onClick={()=>selectpalette(`palette ${paletteSeq + n + 1}`)}>
+                                                      <div className='fv-row mb-5' style={{ display: 'flex', gap: '0', cursor : 'pointer' }} onClick={()=>selectpalette(paletteSeq + n + 1)}>
                                                       <div style={{ backgroundColor: x.color_60, width: '30rem', height: '6rem', borderRadius: '3% 0 0 3%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                                                           60%
                                                       </div>

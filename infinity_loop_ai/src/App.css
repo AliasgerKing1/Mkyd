@@ -59,6 +59,10 @@ body {
 .input-field .otp_input::-webkit-outer-spin-button {
   display: none;
 }
+.yes-disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
  /* button {
   margin-top: 25px;
   width: 100%;

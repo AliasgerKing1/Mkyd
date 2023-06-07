@@ -6,7 +6,7 @@ let rn = require('random-number');
 
 
 let nodemailer = require("nodemailer")
-let mailGen = require("mailgen")
+// let mailGen = require("mailgen")
 const {EMAIL, PASSWORD} = require("../config/env")
 
 routes.get("/:id", async (req, res) => {

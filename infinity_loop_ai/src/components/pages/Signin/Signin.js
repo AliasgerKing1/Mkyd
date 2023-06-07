@@ -6,14 +6,11 @@ import {NavLink, useNavigate} from "react-router-dom"
 import {useDispatch} from "react-redux"
 
 import {OtpRedux} from "../../../Redux/OtpReducer"
-import {getTokenRedux} from "../../../Redux/TokenReducer"
-import {getSignInUserRedux} from "../../../Redux/SignInReducer"
 
 import {useFormik} from "formik"
 import {AlertDanger} from "../../shared/Alert"
 import SigninSchema from '../../../Schemas/SigninSchema'
 import { loginUser } from '../../../services/AuthService'
-import { getCurrentUser } from '../../../services/UserService'
 let initialValues = {
     email : "",
     password : "",
@@ -22,7 +19,7 @@ const Signin = () => {
     let dispatch = useDispatch();
     let [showAlert, setShowAlert] = useState(false);
     let [msg, setMsg] = useState("");
-    let [verify, setVerify] = useState(false)
+    let [verify, setVerify] = useState(true)
     let navigate = useNavigate();
     let {values, handleBlur, handleChange, handleSubmit, errors, touched} = useFormik({
         initialValues : initialValues,
@@ -45,14 +42,7 @@ setVerify(false)
    }
    else {
     setShowAlert(false)
-    let tokens = [
-        {
-            Login_token : result.data.token
-        }
-    ]
-dispatch(getTokenRedux(tokens))
-let result2 = await getCurrentUser(tokens[0].Login_token);
-dispatch(getSignInUserRedux(result2.data[0]))
+ localStorage.setItem("token", result.data.token)
 navigate("/auth/home")
    }
     }
@@ -246,9 +236,8 @@ navigate("/auth/home")
 
     {/*begin::Sign up*/}
     <div className="text-gray-500 text-center fw-semibold fs-6">
-        Not a Member yet?
-        {verify == false ? ("Not a Member yet?") : ("Not Verify yet?")}
-        {verify == false ? (<NavLink to="/signup" className="link-primary">
+        {verify == true ? ("Not a Member yet?") : ("Not Verify yet?")}
+        {verify == true ? (<NavLink to="/signup" className="link-primary">
             &nbsp; <b>Sign up</b>
         </NavLink>) : (<NavLink to="/verify/otp" className="link-primary">
             &nbsp; <b>Verify</b>

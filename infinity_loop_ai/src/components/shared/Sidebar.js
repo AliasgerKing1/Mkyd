@@ -5,27 +5,38 @@ import { useNavigate, NavLink } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { getSidebarConditionRedux } from "../../Redux/SidebarReducer"
 import { HomeChangeLinkRedux } from "../../Redux/HomeChangeLinkReducer"
-import { getTokenRedux } from "../../Redux/TokenReducer"
 
 const Sidebar = () => {
     let state = useSelector(state => state.SidebarReducer)
     let state2 = useSelector(state => state.SignInReducer)
+
     let dispatch = useDispatch()
     let navigate = useNavigate()
+
     let [isMenu, setIsMenu] = useState(false);
     let [isChangeWorkSpace, setIsChangeWorkSpace] = useState(false);
+
+
     let [isInternalMenu1, setIsInternalMenu1] = useState(false);
     let [isInternalMenu2, setIsInternalMenu2] = useState(false);
     let [isInternalMenu3, setIsInternalMenu3] = useState(false);
+    let [notifications, setNotifications] = useState(true)
+
     let [drawer, setDrawer] = useState(false);
+
+
     let [showDashboard, setShowDashboard] = useState(false)
     let [showPages, setShowPages] = useState(false)
     let [showPagesSocial, setShowPagesSocial] = useState(false)
     let [showApps, setShowApps] = useState(false)
+
+
     let [showTutorials, setShowTutorials] = useState(false)
     let [showFreeStuff, setShowFreeStuff] = useState(false)
     let [showUtilities, setShowUtilities] = useState(false)
     let [showHelp, setShowHelp] = useState(false)
+
+
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
     useEffect(() => {
@@ -44,7 +55,7 @@ const Sidebar = () => {
     }, []);
 
     let logout = () => {
-        dispatch(getTokenRedux([]))
+        localStorage.clear()
         navigate("/")
     }
     return (
@@ -78,8 +89,8 @@ const Sidebar = () => {
                             {/*begin::Svg Icon | path: icons/duotune/arrows/arr073.svg*/}
                             <span className="svg-icon svg-icon-3 svg-icon-gray-700">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12.5657 11.3657L16.75 15.55C17.1642 15.9643 17.8358 15.9643 18.25 15.55C18.6642 15.1358 18.6642 14.4643 18.25 14.05L12.7071 8.50716C12.3166 8.11663 11.6834 8.11663 11.2929 8.50715L5.75 14.05C5.33579 14.4643 5.33579 15.1358 5.75 15.55C6.16421 15.9643 6.83579 15.9643 7.25 15.55L11.4343 11.3657C11.7467 11.0533 12.2533 11.0533 12.5657 11.3657Z" fill="currentColor" />
-                            </svg>
+                                    <path d="M12.5657 11.3657L16.75 15.55C17.1642 15.9643 17.8358 15.9643 18.25 15.55C18.6642 15.1358 18.6642 14.4643 18.25 14.05L12.7071 8.50716C12.3166 8.11663 11.6834 8.11663 11.2929 8.50715L5.75 14.05C5.33579 14.4643 5.33579 15.1358 5.75 15.55C6.16421 15.9643 6.83579 15.9643 7.25 15.55L11.4343 11.3657C11.7467 11.0533 12.2533 11.0533 12.5657 11.3657Z" fill="currentColor" />
+                                </svg>
                             </span>
                             {/*end::Svg Icon*/}            {/*begin::Svg Icon | path: icons/duotune/arrows/arr072.svg*/}
                             <span className="svg-icon svg-icon-3 svg-icon-gray-700"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -345,47 +356,47 @@ const Sidebar = () => {
                                     {/*begin:Menu item*/}
                                     {/* <div className="menu-inner flex-column collapse show" id="kt_app_sidebar_menu_dashboards_collapse"> */}
                                     {/* begin:Menu item */}
-                                        {/* <div className="menu-item" > */}
-                                        {/*begin:Menu link*/}
-                                        {/* <a className="menu-link" href="bidding.html" >
+                                    {/* <div className="menu-item" > */}
+                                    {/*begin:Menu link*/}
+                                    {/* <a className="menu-link" href="bidding.html" >
 
                                             <span className="menu-bullet" >
 
                                                 <span className="bullet bullet-dot"></span>
                                             </span> */}
 
-                                            {/* <span className="menu-title" >Bidding</span> */}
-                                        {/* </a> */}
-                                        {/*end:Menu link*/}
-                                        {/* </div> */}
-                                        {/*end:Menu item*/}
-                                        {/* </div> */}
-                                {/* <div className="menu-item">
+                                    {/* <span className="menu-title" >Bidding</span> */}
+                                    {/* </a> */}
+                                    {/*end:Menu link*/}
+                                    {/* </div> */}
+                                    {/*end:Menu item*/}
+                                    {/* </div> */}
+                                    {/* <div className="menu-item">
                                     <div className="menu-content">
                                         <a className="btn btn-flex btn-color-primary d-flex flex-stack fs-base p-0 ms-2 mb-2 toggle collapsible active" data-bs-toggle="collapse" href="#kt_app_sidebar_menu_dashboards_collapse" data-kt-toggle-text="Show 12 More">
                                                 <span data-kt-toggle-text-target="true">Show</span> */}
-                                                 {/*begin::Svg Icon | path: icons/duotune/general/gen036.svg*/}
-                                            {/* <span className="svg-icon toggle-on svg-icon-2 me-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {/*begin::Svg Icon | path: icons/duotune/general/gen036.svg*/}
+                                    {/* <span className="svg-icon toggle-on svg-icon-2 me-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
                                                 <rect x="6.0104" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
                                             </svg>
                                             </span> */}
-                                            {/*end::Svg Icon*/}{/*begin::Svg Icon | path: icons/duotune/general/gen035.svg*/}
-                                            {/* <span className="svg-icon toggle-off svg-icon-2 me-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    {/*end::Svg Icon*/}{/*begin::Svg Icon | path: icons/duotune/general/gen035.svg*/}
+                                    {/* <span className="svg-icon toggle-off svg-icon-2 me-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect opacity="0.3" x="2" y="2" width="20" height="20" rx="5" fill="currentColor" />
                                                 <rect x="10.8891" y="17.8033" width="12" height="2" rx="1" transform="rotate(-90 10.8891 17.8033)" fill="currentColor" />
                                                 <rect x="6.01041" y="10.9247" width="12" height="2" rx="1" fill="currentColor" />
                                             </svg>
                                             </span> */}
-                                            {/*end::Svg Icon*/}
-                                        {/* </a>
+                                    {/*end::Svg Icon*/}
+                                    {/* </a>
                                     </div>
                                 </div> */}
                                 </div>{/*end:Menu sub*/}
-                                </div>
-                                {/*end:Menu item*/}
-                                
-                                {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className={`menu-item menu-accordion ${showPages == true ? "hover show" : ""}`} >{/*begin:Menu link*/}<span className="menu-link" onClick={() => setShowPages(showPages == true ? false : true)}><span className="menu-icon" ><i className="fonticon-stats fs-2"></i>
+                            </div>
+                            {/*end:Menu item*/}
+
+                            {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className={`menu-item menu-accordion ${showPages == true ? "hover show" : ""}`} >{/*begin:Menu link*/}<span className="menu-link" onClick={() => setShowPages(showPages == true ? false : true)}><span className="menu-icon" ><i className="fonticon-stats fs-2"></i>
                             </span>
                                 <span className="menu-title" >General
                                 </span>
@@ -397,38 +408,38 @@ const Sidebar = () => {
                                 {/*end:Menu link*/}
                                 {/*begin:Menu sub*/}
                                 <div className="menu-sub menu-sub-accordion" style={{ display: showPages == false ? "none" : "", overflow: showPages == false ? "hidden" : "" }}>
-                                <NavLink to="/auth/profile/">
+                                    <NavLink to="/auth/profile/">
 
-                                
-                                {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
 
-                                </span>
+                                        {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
 
-                                </span>
-                                    <span className="menu-title" >My Profile
+                                        </span>
+
+                                        </span>
+                                            <span className="menu-title" >My Profile
+                                            </span>
+
+                                        </span>
+                                            {/*end:Menu link*/}
+                                        </div>{/*end:Menu item*/}
+                                    </NavLink>
+
+
+
+                                    {/*begin:Menu item*/}<div data-kt-menu-trigger="click" onClick={() => setShowPagesSocial(showPagesSocial == true ? false : true)} className={`menu-item menu-accordion ${showPagesSocial == true ? "hover show" : ""}`} >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
+
                                     </span>
 
-                                </span>
-                                    {/*end:Menu link*/}
-                                    </div>{/*end:Menu item*/}
-                                </NavLink>
-                                    
-                                
-                                        
-                                        {/*begin:Menu item*/}<div data-kt-menu-trigger="click" onClick={() => setShowPagesSocial(showPagesSocial == true ? false : true)} className={`menu-item menu-accordion ${showPagesSocial == true ? "hover show" : ""}`} >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
-
-                                        </span>
-
-                                        </span>
+                                    </span>
                                         <span className="menu-title" >Social
-                                            </span>
-                                            <span className="menu-arrow" >
-
-                                            </span>
+                                        </span>
+                                        <span className="menu-arrow" >
 
                                         </span>
+
+                                    </span>
                                         {/*end:Menu link*/}
-                                        
+
 
                                         {/*begin:Menu sub*/}<div className="menu-sub menu-sub-accordion" style={{ display: showPagesSocial == false ? "none" : "", overflow: showPagesSocial == false ? "hidden" : "" }}>
                                             <NavLink to="/auth/home" onClick={() => dispatch(HomeChangeLinkRedux(1))}>
@@ -437,11 +448,11 @@ const Sidebar = () => {
                                                     <a className="menu-link">
                                                         <span className="menu-bullet" ><span className="bullet bullet-dot">
 
-                                        </span>
+                                                        </span>
 
-                                        </span>
+                                                        </span>
                                                         <span className="menu-title" >Inspiration
-                                            </span>
+                                                        </span>
                                                     </a>
                                                     {/*end:Menu link*/}</div>{/*end:Menu item*/}
                                             </NavLink>
@@ -452,11 +463,11 @@ const Sidebar = () => {
                                                     <a className="menu-link">
                                                         <span className="menu-bullet" ><span className="bullet bullet-dot">
 
-                                        </span>
+                                                        </span>
 
-                                        </span>
-                                            <span className="menu-title" >Activty
-                                            </span>
+                                                        </span>
+                                                        <span className="menu-title" >Activty
+                                                        </span>
                                                     </a>
                                                     {/*end:Menu link*/}</div>{/*end:Menu item*/}
                                             </NavLink>
@@ -468,11 +479,11 @@ const Sidebar = () => {
                                                     <a className="menu-link">
                                                         <span className="menu-bullet" ><span className="bullet bullet-dot">
 
-                                        </span>
+                                                        </span>
 
-                                        </span>
-                                            <span className="menu-title" >Search
-                                            </span>
+                                                        </span>
+                                                        <span className="menu-title" >Search
+                                                        </span>
                                                     </a>
                                                     {/*end:Menu link*/}</div>{/*end:Menu item*/}
                                             </NavLink>
@@ -484,17 +495,17 @@ const Sidebar = () => {
                                                         <span className="menu-bullet"><span className="bullet bullet-dot">
 
                                                         </span>
-                                        </span>
+                                                        </span>
 
-                                            <span className="menu-title" >Settings
-                                            </span>
+                                                        <span className="menu-title" >Settings
+                                                        </span>
                                                     </a>
                                                     {/*end:Menu link*/}</div>{/*end:Menu item*/}
                                             </NavLink>
 
 
                                         </div>{/*end:Menu sub*/}</div>{/*end:Menu item*/}
-                                        
+
                                     <NavLink to="/pricing">
                                         {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
 
@@ -505,7 +516,7 @@ const Sidebar = () => {
                                             </span>
 
                                         </span>
-                                        {/*end:Menu link*/}
+                                            {/*end:Menu link*/}
                                         </div>{/*end:Menu item*/}
                                     </NavLink>
                                     <NavLink to="/auth/faq">
@@ -518,363 +529,144 @@ const Sidebar = () => {
                                             </span>
 
                                         </span>
-                                        {/*end:Menu link*/}
+                                            {/*end:Menu link*/}
                                         </div>{/*end:Menu item*/}
                                     </NavLink>
-                                        </div>{/*end:Menu sub*/}
-                                            </div>{/*end:Menu item*/}
-                                            
-                                            {/*begin:Menu item*/}<div data-kt-menu-trigger="click" onClick={() => setShowApps(showApps == true ? false : true)} className={`menu-item menu-accordion ${showApps == true ? "hover show" : ""}`} >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-icon" ><i className="fonticon-app-store fs-2"></i>
-                                        </span>
-                                            <span className="menu-title" >Apps
-                                            </span>
-                                            <span className="menu-arrow" >
+                                </div>{/*end:Menu sub*/}
+                            </div>{/*end:Menu item*/}
 
-                                            </span>
-
-                                        </span>
-                                {/*end:Menu link*/}
-                                {/*begin:Menu sub*/}<div className="menu-sub menu-sub-accordion" style={{ display: showApps == false ? "none" : "", overflow: showApps == false ? "hidden" : "" }}>
-                                    <NavLink to="/auth/create/design">
-{/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
-
-</span>
-
-</span>
-    <span className="menu-title" >Website Creation
-    </span>
-
-</span>
-    {/*end:Menu link*/}
-    </div>{/*end:Menu item*/}
-                                    </NavLink>
-{/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
-
-</span>
-
-</span>
-    <span className="menu-title" >Api
-    </span>
-
-</span>
-    {/*end:Menu link*/}
-    </div>{/*end:Menu item*/}
-        </div>{/*end:Menu sub*/}
-            </div>{/*end:Menu item*/}
-                                    
-                                    {/*begin:Menu item*/}<div data-kt-menu-trigger="click"  className={`menu-item menu-accordion ${showUtilities == true ? "hover show" : ""}`} >{/*begin:Menu link*/}<span className="menu-link" onClick={() => setShowUtilities(showUtilities == true ? false : true)}><span className="menu-icon" ><i className="fonticon-image fs-2"></i>
-                                        </span>
-                                            <span className="menu-title" >Resources
-                                            </span>
-                                            <span className="menu-arrow" >
-
-                                            </span>
-
-                                        </span>
-                                {/*end:Menu link*/}
-                                
-                                {/*begin:Menu sub*/}<div className="menu-sub menu-sub-accordion" style={{ display: showUtilities == false ? "none" : "", overflow: showUtilities == false ? "hidden" : "" }}>
-                                
-                                {/*begin:Menu item*/}<div data-kt-menu-trigger="click" onClick={() => setShowTutorials(showTutorials == true ? false : true)} className={`menu-item menu-accordion ${showTutorials == true ? "hover show" : ""}`} >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
+                            {/*begin:Menu item*/}<div data-kt-menu-trigger="click" onClick={() => setShowApps(showApps == true ? false : true)} className={`menu-item menu-accordion ${showApps == true ? "hover show" : ""}`} >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-icon" ><i className="fonticon-app-store fs-2"></i>
+                            </span>
+                                <span className="menu-title" >Apps
+                                </span>
+                                <span className="menu-arrow" >
 
                                 </span>
 
-</span>
-    <span className="menu-title" >Tutorials
-    </span>
-    <span className="menu-arrow" >
-
-    </span>
-
-</span>
-    {/*end:Menu link*/}
-    {/*begin:Menu sub*/}<div className="menu-sub menu-sub-accordion menu-active-bg" style={{ display: showTutorials == false ? "none" : "", overflow: showTutorials == false ? "hidden" : "" }}>
-    
-{/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
-
-</span>
-
-</span>
-    <span className="menu-title" >Video
-    </span>
-
-</span>
-    {/*end:Menu link*/}
-    </div>{/*end:Menu item*/}
-            
-{/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
-
-</span>
-
-</span>
-    <span className="menu-title" >Articles
-    </span>
-
-</span>
-    {/*end:Menu link*/}
-    </div>{/*end:Menu item*/}
-
-{/*end:Menu item*/}</div>{/*end:Menu sub*/}</div>{/*end:Menu item*/}
-
-{/*begin:Menu item*/}<div data-kt-menu-trigger="click" onClick={() => setShowFreeStuff(showFreeStuff == true ? false : true)} className={`menu-item menu-accordion ${showFreeStuff == true ? "hover show" : ""}`} >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
-
-</span>
-
-</span>
-    <span className="menu-title" >Free Stuff
-    </span>
-    <span className="menu-arrow" >
-
-    </span>
-
-</span>
-{/*end:Menu link*/}{/*begin:Menu sub*/}<div className="menu-sub menu-sub-accordion menu-active-bg" style={{ display: showFreeStuff == false ? "none" : "", overflow: showFreeStuff == false ? "hidden" : "" }}>{/*begin:Menu item*/}<div className="menu-item" >{/*begin:Menu link*/}<a className="menu-link" href="../utilities/wizards/horizontal.html" ><span className="menu-bullet" ><span className="bullet bullet-dot">
-
-</span>
-
-</span>
-<span className="menu-title" >Free Points
-</span>
-</a>{/*end:Menu link*/}</div>{/*end:Menu item*/}{/*begin:Menu item*/}<div className="menu-item" >{/*begin:Menu link*/}<a className="menu-link" href="../utilities/wizards/vertical.html" ><span className="menu-bullet" ><span className="bullet bullet-dot">
-
-</span>
-
-</span>
-<span className="menu-title" >Free Cources
-</span>
-</a>{/*end:Menu link*/}</div>{/*end:Menu item*/}
-</div>{/*end:Menu sub*/}</div>{/*end:Menu item*/}
-</div>{/*end:Menu sub*/}</div>{/*end:Menu item*/}
-                                            
-                                            {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-icon" ><i className="fonticon-setting fs-2"></i>
-                                        </span>
-                                            <span className="menu-title" >Help
-                                            </span>
-
-                                        </span>
+                            </span>
                                 {/*end:Menu link*/}
-                                </div>{/*end:Menu item*/}
-                                </div>
-                        {/*end::Sidebar menu*/}
+                                {/*begin:Menu sub*/}<div className="menu-sub menu-sub-accordion" style={{ display: showApps == false ? "none" : "", overflow: showApps == false ? "hidden" : "" }}>
+                                    <NavLink to="/auth/create/design">
+                                        {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
 
-                        {/*begin::Separator*/}
-                        <div className="separator"></div>
-                        {/*end::Separator*/}
-
-                        {/*begin::Projects*/}
-                        <div className="menu menu-rounded menu-column">
-                            {/*begin::Heading*/}
-                            <div className="menu-item">
-                                <div className="menu-content menu-heading">
-                                    Projects
-                                </div>
-                            </div>
-                            {/*end::Heading*/}
-
-
-
-                            {/*begin::Menu Item*/}
-                            <div className="menu-item">
-                                {/*begin::Menu link*/}
-                                <a className="menu-link" href="../apps/projects/project.html">
-                                    {/*begin::Bullet*/}
-                                    <span className="menu-icon">
-                                        <span className="bullet bullet-dot h-10px w-10px bg-primary">
                                         </span>
-                                    </span>
-                                    {/*end::Bullet*/}
 
-                                    {/*begin::Title*/}
-                                    <span className="menu-title">
-                                        Google Ads                </span>
-                                    {/*end::Title*/}
-
-                                    {/*begin::Badge*/}
-                                    <span className="menu-badge">
-                                        <span className="badge badge-custom">
-                                            6                    </span>
-                                    </span>
-                                    {/*end::Badge*/}
-                                </a>
-                                {/*end::Menu link*/}
-                            </div>
-                            {/*end::Menu Item*/}
-                            {/*begin::Menu Item*/}
-                            <div className="menu-item">
-                                {/*begin::Menu link*/}
-                                <a className="menu-link" href="../apps/projects/project.html">
-                                    {/*begin::Bullet*/}
-                                    <span className="menu-icon">
-                                        <span className="bullet bullet-dot h-10px w-10px bg-success">
                                         </span>
-                                    </span>
-                                    {/*end::Bullet*/}
-
-                                    {/*begin::Title*/}
-                                    <span className="menu-title">
-                                        AirStoke App                </span>
-                                    {/*end::Title*/}
-
-                                    {/*begin::Badge*/}
-                                    <span className="menu-badge">
-                                        <span className="badge badge-custom">
-                                            2                    </span>
-                                    </span>
-                                    {/*end::Badge*/}
-                                </a>
-                                {/*end::Menu link*/}
-                            </div>
-                            {/*end::Menu Item*/}
-
-
-
-                            {/*begin::Menu Item*/}
-                            <div className="menu-item">
-                                {/*begin::Menu link*/}
-                                <a className="menu-link" href="../apps/projects/project.html">
-                                    {/*begin::Bullet*/}
-                                    <span className="menu-icon">
-                                        <span className="bullet bullet-dot h-10px w-10px bg-warning">
-                                        </span>
-                                    </span>
-                                    {/*end::Bullet*/}
-
-                                    {/*begin::Title*/}
-                                    <span className="menu-title">
-                                        Internal Tasks                </span>
-                                    {/*end::Title*/}
-
-                                    {/*begin::Badge*/}
-                                    <span className="menu-badge">
-                                        <span className="badge badge-custom">
-                                            37                    </span>
-                                    </span>
-                                    {/*end::Badge*/}
-                                </a>
-                                {/*end::Menu link*/}
-                            </div>
-                            {/*end::Menu Item*/}
-
-
-                            {/*begin::Collapsible items*/}
-                            <div className="menu-inner flex-column collapse" id="kt_app_sidebar_menu_projects_collapse">
-                                {/*begin::Menu Item*/}
-                                <div className="menu-item">
-                                    {/*begin::Menu link*/}
-                                    <a className="menu-link" href="../apps/projects/project.html">
-                                        {/*begin::Bullet*/}
-                                        <span className="menu-icon">
-                                            <span className="bullet bullet-dot h-10px w-10px bg-danger">
+                                            <span className="menu-title" >Website Creation
                                             </span>
+
                                         </span>
-                                        {/*end::Bullet*/}
+                                            {/*end:Menu link*/}
+                                        </div>{/*end:Menu item*/}
+                                    </NavLink>
+                                    {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
 
-                                        {/*begin::Title*/}
-                                        <span className="menu-title">
-                                            Fitnes App                </span>
-                                        {/*end::Title*/}
-
-                                        {/*begin::Badge*/}
-                                        <span className="menu-badge">
-                                            <span className="badge badge-custom">
-                                                3                    </span>
-                                        </span>
-                                        {/*end::Badge*/}
-                                    </a>
-                                    {/*end::Menu link*/}
-                                </div>
-                                {/*end::Menu Item*/}
-
-
-
-                                {/*begin::Menu Item*/}
-                                <div className="menu-item">
-                                    {/*begin::Menu link*/}
-                                    <a className="menu-link" href="../apps/projects/project.html">
-                                        {/*begin::Bullet*/}
-                                        <span className="menu-icon">
-                                            <span className="bullet bullet-dot h-10px w-10px bg-info">
-                                            </span>
-                                        </span>
-                                        {/*end::Bullet*/}
-
-                                        {/*begin::Title*/}
-                                        <span className="menu-title">
-                                            Oppo CRM                </span>
-                                        {/*end::Title*/}
-
-                                        {/*begin::Badge*/}
-                                        <span className="menu-badge">
-                                            <span className="badge badge-custom">
-                                                12                    </span>
-                                        </span>
-                                        {/*end::Badge*/}
-                                    </a>
-                                    {/*end::Menu link*/}
-                                </div>
-                                {/*end::Menu Item*/}
-
-
-
-                                {/*begin::Menu Item*/}
-                                <div className="menu-item">
-                                    {/*begin::Menu link*/}
-                                    <a className="menu-link" href="../apps/projects/project.html">
-                                        {/*begin::Bullet*/}
-                                        <span className="menu-icon">
-                                            <span className="bullet bullet-dot h-10px w-10px bg-warning">
-                                            </span>
-                                        </span>
-                                        {/*end::Bullet*/}
-
-                                        {/*begin::Title*/}
-                                        <span className="menu-title">
-                                            Finance Dispatch                </span>
-                                        {/*end::Title*/}
-
-                                        {/*begin::Badge*/}
-                                        <span className="menu-badge">
-                                            <span className="badge badge-custom">
-                                                25                    </span>
-                                        </span>
-                                        {/*end::Badge*/}
-                                    </a>
-                                    {/*end::Menu link*/}
-                                </div>
-                                {/*end::Menu Item*/}
-
-                            </div>
-                            {/*end::Collapsible items*/}
-
-
-                            {/*begin::Collapse toggle*/}
-                            <div className="menu-item">
-                                {/*begin::Toggle*/}
-                                <a className="menu-link menu-collapse-toggle toggle collapsible collapsed" data-bs-toggle="collapse" href="#kt_app_sidebar_menu_projects_collapse" data-kt-toggle-text="Show less">
-                                    <span className="menu-icon">
-                                        {/*begin::Svg Icon | path: icons/duotune/arrows/arr072.svg*/}
-                                        <span className="svg-icon toggle-off svg-icon-3 me-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z" fill="currentColor" />
-                                        </svg>
-                                        </span>
-                                        {/*end::Svg Icon*/}                {/*begin::Svg Icon | path: icons/duotune/arrows/arr073.svg*/}
-                                        <span className="svg-icon toggle-on svg-icon-3 me-0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M12.5657 11.3657L16.75 15.55C17.1642 15.9643 17.8358 15.9643 18.25 15.55C18.6642 15.1358 18.6642 14.4643 18.25 14.05L12.7071 8.50716C12.3166 8.11663 11.6834 8.11663 11.2929 8.50715L5.75 14.05C5.33579 14.4643 5.33579 15.1358 5.75 15.55C6.16421 15.9643 6.83579 15.9643 7.25 15.55L11.4343 11.3657C11.7467 11.0533 12.2533 11.0533 12.5657 11.3657Z" fill="currentColor" />
-                                        </svg>
-                                        </span>
-                                        {/*end::Svg Icon*/}            </span>
-
-                                    {/*begin::Title*/}
-                                    <span className="menu-title" data-kt-toggle-text-target="true">
-                                        Show more
                                     </span>
-                                    {/*end::Title*/}
-                                </a>
-                                {/*end::Toggle*/}
-                            </div>
-                            {/*end::Collapse toggle*/}
+
+                                    </span>
+                                        <span className="menu-title" >Api
+                                        </span>
+
+                                    </span>
+                                        {/*end:Menu link*/}
+                                    </div>{/*end:Menu item*/}
+                                </div>{/*end:Menu sub*/}
+                            </div>{/*end:Menu item*/}
+
+                            {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className={`menu-item menu-accordion ${showUtilities == true ? "hover show" : ""}`} >{/*begin:Menu link*/}<span className="menu-link" onClick={() => setShowUtilities(showUtilities == true ? false : true)}><span className="menu-icon" ><i className="fonticon-image fs-2"></i>
+                            </span>
+                                <span className="menu-title" >Resources
+                                </span>
+                                <span className="menu-arrow" >
+
+                                </span>
+
+                            </span>
+                                {/*end:Menu link*/}
+
+                                {/*begin:Menu sub*/}<div className="menu-sub menu-sub-accordion" style={{ display: showUtilities == false ? "none" : "", overflow: showUtilities == false ? "hidden" : "" }}>
+
+                                    {/*begin:Menu item*/}<div data-kt-menu-trigger="click" onClick={() => setShowTutorials(showTutorials == true ? false : true)} className={`menu-item menu-accordion ${showTutorials == true ? "hover show" : ""}`} >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
+
+                                    </span>
+
+                                    </span>
+                                        <span className="menu-title" >Tutorials
+                                        </span>
+                                        <span className="menu-arrow" >
+
+                                        </span>
+
+                                    </span>
+                                        {/*end:Menu link*/}
+                                        {/*begin:Menu sub*/}<div className="menu-sub menu-sub-accordion menu-active-bg" style={{ display: showTutorials == false ? "none" : "", overflow: showTutorials == false ? "hidden" : "" }}>
+
+                                            {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
+
+                                            </span>
+
+                                            </span>
+                                                <span className="menu-title" >Video
+                                                </span>
+
+                                            </span>
+                                                {/*end:Menu link*/}
+                                            </div>{/*end:Menu item*/}
+
+                                            {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
+
+                                            </span>
+
+                                            </span>
+                                                <span className="menu-title" >Articles
+                                                </span>
+
+                                            </span>
+                                                {/*end:Menu link*/}
+                                            </div>{/*end:Menu item*/}
+
+                                            {/*end:Menu item*/}</div>{/*end:Menu sub*/}</div>{/*end:Menu item*/}
+
+                                    {/*begin:Menu item*/}<div data-kt-menu-trigger="click" onClick={() => setShowFreeStuff(showFreeStuff == true ? false : true)} className={`menu-item menu-accordion ${showFreeStuff == true ? "hover show" : ""}`} >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
+
+                                    </span>
+
+                                    </span>
+                                        <span className="menu-title" >Free Stuff
+                                        </span>
+                                        <span className="menu-arrow" >
+
+                                        </span>
+
+                                    </span>
+                                        {/*end:Menu link*/}{/*begin:Menu sub*/}<div className="menu-sub menu-sub-accordion menu-active-bg" style={{ display: showFreeStuff == false ? "none" : "", overflow: showFreeStuff == false ? "hidden" : "" }}>{/*begin:Menu item*/}<div className="menu-item" >{/*begin:Menu link*/}<a className="menu-link" href="../utilities/wizards/horizontal.html" ><span className="menu-bullet" ><span className="bullet bullet-dot">
+
+                                        </span>
+
+                                        </span>
+                                            <span className="menu-title" >Free Points
+                                            </span>
+                                        </a>{/*end:Menu link*/}</div>{/*end:Menu item*/}{/*begin:Menu item*/}<div className="menu-item" >{/*begin:Menu link*/}<a className="menu-link" href="../utilities/wizards/vertical.html" ><span className="menu-bullet" ><span className="bullet bullet-dot">
+
+                                        </span>
+
+                                        </span>
+                                            <span className="menu-title" >Free Cources
+                                            </span>
+                                        </a>{/*end:Menu link*/}</div>{/*end:Menu item*/}
+                                        </div>{/*end:Menu sub*/}</div>{/*end:Menu item*/}
+                                </div>{/*end:Menu sub*/}</div>{/*end:Menu item*/}
+
+                            {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-icon" ><i className="fonticon-setting fs-2"></i>
+                            </span>
+                                <span className="menu-title" >Help
+                                </span>
+
+                            </span>
+                                {/*end:Menu link*/}
+                            </div>{/*end:Menu item*/}
                         </div>
-                        {/*end::Projects*/}
+                        {/*end::Sidebar menu*/}
                     </div>
                 </div>
                 {/*end::Navs*/}
@@ -909,11 +701,10 @@ const Sidebar = () => {
                                     {/*begin::Username*/}
                                     <div className="d-flex flex-column">
                                         <div className="fw-bold d-flex align-items-center fs-5">
-                                        <NavLink to="/auth/profile">
-                                            {state2 && state2?.name}
-                                        </NavLink>
-                                            
-                                            <span className="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span>
+                                            <NavLink to="/auth/profile">
+                                                {state2 && state2?.name}
+                                            </NavLink>
+                                            {(state2 && state2.plan != "free") ? (<span className="badge badge-light-success fw-bold fs-8 px-2 py-1 ms-2">Pro</span>) : ""}
                                         </div>
 
                                         <a href="#" className="fw-semibold text-muted text-hover-primary fs-7">
@@ -932,10 +723,10 @@ const Sidebar = () => {
 
                             {/*begin::Menu item*/}
                             <div className="menu-item px-5">
-                            <a className="menu-link px-5">
-                                <NavLink to="/auth/profile/">
-                                    My Profile
-                                </NavLink>
+                                <a className="menu-link px-5">
+                                    <NavLink to="/auth/profile/">
+                                        My Profile
+                                    </NavLink>
                                 </a>
 
                             </div>
@@ -972,27 +763,19 @@ const Sidebar = () => {
                                     {/*begin::Menu item*/}
                                     <div className="menu-item px-3">
                                         <a href="../account/billing.html" className="menu-link px-5">
-                                            Billing
+                                            Plan
                                         </a>
                                     </div>
                                     {/*end::Menu item*/}
 
                                     {/*begin::Menu item*/}
-                                    <div className="menu-item px-3">
-                                        <a href="../account/statements.html" className="menu-link px-5">
-                                            Payments
-                                        </a>
-                                    </div>
-                                    {/*end::Menu item*/}
-
-                                    {/*begin::Menu item*/}
-                                    <div className="menu-item px-3">
+                                    {/* <div className="menu-item px-3">
                                         <a href="../account/statements.html" className="menu-link d-flex flex-stack px-5">
                                             Statements
 
                                             <i className="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="View your statements"></i>
                                         </a>
-                                    </div>
+                                    </div> */}
                                     {/*end::Menu item*/}
 
                                     {/*begin::Menu separator*/}
@@ -1001,9 +784,9 @@ const Sidebar = () => {
 
                                     {/*begin::Menu item*/}
                                     <div className="menu-item px-3">
-                                        <div className="menu-content px-3">
+                                        <div className="menu-content px-3" onClick={() => setNotifications(notifications == true ? false : true)} style={{ cursor: "pointer" }}>
                                             <label className="form-check form-switch form-check-custom form-check-solid">
-                                                <input className="form-check-input w-30px h-20px" type="checkbox" value="1" checked="checked" name="notifications" />
+                                                <input className="form-check-input w-30px h-20px" type="checkbox" value="1" checked={notifications == true ? "checked" : ""} name="notifications" />
                                                 <span className="form-check-label text-muted fs-7">
                                                     Notifications
                                                 </span>
@@ -1035,8 +818,8 @@ const Sidebar = () => {
                                         Mode
 
                                         <span className="ms-5 position-absolute translate-middle-y top-50 end-0">
-                                        {/*begin::Svg Icon | path: icons/duotune/general/gen060.svg*/}
-                                        <span className="svg-icon theme-light-show svg-icon-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            {/*begin::Svg Icon | path: icons/duotune/general/gen060.svg*/}
+                                            <span className="svg-icon theme-light-show svg-icon-2"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M11.9905 5.62598C10.7293 5.62574 9.49646 5.9995 8.44775 6.69997C7.39903 7.40045 6.58159 8.39619 6.09881 9.56126C5.61603 10.7263 5.48958 12.0084 5.73547 13.2453C5.98135 14.4823 6.58852 15.6185 7.48019 16.5104C8.37186 17.4022 9.50798 18.0096 10.7449 18.2557C11.9818 18.5019 13.2639 18.3757 14.429 17.8931C15.5942 17.4106 16.5901 16.5933 17.2908 15.5448C17.9915 14.4962 18.3655 13.2634 18.3655 12.0023C18.3637 10.3119 17.6916 8.69129 16.4964 7.49593C15.3013 6.30056 13.6808 5.62806 11.9905 5.62598Z" fill="currentColor" />
                                                 <path d="M22.1258 10.8771H20.627C20.3286 10.8771 20.0424 10.9956 19.8314 11.2066C19.6204 11.4176 19.5018 11.7038 19.5018 12.0023C19.5018 12.3007 19.6204 12.5869 19.8314 12.7979C20.0424 13.0089 20.3286 13.1274 20.627 13.1274H22.1258C22.4242 13.1274 22.7104 13.0089 22.9214 12.7979C23.1324 12.5869 23.2509 12.3007 23.2509 12.0023C23.2509 11.7038 23.1324 11.4176 22.9214 11.2066C22.7104 10.9956 22.4242 10.8771 22.1258 10.8771Z" fill="currentColor" />
                                                 <path d="M11.9905 19.4995C11.6923 19.5 11.4064 19.6187 11.1956 19.8296C10.9848 20.0405 10.8663 20.3265 10.866 20.6247V22.1249C10.866 22.4231 10.9845 22.7091 11.1953 22.9199C11.4062 23.1308 11.6922 23.2492 11.9904 23.2492C12.2886 23.2492 12.5746 23.1308 12.7854 22.9199C12.9963 22.7091 13.1147 22.4231 13.1147 22.1249V20.6247C13.1145 20.3265 12.996 20.0406 12.7853 19.8296C12.5745 19.6187 12.2887 19.5 11.9905 19.4995Z" fill="currentColor" />
@@ -1068,7 +851,7 @@ const Sidebar = () => {
                                             <span className="menu-icon" data-kt-element="icon">
                                                 {/*begin::Svg Icon | path: icons/duotune/general/gen060.svg*/}
                                                 <span className="svg-icon svg-icon-3"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M11.9905 5.62598C10.7293 5.62574 9.49646 5.9995 8.44775 6.69997C7.39903 7.40045 6.58159 8.39619 6.09881 9.56126C5.61603 10.7263 5.48958 12.0084 5.73547 13.2453C5.98135 14.4823 6.58852 15.6185 7.48019 16.5104C8.37186 17.4022 9.50798 18.0096 10.7449 18.2557C11.9818 18.5019 13.2639 18.3757 14.429 17.8931C15.5942 17.4106 16.5901 16.5933 17.2908 15.5448C17.9915 14.4962 18.3655 13.2634 18.3655 12.0023C18.3637 10.3119 17.6916 8.69129 16.4964 7.49593C15.3013 6.30056 13.6808 5.62806 11.9905 5.62598Z" fill="currentColor" />
+                                                    <path d="M11.9905 5.62598C10.7293 5.62574 9.49646 5.9995 8.44775 6.69997C7.39903 7.40045 6.58159 8.39619 6.09881 9.56126C5.61603 10.7263 5.48958 12.0084 5.73547 13.2453C5.98135 14.4823 6.58852 15.6185 7.48019 16.5104C8.37186 17.4022 9.50798 18.0096 10.7449 18.2557C11.9818 18.5019 13.2639 18.3757 14.429 17.8931C15.5942 17.4106 16.5901 16.5933 17.2908 15.5448C17.9915 14.4962 18.3655 13.2634 18.3655 12.0023C18.3637 10.3119 17.6916 8.69129 16.4964 7.49593C15.3013 6.30056 13.6808 5.62806 11.9905 5.62598Z" fill="currentColor" />
                                                     <path d="M22.1258 10.8771H20.627C20.3286 10.8771 20.0424 10.9956 19.8314 11.2066C19.6204 11.4176 19.5018 11.7038 19.5018 12.0023C19.5018 12.3007 19.6204 12.5869 19.8314 12.7979C20.0424 13.0089 20.3286 13.1274 20.627 13.1274H22.1258C22.4242 13.1274 22.7104 13.0089 22.9214 12.7979C23.1324 12.5869 23.2509 12.3007 23.2509 12.0023C23.2509 11.7038 23.1324 11.4176 22.9214 11.2066C22.7104 10.9956 22.4242 10.8771 22.1258 10.8771Z" fill="currentColor" />
                                                     <path d="M11.9905 19.4995C11.6923 19.5 11.4064 19.6187 11.1956 19.8296C10.9848 20.0405 10.8663 20.3265 10.866 20.6247V22.1249C10.866 22.4231 10.9845 22.7091 11.1953 22.9199C11.4062 23.1308 11.6922 23.2492 11.9904 23.2492C12.2886 23.2492 12.5746 23.1308 12.7854 22.9199C12.9963 22.7091 13.1147 22.4231 13.1147 22.1249V20.6247C13.1145 20.3265 12.996 20.0406 12.7853 19.8296C12.5745 19.6187 12.2887 19.5 11.9905 19.4995Z" fill="currentColor" />
                                                     <path d="M4.49743 12.0023C4.49718 11.704 4.37865 11.4181 4.16785 11.2072C3.95705 10.9962 3.67119 10.8775 3.37298 10.8771H1.87445C1.57603 10.8771 1.28984 10.9956 1.07883 11.2066C0.867812 11.4176 0.749266 11.7038 0.749266 12.0023C0.749266 12.3007 0.867812 12.5869 1.07883 12.7979C1.28984 13.0089 1.57603 13.1274 1.87445 13.1274H3.37299C3.6712 13.127 3.95706 13.0083 4.16785 12.7973C4.37865 12.5864 4.49718 12.3005 4.49743 12.0023Z" fill="currentColor" />
