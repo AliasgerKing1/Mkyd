@@ -29,9 +29,13 @@ const Signup = () => {
         onSubmit : async () => {
         let result = await addUser(values);
         let id = result.data._id;
-        if(result.data.status ? (result.data.status == 409) : null) {
+        if(result.data.errType ? (result.data.errType == 1) : null) {
             setShowAlert(true)
             setMsg("This email is already exist, please login !");
+        } 
+        else if(result.data.errType ? (result.data.errType == 2) : null) {
+            setShowAlert(true)
+            setMsg("This is a spam email, use a valid email. !");
         } else {
             let validOtop = await otpGen(id)
             dispatch(OtpRedux({email :result.data.email }))

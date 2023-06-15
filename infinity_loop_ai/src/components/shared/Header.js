@@ -1,11 +1,12 @@
 /*eslint-disable */
 import React, { useState } from 'react'
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { getSidebarRedux } from "../../Redux/SidebarReducer"
 import { NavLink } from 'react-router-dom'
 
 const Header = () => {
     let dispatch = useDispatch()
+    let state = useSelector(state => state.SignInReducer)
     let sideBarTrue = () => {
         dispatch(getSidebarRedux(true))
     }
@@ -99,9 +100,11 @@ const Header = () => {
                         </div>
                         {/*end::Page title*/}
                         {/*begin::Action*/}
-                        <NavLink to="/auth/create/design" className="btn btn-primary d-flex flex-center h-35px h-lg-40px">
+                        { state.plan == "free" ?(<NavLink to="/auth/create/design" className="btn btn-primary d-flex flex-center h-35px h-lg-40px">
                             Create <span className="d-none d-sm-inline ps-2">New Design</span>
-                        </NavLink>
+                        </NavLink>) : (<NavLink to="/auth/create/design/react" className="btn btn-primary d-flex flex-center h-35px h-lg-40px">
+                            Create <span className="d-none d-sm-inline ps-2">New Design</span>
+                        </NavLink>)}
                         {/*end::Action*/}
                     </div>
                     {/*end::Header wrapper*/}            </div>

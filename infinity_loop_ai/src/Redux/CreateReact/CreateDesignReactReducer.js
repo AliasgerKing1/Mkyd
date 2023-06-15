@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-let initialState = [
+let initialState =
 {
-    step_1 : "html"
+    step_1 : "react"
 
-}];
+}
 
 let CreateDesignReducer = createSlice({
-    name: "create design",
+    name: "create design react",
     initialState,
     reducers: {
         getCreateDesignRedux(state, action) {

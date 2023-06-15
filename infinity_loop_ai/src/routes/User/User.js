@@ -9,6 +9,8 @@ import Error404 from '../../components/pages/Error404/Error404';
 import Error500 from '../../components/pages/Error500/Error500';
 import DrawCanvas from '../../components/pages/DrawCanvas/DrawCanvas';
 import UserProfile from "../../components/pages/UserProfile/UserProfile"
+import ContentWritingApi from '../../components/pages/ContentWritingApi/ContentWritingApi';
+import ViewCreatedSite from '../../components/pages/ViewCreatedSite/ViewCreatedSite';
 let userRoutes = [
   {
     path: "home",
@@ -33,6 +35,14 @@ let userRoutes = [
   {
     path: "profile",
     element: <UserProfile />
+  },
+  {
+    path: "create/content",
+    element: <ContentWritingApi />
+  },
+  {
+    path: "view/site/:website",
+    element: <ViewCreatedSite />
   },
   {
     path: "error500",

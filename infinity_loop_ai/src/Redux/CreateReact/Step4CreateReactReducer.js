@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 let initialState = {
-    tone: 1,
-    language: 1,
+    tone: "professional",
+    language: "English (US)",
 };
 
 let CreateDesignReducer4 = createSlice({
-    name: "create design step 4",
+    name: "create design step 4 React",
     initialState,
     reducers: {
         updateTone: (state, action) => {

@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit"
 let initialState = [];
 
 let CreateDesignReducer3 = createSlice({
-    name: "create design step 3",
+    name: "create design step 3 React",
     initialState,
     reducers: {
         updatePaletteRedux(state, action) {

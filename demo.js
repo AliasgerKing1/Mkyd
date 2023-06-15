@@ -4930,3 +4930,146 @@
     {/*end::Collapse toggle*/}
 </div>
 {/*end::Projects*/ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {/*begin::Message(out)*/}
+        <div className="d-flex justify-content-end mb-10 ">
+          {/*begin::Wrapper*/}
+          <div className="d-flex flex-column align-items-end">
+            {/*begin::User*/}
+            <div className="d-flex align-items-center mb-2">
+              {/*begin::Details*/}
+              <div className="me-3">
+                <span className="text-muted fs-7 mb-1">2 Hours</span>
+                <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary ms-1">You</a>  
+              </div>
+              {/*end::Details*/}
+              {/*begin::Avatar*/}<div className="symbol  symbol-35px symbol-circle "><img alt="Pic" src="/assets/media/avatars/300-1.jpg" /></div>{/*end::Avatar*/}                 
+            </div>
+            {/*end::User*/}
+            {/*begin::Text*/}
+            <div className="p-5 rounded bg-light-primary text-dark fw-semibold mw-lg-400px text-end" data-kt-element="message-text">
+              You’ll receive notifications for all issues, pull requests!          </div>
+            {/*end::Text*/}
+          </div>
+          {/*end::Wrapper*/}
+        </div>
+        {/*end::Message(out)*/}
+        {/*begin::Message(in)*/}
+        <div className="d-flex justify-content-start mb-10 ">
+          {/*begin::Wrapper*/}
+          <div className="d-flex flex-column align-items-start">
+            {/*begin::User*/}
+            <div className="d-flex align-items-center mb-2">
+              {/*begin::Avatar*/}<div className="symbol  symbol-35px symbol-circle "><img alt="Pic" src="/assets/media/avatars/300-25.jpg" /></div>{/*end::Avatar*/}
+              {/*begin::Details*/}
+              <div className="ms-3">
+                <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary me-1">Brian Cox</a>
+                <span className="text-muted fs-7 mb-1">3 Hours</span>
+              </div>
+              {/*end::Details*/}
+            </div>
+            {/*end::User*/}
+            {/*begin::Text*/}
+            <div className="p-5 rounded bg-light-info text-dark fw-semibold mw-lg-400px text-start" data-kt-element="message-text">
+              You can unwatch this repository immediately by clicking here: <a href="https://keenthemes.com">Keenthemes.com</a>          </div>
+            {/*end::Text*/}
+          </div>
+          {/*end::Wrapper*/}
+        </div>
+        {/*end::Message(in)*/}
+        {/*begin::Message(out)*/}
+        <div className="d-flex justify-content-end mb-10 ">
+          {/*begin::Wrapper*/}
+          <div className="d-flex flex-column align-items-end">
+            {/*begin::User*/}
+            <div className="d-flex align-items-center mb-2">
+              {/*begin::Details*/}
+              <div className="me-3">
+                <span className="text-muted fs-7 mb-1">4 Hours</span>
+                <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary ms-1">You</a>  
+              </div>
+              {/*end::Details*/}
+              {/*begin::Avatar*/}<div className="symbol  symbol-35px symbol-circle "><img alt="Pic" src="/assets/media/avatars/300-1.jpg" /></div>{/*end::Avatar*/}                 
+            </div>
+            {/*end::User*/}
+            {/*begin::Text*/}
+            <div className="p-5 rounded bg-light-primary text-dark fw-semibold mw-lg-400px text-end" data-kt-element="message-text">
+              Most purchased Business courses during this sale!          </div>
+            {/*end::Text*/}
+          </div>
+          {/*end::Wrapper*/}
+        </div>
+        {/*end::Message(out)*/}
+        {/*begin::Message(in)*/}
+        <div className="d-flex justify-content-start mb-10 ">
+          {/*begin::Wrapper*/}
+          <div className="d-flex flex-column align-items-start">
+            {/*begin::User*/}
+            <div className="d-flex align-items-center mb-2">
+              {/*begin::Avatar*/}<div className="symbol  symbol-35px symbol-circle "><img alt="Pic" src="/assets/media/avatars/300-25.jpg" /></div>{/*end::Avatar*/}
+              {/*begin::Details*/}
+              <div className="ms-3">
+                <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary me-1">Brian Cox</a>
+                <span className="text-muted fs-7 mb-1">5 Hours</span>
+              </div>
+              {/*end::Details*/}
+            </div>
+            {/*end::User*/}
+            {/*begin::Text*/}
+            <div className="p-5 rounded bg-light-info text-dark fw-semibold mw-lg-400px text-start" data-kt-element="message-text">
+              Company BBQ to celebrate the last quater achievements and goals. Food and drinks provided          </div>
+            {/*end::Text*/}
+          </div>
+          {/*end::Wrapper*/}
+        </div>
+        {/*end::Message(in)*/}
+          {/*begin::Message(in)*/}
+        <div className="d-flex justify-content-start mb-10 ">
+          {/*begin::Wrapper*/}
+          <div className="d-flex flex-column align-items-start">
+            {/*begin::User*/}
+            <div className="d-flex align-items-center mb-2">
+              {/*begin::Avatar*/}<div className="symbol  symbol-35px symbol-circle "><img alt="Pic" src="/assets/media/avatars/300-25.jpg" /></div>{/*end::Avatar*/}
+              {/*begin::Details*/}
+              <div className="ms-3">
+                <a href="#" className="fs-5 fw-bold text-gray-900 text-hover-primary me-1">Brian Cox</a>
+                <span className="text-muted fs-7 mb-1">1 Hour</span>
+              </div>
+              {/*end::Details*/}
+            </div>
+            {/*end::User*/}
+            {/*begin::Text*/}
+            <div className="p-5 rounded bg-light-info text-dark fw-semibold mw-lg-400px text-start" data-kt-element="message-text">
+              Ok, Understood!          </div>
+            {/*end::Text*/}
+          </div>
+          {/*end::Wrapper*/}
+        </div>
+        {/*end::Message(in)*/}

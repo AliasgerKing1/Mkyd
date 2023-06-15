@@ -51,8 +51,13 @@ let dummy2 = [
 ]
 
 let languages = [
-    "Hindi (IND)", "English (IND)", "French", "Korean", "Chinese"
+    "Hindi (IND)", "English (IND)", "French", "Korean", "Chinese", "Marathi", "Gujrati", "Telgu", "Tamil", "Mewari"
 ]
 
-let languages_ind = ["Marathi", "Gujrati", "Telgu", "Tamil", "Mewari"]
-export { dummy, dummy2, languages, languages_ind } 
+let languages_ind = [
+    "Marathi", "Gujrati", "Telgu", "Tamil", "Mewari"
+]
+
+let category = ["Ecommerce","Social", "Blog" , "Health", "Finance", "Art"]
+
+export { dummy, dummy2, languages, languages_ind, category } 

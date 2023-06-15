@@ -15,6 +15,9 @@ import CreateDesignReactReducer from './Redux/CreateReact/CreateDesignReactReduc
 import Step2CreateReactReducer from "./Redux/CreateReact/Step2CreateReactReducer"
 import Step3CreateReactReducer from "./Redux/CreateReact/Step3CreateReactReducer"
 import Step4CreateReactReducer from "./Redux/CreateReact/Step4CreateReactReducer"
+import Step6CreateReactReducer from "./Redux/CreateReact/Step6CreateReactReducer"
+import Step7CreateReactReducer from "./Redux/CreateReact/Step7CreateReactReducer"
+import Step8CreateReactReducer from "./Redux/CreateReact/Step8CreateReactReducer"
 import SidebarReducer from "./Redux/SidebarReducer"
 import PlanSelectedReducer from "./Redux/PlanSelectedReducer"
 import PostReducer from './Redux/PostReducer';
@@ -35,6 +38,9 @@ let rootReducer = combineReducers({
   Step2CreateReactReducer,
   Step3CreateReactReducer,
   Step4CreateReactReducer,
+  Step6CreateReactReducer,
+  Step7CreateReactReducer,
+  Step8CreateReactReducer,
   SidebarReducer,
   PlanSelectedReducer,
   PostReducer,

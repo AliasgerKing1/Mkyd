@@ -570,6 +570,19 @@ const Sidebar = () => {
                                     </span>
                                         {/*end:Menu link*/}
                                     </div>{/*end:Menu item*/}
+                                    <NavLink to="/auth/create/content">
+                                        {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
+
+                                        </span>
+
+                                        </span>
+                                            <span className="menu-title" >Chat
+                                            </span>
+
+                                        </span>
+                                            {/*end:Menu link*/}
+                                        </div>{/*end:Menu item*/}
+                                    </NavLink>
                                 </div>{/*end:Menu sub*/}
                             </div>{/*end:Menu item*/}
 

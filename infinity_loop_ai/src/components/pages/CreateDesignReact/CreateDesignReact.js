@@ -5,19 +5,26 @@ import { useDispatch, useSelector } from "react-redux"
 
 
 import { getCreateDesignRedux } from "../../../Redux/CreateReact/CreateDesignReactReducer"
-import { updatePageNumber, updateWebsiteName } from '../../../Redux/CreateReact/Step2CreateReactReducer'
+import { updateCategory, updatePageNumber, updateWebsiteName, updateLogo_name } from '../../../Redux/CreateReact/Step2CreateReactReducer'
 import { updatePaletteRedux } from '../../../Redux/CreateReact/Step3CreateReactReducer'
 import { updateLanguage, updateTone } from '../../../Redux/CreateReact/Step4CreateReactReducer'
+import {updateAuthentication, updateOtp, updateRouting, updateRedux} from "../../../Redux/CreateReact/Step6CreateReactReducer"
 
-import { dummy, dummy2, languages, languages_ind } from '../../../json/Bin'
-import Sidebar from '../../shared/Sidebar'
+import {updateHelp_chat_bot, updateIDE, updateInfinite_scroll, updatePagination, updateReferal, updateVideo_calling} from "../../../Redux/CreateReact/Step7CreateReactReducer"
+import {updateAnalytics_tool, updateBackend_web_server, updateFrontend_web_server, updateSeo_tool, updatecContent_writing_tool} from "../../../Redux/CreateReact/Step8CreateReactReducer"
+// import Switch from '../../shared/switch/Switch'
+import { dummy, dummy2, languages, category } from '../../../json/Bin'
+import { addDesign } from '../../../services/DesignService'
 
 const CreateDesignReact = () => {
     let state = useSelector(state => state.SignInReducer)
     let state2 = useSelector(state => state.CreateDesignReactReducer)
     let state3 = useSelector(state => state.Step2CreateReactReducer)
+    let state4 = useSelector(state => state.Step6CreateReactReducer)
+    let state5 = useSelector(state => state.Step7CreateReactReducer)
+    let state6 = useSelector(state => state.Step8CreateReactReducer)
     let dispatch = useDispatch();
-    let [checkStep, setCheckStep] = useState(6)
+    let [checkStep, setCheckStep] = useState(4)
     let [checkTeamSize, setCheckTEamSize] = useState(1)
     let [checkAccount, setCheckAccount] = useState(1)
     let [modalOpen, setModalOpen] = useState(false)
@@ -25,23 +32,26 @@ const CreateDesignReact = () => {
     let [selectedP, setSelectedP] = useState(0)
     let [selectedLang, setSelectedLang] = useState(0)
     let [websiteName, setWebsiteName] = useState("")
-    let [checkAccountStep1, setCheckAccountStep1] = useState("html")
-    let [languageSelected, setLanguageSelected] = useState(1)
-    let [toneSelected, setToneSelected] = useState(1)
+    let [checkAccountStep1, setCheckAccountStep1] = useState("react")
+    let [languageSelected, setLanguageSelected] = useState("")
+    let [toneSelected, setToneSelected] = useState("professional")
     let [isMenu, setIsMenu] = useState(false);
     let [isErrMenu, setIsErrMenu] = useState(false);
     let [isPalette, setIsPalette] = useState(false)
-    let [isLanguage, setIsLanguage] = useState(false)
+    let [selectOption, setSelectOption] = useState("")
+    let  [file, setFile] = useState(null);
+    let  [data, setData] = useState('');
+    let  [langWord, setLangWord] = useState('');
 
+    useEffect(()=> {
+dispatch(updateCategory(selectOption.toLowerCase()))
+    }, [selectOption])
     useEffect(() => {
         dispatch(updateLanguage(languageSelected))
     }, [languageSelected])
     useEffect(() => {
         dispatch(updateTone(toneSelected))
     }, [toneSelected])
-    useEffect(() => {
-        setPaletteSeq(dummy.length)
-    }, [])
     let handleChange = (event) => {
         setCheckAccount(event.target.value)
     }
@@ -58,22 +68,30 @@ const CreateDesignReact = () => {
         dispatch(updatePageNumber(val))
     }
     let setClicked3 = async (val) => {
+        // let logo = val.target.files[0]
+        setFile(val.target.files[0]);
         let step1_2 = {
-            step_1: state2[0].step_1,
-            step_2: {
-                website_name: state3.website_name,
-                page_number: state3.page_number,
-            }
+            step_1 : state2,
+            step_2: state3
         }
-        //     let form = new FormData();
-        //     form.append("photo",val.target.files[0]);
-        //     form.append("data",step1_2)
-        // let resultOfPhoto = await addDesign(form)
-        // if (resultOfPhoto.status == 500) {
+        setData(step1_2)
+    }
+    let clickBtn = async () => {
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('data', data);
 
-        // } else {
-        // console.log(val.target.files[0])
-        // }
+        try {
+            await axios.put('http://localhost:4000/api/design/:id', formData, {
+                headers: {
+                  'Content-Type': 'multipart/form-data',
+                },
+              });
+              console.log('File uploaded successfully');
+    } catch (error) {
+        console.error('Error uploading file', error);
+      }
+    
     }
     let setClicked22 = () => {
         dispatch(updateWebsiteName(websiteName))
@@ -86,6 +104,16 @@ const CreateDesignReact = () => {
             dispatch(updatePaletteRedux({ palette_selected: palette }))
         }
     }
+    let typnigLang = (event) => {
+        setLangWord(event.target.value.length)
+    const filteredWords = languages.filter((word) => word.startsWith(event.target.value.toUpperCase()));
+
+    }
+    const handleKeyDown = (event) => {
+        if (event.key === "Backspace") {
+            setLanguageSelected("")
+        }
+      };
     return (
         <>
 
@@ -284,10 +312,10 @@ const CreateDesignReact = () => {
                                                 {/*begin::Label*/}
                                                 <div className="stepper-label">
                                                     <h3 className="stepper-title ">
-                                                        defualt Features
+                                                        Defualt Features
                                                     </h3>
                                                     <div className="stepper-desc fw-normal">
-                                                        Select defualt Features
+                                                        Select Defualt Features
                                                     </div>
                                                 </div>
                                                 {/*end::Label*/}
@@ -313,6 +341,64 @@ const CreateDesignReact = () => {
                                                 {/*begin::Label*/}
                                                 <div className="stepper-label">
                                                     <h3 className="stepper-title ">
+                                                        Additional Features
+                                                    </h3>
+                                                    <div className="stepper-desc fw-normal">
+                                                        Select Additional Features
+                                                    </div>
+                                                </div>
+                                                {/*end::Label*/}
+                                            </div>
+                                            {/*end::Wrapper*/}
+                                            {/*begin::Line*/}
+                                            <div className="stepper-line h-40px">
+                                            </div>
+                                            {/*end::Line*/}
+                                        </div>
+                                        {/*end::Step 7*/}
+                                                                                {/*begin::Step 8*/}
+                                                                                <div className={`stepper-item ${checkStep == 8 ? "current" : (checkStep > 8 ? "completed" : "")}`} data-kt-stepper-element="nav">
+                                            {/*begin::Wrapper*/}
+                                            <div className="stepper-wrapper">
+                                                {/*begin::Icon*/}
+                                                <div className="stepper-icon">
+                                                    <i className="stepper-check fas fa-check"></i>
+                                                    <span className="stepper-number">8</span>
+                                                </div>
+                                                {/*end::Icon*/}
+
+                                                {/*begin::Label*/}
+                                                <div className="stepper-label">
+                                                    <h3 className="stepper-title ">
+                                                        Inifinity Spceial Features
+                                                    </h3>
+                                                    <div className="stepper-desc fw-normal">
+                                                        Select Inifinity Spceial Features
+                                                    </div>
+                                                </div>
+                                                {/*end::Label*/}
+                                            </div>
+                                            {/*end::Wrapper*/}
+                                            {/*begin::Line*/}
+                                            <div className="stepper-line h-40px">
+                                            </div>
+                                            {/*end::Line*/}
+                                        </div>
+                                        {/*end::Step 8*/}
+                                        {/*begin::Step 9*/}
+                                        <div className={`stepper-item ${checkStep == 9 ? "current" : (checkStep > 9 ? "completed" : "")}`} data-kt-stepper-element="nav">
+                                            {/*begin::Wrapper*/}
+                                            <div className="stepper-wrapper">
+                                                {/*begin::Icon*/}
+                                                <div className="stepper-icon">
+                                                    <i className="stepper-check fas fa-check"></i>
+                                                    <span className="stepper-number">9</span>
+                                                </div>
+                                                {/*end::Icon*/}
+
+                                                {/*begin::Label*/}
+                                                <div className="stepper-label">
+                                                    <h3 className="stepper-title ">
                                                         Completed
                                                     </h3>
                                                     <div className="stepper-desc fw-normal">
@@ -323,7 +409,7 @@ const CreateDesignReact = () => {
                                             </div>
                                             {/*end::Wrapper*/}
                                         </div>
-                                        {/*end::Step 7*/}
+                                        {/*end::Step 9*/}
                                     </div>
                                     {/*end::Nav*/}
                                 </div>
@@ -383,7 +469,7 @@ const CreateDesignReact = () => {
                                                         {/*begin::Col*/}
                                                         <div className="col-lg-6">
                                                             {/*begin::Option*/}
-                                                            <input type="radio" className="btn-check" name="account_type" value="html" checked={checkAccountStep1 == "html" ? "checked" : ""} id="kt_create_account_form_account_type_personal" onFocus={(e) => handleChangeStep1(e)} onClick={() => setClicked("html")} />
+                                                            <input type="radio" className="btn-check" name="account_type" value="react" checked={checkAccountStep1 == "react" ? "checked" : ""} id="kt_create_account_form_account_type_personal" onFocus={(e) => handleChangeStep1(e)} onClick={() => setClicked("react")} />
                                                             <label className="btn btn-outline btn-outline-dashed btn-active-light-primary p-7 d-flex align-items-center mb-10" htmlFor="kt_create_account_form_account_type_personal">
                                                                 {/*begin::Svg Icon | path: icons/duotune/communication/com005.svg*/}
                                                                 <span className="svg-icon svg-icon-3x me-5">                                                              <span className="svg-icon me-5">
@@ -408,7 +494,7 @@ const CreateDesignReact = () => {
                                                         {/*begin::Col*/}
                                                         <div className="col-lg-6">
                                                             {/*begin::Option*/}
-                                                            <input type="radio" className="btn-check" name="account_type" value="bootstrap" checked={checkAccountStep1 == "bootstrap" ? "checked" : ""} id="kt_create_account_form_account_type_corporate" onFocus={(e) => handleChangeStep1(e)} onClick={() => setClicked("bootstrap")} />
+                                                            <input type="radio" className="btn-check" name="account_type" value="angular" checked={checkAccountStep1 == "angular" ? "checked" : ""} id="kt_create_account_form_account_type_corporate" onFocus={(e) => handleChangeStep1(e)} onClick={() => setClicked("angular")} />
                                                             <label className="btn btn-outline btn-outline-dashed btn-active-light-primary p-7 d-flex align-items-center" htmlFor="kt_create_account_form_account_type_corporate">
                                                                 {/*begin::Svg Icon | path: icons/duotune/finance/fin006.svg*/}
                                                                 <span className="svg-icon svg-icon-3x me-5">
@@ -449,10 +535,10 @@ const CreateDesignReact = () => {
                                                         If you need more info, please check out
                                                         <a href="#" className="link-primary fw-bold">&nbsp;<b> Help Page</b></a>.
                                                     </div>
+                                                 
                                                     {/*end::Notice*/}
                                                 </div>
                                                 {/*end::Heading*/}
-
                                                 {/*begin::Input group*/}
                                                 <div className="mb-10 fv-row">
                                                     {/*begin::Label*/}
@@ -530,9 +616,9 @@ const CreateDesignReact = () => {
                                                     {/*end::Hint*/}
                                                 </div>
                                                 {/*end::Input group*/}
-
-                                                {/*begin::Input group*/}
-                                                <div className="mb-10 fv-row">
+                                                <div className='d-flex flex-wrap gap-5'>
+                                            {/*begin::Input group*/}
+                                            <div className="mb-10 fv-row w-100 flex-md-root">
                                                     {/*begin::Label*/}
                                                     <label className="form-label mb-3">Give your Website a Name <span className='text-danger'>*</span></label>
                                                     {/*end::Label*/}
@@ -547,6 +633,34 @@ const CreateDesignReact = () => {
                                                     {/*end::Input*/}
                                                 </div>
                                                 {/*end::Input group*/}
+                                                {/*begin::Input group*/}
+                                                <div className="mb-10 fv-row w-100 flex-md-root">
+                                                    {/*begin::Label*/}
+                                                    <label className="form-label mb-3">Select your Website Category <span className='text-danger'>*</span></label>
+                                                    {/*end::Label*/}
+
+                                                    {/*begin::Input*/}
+                                                    {/* <input type="text" className="form-control form-control-lg form-control-solid" name="account_name" placeholder="Example" value={websiteName} onChange={(e) => {
+                                                        setWebsiteName(e.target.value)
+                                                        setClicked22()
+                                                    }
+
+                                                    } /> */}
+
+                                                <select className="form-control form-control-lg form-control-solid" onChange={(e)=> setSelectOption(e.target.value)} value={selectOption}>
+                                                    <option>Select</option>
+                                                    {category.map((x)=> {
+                                                        return (
+                                                            <option>{x}</option>
+                                                        )
+                                                    })}
+
+                                                </select>
+                                                    {/*end::Input*/}
+                                                </div>
+                                                {/*end::Input group*/}
+                                                </div>
+    
 
                                                 {/*begin::Input group*/}
                                                 <div className="mb-0 fv-row">
@@ -593,7 +707,7 @@ const CreateDesignReact = () => {
                                                                     <i className="bi bi-pencil-fill fs-7"></i>
 
                                                                     {/*begin::Inputs*/}
-                                                                    <input type="file" name="avatar" accept=".png, .jpg, .jpeg" onChange={(e) => setClicked3(e)} />
+                                                                    <input type="file" name="avatar" accept=".png, .jpg, .jpeg, .svg" onChange={(e) => setClicked3(e)} />
                                                                     <input type="hidden" name="avatar_remove" />
                                                                     {/*end::Inputs*/}
                                                                 </label>
@@ -877,7 +991,7 @@ const CreateDesignReact = () => {
 
                                                                     {/*begin::Text*/}
                                                                     <div className="d-flex flex-column">
-                                                                        <a href="#" className={`text-dark text-hover-primary fs-6 fw-bold text-active-primary ${toneSelected == 1 ? "active" : ""}`} onClick={() => setToneSelected(1)}>Professional tone</a>
+                                                                        <a style={{cursor : "pointer"}} className={`text-dark text-hover-primary fs-6 fw-bold text-active-primary ${toneSelected == "professional" ? "active" : ""}`} onClick={() => setToneSelected("professional")}>Professional tone</a>
 
                                                                         <span className="text-muted fw-bold">standard</span>
                                                                     </div>
@@ -901,7 +1015,7 @@ const CreateDesignReact = () => {
 
                                                                     {/*begin::Text*/}
                                                                     <div className="d-flex flex-column">
-                                                                        <a href="#" className={`text-dark text-hover-primary fs-6 fw-bold text-active-primary ${toneSelected == 2 ? "active" : ""}`} onClick={() => setToneSelected(2)}>Poetic tone</a>
+                                                                        <a style={{cursor : "pointer"}} className={`text-dark text-hover-primary fs-6 fw-bold text-active-primary ${toneSelected == "poetic" ? "active" : ""}`} onClick={() => setToneSelected("poetic")}>Poetic tone</a>
 
                                                                         <span className="text-muted fw-bold">Artistic tone</span>
                                                                     </div>
@@ -926,7 +1040,7 @@ const CreateDesignReact = () => {
 
                                                                     {/*begin::Text*/}
                                                                     <div className="d-flex flex-column">
-                                                                        <a href="#" className={`text-dark text-hover-primary fs-6 fw-bold text-active-primary ${toneSelected == 3 ? "active" : ""}`} onClick={() => setToneSelected(3)}>Communicational tone</a>
+                                                                        <a style={{cursor : "pointer"}} className={`text-dark text-hover-primary fs-6 fw-bold text-active-primary ${toneSelected == "communicational" ? "active" : ""}`} onClick={() => setToneSelected("communicational")}>Communicational tone</a>
 
                                                                         <span className="text-muted fw-bold">general conversation</span>
                                                                     </div>
@@ -950,7 +1064,7 @@ const CreateDesignReact = () => {
 
                                                                     {/*begin::Text*/}
                                                                     <div className="d-flex flex-column">
-                                                                        <a href="#" className={`text-dark text-hover-primary fs-6 fw-bold text-active-primary ${toneSelected == 4 ? "active" : ""}`} onClick={() => setToneSelected(4)}>Developer tone</a>
+                                                                        <a style={{cursor : "pointer"}} className={`text-dark text-hover-primary fs-6 fw-bold text-active-primary ${toneSelected == "developer" ? "active" : ""}`} onClick={() => setToneSelected("developer")}>Developer tone</a>
 
                                                                         <span className="text-muted fw-bold">DevOps</span>
                                                                     </div>
@@ -975,7 +1089,7 @@ const CreateDesignReact = () => {
 
                                                                     {/*begin::Text*/}
                                                                     <div className="d-flex flex-column">
-                                                                        <a href="#" className={`text-dark text-hover-primary fs-6 fw-bold text-active-primary ${toneSelected == 5 ? "active" : ""}`} onClick={() => setToneSelected(5)}>funny</a>
+                                                                        <a style={{cursor : "pointer"}} className={`text-dark text-hover-primary fs-6 fw-bold text-active-primary ${toneSelected =="funny" ? "active" : ""}`} onClick={() => setToneSelected("funny")}>funny</a>
 
                                                                         <span className="text-muted fw-bold">Light and Humorous</span>
                                                                     </div>
@@ -998,19 +1112,8 @@ const CreateDesignReact = () => {
                                                                 {/*begin::Menu wrapper*/}
 
                                                                 {/*begin::Select2*/}
-                                                                <select className="form-select mb-2 select2-hidden-accessible" data-control="select2" data-placeholder="Select an option" data-allow-clear="true" multiple="" data-select2-id="select2-data-3-tn0u" tabindex="-1" aria-hidden="true" data-kt-initialized="1">
-                                                                    <option></option>
-                                                                    <option value="Computers">Computers</option>
-                                                                    <option value="Watches">Watches</option>
-                                                                    <option value="Headphones">Headphones</option>
-                                                                    <option value="Footwear">Footwear</option>
-                                                                    <option value="Cameras">Cameras</option>
-                                                                    <option value="Shirts">Shirts</option>
-                                                                    <option value="Household">Household</option>
-                                                                    <option value="Handbags">Handbags</option>
-                                                                    <option value="Wines">Wines</option>
-                                                                    <option value="Sandals">Sandals</option>
-                                                                </select><span className="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-4-cpoo" style={{ width: '100%' }}><span className="selection"><span className="select2-selection select2-selection--multiple form-select mb-2" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false"><ul className="select2-selection__rendered" id="select2-nt4d-container"></ul><span className="select2-search select2-search--inline"><textarea className="select2-search__field" type="search" tabindex="0" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" autocomplete="off" aria-label="Search" aria-describedby="select2-nt4d-container" placeholder="Select an option" style={{ width: '100%' }}></textarea></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
+                                                                
+                                                                <span className="select2 select2-container select2-container--bootstrap5" dir="ltr" data-select2-id="select2-data-4-cpoo" style={{ width: '100%' }}><span className="selection"><span className="select2-selection select2-selection--multiple form-select mb-2" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false"><ul className="select2-selection__rendered" id="select2-nt4d-container"></ul><span className="select2-search select2-search--inline"><textarea onChange={(e)=> typnigLang(e)} className="select2-search__field" type="search" tabindex="0" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" autocomplete="off" aria-label="Search" aria-describedby="select2-nt4d-container" placeholder="Select an option" style={{ width: '100%' }} value={languageSelected} onKeyDown={handleKeyDown}></textarea></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
                                                                 {/*end::Select2*/}
                                                                 {/*end::Input group*/}
 
@@ -1019,8 +1122,9 @@ const CreateDesignReact = () => {
                                                                 <div className={`menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-color fw-semibold py-2 fs-6 w-275px ${isMenu == true ? "show" : ""}`} data-kt-menu="true" data-kt-menu-placement="top-start">
                                                                     {/*begin::Menu item*/}
                                                                     <div className="menu-item px-5">
-                                                                        <a href="#" className="menu-link px-5" onClick={() => setLanguageSelected(1)}>
-                                                                            <span className="menu-text">English (US)</span>
+                                                                        <a className="menu-link px-5" onClick={() => setLanguageSelected("English (US)")}>
+                                                                            <span className="menu-text" >English (US)
+                                                                    </span>
                                                                             <span className="menu-badge">
                                                                                 <span className="badge badge-light-danger badge-circle fw-bold fs-9">hot</span>
                                                                             </span>
@@ -1028,29 +1132,30 @@ const CreateDesignReact = () => {
                                                                     </div>
                                                                     {/*end::Menu item*/}
                                                                     {/*begin::Menu item*/}
-                                                                    {languages.map((x, n) => {
-                                                                        return (
-                                                                            <div className="menu-item px-5">
-                                                                                <a href="#" className="menu-link px-5" onClick={() => {
-                                                                                    setLanguageSelected(n + 2)
-                                                                                }
-                                                                                }>
-                                                                                    {x}
-                                                                                </a>
-                                                                            </div>
-                                                                        )
-                                                                    })}
+                                                                    {langWord > 0 ? (
+  <>
+    {lang.map((x, n) => (
+      <div className="menu-item px-5" key={n}>
+        <a href="#" className="menu-link px-5" onClick={() => setLanguageSelected(x)}>
+          {x}
+        </a>
+      </div>
+    ))}
+  </>
+) : (
+  <>
+    {languages.map((x, n) => (
+      <div className="menu-item px-5" key={n}>
+        <a href="#" className="menu-link px-5" onClick={() => setLanguageSelected(x)}>
+          {x}
+        </a>
+      </div>
+    ))}
+  </>
+)}
+
                                                                     {/*end::Menu item*/}
                                                                     {/*begin::Menu item*/}
-                                                                    {languages_ind.map((x, n) => {
-                                                                        return (
-                                                                            <div className="menu-item px-5">
-                                                                                <a href="#" className="menu-link px-5" onClick={() => setLanguageSelected(5 + n + 2)}>
-                                                                                    {x + "\t(IND)"}
-                                                                                </a>
-                                                                            </div>
-                                                                        )
-                                                                    })}
                                                                     {/*end::Menu item*/}
 
                                                                 </div>
@@ -1146,7 +1251,7 @@ const CreateDesignReact = () => {
                                                 {/*begin::Heading*/}
                                                 <div className="pb-10 pb-lg-15">
                                                     {/*begin::Title*/}
-                                                    <h2 className="fw-bold text-dark">defualt Features</h2>
+                                                    <h2 className="fw-bold text-dark">Defualt Features</h2>
                                                     {/*end::Title*/}
 
                                                     {/*begin::Notice*/}
@@ -1161,7 +1266,7 @@ const CreateDesignReact = () => {
                                                         {/*begin::Card header*/}
                                                         <div className="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_connected_accounts" aria-expanded="true" aria-controls="kt_account_connected_accounts">
                                                             <div className="card-title m-0">
-                                                                <h3 className="fw-bold m-0">Connected Accounts</h3>
+                                                                <h3 className="fw-bold m-0">Basic Features</h3>
                                                             </div>
                                                         </div>
                                                         {/*end::Card header*/}
@@ -1177,7 +1282,7 @@ const CreateDesignReact = () => {
                                                                     <div className="d-flex flex-stack flex-grow-1 ">
                                                                         {/*begin::Content*/}
                                                                         <div className=" fw-semibold">
-                                                                            <div className="fs-6 text-gray-700 ">Two-factor authentication adds an extra layer of security to your account. To log in, in you'll need to provide a 4 digit amazing code. <a href="#" className="fw-bold">Learn More</a></div>
+                                                                            <div className="fs-6 text-gray-700 ">The features listed below are the basic features required in a web application, and you can deselect any feature if you do not want to use it. <a href="#" className="fw-bold">Learn More</a></div>
                                                                         </div>
                                                                         {/*end::Content*/}
                                                                     </div>
@@ -1189,65 +1294,87 @@ const CreateDesignReact = () => {
                                                                     {/*begin::Item*/}
                                                                     <div className="d-flex flex-stack">
                                                                         <div className="d-flex">
-                                                                            <img src="/assets/media/svg/brand-logos/google-icon.svg" className="w-30px me-6" alt />
+                                                                            <img src="/assets/media/logos/authentication.svg" className="w-30px me-6" alt="authentication" />
                                                                             <div className="d-flex flex-column">
-                                                                                <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Google</a>
-                                                                                <div className="fs-6 fw-semibold text-gray-400">Plan properly your workflow</div>
+                                                                                <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Authentication</a>
+                                                                                <div className="fs-6 fw-semibold text-gray-400">{state.plan == "free" ? "Auth Guard" : "Auth & Anti Auth Guards"}</div>
                                                                             </div>
                                                                         </div>
                                                                         <div className="d-flex justify-content-end">
-                                                                            <div className="form-check form-check-solid form-check-custom form-switch">
-                                                                                <input className="form-check-input w-45px h-30px" type="checkbox" id="googleswitch" defaultChecked />
-                                                                                <label className="form-check-label" htmlFor="googleswitch" />
-                                                                            </div>
-                                                                        </div>
+                        <div className="form-check form-check-solid form-check-custom form-switch">
+                            <input className="form-check-input w-45px h-30px" type="checkbox" id="switch" style={{cursor : "pointer"}}  onClick={()=>dispatch(updateAuthentication(state4.authentication === false ? true : false))} checked={state4.authentication === true ? "checked" : ""}/>
+                            <label className="form-check-label" htmlFor="switch" />
+                        </div>
+                    </div>
                                                                     </div>
                                                                     {/*end::Item*/}
                                                                     <div className="separator separator-dashed my-5" />
                                                                     {/*begin::Item*/}
                                                                     <div className="d-flex flex-stack">
                                                                         <div className="d-flex">
-                                                                            <img src="/assets/media/svg/brand-logos/github.svg" className="w-30px me-6" alt />
+                                                                            <img src="/assets/media/logos/routing.svg" className="w-30px me-6" alt="routing" />
                                                                             <div className="d-flex flex-column">
-                                                                                <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Github</a>
-                                                                                <div className="fs-6 fw-semibold text-gray-400">Keep eye on on your Repositories</div>
+                                                                                <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Routing</a>
+                                                                                <div className="fs-6 fw-semibold text-gray-400">Connecting pages without reload</div>
                                                                             </div>
                                                                         </div>
                                                                         <div className="d-flex justify-content-end">
-                                                                            <div className="form-check form-check-solid form-check-custom form-switch">
-                                                                                <input className="form-check-input w-45px h-30px" type="checkbox" id="githubswitch" defaultChecked />
-                                                                                <label className="form-check-label" htmlFor="githubswitch" />
-                                                                            </div>
-                                                                        </div>
+                        <div className="form-check form-check-solid form-check-custom form-switch">
+                            <input className="form-check-input w-45px h-30px" type="checkbox" id="switch" style={{cursor : "pointer"}}  onClick={()=>dispatch(updateRouting(state4.routing === false ? true : false))} checked={state4.routing === true ? "checked" : ""} />
+                            <label className="form-check-label" htmlFor="switch" />
+                        </div>
+                    </div>
                                                                     </div>
                                                                     {/*end::Item*/}
                                                                     <div className="separator separator-dashed my-5" />
                                                                     {/*begin::Item*/}
                                                                     <div className="d-flex flex-stack">
                                                                         <div className="d-flex">
-                                                                            <img src="/assets/media/svg/brand-logos/slack-icon.svg" className="w-30px me-6" alt />
+                                                                            <img src="/assets/media/logos/otp.svg" className="w-30px me-6" alt="otp" />
                                                                             <div className="d-flex flex-column">
-                                                                                <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Slack</a>
-                                                                                <div className="fs-6 fw-semibold text-gray-400">Integrate Projects Discussions</div>
+                                                                                <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Otp</a>
+                                                                                <div className="fs-6 fw-semibold text-gray-400">One Time Password using mail</div>
                                                                             </div>
                                                                         </div>
                                                                         <div className="d-flex justify-content-end">
-                                                                            <div className="form-check form-check-solid form-check-custom form-switch">
-                                                                                <input className="form-check-input w-45px h-30px" type="checkbox" id="slackswitch" />
-                                                                                <label className="form-check-label" htmlFor="slackswitch" />
-                                                                            </div>
-                                                                        </div>
+                        <div className="form-check form-check-solid form-check-custom form-switch">
+                            <input className="form-check-input w-45px h-30px" type="checkbox" id="switch" style={{cursor : "pointer"}}  onClick={()=>dispatch(updateOtp(state4.otp === false ? true : false))} checked={state4.otp === true ? "checked" : ""} />
+                            <label className="form-check-label" htmlFor="switch" />
+                        </div>
+                    </div>
                                                                     </div>
                                                                     {/*end::Item*/}
+                                                                    {state2.step_1 == "react" ? (                      
+                                                                        <>                                           <div className="separator separator-dashed my-5" />
+                                                                    {/*begin::Item*/}
+                                                                    <div className="d-flex flex-stack">
+                                                                        <div className="d-flex">
+                                                                            <img src="/assets/media/logos/redux.svg" className="w-30px me-6" alt="redux" />
+                                                                            <div className="d-flex flex-column">
+                                                                                <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Redux</a>
+                                                                                <div className="fs-6 fw-semibold text-gray-400">Very Powerful state management tool</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="d-flex justify-content-end">
+                        <div className="form-check form-check-solid form-check-custom form-switch">
+                            <input className="form-check-input w-45px h-30px" type="checkbox" id="switch" style={{cursor : "pointer"}} onClick={()=>dispatch(updateRedux(state4.redux === false ? true : false))} checked={state4.redux === true ? "checked" : ""} />
+                            <label className="form-check-label" htmlFor="switch" />
+                        </div>
+                    </div>
+                                                                    </div>
+                                                                    {/*end::Item*/}
+                                                                    </>   
+                                                                    ) : null}
+
                                                                 </div>
                                                                 {/*end::Items*/}
                                                             </div>
                                                             {/*end::Card body*/}
                                                             {/*begin::Card footer*/}
-                                                            <div className="card-footer d-flex justify-content-end py-6 px-9">
+                                                            {/* <div className="card-footer d-flex justify-content-end py-6 px-9">
                                                                 <button className="btn btn-light btn-active-light-primary me-2">Discard</button>
                                                                 <button className="btn btn-primary">Save Changes</button>
-                                                            </div>
+                                                            </div> */}
                                                             {/*end::Card footer*/}
                                                         </div>
                                                         {/*end::Content*/}
@@ -1259,8 +1386,359 @@ const CreateDesignReact = () => {
 
                                         </div>
                                         {/*end::Step 6*/}
+
                                         {/*begin::Step 7*/}
                                         <div className={`${checkStep == 7 ? "current" : (checkStep > 7 ? "completed" : "")}`} data-kt-stepper-element="content">
+
+
+                                            {/*begin::Wrapper*/}
+                                            <div className="w-100">
+                                                {/*begin::Heading*/}
+                                                <div className="pb-10 pb-lg-15">
+                                                    {/*begin::Title*/}
+                                                    <h2 className="fw-bold text-dark">Additional Features</h2>
+                                                    {/*end::Title*/}
+
+                                                    {/*begin::Notice*/}
+                                                    <div className="text-muted fw-semibold fs-6">
+                                                        If you need more info, please check out
+                                                        <a href="#" className="text-primary fw-bold">&nbsp;<b>Help Page</b></a>.
+                                                    </div>
+                                                    {/*end::Notice*/}
+                                                </div>
+                                                <div className='row'>
+                                                    <div className="card mb-5 mb-xl-10">
+                                                        {/*begin::Card header*/}
+                                                        <div className="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_connected_accounts" aria-expanded="true" aria-controls="kt_account_connected_accounts">
+                                                            <div className="card-title m-0">
+                                                                <h3 className="fw-bold m-0">Additional Features</h3>
+                                                            </div>
+                                                        </div>
+                                                        {/*end::Card header*/}
+                                                        {/*begin::Content*/}
+                                                        <div id="kt_account_settings_connected_accounts" className="collapse show">
+                                                            {/*begin::Card body*/}
+                                                            <div className="card-body border-top p-9">
+                                                                {/*begin::Notice*/}
+                                                                <div className="notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6">
+                                                                    {/*begin::Icon*/}
+                                                                    <i className="ki-outline ki-design-1 fs-2tx text-primary me-4" />        {/*end::Icon*/}
+                                                                    {/*begin::Wrapper*/}
+                                                                    <div className="d-flex flex-stack flex-grow-1 ">
+                                                                        {/*begin::Content*/}
+                                                                        <div className=" fw-semibold">
+                                                                            <div className="fs-6 text-gray-700 ">The features listed below are the additional and advanced features for a web application, and you can deselect any feature if you do not want to use it. <a href="#" className="fw-bold">Learn More</a></div>
+                                                                        </div>
+                                                                        {/*end::Content*/}
+                                                                    </div>
+                                                                    {/*end::Wrapper*/}
+                                                                </div>
+                                                                {/*end::Notice*/}
+                                                                {/*begin::Items*/}
+                                                                <div className="py-2">
+                                                                {state3.category === "social" || state3.category === "blog" || state3.category === "ecommerce" ? (                                         
+    <>                    
+        {/*begin::Item*/}
+        <div className="d-flex flex-stack">
+            <div className="d-flex">
+                <img src="/assets/media/logos/scroll.svg" className="w-30px me-6" alt="infinite scroll" />
+                <div className="d-flex flex-column">
+                    <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Infinite Scroll</a>
+                    <div className="fs-6 fw-semibold text-gray-400">Content scrolls infinitely (generally used in social media & blogs)</div>
+                </div>
+            </div>
+            <div className="d-flex justify-content-end">
+                <div className="form-check form-check-solid form-check-custom form-switch">
+                    <input className="form-check-input w-45px h-30px" type="checkbox" id="switch" style={{cursor: "pointer"}} onClick={()=>dispatch(updateInfinite_scroll(state5.infinite_scroll === false ? true : false))} checked={state5.infinite_scroll === true ? "checked" : ""}  />
+                    <label className="form-check-label" htmlFor="switch" />
+                </div>
+            </div>
+        </div>
+        {/*end::Item*/}
+    </>
+) : null}
+                                                                                {state3.category === "blog" || state3.category === "ecommerce" ? (              
+    <>    
+                                                                    <div className="separator separator-dashed my-5" />
+                                                                    {/*begin::Item*/}
+                                                                    <div className="d-flex flex-stack">
+                                                                        <div className="d-flex">
+                                                                            <img src="/assets/media/logos/pagination.svg" className="w-30px me-6" alt="pagination" />
+                                                                            <div className="d-flex flex-column">
+                                                                                <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Pagination</a>
+                                                                                <div className="fs-6 fw-semibold text-gray-400">Only specific amount of content show in a single look</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="d-flex justify-content-end">
+                        <div className="form-check form-check-solid form-check-custom form-switch">
+                            <input className="form-check-input w-45px h-30px" type="checkbox" id="switch" style={{cursor : "pointer"}}  onClick={()=>dispatch(updatePagination(state5.pagination === false ? true : false))} checked={state5.pagination === true ? "checked" : ""}/>
+                            <label className="form-check-label" htmlFor="switch" />
+                        </div>
+                    </div>
+                                                                    </div>
+                                                                    {/*end::Item*/}
+                                                                    </>
+                                                                    ) : null}
+                                                                    <div className="separator separator-dashed my-5" />
+                                                                    {/*begin::Item*/}
+                                                                    <div className="d-flex flex-stack">
+                                                                        <div className="d-flex">
+                                                                            <img src="/assets/media/logos/refaral.svg" className="w-30px me-6" alt="referal" />
+                                                                            <div className="d-flex flex-column">
+                                                                                <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Referal</a>
+                                                                                <div className="fs-6 fw-semibold text-gray-400">Management of refering your web app</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="d-flex justify-content-end">
+                        <div className="form-check form-check-solid form-check-custom form-switch">
+                            <input className="form-check-input w-45px h-30px" type="checkbox" id="switch" style={{cursor : "pointer"}}  onClick={()=>dispatch(updateReferal(state5.referal === false ? true : false))} checked={state5.referal === true ? "checked" : ""} />
+                            <label className="form-check-label" htmlFor="switch" />
+                        </div>
+                    </div>
+                                                                    </div>
+                                                                    {/*end::Item*/}
+                                                                    <div className="separator separator-dashed my-5" />
+                                                                    {/*begin::Item*/}
+                                                                    <div className="d-flex flex-stack">
+                                                                        <div className="d-flex">
+                                                                            <img src="/assets/media/logos/chatbot.svg" className="w-30px me-6" alt="chat bot" />
+                                                                            <div className="d-flex flex-column">
+                                                                                <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Help Chat Bot</a>
+                                                                                <div className="fs-6 fw-semibold text-gray-400">An ai bot will speak for you.</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="d-flex justify-content-end">
+                        <div className="form-check form-check-solid form-check-custom form-switch">
+                            <input className="form-check-input w-45px h-30px" type="checkbox" id="switch" style={{cursor : "pointer"}}  onClick={()=>dispatch(updateHelp_chat_bot(state5.help_chat_bot === false ? true : false))} checked={state5.help_chat_bot === true ? "checked" : ""} />
+                            <label className="form-check-label" htmlFor="switch" />
+                        </div>
+                    </div>
+                                                                    </div>
+                                                                    {/*end::Item*/}
+                                                                    {state3.category == "blog" || state3.category == "code" ? (      
+                                                                        <>                                       <div className="separator separator-dashed my-5" />    
+                                                                                         {/*begin::Item*/}
+                                                                    <div className="d-flex flex-stack">
+                                                                        <div className="d-flex">
+                                                                            <img src="/assets/media/logos/codeeditor.svg" className="w-30px me-6" alt="code editor" />
+                                                                            <div className="d-flex flex-column">
+                                                                                <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Integrated Developement Enviroment</a>
+                                                                                <div className="fs-6 fw-semibold text-gray-400">Small code editor for web App.</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="d-flex justify-content-end">
+                        <div className="form-check form-check-solid form-check-custom form-switch">
+                            <input className="form-check-input w-45px h-30px" type="checkbox" id="switch" style={{cursor : "pointer"}}  onClick={()=>dispatch(updateIDE(state5.ide === false ? true : false))} checked={state5.ide === true ? "checked" : ""} />
+                            <label className="form-check-label" htmlFor="switch" />
+                        </div>
+                    </div>
+                                                                    </div>
+                                                                    {/*end::Item*/}
+                                                                    </> 
+                                                                    ) : null }
+                                                                    <div className="separator separator-dashed my-5" />
+{state3.category == "social" || state3.category == "health" ? (
+    <>
+                                                                        <div className="separator separator-dashed my-5" />
+                                                                    {/*begin::Item*/}
+                                                                    <div className="d-flex flex-stack">
+                                                                        <div className="d-flex">
+                                                                            <img src="/assets/media/logos/videocall.svg" className="w-30px me-6" alt="video call" />
+                                                                            <div className="d-flex flex-column">
+                                                                                <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Video calling</a>
+                                                                                <div className="fs-6 fw-semibold text-gray-400">Video calling feature.</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="d-flex justify-content-end">
+                        <div className="form-check form-check-solid form-check-custom form-switch">
+                            <input className="form-check-input w-45px h-30px" type="checkbox" id="switch" style={{cursor : "pointer"}}  onClick={()=>dispatch(updateVideo_calling(state5.video_calling === false ? true : false))} checked={state5.video_calling === true ? "checked" : ""} />
+                            <label className="form-check-label" htmlFor="switch" />
+                        </div>
+                    </div>
+                                                                    </div>
+                                                                    {/*end::Item*/}
+    </>
+) : null}
+                                                                </div>
+                                                                {/*end::Items*/}
+                                                            </div>
+                                                            {/*end::Card body*/}
+                                                            {/*begin::Card footer*/}
+                                                            {/* <div className="card-footer d-flex justify-content-end py-6 px-9">
+                                                                <button className="btn btn-light btn-active-light-primary me-2">Discard</button>
+                                                                <button className="btn btn-primary">Save Changes</button>
+                                                            </div> */}
+                                                            {/*end::Card footer*/}
+                                                        </div>
+                                                        {/*end::Content*/}
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            {/*end::Wrapper*/}
+
+                                        </div>
+                                        {/*end::Step 7*/}
+                                                                                {/*begin::Step 8*/}
+                                                                                <div className={`${checkStep == 8 ? "current" : (checkStep > 8 ? "completed" : "")}`} data-kt-stepper-element="content">
+
+
+{/*begin::Wrapper*/}
+<div className="w-100">
+    {/*begin::Heading*/}
+    <div className="pb-10 pb-lg-15">
+        {/*begin::Title*/}
+        <h2 className="fw-bold text-dark">Infinity Special Features</h2>
+        {/*end::Title*/}
+
+        {/*begin::Notice*/}
+        <div className="text-muted fw-semibold fs-6">
+            If you need more info, please check out
+            <a href="#" className="text-primary fw-bold">&nbsp;<b>Help Page</b></a>.
+        </div>
+        {/*end::Notice*/}
+    </div>
+    <div className='row'>
+        <div className="card mb-5 mb-xl-10">
+            {/*begin::Card header*/}
+            <div className="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_connected_accounts" aria-expanded="true" aria-controls="kt_account_connected_accounts">
+                <div className="card-title m-0">
+                    <h3 className="fw-bold m-0">Infinity Special Features</h3>
+                </div>
+            </div>
+            {/*end::Card header*/}
+            {/*begin::Content*/}
+            <div id="kt_account_settings_connected_accounts" className="collapse show">
+                {/*begin::Card body*/}
+                <div className="card-body border-top p-9">
+                    {/*begin::Notice*/}
+                    <div className="notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6">
+                        {/*begin::Icon*/}
+                        <i className="ki-outline ki-design-1 fs-2tx text-primary me-4" />        {/*end::Icon*/}
+                        {/*begin::Wrapper*/}
+                        <div className="d-flex flex-stack flex-grow-1 ">
+                            {/*begin::Content*/}
+                            <div className=" fw-semibold">
+                                <div className="fs-6 text-gray-700 ">The features listed below are the basic features required in a web application, and you can deselect any feature if you do not need to use it. <a href="#" className="fw-bold">Learn More</a></div>
+                            </div>
+                            {/*end::Content*/}
+                        </div>
+                        {/*end::Wrapper*/}
+                    </div>
+                    {/*end::Notice*/}
+                    {/*begin::Items*/}
+                    <div className="py-2">
+                        {/*begin::Item*/}
+                        <div className="d-flex flex-stack">
+                            <div className="d-flex">
+                                <img src="/assets/media/logos/seo.svg" className="w-30px me-6" alt="seo" />
+                                <div className="d-flex flex-column">
+                                    <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Seo tool</a>
+                                    <div className="fs-6 fw-semibold text-gray-400">Tool for better website ranking</div>
+                                </div>
+                            </div>
+                            <div className="d-flex justify-content-end">
+<div className="form-check form-check-solid form-check-custom form-switch">
+<input className="form-check-input w-45px h-30px" type="checkbox" id="switch" style={{cursor : "pointer"}}  onClick={()=>dispatch(updateSeo_tool(state6.seo_tool === false ? true : false))} checked={state6.seo_tool === true ? "checked" : ""} />
+<label className="form-check-label" htmlFor="switch" />
+</div>
+</div>
+                        </div>
+                        {/*end::Item*/}
+                        <div className="separator separator-dashed my-5" />
+                                                {/*begin::Item*/}
+                                                <div className="d-flex flex-stack">
+                            <div className="d-flex">
+                                <img src="/assets/media/logos/analytics.svg" className="w-30px me-6" alt="analytics" />
+                                <div className="d-flex flex-column">
+                                    <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Analytics tool</a>
+                                    <div className="fs-6 fw-semibold text-gray-400">Tool for better website Analytics</div>
+                                </div>
+                            </div>
+                            <div className="d-flex justify-content-end">
+<div className="form-check form-check-solid form-check-custom form-switch">
+<input className="form-check-input w-45px h-30px" type="checkbox" id="switch" style={{cursor : "pointer"}}  onClick={()=>dispatch(updateAnalytics_tool(state6.analytics_tool === false ? true : false))} checked={state6.analytics_tool === true ? "checked" : ""} />
+<label className="form-check-label" htmlFor="switch" />
+</div>
+</div>
+                        </div>
+                        {/*end::Item*/}
+                        <div className="separator separator-dashed my-5" />
+                                                                    {/*begin::Item*/}
+                                                                    <div className="d-flex flex-stack">
+                                                                        <div className="d-flex">
+                                                                            <img src="/assets/media/logos/bserver.svg" className="w-30px me-6" alt="backend server" />
+                                                                            <div className="d-flex flex-column">
+                                                                                <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Backend Web Server</a>
+                                                                                <div className="fs-6 fw-semibold text-gray-400">Backend code Hosting.</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="d-flex justify-content-end">
+                        <div className="form-check form-check-solid form-check-custom form-switch">
+                            <input className="form-check-input w-45px h-30px" type="checkbox" id="switch" style={{cursor : "pointer"}}  onClick={()=>dispatch(updateBackend_web_server(state6.backend_web_server === false ? true : false))} checked={state6.backend_web_server === true ? "checked" : ""} />
+                            <label className="form-check-label" htmlFor="switch" />
+                        </div>
+                    </div>
+                                                                    </div>
+                                                                    {/*end::Item*/}
+                                                                    <div className="separator separator-dashed my-5" />
+                                                                    {/*begin::Item*/}
+                                                                    <div className="d-flex flex-stack">
+                                                                    <div className="d-flex">
+                                                                            <img src="/assets/media/logos/fserver.svg" className="w-30px me-6" alt="frontend server" />
+                                                                            <div className="d-flex flex-column">
+                                                                                <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Frontend Web Server</a>
+                                                                                <div className="fs-6 fw-semibold text-gray-400">Frontend code Hosting.</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="d-flex justify-content-end">
+                        <div className="form-check form-check-solid form-check-custom form-switch">
+                            <input className="form-check-input w-45px h-30px" type="checkbox" id="switch" style={{cursor : "pointer"}}  onClick={()=>dispatch(updateFrontend_web_server(state6.frontend_web_server === false ? true : false))} checked={state6.frontend_web_server === true ? "checked" : ""} />
+                            <label className="form-check-label" htmlFor="switch" />
+                        </div>
+                    </div>
+                                                                    </div>
+                                                                    {/*end::Item*/}
+                                                                    <div className="separator separator-dashed my-5" />
+                                                                    {/*begin::Item*/}
+                                                                    <div className="d-flex flex-stack">
+                                                                    <div className="d-flex">
+                                                                            <img src="/assets/media/logos/contentwriting.svg" className="w-30px me-6" alt="content writing" />
+                                                                            <div className="d-flex flex-column">
+                                                                                <a href="#" className="fs-5 text-dark text-hover-primary fw-bold">Content Writing Tool</a>
+                                                                                <div className="fs-6 fw-semibold text-gray-400">An AI tool that helps you write better content.</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="d-flex justify-content-end">
+                        <div className="form-check form-check-solid form-check-custom form-switch">
+                            <input className="form-check-input w-45px h-30px" type="checkbox" id="switch" style={{cursor : "pointer"}}  onClick={()=>dispatch(updatecContent_writing_tool(state6.content_writing_tool === false ? true : false))} checked={state6.content_writing_tool === true ? "checked" : ""} />
+                            <label className="form-check-label" htmlFor="switch" />
+                        </div>
+                    </div>
+                                                                    </div>
+                                                                    {/*end::Item*/}
+                    </div>
+                    {/*end::Items*/}
+                </div>
+                {/*end::Card body*/}
+                {/*begin::Card footer*/}
+                {/* <div className="card-footer d-flex justify-content-end py-6 px-9">
+                    <button className="btn btn-light btn-active-light-primary me-2">Discard</button>
+                    <button className="btn btn-primary">Save Changes</button>
+                </div> */}
+                {/*end::Card footer*/}
+            </div>
+            {/*end::Content*/}
+        </div>
+
+    </div>
+</div>
+{/*end::Wrapper*/}
+
+</div>
+{/*end::Step 8*/}
+                                        {/*begin::Step 9*/}
+                                        <div className={`${checkStep == 9 ? "current" : (checkStep > 9 ? "completed" : "")}`} data-kt-stepper-element="content">
 
 
                                             {/*begin::Wrapper*/}
@@ -1311,7 +1789,7 @@ const CreateDesignReact = () => {
                                                             <div className=" fw-semibold">
                                                                 <h4 className="text-gray-900 fw-bold">Attention {state && state[0] ? (state[0].name) : null}!</h4>
 
-                                                                <div className="fs-6 text-gray-700 ">Hello! If you feel that further changes need to be made to the design, please click on the following link to proceed: <a onClick={() => setModalOpen(true)} style={{ cursor: 'pointer' }} className="fw-bold">Create Design</a> Thank you!</div>
+                                                                <div className="fs-6 text-gray-700 ">Hello! If you feel that you need to change something about the design, please click on the following link to continue: <NavLink to={"/auth/create/design/draw"} style={{ cursor: 'pointer' }} className="fw-bold">Create Design</NavLink> Thank you!</div>
                                                             </div>
                                                             {/*end::Content*/}
 
@@ -1326,7 +1804,7 @@ const CreateDesignReact = () => {
                                             {/*end::Wrapper*/}
 
                                         </div>
-                                        {/*end::Step 7*/}
+                                        {/*end::Step 9*/}
                                         {/*begin::Actions*/}
                                         <div className="d-flex flex-stack pt-15">
                                             <div className="mr-2">
@@ -1348,7 +1826,7 @@ const CreateDesignReact = () => {
                                                 {/* <div className="spinner-border" role="status" style={{display : (checkStep == 6 ? "block" : "none")}}>
   <span className="visually-hidden">Loading...</span>
 </div> */}
-                                                <button type="button" className="btn btn-lg btn-primary" style={{ display: (checkStep == 6 ? "block" : "none") }}>
+                                                <NavLink to={`/auth/view/site/${state3.website_name}`} className="btn btn-lg btn-primary" style={{ display: (checkStep == 9 ? "block" : "none") }} >
                                                     <span className="indicator-label">
                                                         View Site
                                                         {/* begin::Svg Icon | path: icons/duotune/arrows/arr064.svg */}
@@ -1362,9 +1840,9 @@ const CreateDesignReact = () => {
                                                     <span className="indicator-progress">
                                                         Please wait... <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
                                                     </span>
-                                                </button>
-                                                <button type="button" className="btn btn-lg btn-primary" data-kt-stepper-action="next" style={{ display: (checkStep == 6 ? "none" : "block") }} onClick={() => {
-                                                    checkStep == 2 && websiteName.length == 0 || checkStep == 3 && isPalette == false ? (setIsErrMenu(true)) : (setCheckStep(checkStep + 1))
+                                                </NavLink>
+                                                <button type="button" className="btn btn-lg btn-primary" data-kt-stepper-action="next" style={{ display: (checkStep == 9 ? "none" : "block") }} onClick={() => {
+                                                    checkStep == 2 && websiteName.length == 0 || checkStep == 2 && state3.category == "select" || checkStep == 3 && isPalette == false ? (setIsErrMenu(true)) : (setCheckStep(checkStep + 1))
                                                 }}>
                                                     Continue
                                                     {/*begin::Svg Icon | path: icons/duotune/arrows/arr064.svg*/}

@@ -1,3 +1,4 @@
+/*eslint-disable */
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
@@ -5,7 +6,7 @@ const Error404 = () => {
     return (
         <>
             {/*begin::Body*/}
-            <div id="kt_body" className="app-blank bgi-size-cover bgi-position-center bgi-no-repeat" style={{ backgroundImage: "url('../../assets/media/auth/bg1.jpg')" }}>
+            <div id="kt_body" className="app-blank bgi-size-cover bgi-position-center bgi-no-repeat" style={{ backgroundImage: "url('/assets/media/auth/bg1.jpg')" }}>
                 {/*begin::Theme mode setup on page load*/}
 
                 {/*end::Theme mode setup on page load*/}
@@ -13,18 +14,6 @@ const Error404 = () => {
                 {/*begin::Root*/}
                 <div className="d-flex flex-column flex-root" id="kt_app_root">
                     {/*begin::Page bg image*/}
-                    {/* <style>
-                        body {
-                            background - image: url('../../assets/media/auth/bg1.jpg');
-    }
-
-                        [data-bs-theme="dark"] body {
-                            background - image: url('../../assets/media/auth/bg1-dark.jpg');
-    }
-                    </style> */}
-                    {/*end::Page bg image*/}
-
-
                     {/*begin::Authentication - Signup Welcome Message */}
                     <div className="d-flex flex-column flex-center flex-column-fluid">
                         {/*begin::Content*/}
@@ -47,8 +36,8 @@ const Error404 = () => {
 
                                     {/*begin::Illustration*/}
                                     <div className="mb-3">
-                                        <img src="../../assets/media/auth/404-error.png" className="mw-100 mh-300px theme-light-show" alt="" />
-                                        <img src="../../assets/media/auth/404-error-dark.png" className="mw-100 mh-300px theme-dark-show" alt="" />
+                                        <img src="/assets/media/auth/404-error.png" className="mw-100 mh-300px theme-light-show" alt="" />
+                                        <img src="/assets/media/auth/404-error-dark.png" className="mw-100 mh-300px theme-dark-show" alt="" />
                                     </div>
                                     {/*end::Illustration*/}
 

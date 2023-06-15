@@ -130,7 +130,7 @@ const Home = () => {
                                                             <div className="d-flex flex-column text-center mb-9 px-9">
                                                                 {/*begin::Photo*/}
                                                                 <div className="symbol symbol-80px symbol-lg-150px mb-4">
-                                                                    <img src={state2.profile_photo} className="" alt="" />
+                                                                <span className="symbol-label  bg-light-danger text-danger fs-1 fw-bolder">{state2 && state2.profile_photo}</span>
                                                                 </div>
                                                                 {/*end::Photo*/}
 
@@ -975,7 +975,7 @@ const Home = () => {
                                                                     <div className="d-flex flex-column text-center mb-9 px-9">
                                                                         {/*begin::Photo*/}
                                                                         <div className="symbol symbol-80px symbol-lg-150px mb-4">
-                                                                            <img src={state2.profile_photo} className="" alt="" />
+                                                                        <span className="symbol-label  bg-light-danger text-danger fs-1 fw-bolder">{state2 && state2.profile_photo}</span>
                                                                         </div>
                                                                         {/*end::Photo*/}
 
@@ -1441,7 +1441,7 @@ const Home = () => {
                                                                 <div className="card-header justify-content-start align-items-center pt-4">
                                                                     {/*begin::Photo*/}
                                                                     <div className="symbol symbol-45px me-5">
-                                                                        <img src={state2.profile_photo} className="" alt="" />
+                                                                    <span className="symbol-label  bg-light-danger text-danger fs-6 fw-bolder">{state2 && state2.profile_photo}</span>
                                                                     </div>
                                                                     {/*end::Photo*/}
 

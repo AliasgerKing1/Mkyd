@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-let initialState = [
+let initialState =
 {
     step_1 : "html"
 
-}];
+};
 
 let CreateDesignReducer = createSlice({
     name: "create design",
