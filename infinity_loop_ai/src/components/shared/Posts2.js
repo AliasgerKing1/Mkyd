@@ -1,6 +1,7 @@
 /*eslint-disable */
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 
 const Posts2 = () => {
     let state = useSelector(state=>state.PostReducer)
@@ -31,7 +32,7 @@ const Posts2 = () => {
                             {/*begin::Info*/}
                             <div className="flex-grow-1">
                                 {/*begin::Name*/}
-                                <a href="#" className="text-gray-800 text-hover-primary fs-4 fw-bold">{x.name}</a>
+                                {state[0]._id == x._id ? (<NavLink to={`/auth/profile`} className="text-gray-800 text-hover-primary fs-4 fw-bold">{x.name}</NavLink>) : (<NavLink to={`/auth/profile/${x.name}/${x._id}`} className="text-gray-800 text-hover-primary fs-4 fw-bold">{x.name}</NavLink>)}
                                 {/*end::Name*/}
 
                                 {/*begin::Date*/}

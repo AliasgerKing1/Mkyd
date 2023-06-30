@@ -245,4 +245,10 @@ routes.get("/signin",async (req, res) => {
     
 }});
 
+routes.get("/openuser/:id", async (req,res) => {
+let id = req.params.id;
+let result = await User.find({_id : id})
+res.send(result)
+})
+
 module.exports = routes;

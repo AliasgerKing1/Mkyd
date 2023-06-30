@@ -11,6 +11,8 @@ import DrawCanvas from '../../components/pages/DrawCanvas/DrawCanvas';
 import UserProfile from "../../components/pages/UserProfile/UserProfile"
 import ContentWritingApi from '../../components/pages/ContentWritingApi/ContentWritingApi';
 import ViewCreatedSite from '../../components/pages/ViewCreatedSite/ViewCreatedSite';
+import UserOpenProfile from '../../components/pages/UserOpenProfile/UserOpenProfile';
+import Calender from '../../components/pages/Calender/Calender';
 let userRoutes = [
   {
     path: "home",
@@ -37,12 +39,20 @@ let userRoutes = [
     element: <UserProfile />
   },
   {
+    path: "profile/:name/:id",
+    element: <UserOpenProfile />
+  },
+  {
     path: "create/content",
     element: <ContentWritingApi />
   },
   {
     path: "view/site/:website",
     element: <ViewCreatedSite />
+  },
+  {
+    path: "calender",
+    element: <Calender />
   },
   {
     path: "error500",

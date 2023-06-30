@@ -38,10 +38,10 @@ const UserProfile = () => {
                         </span>
                         {/*end::Svg Icon*/}	</div>
                       {/*begin::Logo image*/}
-                      <a href="../../index.html">
+                      <NavLink to="/auth/home">
                         <img alt="Logo" src="/assets/media/logos/default-small.svg" className="h-30px theme-light-show" />
                         <img alt="Logo" src="/assets/media/logos/default-small-dark.svg" className="h-30px theme-dark-show" />
-                      </a>
+                      </NavLink>
                       {/*end::Logo image*/}
                     </div>
                     {/*end::Sidebar toggle*/}
@@ -53,9 +53,9 @@ const UserProfile = () => {
                         <ul className="breadcrumb breadcrumb-separatorless fw-semibold fs-7 mb-2">
                           {/*begin::Item*/}
                           <li className="breadcrumb-item text-gray-600 fw-bold lh-1">
-                            <a href="../../index.html" className="text-gray-700 text-hover-primary me-1">
+                            <NavLink to="/auth/home" className="text-gray-700 text-hover-primary me-1">
                               <i className="fonticon-home text-gray-700 fs-3" />
-                            </a>
+                            </NavLink>
                           </li>
                           {/*end::Item*/}
                           {/*begin::Item*/}
@@ -123,7 +123,8 @@ const UserProfile = () => {
                             {/*begin: Pic*/}
                             <div className="me-7 mb-4">
                               <div className="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                                <img src={state && state.profile_photo} alt="image" />
+
+                                                                <span className="symbol-label  bg-light-danger text-danger fs-1 fw-bolder">{state && state.profile_photo}</span>
                                 <div className="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px" />
                               </div>
                             </div>
@@ -443,7 +444,7 @@ const UserProfile = () => {
                                 <div className="d-flex align-items-center flex-grow-1">
                                   {/*begin::Avatar*/}
                                   <div className="symbol symbol-45px me-5">
-                                    <img src="../../assets/media/avatars/300-6.jpg" alt />
+                                    <img src="/assets/media/avatars/300-6.jpg" alt />
                                   </div>
                                   {/*end::Avatar*/}
                                   {/*begin::Info*/}

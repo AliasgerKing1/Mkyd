@@ -24,7 +24,7 @@ const CreateDesignReact = () => {
     let state5 = useSelector(state => state.Step7CreateReactReducer)
     let state6 = useSelector(state => state.Step8CreateReactReducer)
     let dispatch = useDispatch();
-    let [checkStep, setCheckStep] = useState(4)
+    let [checkStep, setCheckStep] = useState(1)
     let [checkTeamSize, setCheckTEamSize] = useState(1)
     let [checkAccount, setCheckAccount] = useState(1)
     let [modalOpen, setModalOpen] = useState(false)

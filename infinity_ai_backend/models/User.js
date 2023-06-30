@@ -16,6 +16,18 @@ const User = mongoose.Schema({
     website: Array,
     website_react: Array,
     profile_photo: String,
-    social: Array
+    social: {
+        type : Array,
+        default : [
+            {
+                followers : 0,
+                followings : 0
+            }
+        ]
+    },
+    plan : {
+        type: String,
+        default: "free"
+    }
 })
 module.exports = mongoose.model("user", User);

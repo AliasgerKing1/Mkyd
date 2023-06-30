@@ -546,7 +546,7 @@ const Sidebar = () => {
                             </span>
                                 {/*end:Menu link*/}
                                 {/*begin:Menu sub*/}<div className="menu-sub menu-sub-accordion" style={{ display: showApps == false ? "none" : "", overflow: showApps == false ? "hidden" : "" }}>
-                                    <NavLink to="/auth/create/design">
+                                { state.plan == "free" ? (                                    <NavLink to="/auth/create/design">
                                         {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
 
                                         </span>
@@ -558,7 +558,20 @@ const Sidebar = () => {
                                         </span>
                                             {/*end:Menu link*/}
                                         </div>{/*end:Menu item*/}
-                                    </NavLink>
+                                    </NavLink>) : (                                    <NavLink to="/auth/create/design/react">
+                                        {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
+
+                                        </span>
+
+                                        </span>
+                                            <span className="menu-title" >Website Creation
+                                            </span>
+
+                                        </span>
+                                            {/*end:Menu link*/}
+                                        </div>{/*end:Menu item*/}
+                                    </NavLink>)}
+
                                     {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
 
                                     </span>
@@ -577,6 +590,19 @@ const Sidebar = () => {
 
                                         </span>
                                             <span className="menu-title" >Chat
+                                            </span>
+
+                                        </span>
+                                            {/*end:Menu link*/}
+                                        </div>{/*end:Menu item*/}
+                                    </NavLink>
+                                    <NavLink to="/auth/calender">
+                                        {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-bullet" ><span className="bullet bullet-dot">
+
+                                        </span>
+
+                                        </span>
+                                            <span className="menu-title" >Calender
                                             </span>
 
                                         </span>
@@ -669,7 +695,7 @@ const Sidebar = () => {
                                         </a>{/*end:Menu link*/}</div>{/*end:Menu item*/}
                                         </div>{/*end:Menu sub*/}</div>{/*end:Menu item*/}
                                 </div>{/*end:Menu sub*/}</div>{/*end:Menu item*/}
-
+                                <NavLink to="/help">
                             {/*begin:Menu item*/}<div data-kt-menu-trigger="click" className="menu-item menu-accordion" >{/*begin:Menu link*/}<span className="menu-link" ><span className="menu-icon" ><i className="fonticon-setting fs-2"></i>
                             </span>
                                 <span className="menu-title" >Help
@@ -678,6 +704,7 @@ const Sidebar = () => {
                             </span>
                                 {/*end:Menu link*/}
                             </div>{/*end:Menu item*/}
+                            </NavLink>
                         </div>
                         {/*end::Sidebar menu*/}
                     </div>
