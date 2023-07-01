@@ -1,5 +1,5 @@
 /*eslint-disable */
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { NavLink } from 'react-router-dom'
 
@@ -10,6 +10,60 @@ const UserProfile = () => {
   let state = useSelector(state => state.SignInReducer)
   let [menu, setMenu] = useState(false)
   let [internalMenu, setinternalMenu] = useState(false)
+  let [followersPost, setFollowersPost] = useState("")
+  let [followingsPost, setFollowingsPost] = useState("")
+  let [followers, setFollowers] = useState(0)
+  let [followings, setFollowings] = useState(0)
+
+  useEffect(()=> {
+    if(state) {
+      let follower = state.social[0].followers
+      let following = state.social[0].followings
+      if(follower == 0) {
+        setFollowersPost("")
+        setFollowers(0)
+      }else if(follower > 100 && follower < 1000) {
+        setFollowersPost("Hundred")
+        setFollowers(follower / 100)
+
+      }else if(follower > 1000 && follower < 100000) {
+        setFollowersPost("Thousand")
+        setFollowers(follower / 1000)
+
+      }else if(follower > 100000 && follower < 10000000) {
+        setFollowersPost("Lakh")
+        setFollowers(follower / 100000)
+
+      }else if(follower > 10000000 && follower < 1000000000) {
+        setFollowersPost("Crore")
+        setFollowers(follower / 10000000)
+
+      }
+
+
+      if(following == 0) {
+        setFollowingsPost("")
+        setFollowings(0)
+    }else if(following > 100 && following < 1000) {
+        setFollowingsPost("Hundred")
+        setFollowings(following / 100)
+
+      }else if(following > 1000 && following < 100000) {
+        setFollowingsPost("Thousand")
+        setFollowings(following / 1000)
+
+      }else if(following > 100000 && following < 10000000) {
+        setFollowingsPost("Lakh")
+        setFollowings(following / 100000)
+
+      }else if(following > 10000000 && following < 1000000000) {
+        setFollowingsPost("Crore")
+        setFollowings(following / 10000000)
+
+      }
+      // console.log(following)
+    }
+  }, [state && state.social[0]])
   return (
     <>
       {/*begin::Body*/}
@@ -313,38 +367,22 @@ const UserProfile = () => {
                                   {/*begin::Stats*/}
                                   <div className="d-flex flex-wrap">
                                     {/*begin::Stat*/}
-                                    <div className="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
-                                      {/*begin::Number*/}
-                                      <div className="d-flex align-items-center">
-                                        {/*begin::Svg Icon | path: icons/duotune/arrows/arr066.svg*/}
-                                        <span className="svg-icon svg-icon-3 svg-icon-success me-2"><svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                          <rect opacity="0.5" x={13} y={6} width={13} height={2} rx={1} transform="rotate(90 13 6)" fill="currentColor" />
-                                          <path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor" />
-                                        </svg>
-                                        </span>
-                                        {/*end::Svg Icon*/}                                    <div className="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value={4500} data-kt-countup-prefix="$">0</div>
-                                      </div>
-                                      {/*end::Number*/}
-                                      {/*begin::Label*/}
-                                      <div className="fw-semibold fs-6 text-gray-400">Earnings</div>
-                                      {/*end::Label*/}
-                                    </div>
                                     {/*end::Stat*/}
                                     {/*begin::Stat*/}
                                     <div className="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
                                       {/*begin::Number*/}
                                       <div className="d-flex align-items-center">
                                         {/*begin::Svg Icon | path: icons/duotune/arrows/arr065.svg*/}
-                                        <span className="svg-icon svg-icon-3 svg-icon-danger me-2"><svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        {/* <span className="svg-icon svg-icon-3 svg-icon-danger me-2"><svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                           <rect opacity="0.5" x={11} y={18} width={13} height={2} rx={1} transform="rotate(-90 11 18)" fill="currentColor" />
                                           <path d="M11.4343 15.4343L7.25 11.25C6.83579 10.8358 6.16421 10.8358 5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75L11.2929 18.2929C11.6834 18.6834 12.3166 18.6834 12.7071 18.2929L18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25C17.8358 10.8358 17.1642 10.8358 16.75 11.25L12.5657 15.4343C12.2533 15.7467 11.7467 15.7467 11.4343 15.4343Z" fill="currentColor" />
                                         </svg>
-                                        </span>
-                                        {/*end::Svg Icon*/}                                    <div className="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value={80}>0</div>
+                                        </span> */}
+                                        {/*end::Svg Icon*/}                                    <div className="fs-2 fw-bold">{`${followers} ${followersPost}`}</div>
                                       </div>
                                       {/*end::Number*/}
                                       {/*begin::Label*/}
-                                      <div className="fw-semibold fs-6 text-gray-400">Projects</div>
+                                      <div className="fw-semibold fs-6 text-gray-400">Followers</div>
                                       {/*end::Label*/}
                                     </div>
                                     {/*end::Stat*/}
@@ -353,16 +391,17 @@ const UserProfile = () => {
                                       {/*begin::Number*/}
                                       <div className="d-flex align-items-center">
                                         {/*begin::Svg Icon | path: icons/duotune/arrows/arr066.svg*/}
-                                        <span className="svg-icon svg-icon-3 svg-icon-success me-2"><svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        {/* <span className="svg-icon svg-icon-3 svg-icon-success me-2">
+                                        <svg width={24} height={24} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                           <rect opacity="0.5" x={13} y={6} width={13} height={2} rx={1} transform="rotate(90 13 6)" fill="currentColor" />
                                           <path d="M12.5657 8.56569L16.75 12.75C17.1642 13.1642 17.8358 13.1642 18.25 12.75C18.6642 12.3358 18.6642 11.6642 18.25 11.25L12.7071 5.70711C12.3166 5.31658 11.6834 5.31658 11.2929 5.70711L5.75 11.25C5.33579 11.6642 5.33579 12.3358 5.75 12.75C6.16421 13.1642 6.83579 13.1642 7.25 12.75L11.4343 8.56569C11.7467 8.25327 12.2533 8.25327 12.5657 8.56569Z" fill="currentColor" />
                                         </svg>
-                                        </span>
-                                        {/*end::Svg Icon*/}                                    <div className="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value={60} data-kt-countup-prefix="%">0</div>
+                                        </span> */}
+                                        {/*end::Svg Icon*/}                                    <div className="fs-2 fw-bold">{`${followings} ${followingsPost}`}</div>
                                       </div>
                                       {/*end::Number*/}
                                       {/*begin::Label*/}
-                                      <div className="fw-semibold fs-6 text-gray-400">Success Rate</div>
+                                      <div className="fw-semibold fs-6 text-gray-400">Followings</div>
                                       {/*end::Label*/}
                                     </div>
                                     {/*end::Stat*/}

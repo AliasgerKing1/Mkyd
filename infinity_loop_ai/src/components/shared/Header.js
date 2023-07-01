@@ -30,10 +30,10 @@ const Header = () => {
                             {/*end::Svg Icon*/} </div>
 
                         {/*begin::Logo image*/}
-                        <a href="../../index.html">
-                            <img alt="Logo" src="../../assets/media/logos/default-small.svg" className="h-30px theme-light-show" />
-                            <img alt="Logo" src="../../assets/media/logos/default-small-dark.svg" className="h-30px theme-dark-show" />
-                        </a>
+                        <NavLink to="/auth/home">
+                            <img alt="Logo" src="/assets/media/logos/default-small.svg" className="h-30px theme-light-show" />
+                            <img alt="Logo" src="/assets/media/logos/default-small-dark.svg" className="h-30px theme-dark-show" />
+                        </NavLink>
                         {/*end::Logo image*/}
                     </div>
                     {/*end::Sidebar toggle*/}

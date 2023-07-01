@@ -42,6 +42,7 @@ const CreateDesignReact = () => {
     let  [file, setFile] = useState(null);
     let  [data, setData] = useState('');
     let  [langWord, setLangWord] = useState('');
+    let  [lang, setLang] = useState([]);
 
     useEffect(()=> {
 dispatch(updateCategory(selectOption.toLowerCase()))
@@ -107,6 +108,7 @@ dispatch(updateCategory(selectOption.toLowerCase()))
     let typnigLang = (event) => {
         setLangWord(event.target.value.length)
     const filteredWords = languages.filter((word) => word.startsWith(event.target.value.toUpperCase()));
+    setLang(filteredWords)
 
     }
     const handleKeyDown = (event) => {

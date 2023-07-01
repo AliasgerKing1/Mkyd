@@ -16,7 +16,7 @@ const Posts = () => {
                 {/*begin::Card*/}
                 {state && state.map((x) => {
                     return (
-                        <div className="card card-flush mb-10">
+                        <div className="card card-flush mb-10" key={x._id}>
                     {/*begin::Card header*/}
                     <div className="card-header pt-9">
                         {/*begin::Author*/}

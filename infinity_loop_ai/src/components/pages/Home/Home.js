@@ -21,10 +21,10 @@ import Activity from '../../shared/HomeComponents/Activity'
 import Connections from '../../shared/HomeComponents/Connections'
 import Settings from "../../shared/HomeComponents/Settings"
 const Home = () => {
-    let state4 = useSelector(state => state.HomeChangeLinkReducer)
-    let state3 = useSelector(state => state.PostReducer)
     let state = useSelector(state => state.SidebarReducer)
-    let state2 = useSelector(state2 => state2.SignInReducer)
+    let state2 = useSelector(state => state.SignInReducer)
+    let state3 = useSelector(state => state.PostReducer)
+    let state4 = useSelector(state => state.HomeChangeLinkReducer)
     let dispatch = useDispatch()
     let [message, setMessage] = useState("")
     let [showSpinner, setShowSpinner] = useState(false)
@@ -32,6 +32,11 @@ const Home = () => {
     const [pages, setPages] = useState(2);
     const [infheight, setInfHeight] = useState(700)
     const fixedHeight = infheight; // the fixed height to check against
+
+    let [followersPost, setFollowersPost] = useState("")
+    let [followingsPost, setFollowingsPost] = useState("")
+    let [followers, setFollowers] = useState(0)
+    let [followings, setFollowings] = useState(0)
 
     let getCurrentUserFun = async () => {
         let token = localStorage.getItem("token")
@@ -52,7 +57,52 @@ const Home = () => {
                 dispatch(getPostRedux(result.data))
             })
         }
-
+        if(state2 && state2.social && state2.social[0]) {
+            let follower = state2?.social[0]?.followers
+            let following = state2?.social[0]?.followings
+            if(follower == 0) {
+                setFollowersPost("")
+                setFollowers(0)
+              }else if(follower > 100 && follower < 1000) {
+                setFollowersPost("Hundred")
+                setFollowers(follower / 100)
+        
+              }else if(follower > 1000 && follower < 100000) {
+                setFollowersPost("Thousand")
+                setFollowers(follower / 1000)
+        
+              }else if(follower > 100000 && follower < 10000000) {
+                setFollowersPost("Lakh")
+                setFollowers(follower / 100000)
+        
+              }else if(follower > 10000000 && follower < 1000000000) {
+                setFollowersPost("Crore")
+                setFollowers(follower / 10000000)
+        
+              }
+        
+        
+              if(following == 0) {
+                setFollowingsPost("")
+                setFollowings(0)
+            }else if(following > 100 && following < 1000) {
+                setFollowingsPost("Hundred")
+                setFollowings(following / 100)
+        
+              }else if(following > 1000 && following < 100000) {
+                setFollowingsPost("Thousand")
+                setFollowings(following / 1000)
+        
+              }else if(following > 100000 && following < 10000000) {
+                setFollowingsPost("Lakh")
+                setFollowings(following / 100000)
+        
+              }else if(following > 10000000 && following < 1000000000) {
+                setFollowingsPost("Crore")
+                setFollowings(following / 10000000)
+        
+              }
+        }
         function handleScroll() {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             const isFixedHeightReached = scrollTop >= fixedHeight;
@@ -65,7 +115,6 @@ const Home = () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, [])
-
     useEffect(() => {
         if (isScrolledToFixedHeight) {
             setShowSpinner(true);
@@ -84,6 +133,9 @@ const Home = () => {
         if (state.condition == true) {
             dispatch(getSidebarRedux(false))
         }
+    }
+
+    let dummyFun = () => {
     }
     return (
         <>
@@ -165,7 +217,7 @@ const Home = () => {
                                                                 {/*begin::Col*/}
                                                                 <div className="col-md-4 text-center">
                                                                     <div className="text-gray-800 fw-bold fs-3">
-                                                                        <span className="m-0 counted" data-kt-countup="true" data-kt-countup-value="24" data-kt-initialized="1">24</span> K
+                                                                        <span className="m-0 counted" data-kt-countup="true" data-kt-countup-value="24" data-kt-initialized="1">{followers}</span> {followersPost}
                                                                     </div>
 
                                                                     <span className="text-gray-500 fs-8 d-block fw-bold">FOLLOWERS</span>
@@ -175,7 +227,7 @@ const Home = () => {
                                                                 {/*begin::Col*/}
                                                                 <div className="col-md-4 text-center">
                                                                     <div className="text-gray-800 fw-bold fs-3">
-                                                                        <span className="m-0 counted" data-kt-countup="true" data-kt-countup-value="12" data-kt-initialized="1">12</span> K
+                                                                        <span className="m-0 counted" data-kt-countup="true" data-kt-countup-value="12" data-kt-initialized="1">{followings}</span> {followingsPost}
                                                                     </div>
 
                                                                     <span className="text-gray-500 fs-8 d-block fw-bold">FOLLOWING</span>
@@ -609,7 +661,7 @@ const Home = () => {
                                                         {/*begin::Body*/}
                                                         <div className="card-body pt-2 pb-0">
                                                             {/*begin::Input*/}
-                                                            <textarea className="form-control bg-transparent border-0 px-0" id="kt_social_feeds_post_input" name="message" data-kt-autosize="true" rows="1" placeholder="Type your message..." style={{ overflow: 'hidden', overflowWrap: 'break-word', resize: 'none', height: '64px' }} data-kt-initialized="1">
+                                                            <textarea className="form-control bg-transparent border-0 px-0" id="kt_social_feeds_post_input" name="message" data-kt-autosize="true" rows="1" placeholder="Type your message..." style={{ overflow: 'hidden', overflowWrap: 'break-word', resize: 'none', height: '64px' }} data-kt-initialized="1" onChange={dummyFun}>
                                                             </textarea>
                                                             {/*end::Input*/}
                                                         </div>
@@ -862,7 +914,7 @@ const Home = () => {
                                                                     {/*begin::Input group*/}
                                                                     <div className="position-relative w-100">
                                                                         {/*begin::Input*/}
-                                                                        <textarea type="text" className="form-control form-control-solid border ps-5" rows="1" name="search" value="" data-kt-autosize="true" placeholder="Write your comment.." style={{ overflow: 'hidden', overflowWrap: 'break-word', resize: 'none' }} data-kt-initialized="1">                </textarea>
+                                                                        <textarea type="text" className="form-control form-control-solid border ps-5" rows="1" name="search" value="" data-kt-autosize="true" placeholder="Write your comment.." style={{ overflow: 'hidden', overflowWrap: 'break-word', resize: 'none' }} data-kt-initialized="1" onChange={dummyFun}>                </textarea>
                                                                         {/*end::Input*/}
 
                                                                         {/*begin::Actions*/}
@@ -1020,7 +1072,7 @@ const Home = () => {
                                                                         {/*begin::Col*/}
                                                                         <div className="col-md-4 text-center">
                                                                             <div className="text-gray-800 fw-bold fs-3">
-                                                                                <span className="m-0 counted" data-kt-countup="true" data-kt-countup-value="24" data-kt-initialized="1">24</span> K
+                                                                                <span className="m-0 counted" data-kt-countup="true" data-kt-countup-value="24" data-kt-initialized="1">{followers}</span> {followersPost}
                                                                             </div>
 
                                                                             <span className="text-gray-500 fs-8 d-block fw-bold">FOLLOWERS</span>
@@ -1030,7 +1082,7 @@ const Home = () => {
                                                                         {/*begin::Col*/}
                                                                         <div className="col-md-4 text-center">
                                                                             <div className="text-gray-800 fw-bold fs-3">
-                                                                                <span className="m-0 counted" data-kt-countup="true" data-kt-countup-value="12" data-kt-initialized="1">12</span> K
+                                                                                <span className="m-0 counted" data-kt-countup="true" data-kt-countup-value="12" data-kt-initialized="1">{followings}</span> {followingsPost}
                                                                             </div>
 
                                                                             <span className="text-gray-500 fs-8 d-block fw-bold">FOLLOWING</span>
@@ -1719,7 +1771,7 @@ const Home = () => {
                                                                             {/*begin::Input group*/}
                                                                             <div className="position-relative w-100">
                                                                                 {/*begin::Input*/}
-                                                                                <textarea type="text" className="form-control form-control-solid border ps-5" rows="1" name="search" value="" data-kt-autosize="true" placeholder="Write your comment.." style={{ overflow: 'hidden', overflowWrap: 'break-word', resize: 'none' }} data-kt-initialized="1">                </textarea>
+                                                                                <textarea type="text" className="form-control form-control-solid border ps-5" rows="1" name="search" value="" data-kt-autosize="true" placeholder="Write your comment.." style={{ overflow: 'hidden', overflowWrap: 'break-word', resize: 'none' }} data-kt-initialized="1" onChange={dummyFun}>                </textarea>
                                                                                 {/*end::Input*/}
 
                                                                                 {/*begin::Actions*/}

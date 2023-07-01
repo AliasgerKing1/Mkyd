@@ -6,8 +6,6 @@ import userRoutes from "./User/User";
 import Signin from "../components/pages/Signin/Signin";
 import Signup from "../components/pages/Signup/Signup";
 import Pricing from "../components/pages/Pricing/Pricing"
-import Help from "../components/pages/Help/Help";
-import Documentation from "../components/pages/Documentation/Documentation";
 import VerifyOtp from "../components/pages/VerifyOtp/VerifyOtp"
 
 const Router = () => {
@@ -28,14 +26,6 @@ const router = useRoutes([
   {
     path: "/pricing",
     element: <Pricing />
-  },
-  {
-    path: "/help",
-    element: <Help />
-  },
-  {
-    path: "/docs/index",
-    element: <Documentation />
   },
 {
   path : "auth",

@@ -16,7 +16,7 @@ const Posts2 = () => {
                 {/*begin::Card*/}
                 {state && state.map((x)=> {
                     return (
-                        <div className="card card-flush mb-10">
+                        <div className="card card-flush mb-10" key={x._id}>
                     {/*begin::Card header*/}
                     <div className="card-header pt-9">
                         {/*begin::Author*/}
@@ -376,7 +376,7 @@ const Posts2 = () => {
                             {/*begin::Input group*/}
                             <div className="position-relative w-100">
                                 {/*begin::Input*/}
-                                <textarea type="text" className="form-control form-control-solid border ps-5" rows="1" name="search" value={userComment} data-kt-autosize="true" placeholder="Write your comment.." style={{ overflow: 'hidden', overflowWrap: 'break-word', resize: 'none', height: '44px' }} data-kt-initialized="1" onChange={(e)=> setUserComment(e.target.value)}>                </textarea>
+                                <textarea type="text" className="form-control form-control-solid border ps-5" rows="1" name="search" onChange={(e)=> setUserComment(e.target.value)} value={userComment} data-kt-autosize="true" placeholder="Write your comment.." style={{ overflow: 'hidden', overflowWrap: 'break-word', resize: 'none', height: '44px' }} data-kt-initialized="1">                </textarea>
                                 {/*end::Input*/}
 
                                 {/*begin::Actions*/}

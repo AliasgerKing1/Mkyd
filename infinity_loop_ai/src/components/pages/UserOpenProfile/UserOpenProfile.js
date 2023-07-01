@@ -16,7 +16,6 @@ const UserOpenProfile = () => {
   let getOpenUserFun = async () => {
     let result = await getOpenUser(id);
     setData(result.data[0])
-    console.log(result.data[0])
   }
   useEffect(()=> {
 getOpenUserFun()
@@ -329,7 +328,8 @@ getOpenUserFun()
  <div className="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
   {/*begin::Number*/}
   <div className="d-flex align-items-center">
-    {/* <i className="ki-outline ki-arrow-down fs-2 text-danger me-2" />                                    <div className="fs-2 fw-bold counted" data-kt-countup="true" data-kt-countup-value={data.social[0].followers} data-kt-initialized={0}>{data.social[0].followers}</div> */}
+    <i className="ki-outline ki-arrow-down fs-2 text-danger me-2" />                                  
+      <div className="fs-2 fw-bold counted">{data && data.social[0].followers}</div>
   </div>
   {/*end::Number*/}
   {/*begin::Label*/}
@@ -342,7 +342,8 @@ getOpenUserFun()
  <div className="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
   {/*begin::Number*/}
   <div className="d-flex align-items-center">
-    <i className="ki-outline ki-arrow-down fs-2 text-danger me-2" />                                    <div className="fs-2 fw-bold counted" data-kt-countup="true" data-kt-countup-value={100} data-kt-initialized={1}>100</div>
+    <i className="ki-outline ki-arrow-down fs-2 text-danger me-2" />                                   
+     <div className="fs-2 fw-bold counted">{data && data.social[0].followings}</div>
   </div>
   {/*end::Number*/}
   {/*begin::Label*/}

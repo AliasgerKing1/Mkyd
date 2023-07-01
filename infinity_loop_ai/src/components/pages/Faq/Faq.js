@@ -71,9 +71,9 @@ const Faq = () => {
 
                                             {/*begin::Item*/}
                                             <li className="breadcrumb-item text-gray-600 fw-bold lh-1">
-                                                <a href="../../index.html" className="text-gray-700 text-hover-primary me-1">
+                                                <NavLink to="/auth/home" className="text-gray-700 text-hover-primary me-1">
                                                     <i className="fonticon-home text-gray-700 fs-3"></i>
-                                                </a>
+                                                </NavLink>
                                             </li>
                                             {/*end::Item*/}
 
